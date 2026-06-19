@@ -5,6 +5,7 @@ description: "AI data analyst that lets you chat with your data, generate visual
 category: "data"
 website: "https://julius.ai"
 pricing: "Free / $17.99/mo"
+affiliate_url: https://julius.ai
 featured: false
 rating: 4.2
 features:

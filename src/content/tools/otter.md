@@ -5,6 +5,7 @@ description: "AI meeting assistant that records, transcribes, summarizes, and ca
 category: "business"
 website: "https://otter.ai"
 pricing: "Free / $16.99/mo"
+affiliate_url: https://otter.ai
 featured: true
 rating: 4.4
 features:

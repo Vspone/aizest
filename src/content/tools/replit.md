@@ -5,6 +5,7 @@ description: "Cloud-based development environment with built-in AI coding assist
 category: "coding"
 website: "https://replit.com"
 pricing: "Free / $20/mo"
+affiliate_url: https://replit.com
 featured: false
 rating: 4.4
 features:

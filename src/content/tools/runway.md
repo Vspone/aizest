@@ -5,6 +5,7 @@ description: "Creative AI toolkit for video editing, generation, and visual effe
 category: "video"
 website: "https://runwayml.com"
 pricing: "Free / $15/mo"
+affiliate_url: https://runwayml.com
 featured: false
 rating: 4.4
 features:

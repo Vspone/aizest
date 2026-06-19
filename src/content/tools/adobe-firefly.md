@@ -5,6 +5,7 @@ description: "Adobe's family of creative generative AI models for image generati
 category: "design"
 website: "https://firefly.adobe.com"
 pricing: "Free / $4.99/mo"
+affiliate_url: https://firefly.adobe.com
 featured: false
 rating: 4.3
 features:

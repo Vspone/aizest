@@ -5,6 +5,7 @@ description: "AI-powered sales, marketing, and CRM tools baked into HubSpot for 
 category: "marketing"
 website: "https://www.hubspot.com"
 pricing: "Free / $45/mo"
+affiliate_url: https://www.hubspot.com
 featured: true
 rating: 4.4
 features:

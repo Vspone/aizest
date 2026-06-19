@@ -5,6 +5,7 @@ description: "AI content generation platform for blogs, ads, and marketing copy"
 category: "writing"
 website: "https://writesonic.com"
 pricing: "$20/mo"
+affiliate_url: https://writesonic.com/?ref=aizest
 featured: false
 rating: 4.2
 features:

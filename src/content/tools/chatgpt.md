@@ -5,6 +5,7 @@ description: "Advanced AI chatbot by OpenAI for conversation, writing, and probl
 category: "writing"
 website: "https://chat.openai.com"
 pricing: "Free / $20/mo"
+affiliate_url: https://chat.openai.com
 featured: true
 rating: 4.8
 features:

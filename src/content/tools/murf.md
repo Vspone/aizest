@@ -5,6 +5,7 @@ description: "AI voiceover platform for generating natural-sounding voiceovers f
 category: "audio"
 website: "https://murf.ai"
 pricing: "Free / $19/mo"
+affiliate_url: https://murf.ai
 featured: false
 rating: 4.2
 features:

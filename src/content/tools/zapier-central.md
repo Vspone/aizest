@@ -5,6 +5,7 @@ description: "AI-powered automation platform that connects apps and services wit
 category: "productivity"
 website: "https://zapier.com"
 pricing: "Free / $19.99/mo"
+affiliate_url: https://zapier.com
 featured: false
 rating: 4.3
 features:

@@ -5,6 +5,7 @@ description: "AI video generation platform for creating cinematic video clips an
 category: "video"
 website: "https://pika.art"
 pricing: "Free / $10/mo"
+affiliate_url: https://pika.art
 featured: false
 rating: 4.2
 features:

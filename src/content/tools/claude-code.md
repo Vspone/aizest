@@ -5,6 +5,7 @@ description: "Agentic AI coding tool for the terminal that can autonomously read
 category: "coding"
 website: "https://docs.anthropic.com/en/docs/claude-code/overview"
 pricing: "Included with Claude Pro / $20/mo"
+affiliate_url: https://docs.anthropic.com/en/docs/claude-code/overview
 featured: false
 rating: 4.6
 features:

@@ -5,6 +5,7 @@ description: "AI-powered presentation tool that turns ideas into polished slide 
 category: "productivity"
 website: "https://gamma.app"
 pricing: "Free / $8/mo"
+affiliate_url: https://gamma.app
 featured: false
 rating: 4.3
 features:

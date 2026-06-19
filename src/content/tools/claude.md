@@ -5,6 +5,7 @@ description: "Advanced AI assistant for writing, analysis, and coding with a foc
 category: "writing"
 website: "https://claude.ai"
 pricing: "Free / $20/mo"
+affiliate_url: https://claude.ai
 featured: true
 rating: 4.7
 features:

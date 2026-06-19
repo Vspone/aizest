@@ -5,6 +5,7 @@ description: "AI-first code editor built on VS Code with deep integration of Cla
 category: "coding"
 website: "https://cursor.com"
 pricing: "Free / $20/mo"
+affiliate_url: https://cursor.com
 featured: true
 rating: 4.7
 features:

@@ -5,6 +5,7 @@ description: "AI-driven content optimization platform that helps you write searc
 category: "marketing"
 website: "https://surferseo.com"
 pricing: "$69/mo"
+affiliate_url: https://surferseo.com/?ref=aizest
 featured: false
 rating: 4.3
 features:

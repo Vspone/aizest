@@ -5,6 +5,7 @@ description: "OpenAI's most advanced text-to-image generation model with photore
 category: "image"
 website: "https://openai.com/dall-e-3"
 pricing: "Included with ChatGPT / $20/mo"
+affiliate_url: https://openai.com/dall-e-3
 featured: true
 rating: 4.6
 features:

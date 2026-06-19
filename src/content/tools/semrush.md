@@ -5,6 +5,7 @@ description: "All-in-one marketing toolkit with AI-powered SEO, content marketin
 category: "marketing"
 website: "https://www.semrush.com"
 pricing: "$129.95/mo"
+affiliate_url: https://www.semrush.com/?ref=aizest
 featured: false
 rating: 4.5
 features:

@@ -5,6 +5,7 @@ description: "AI video generation platform for creating professional videos with
 category: "video"
 website: "https://www.heygen.com"
 pricing: "$24/mo"
+affiliate_url: https://www.heygen.com
 featured: false
 rating: 4.3
 features:

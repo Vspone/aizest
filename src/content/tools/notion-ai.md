@@ -5,6 +5,7 @@ description: "AI-enhanced workspace for notes, documentation, project management
 category: "productivity"
 website: "https://www.notion.so/product/ai"
 pricing: "$10/mo (add-on)"
+affiliate_url: https://www.notion.so
 featured: false
 rating: 4.4
 features:

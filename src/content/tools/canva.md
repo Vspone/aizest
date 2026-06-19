@@ -5,6 +5,7 @@ description: "AI-powered design platform with text-to-image, magic editing, and 
 category: "design"
 website: "https://www.canva.com"
 pricing: "Free / $13/mo"
+affiliate_url: https://www.canva.com
 featured: true
 rating: 4.6
 features:

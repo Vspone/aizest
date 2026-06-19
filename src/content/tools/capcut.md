@@ -5,6 +5,7 @@ description: "Free AI-powered video editor with advanced editing features and te
 category: "video"
 website: "https://capcut.com"
 pricing: "Free / $7.99/mo"
+affiliate_url: https://capcut.com
 featured: false
 rating: 4.3
 features:

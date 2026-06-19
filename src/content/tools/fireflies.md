@@ -5,6 +5,7 @@ description: "AI meeting assistant that records, transcribes, and analyzes conve
 category: "business"
 website: "https://fireflies.ai"
 pricing: "Free / $10/mo"
+affiliate_url: https://fireflies.ai
 featured: true
 rating: 4.2
 features:

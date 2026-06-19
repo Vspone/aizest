@@ -5,6 +5,7 @@ description: "AI video generation platform creating professional videos with rea
 category: "video"
 website: "https://www.synthesia.io"
 pricing: "$29/mo"
+affiliate_url: https://www.synthesia.io/?via=aizest
 featured: false
 rating: 4.4
 features:

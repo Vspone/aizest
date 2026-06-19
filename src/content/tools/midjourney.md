@@ -5,6 +5,7 @@ description: "AI image generator creating stunning, artistic visuals from text p
 category: "image"
 website: "https://www.midjourney.com"
 pricing: "$10/mo"
+affiliate_url: https://www.midjourney.com
 featured: true
 rating: 4.7
 features:

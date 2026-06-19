@@ -5,6 +5,7 @@ description: "AI-powered search engine providing comprehensive answers with cite
 category: "data"
 website: "https://www.perplexity.ai"
 pricing: "Free / $20/mo"
+affiliate_url: https://www.perplexity.ai
 featured: false
 rating: 4.6
 features:

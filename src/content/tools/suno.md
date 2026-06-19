@@ -5,6 +5,7 @@ description: "AI music generation platform that creates original songs with lyri
 category: "audio"
 website: "https://suno.com"
 pricing: "Free / $10/mo"
+affiliate_url: https://suno.com
 featured: true
 rating: 4.5
 features:

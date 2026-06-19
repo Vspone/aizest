@@ -5,6 +5,7 @@ description: "Creative AI art generator with game asset focus and intuitive inte
 category: "image"
 website: "https://leonardo.ai"
 pricing: "Free / $10/mo"
+affiliate_url: https://leonardo.ai
 featured: false
 rating: 4.4
 features:

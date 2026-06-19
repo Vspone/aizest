@@ -5,6 +5,7 @@ description: "AI pair programmer that suggests code in real-time, integrated int
 category: "coding"
 website: "https://github.com/features/copilot"
 pricing: "$10/mo"
+affiliate_url: https://github.com/features/copilot
 featured: false
 rating: 4.5
 features:

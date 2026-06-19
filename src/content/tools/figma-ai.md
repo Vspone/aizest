@@ -5,6 +5,7 @@ description: "AI-powered design features integrated into Figma for generating UI
 category: "design"
 website: "https://www.figma.com"
 pricing: "Free / $12/mo"
+affiliate_url: https://www.figma.com
 featured: true
 rating: 4.6
 features:

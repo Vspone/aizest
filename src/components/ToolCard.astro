@@ -1,0 +1,79 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  tool: CollectionEntry<'tools'>;
+}
+
+const { tool } = Astro.props;
+const { name, description, category, rating, pricing, slug, featured, affiliate_url } = tool.data;
+
+const categoryLabels: Record<string, string> = {
+  writing: 'Writing', image: 'Image', video: 'Video', audio: 'Audio',
+  coding: 'Coding', productivity: 'Productivity', data: 'Data',
+  design: 'Design', marketing: 'Marketing', business: 'Business',
+};
+
+const categoryColors: Record<string, string> = {
+  writing: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+  image: 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400',
+  video: 'bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400',
+  audio: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
+  coding: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400',
+  productivity: 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400',
+  data: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400',
+  design: 'bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400',
+  marketing: 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400',
+  business: 'bg-teal-100 text-teal-700 dark:bg-teal-900/30 dark:text-teal-400',
+};
+---
+
+<a href={`/tool/${slug}`} class="card p-5 flex flex-col h-full group">
+  <div class="flex items-start justify-between mb-3">
+    <div class="flex-1 min-w-0">
+      <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-[#3B82F6] transition-colors truncate">
+        {name}
+      </h3>
+      <span class={`badge mt-1.5 ${categoryColors[category] || 'bg-gray-100 text-gray-700'}`}>
+        {categoryLabels[category] || category}
+      </span>
+    </div>
+    {featured && (
+      <span class="badge bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400 shrink-0 ml-2">
+        Featured
+      </span>
+    )}
+  </div>
+  
+  <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-4 flex-1">
+    {description}
+  </p>
+  
+  <div class="flex items-center gap-2 mb-4">
+    <div class="flex items-center">
+      {[1,2,3,4,5].map(i => (
+        <svg key={i} class={`w-4 h-4 ${i <= Math.round(rating) ? 'text-yellow-400' : 'text-gray-300 dark:text-gray-600'}`} fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))}
+    </div>
+    <span class="text-xs text-gray-500">{rating}</span>
+    <span class="text-xs text-gray-400 ml-auto">{pricing}</span>
+  </div>
+
+  <div class="flex gap-2">
+    {affiliate_url ? (
+      <a href={affiliate_url} target="_blank" rel="noopener noreferrer" class="btn-primary text-sm flex-1 text-center"
+         onclick="event.stopPropagation()">
+        Visit Website
+      </a>
+    ) : (
+      <a href={`/tool/${slug}`} class="btn-primary text-sm flex-1 text-center">
+        Read Review
+      </a>
+    )}
+    <a href={`/tool/${slug}`} class="btn-outline text-sm px-3">
+      Details
+    </a>
+  </div>
+</a>

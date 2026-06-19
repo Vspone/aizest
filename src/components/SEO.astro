@@ -1,0 +1,15 @@
+---
+const { title } = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>{title || 'AI Zest — Discover the Best AI Tools'}</title>
+<meta name="description" content="AI Zest helps you discover, compare, and choose the best AI tools for every task. Curated reviews, comparisons, and expert guides." />
+<meta property="og:title" content={title || 'AI Zest — Discover the Best AI Tools'} />
+<meta property="og:description" content="Discover the best AI tools for every task. Curated reviews, comparisons, and expert guides." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href={Astro.url} />

@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SearchBar from '../components/SearchBar.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+import ToolCard from '../components/ToolCard.astro';
+import { getCollection } from 'astro:content';
+
+const tools = await getCollection('tools');
+const featuredTools = tools.filter(t => t.data.featured).slice(0, 6);
+
+const categories = [
+  { name: 'Writing & Content', icon: '✍️', slug: 'writing', color: 'bg-blue-100 text-blue-600' },
+  { name: 'Image Generation', icon: '🎨', slug: 'image', color: 'bg-purple-100 text-purple-600' },
+  { name: 'Video Creation', icon: '🎬', slug: 'video', color: 'bg-pink-100 text-pink-600' },
+  { name: 'Audio & Voice', icon: '🎵', slug: 'audio', color: 'bg-green-100 text-green-600' },
+  { name: 'Coding & Dev', icon: '💻', slug: 'coding', color: 'bg-cyan-100 text-cyan-600' },
+  { name: 'Marketing & SEO', icon: '📈', slug: 'marketing', color: 'bg-orange-100 text-orange-600' },
+  { name: 'Productivity', icon: '⚡', slug: 'productivity', color: 'bg-amber-100 text-amber-600' },
+  { name: 'Data & Analytics', icon: '📊', slug: 'data', color: 'bg-indigo-100 text-indigo-600' },
+  { name: 'Design & Creative', icon: '🎯', slug: 'design', color: 'bg-rose-100 text-rose-600' },
+  { name: 'Business & Finance', icon: '💼', slug: 'business', color: 'bg-teal-100 text-teal-600' },
+];
+
+const toolCounts: Record<string, number> = {};
+for (const t of tools) {
+  toolCounts[t.data.category] = (toolCounts[t.data.category] || 0) + 1;
+}
+---
+
+<BaseLayout title="AI Zest — Discover the Best AI Tools">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <Hero />
+    
+    <div class="mt-4 mb-16">
+      <SearchBar />
+    </div>
+
+    <!-- Categories -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        Browse by Category
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {categories.map(cat => (
+          <CategoryCard 
+            name={cat.name}
+            icon={cat.icon}
+            slug={cat.slug}
+            count={toolCounts[cat.slug] || 0}
+            color={cat.color}
+          />
+        ))}
+      </div>
+    </section>
+
+    <!-- Featured Tools -->
+    {featuredTools.length > 0 && (
+      <section class="mb-16">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            Featured Tools
+          </h2>
+          <a href="/category/writing" class="text-sm text-[#3B82F6] hover:underline">
+            View All →
+          </a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredTools.map(tool => (
+            <ToolCard tool={tool} />
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Stats section -->
+    <section class="mb-16 py-12 px-8 rounded-2xl bg-gradient-to-br from-[#3B82F6]/5 to-[#8B5CF6]/5 dark:from-[#3B82F6]/10 dark:to-[#8B5CF6]/10 border border-gray-200 dark:border-gray-800">
+      <div class="grid grid-cols-3 gap-8 text-center">
+        <div>
+          <div class="text-3xl font-bold text-[#3B82F6]">{tools.length}+</div>
+          <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">AI Tools Reviewed</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-[#8B5CF6]">{categories.length}</div>
+          <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Categories</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-[#3B82F6]">2026</div>
+          <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Continuously Updated</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #3B82F6;
+  --color-accent-dark: #2563EB;
+}
+
+@utility btn-primary {
+  @apply inline-flex items-center justify-center px-5 py-2.5 rounded-lg font-medium text-white transition-all;
+  background-color: var(--color-accent);
+}
+.btn-primary:hover {
+  background-color: var(--color-accent-dark);
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+@utility btn-outline {
+  @apply inline-flex items-center justify-center px-5 py-2.5 rounded-lg font-medium transition-all;
+  @apply border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300;
+}
+.btn-outline:hover {
+  @apply bg-gray-50 dark:bg-gray-800;
+}
+.btn-outline:active {
+  transform: scale(0.98);
+}
+
+@utility card {
+  @apply bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 transition-shadow;
+}
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+@utility badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}

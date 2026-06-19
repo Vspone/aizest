@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aizest.net/sitemap-index.xml

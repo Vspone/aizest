@@ -169,75 +169,88 @@
 
 <script>
 (function() {
-  const menuToggle = document.getElementById('menu-toggle');
-  const menuClose = document.getElementById('menu-close');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileOverlay = document.getElementById('mobile-overlay');
-  const hamburgerIcon = document.getElementById('hamburger-icon');
-  const closeIcon = document.getElementById('close-icon');
+  'use strict';
+  var isOpen = false;
+  var toggleBtn = document.getElementById('menu-toggle');
+  var menuPanel = document.getElementById('mobile-menu');
+  var overlay = document.getElementById('mobile-overlay');
+  var hamIcon = document.getElementById('hamburger-icon');
+  var xIcon = document.getElementById('close-icon');
 
-  function openMenu() {
-    mobileOverlay.classList.remove('hidden');
-    mobileMenu.classList.remove('translate-x-full');
-    // Trigger overlay opacity transition
-    requestAnimationFrame(() => {
-      mobileOverlay.classList.remove('opacity-0');
-      mobileOverlay.classList.add('opacity-100');
+  function open() {
+    if (!overlay || !menuPanel) return;
+    isOpen = true;
+    overlay.classList.remove('hidden');
+    menuPanel.classList.remove('translate-x-full');
+    requestAnimationFrame(function () {
+      overlay.classList.remove('opacity-0');
+      overlay.classList.add('opacity-100');
     });
-    hamburgerIcon.classList.add('hidden');
-    closeIcon.classList.remove('hidden');
+    if (hamIcon) hamIcon.classList.add('hidden');
+    if (xIcon) xIcon.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
   }
 
-  function closeMenu() {
-    mobileOverlay.classList.add('opacity-0');
-    mobileOverlay.classList.remove('opacity-100');
-    mobileMenu.classList.add('translate-x-full');
-    hamburgerIcon.classList.remove('hidden');
-    closeIcon.classList.add('hidden');
+  function close() {
+    if (!isOpen || !overlay || !menuPanel) return;
+    isOpen = false;
+    overlay.classList.add('opacity-0');
+    overlay.classList.remove('opacity-100');
+    menuPanel.classList.add('translate-x-full');
+    if (hamIcon) hamIcon.classList.remove('hidden');
+    if (xIcon) xIcon.classList.add('hidden');
     document.body.style.overflow = '';
-    // Hide overlay after transition
-    setTimeout(() => {
-      mobileOverlay.classList.add('hidden');
+    setTimeout(function () {
+      overlay.classList.add('hidden');
     }, 300);
   }
 
-  menuToggle?.addEventListener('click', openMenu);
-  menuClose?.addEventListener('click', closeMenu);
-  mobileOverlay?.addEventListener('click', closeMenu);
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function () {
+      if (isOpen) close(); else open();
+    });
+  }
+
+  // Close via X inside menu
+  var closeBtn = document.getElementById('menu-close');
+  if (closeBtn) closeBtn.addEventListener('click', close);
+
+  // Close via overlay tap
+  if (overlay) overlay.addEventListener('click', close);
 
   // Close on Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') close();
   });
 
   // Theme toggle
-  const toggle = document.getElementById('theme-toggle');
-  const sunIcon = document.getElementById('sun-icon');
-  const moonIcon = document.getElementById('moon-icon');
-  
+  var themeBtn = document.getElementById('theme-toggle');
+  var sun = document.getElementById('sun-icon');
+  var moon = document.getElementById('moon-icon');
+
   function getTheme() {
-    return localStorage.getItem('theme') || 
-           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    return localStorage.getItem('theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   }
-  
-  function setTheme(theme) {
-    if (theme === 'dark') {
+
+  function setTheme(t) {
+    if (t === 'dark') {
       document.documentElement.classList.add('dark');
-      sunIcon?.classList.remove('hidden');
-      moonIcon?.classList.add('hidden');
+      sun.classList.remove('hidden');
+      moon.classList.add('hidden');
     } else {
       document.documentElement.classList.remove('dark');
-      sunIcon?.classList.add('hidden');
-      moonIcon?.classList.remove('hidden');
+      sun.classList.add('hidden');
+      moon.classList.remove('hidden');
     }
-    localStorage.setItem('theme', theme);
+    localStorage.setItem('theme', t);
   }
-  
+
   setTheme(getTheme());
-  
-  toggle?.addEventListener('click', () => {
-    setTheme(getTheme() === 'dark' ? 'light' : 'dark');
-  });
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      setTheme(getTheme() === 'dark' ? 'light' : 'dark');
+    });
+  }
 })();
 </script>

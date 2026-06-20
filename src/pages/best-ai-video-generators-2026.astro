@@ -1,9 +1,61 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Best AI Video Generators 2026 — AI Zest";
+const description = "We tested the top AI video creators in 2026. Compare Runway, Synthesia, HeyGen, CapCut, and Pika with detailed reviews, ratings, and pricing.";
+const canonical = "/best-ai-video-generators-2026";
+
+// Article JSON-LD
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Best AI Video Generators 2026",
+  "description": description,
+  "datePublished": "2026-06-01",
+  "dateModified": "2026-06-20",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Zest"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Zest"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://aizest.net${canonical}`
+  }
+});
+
+// Breadcrumb JSON-LD
+const breadcrumbJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aizest.net/" },
+    { "@type": "ListItem", "position": 2, "name": "Best AI Video Generators 2026" }
+  ]
+});
 ---
 
-<BaseLayout title="Best AI Video Generators 2026 — AI Zest">
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  type="article"
+  jsonLd={jsonLd}
+>
+  <!-- Breadcrumb JSON-LD (separate) -->
+  <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-[#3B82F6]">Home</a>
+      <span>/</span>
+      <span class="text-gray-900 dark:text-white font-medium">Best AI Video Generators 2026</span>
+    </nav>
+
     <article class="prose prose-lg prose-gray dark:prose-invert max-w-none">
 
 <h1>Best AI Video Generators 2026</h1>

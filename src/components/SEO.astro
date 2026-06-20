@@ -1,15 +1,73 @@
 ---
-const { title } = Astro.props;
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  type?: 'website' | 'article';
+  jsonLd?: string;
+}
+
+const { 
+  title = 'AI Zest — Discover the Best AI Tools',
+  description = 'Curated reviews, comparisons, and guides to help you find the perfect AI tool for every task.',
+  canonical,
+  ogImage = '/images/og-default.png',
+  type = 'website',
+  jsonLd,
+} = Astro.props;
+
+const siteUrl = 'https://aizest.net';
+const fullUrl = canonical ? `${siteUrl}${canonical}` : Astro.url.href;
+const fullImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 ---
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<title>{title || 'AI Zest — Discover the Best AI Tools'}</title>
-<meta name="description" content="AI Zest helps you discover, compare, and choose the best AI tools for every task. Curated reviews, comparisons, and expert guides." />
-<meta property="og:title" content={title || 'AI Zest — Discover the Best AI Tools'} />
-<meta property="og:description" content="Discover the best AI tools for every task. Curated reviews, comparisons, and expert guides." />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href={fullUrl} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="description" content={description} />
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href={Astro.url} />
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={fullUrl} />
+<meta property="og:type" content={type} />
+<meta property="og:image" content={fullImage} />
+<meta property="og:site_name" content="AI Zest" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullImage} />
+
+<!-- Structured Data -->
+{jsonLd && (
+  <script type="application/ld+json" set:html={jsonLd} />
+)}
+
+<!-- WebSite Schema (homepage) -->
+{!canonical || canonical === '/' ? (
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "AI Zest",
+      "url": siteUrl,
+      "description": description,
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": `${siteUrl}/?s={search_term_string}`
+        },
+        "query-input": "required name=search_term_string"
+      }
+    })}
+  </script>
+) : null}

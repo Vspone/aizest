@@ -1,9 +1,58 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Article JSON-LD
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ChatGPT vs Claude vs Gemini: Which AI Assistant is Best in 2026?",
+  "description": "We've spent hundreds of hours testing ChatGPT, Claude, and Gemini across writing, coding, analysis, and creative tasks. Find out which AI assistant is right for you in 2026.",
+  "datePublished": "2026-06-01",
+  "dateModified": "2026-06-20",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Zest"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Zest",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aizest.net/logo.png"
+    }
+  }
+});
+
+// Breadcrumb JSON-LD
+const breadcrumbJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aizest.net/" },
+    { "@type": "ListItem", "position": 2, "name": "ChatGPT vs Claude vs Gemini: Which AI Assistant is Best in 2026?" }
+  ]
+});
 ---
 
-<BaseLayout title="ChatGPT vs Claude vs Gemini: Which AI Assistant is Best in 2026? — AI Zest">
+<BaseLayout 
+  title="ChatGPT vs Claude vs Gemini: Which AI Assistant is Best in 2026? — AI Zest"
+  description="We've spent hundreds of hours testing ChatGPT, Claude, and Gemini across writing, coding, analysis, and creative tasks. Find out which AI assistant is right for you in 2026."
+  canonical="/chatgpt-vs-claude-vs-gemini/"
+  type="article"
+  jsonLd={jsonLd}
+>
+  <!-- Breadcrumb JSON-LD -->
+  <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-[#3B82F6]">Home</a>
+      <span>/</span>
+      <span class="text-gray-900 dark:text-white font-medium truncate">ChatGPT vs Claude vs Gemini: Which AI Assistant is Best in 2026?</span>
+    </nav>
+
     <article class="prose prose-lg prose-gray dark:prose-invert max-w-none">
 
 <h1>ChatGPT vs Claude vs Gemini: Which AI Assistant is Best in 2026?</h1>

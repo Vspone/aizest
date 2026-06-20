@@ -1,10 +1,47 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const description = "We tested the top AI image generators of 2026 — Midjourney, Ideogram, DALL-E 3, Stable Diffusion, Recraft, and Leonardo AI. Find the best tool for your creative needs, from photorealistic art to vector graphics and game assets.";
+const canonical = "https://aizest.net/best-ai-image-generators-2026";
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Best AI Image Generators 2026",
+  "description": "We tested the top AI image generators of 2026 — Midjourney, Ideogram, DALL-E 3, Stable Diffusion, Recraft, and Leonardo AI. Find the best tool for your creative needs.",
+  "datePublished": "2026-06-20",
+  "dateModified": "2026-06-20",
+  "author": { "@type": "Organization", "name": "AI Zest" }
+});
+
+const breadcrumbJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aizest.net/" },
+    { "@type": "ListItem", "position": 2, "name": "Best AI Image Generators 2026" }
+  ]
+});
 ---
 
-<BaseLayout title="Best AI Image Generators 2026 — AI Zest">
+<BaseLayout title="Best AI Image Generators 2026 — AI Zest" {description} {canonical} type="article" {jsonLd}>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <article class="prose prose-lg prose-gray dark:prose-invert max-w-none">
+
+<nav aria-label="Breadcrumb" class="not-prose mb-6">
+  <ol class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+    <li>
+      <a href="https://aizest.net/" class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Home</a>
+    </li>
+    <li class="flex items-center">
+      <svg class="w-4 h-4 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </li>
+    <li class="text-gray-700 dark:text-gray-300" aria-current="page">Best AI Image Generators 2026</li>
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={breadcrumbJsonLd}></script>
 
 <h1>Best AI Image Generators 2026</h1>
 <p><em>Last updated: June 2026</em></p>

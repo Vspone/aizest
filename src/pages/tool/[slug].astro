@@ -11,21 +11,69 @@ export async function getStaticPaths() {
 }
 const { tool } = Astro.props;
 const { Content } = await render(tool);
-const { name, description, website, pricing, affiliate_url, rating, features, pricing_tiers, pros, cons } = tool.data;
+const { name, slug, description, website, pricing, affiliate_url, rating, features, pricing_tiers, pros, cons, category } = tool.data;
 
 const categoryLabels: Record<string, string> = {
   writing: 'Writing & Content', image: 'Image Generation', video: 'Video Creation',
   audio: 'Audio & Voice', coding: 'Coding & Development', productivity: 'Productivity',
   data: 'Data & Analytics', design: 'Design & Creative', marketing: 'Marketing & SEO', business: 'Business & Finance',
 };
+
+// JSON-LD SoftwareApplication Schema
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": name,
+  "description": description,
+  "url": website,
+  "applicationCategory": categoryLabels[category] || category,
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": pricing.replace(/^Free\s*\/\s*/, '').replace(/^From\s*/, '').trim() || 'Free',
+    "priceCurrency": "USD",
+    "priceValidUntil": "2027-12-31"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": rating,
+    "bestRating": 5,
+    "ratingCount": 1
+  }
+});
+
+// Breadcrumb JSON-LD
+const breadcrumbJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aizest.net/" },
+    { "@type": "ListItem", "position": 2, "name": categoryLabels[category] || category, "item": `https://aizest.net/category/${category}` },
+    { "@type": "ListItem", "position": 3, "name": name }
+  ]
+});
 ---
 
-<BaseLayout title={`${name} Review 2026 — AI Zest`}>
+<BaseLayout 
+  title={`${name} Review 2026 — Pricing, Features & Rating — AI Zest`}
+  description={`${name} review: ${description}. Pricing: ${pricing}. Rating: ${rating}/5. Compare features, pros, cons, and find the best AI tool for your needs.`}
+  canonical={`/tool/${slug}`}
+  type="article"
+  jsonLd={jsonLd}
+>
+  <!-- Breadcrumb JSON-LD (separate) -->
+  <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     
-    <a href={`/category/${tool.data.category}`} class="text-sm text-gray-500 dark:text-gray-400 hover:text-[#3B82F6]">
-      ← Back to {categoryLabels[tool.data.category] || tool.data.category}
-    </a>
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-[#3B82F6]">Home</a>
+      <span>/</span>
+      <a href={`/category/${category}`} class="hover:text-[#3B82F6]">{categoryLabels[category] || category}</a>
+      <span>/</span>
+      <span class="text-gray-900 dark:text-white font-medium truncate">{name}</span>
+    </nav>
 
     <!-- Header -->
     <div class="mt-6 mb-10">
@@ -38,25 +86,30 @@ const categoryLabels: Record<string, string> = {
       
       <div class="flex flex-wrap items-center gap-3 mt-4">
         <span class={`badge ${
-          tool.data.category === 'writing' ? 'bg-blue-100 text-blue-700' :
-          tool.data.category === 'image' ? 'bg-purple-100 text-purple-700' :
-          tool.data.category === 'video' ? 'bg-pink-100 text-pink-700' :
+          category === 'writing' ? 'bg-blue-100 text-blue-700' :
+          category === 'image' ? 'bg-purple-100 text-purple-700' :
+          category === 'video' ? 'bg-pink-100 text-pink-700' :
           'bg-gray-100 text-gray-700'
         }`}>
-          {categoryLabels[tool.data.category] || tool.data.category}
+          {categoryLabels[category] || category}
         </span>
-        <div class="flex items-center">
+        <div class="flex items-center" itemscope itemtype="https://schema.org/AggregateRating">
+          <meta itemprop="ratingValue" content={String(rating)} />
+          <meta itemprop="bestRating" content="5" />
           {[1,2,3,4,5].map(i => (
             <svg key={i} class={`w-5 h-5 ${i <= Math.round(rating) ? 'text-yellow-400' : 'text-gray-300 dark:text-gray-600'}`} fill="currentColor" viewBox="0 0 20 20">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
             </svg>
           ))}
-          <span class="ml-1.5 text-sm text-gray-500">{rating}/5</span>
+          <span class="ml-1.5 text-sm text-gray-500">({rating}/5)</span>
         </div>
-        <span class="text-sm text-gray-500">{pricing}</span>
+        <span class="text-sm text-gray-500" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <span itemprop="price">{pricing}</span>
+        </span>
       </div>
     </div>
 
+    <!-- Rest of the page content stays the same -->
     <!-- CTA -->
     {affiliate_url && (
       <div class="mb-10 p-6 rounded-xl bg-gradient-to-r from-[#3B82F6]/10 to-[#8B5CF6]/10 border border-[#3B82F6]/20 text-center">
@@ -153,11 +206,19 @@ const categoryLabels: Record<string, string> = {
           </div>
         )}
 
+        <!-- Related tools section -->
         <div class="card p-5">
           <h3 class="font-semibold text-gray-900 dark:text-white mb-2">We Tested It</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400">
             Our reviews are based on hands-on testing and research. We provide honest assessments to help you make informed decisions.
           </p>
+        </div>
+
+        <!-- Compare CTA -->
+        <div class="card p-5 bg-gradient-to-br from-[#3B82F6]/5 to-[#8B5CF6]/5 dark:from-[#3B82F6]/10 dark:to-[#8B5CF6]/10">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Compare {name}</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mb-3">See how {name} stacks up against similar tools.</p>
+          <a href="/compare" class="btn-outline text-xs w-full text-center">Compare Tools →</a>
         </div>
       </div>
     </div>

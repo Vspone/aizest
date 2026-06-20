@@ -28,9 +28,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div>
           <h2 class="font-semibold text-gray-900 dark:text-white mb-1">Email</h2>
           <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Send us an email and we'll get back to you.</p>
-          <a href="mailto:admin@aizest.net" class="text-[#3B82F6] hover:underline font-medium text-sm">
-            admin@aizest.net →
-          </a>
+          <div class="flex items-center gap-2">
+            <span class="text-[#3B82F6] font-medium text-base select-all hover:underline cursor-pointer" id="email-text" title="Click to email">admin@aizest.net</span>
+            <button id="copy-email" class="px-3 py-1.5 text-xs rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors min-h-[32px]">
+              Copy
+            </button>
+          </div>
+          <p id="copy-status" class="text-xs text-gray-400 mt-1 hidden"></p>
         </div>
       </div>
 
@@ -72,3 +76,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </p>
   </div>
 </BaseLayout>
+
+<script>
+(function() {
+  var btn = document.getElementById('copy-email');
+  var status = document.getElementById('copy-status');
+  var emailText = document.getElementById('email-text');
+  if (!btn || !status) return;
+  
+  // Copy button
+  btn.addEventListener('click', function() {
+    copyEmail();
+  });
+  
+  // Click email text to open mail client
+  if (emailText) {
+    emailText.addEventListener('click', function() {
+      window.location.href = 'mailto:admin@aizest.net';
+    });
+  }
+  
+  function copyEmail() {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText('admin@aizest.net').then(function() {
+        status.textContent = 'Copied!';
+        status.className = 'text-xs text-emerald-500 mt-1';
+        status.classList.remove('hidden');
+        setTimeout(function() { status.classList.add('hidden'); }, 2000);
+      }).catch(function() {
+        fallbackCopyEmail();
+      });
+    } else {
+      fallbackCopyEmail();
+    }
+  }
+  function fallbackCopyEmail() {
+    var textarea = document.createElement('textarea');
+    textarea.value = 'admin@aizest.net';
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand('copy');
+      status.textContent = 'Copied!';
+      status.className = 'text-xs text-emerald-500 mt-1';
+      status.classList.remove('hidden');
+      setTimeout(function() { status.classList.add('hidden'); }, 2000);
+    } catch (e) {}
+    document.body.removeChild(textarea);
+  }
+})();
+</script>

@@ -73,25 +73,25 @@
   </div>
 
   <!-- Mobile overlay -->
-  <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300 md:hidden"></div>
+  <div id="mobile-overlay" class="fixed inset-0 bg-black/40 z-30 hidden opacity-0 transition-opacity duration-300" style="pointer-events:none"></div>
 
   <!-- Mobile slide-in menu -->
-  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 max-w-[80vw] bg-white dark:bg-gray-900 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 max-w-[65vw] bg-white dark:bg-gray-900 shadow-2xl z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
     <div class="flex flex-col h-full">
       <!-- Menu header -->
-      <div class="flex items-center justify-between px-5 h-16 border-b border-gray-200 dark:border-gray-800">
-        <span class="text-lg font-bold bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] bg-clip-text text-transparent">
+      <div class="flex items-center justify-between px-4 h-14 border-b border-gray-200 dark:border-gray-800">
+        <span class="text-base font-bold bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] bg-clip-text text-transparent">
           AI Zest
         </span>
         <button id="menu-close" class="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Close menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
 
       <!-- Menu links -->
-      <nav class="flex-1 overflow-y-auto py-4 px-3">
+      <nav class="flex-1 overflow-y-auto py-3 px-2">
         <a href="/" class="mobile-nav-link">
           <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -132,7 +132,7 @@
       </nav>
 
       <!-- Menu footer -->
-      <div class="px-5 py-4 border-t border-gray-200 dark:border-gray-800">
+      <div class="px-4 py-3 border-t border-gray-200 dark:border-gray-800">
         <a href="/category/writing" class="btn-primary w-full text-sm text-center">
           Browse All Tools
         </a>
@@ -146,13 +146,14 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.75rem 0.75rem;
+    padding: 0.625rem 0.75rem;
     font-size: 0.875rem;
     font-weight: 500;
     border-radius: 0.5rem;
     min-height: 44px;
     color: #374151;
-    transition: all 0.15s ease;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    -webkit-tap-highlight-color: rgba(59,130,246,0.15);
   }
   .dark .mobile-nav-link {
     color: #d1d5db;
@@ -165,65 +166,82 @@
     background-color: #1f2937;
     color: #ffffff;
   }
+  .mobile-nav-link:active {
+    background-color: #e5e7eb;
+  }
+  .dark .mobile-nav-link:active {
+    background-color: #374151;
+  }
 </style>
 
 <script>
 (function() {
   'use strict';
-  var isOpen = false;
-  var toggleBtn = document.getElementById('menu-toggle');
-  var menuPanel = document.getElementById('mobile-menu');
+  var toggle = document.getElementById('menu-toggle');
+  var panel = document.getElementById('mobile-menu');
   var overlay = document.getElementById('mobile-overlay');
+  var closeBtn = document.getElementById('menu-close');
   var hamIcon = document.getElementById('hamburger-icon');
   var xIcon = document.getElementById('close-icon');
+  var body = document.body;
+  var isOpen = false;
+
+  if (!toggle || !panel || !overlay) return;
 
   function open() {
-    if (!overlay || !menuPanel) return;
     isOpen = true;
     overlay.classList.remove('hidden');
-    menuPanel.classList.remove('translate-x-full');
+    panel.classList.remove('translate-x-full');
+    overlay.style.pointerEvents = 'auto';
+    if (hamIcon) hamIcon.classList.add('hidden');
+    if (xIcon) xIcon.classList.remove('hidden');
+    body.style.overflow = 'hidden';
     requestAnimationFrame(function () {
       overlay.classList.remove('opacity-0');
       overlay.classList.add('opacity-100');
     });
-    if (hamIcon) hamIcon.classList.add('hidden');
-    if (xIcon) xIcon.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
   }
 
   function close() {
-    if (!isOpen || !overlay || !menuPanel) return;
+    if (!isOpen) return;
     isOpen = false;
     overlay.classList.add('opacity-0');
     overlay.classList.remove('opacity-100');
-    menuPanel.classList.add('translate-x-full');
+    panel.classList.add('translate-x-full');
+    overlay.style.pointerEvents = 'none';
     if (hamIcon) hamIcon.classList.remove('hidden');
     if (xIcon) xIcon.classList.add('hidden');
-    document.body.style.overflow = '';
+    body.style.overflow = '';
     setTimeout(function () {
       overlay.classList.add('hidden');
     }, 300);
   }
 
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', function () {
-      if (isOpen) close(); else open();
-    });
+  function toggleMenu(e) {
+    e.preventDefault();
+    if (isOpen) close(); else open();
   }
 
-  // Close via X inside menu
-  var closeBtn = document.getElementById('menu-close');
-  if (closeBtn) closeBtn.addEventListener('click', close);
+  // Use both touchstart and click for mobile reliability
+  toggle.addEventListener('touchstart', toggleMenu, { passive: false });
+  toggle.addEventListener('click', toggleMenu);
 
-  // Close via overlay tap
-  if (overlay) overlay.addEventListener('click', close);
+  // Close button inside menu
+  if (closeBtn) {
+    closeBtn.addEventListener('touchstart', function(e) { e.preventDefault(); close(); }, { passive: false });
+    closeBtn.addEventListener('click', close);
+  }
 
-  // Close on Escape
-  document.addEventListener('keydown', function (e) {
+  // Overlay tap to close (pointerEvents is 'auto' when open)
+  overlay.addEventListener('touchstart', function(e) { e.preventDefault(); close(); }, { passive: false });
+  overlay.addEventListener('click', close);
+
+  // Escape key
+  document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') close();
   });
 
-  // Theme toggle
+  // Theme toggle (separate logic, no conflicts)
   var themeBtn = document.getElementById('theme-toggle');
   var sun = document.getElementById('sun-icon');
   var moon = document.getElementById('moon-icon');
@@ -236,12 +254,12 @@
   function setTheme(t) {
     if (t === 'dark') {
       document.documentElement.classList.add('dark');
-      sun.classList.remove('hidden');
-      moon.classList.add('hidden');
+      if (sun) sun.classList.remove('hidden');
+      if (moon) moon.classList.add('hidden');
     } else {
       document.documentElement.classList.remove('dark');
-      sun.classList.add('hidden');
-      moon.classList.remove('hidden');
+      if (sun) sun.classList.add('hidden');
+      if (moon) moon.classList.remove('hidden');
     }
     localStorage.setItem('theme', t);
   }

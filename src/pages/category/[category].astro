@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ToolCard from '../../components/ToolCard.astro';
 import { getCollection } from 'astro:content';
+
 export async function getStaticPaths() {
   const tools = await getCollection('tools');
   const categories = [...new Set(tools.map(t => t.data.category))];
@@ -10,6 +11,7 @@ export async function getStaticPaths() {
     props: { category: cat },
   }));
 }
+
 const { category } = Astro.props;
 const tools = await getCollection('tools');
 const filtered = tools.filter(t => t.data.category === category);
@@ -19,25 +21,78 @@ const categoryLabels: Record<string, string> = {
   audio: 'Audio & Voice', coding: 'Coding & Development', productivity: 'Productivity',
   data: 'Data & Analytics', design: 'Design & Creative', marketing: 'Marketing & SEO', business: 'Business & Finance',
 };
+
+const categoryEmojis: Record<string, string> = {
+  writing: '✍️', image: '🎨', video: '🎬', audio: '🎵', coding: '💻',
+  productivity: '⚡', data: '📊', design: '🎯', marketing: '📈', business: '💼',
+};
+
+const categoryDescriptions: Record<string, string> = {
+  writing: 'AI writing assistants, content generators, and copywriting tools',
+  image: 'AI image generators, art creators, and visual design tools',
+  video: 'AI video creation, editing, and animation platforms',
+  audio: 'AI voice generation, music creation, and audio editing',
+  coding: 'AI code assistants, development tools, and debugging aids',
+  productivity: 'AI productivity tools, automation, and workflow enhancement',
+  data: 'AI analytics, data processing, and business intelligence tools',
+  design: 'AI design tools for UI/UX, graphics, and creative work',
+  marketing: 'AI marketing, SEO, and advertising optimization platforms',
+  business: 'AI business tools for finance, operations, and management',
+};
 ---
 
 <BaseLayout title={`${categoryLabels[category] || category} AI Tools — AI Zest`}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     
+    <!-- Breadcrumb + header -->
     <div class="mb-8">
-      <a href="/" class="text-sm text-gray-500 dark:text-gray-400 hover:text-[#3B82F6]">← Back to Home</a>
-      <h1 class="text-3xl font-bold text-gray-900 dark:text-white mt-2">
-        {categoryLabels[category] || category} AI Tools
-      </h1>
-      <p class="text-gray-600 dark:text-gray-400 mt-1">
-        {filtered.length} tools found
-      </p>
+      <a href="/" class="text-sm text-gray-500 dark:text-gray-400 hover:text-[#3B82F6] transition-colors">
+        ← Back to Home
+      </a>
+      <div class="flex items-center gap-3 mt-2">
+        <span class="text-3xl">{categoryEmojis[category] || ''}</span>
+        <div>
+          <h1 class="text-3xl font-bold text-gray-900 dark:text-white">
+            {categoryLabels[category] || category} AI Tools
+          </h1>
+          <p class="text-gray-500 dark:text-gray-400 mt-1">
+            {categoryDescriptions[category] || ''}
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 mt-3 text-sm text-gray-500 dark:text-gray-400">
+        <span class="font-medium text-gray-900 dark:text-white">{filtered.length} tools</span>
+        <span>·</span>
+        <button id="sort-rating" class="sort-btn text-[#3B82F6] font-medium cursor-pointer hover:underline" data-sort="rating">Highest Rated</button>
+        <span>·</span>
+        <button id="sort-name" class="sort-btn text-gray-500 dark:text-gray-400 cursor-pointer hover:text-gray-900 dark:hover:text-white" data-sort="name">A-Z</button>
+      </div>
     </div>
 
+    <!-- Tools grid -->
     {filtered.length > 0 ? (
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filtered.map(tool => <ToolCard tool={tool} />)}
-      </div>
+      <>
+        <div id="tool-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filtered.map(tool => (
+            <div class="tool-item" data-rating={tool.data.rating} data-name={tool.data.name}>
+              <ToolCard tool={tool} />
+            </div>
+          ))}
+        </div>
+
+        <!-- Compare CTA -->
+        <div class="mt-12 p-6 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 text-center">
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+            Can't decide which tool is right for you?
+          </p>
+          <a href="/compare" class="btn-primary inline-flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            Compare Tools →
+          </a>
+        </div>
+      </>
     ) : (
       <div class="text-center py-16">
         <p class="text-gray-500 dark:text-gray-400">No tools in this category yet. Check back soon!</p>
@@ -46,3 +101,32 @@ const categoryLabels: Record<string, string> = {
     
   </div>
 </BaseLayout>
+
+<script>
+(function() {
+  const grid = document.getElementById('tool-grid');
+  if (!grid) return;
+
+  function sortTools(by) {
+    const items = [...grid.querySelectorAll('.tool-item')];
+    items.sort((a, b) => {
+      if (by === 'rating') return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
+      return a.dataset.name.localeCompare(b.dataset.name);
+    });
+    items.forEach(item => grid.appendChild(item));
+
+    // Update active button style
+    document.querySelectorAll('.sort-btn').forEach(btn => {
+      if (btn.dataset.sort === by) {
+        btn.className = 'sort-btn text-[#3B82F6] font-medium cursor-pointer hover:underline';
+      } else {
+        btn.className = 'sort-btn text-gray-500 dark:text-gray-400 cursor-pointer hover:text-gray-900 dark:hover:text-white';
+      }
+    });
+  }
+
+  document.querySelectorAll('.sort-btn').forEach(btn => {
+    btn.addEventListener('click', () => sortTools(btn.dataset.sort));
+  });
+})();
+</script>

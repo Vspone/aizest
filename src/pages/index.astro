@@ -9,6 +9,9 @@ import { getCollection } from 'astro:content';
 const tools = await getCollection('tools');
 const featuredTools = tools.filter(t => t.data.featured).slice(0, 6);
 
+// "Just Added" - newest tools (by pubDate or just last ones added)
+const justAdded = tools.slice(-4).reverse();
+
 const categories = [
   { name: 'Writing & Content', icon: '✍️', slug: 'writing', color: 'bg-blue-100 text-blue-600' },
   { name: 'Image Generation', icon: '🎨', slug: 'image', color: 'bg-purple-100 text-purple-600' },
@@ -39,9 +42,14 @@ for (const t of tools) {
 
     <!-- Categories -->
     <section class="mb-16">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-        Browse by Category
-      </h2>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+          Browse by Category
+        </h2>
+        <span class="text-sm text-gray-500 dark:text-gray-400">
+          {tools.length} tools across {categories.length} categories
+        </span>
+      </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {categories.map(cat => (
           <CategoryCard 
@@ -55,15 +63,32 @@ for (const t of tools) {
       </div>
     </section>
 
+    <!-- Just Added -->
+    {justAdded.length > 0 && (
+      <section class="mb-16">
+        <div class="flex items-center gap-2 mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            Just Added
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {justAdded.map(tool => (
+            <ToolCard tool={tool} />
+          ))}
+        </div>
+      </section>
+    )}
+
     <!-- Featured Tools -->
     {featuredTools.length > 0 && (
       <section class="mb-16">
         <div class="flex items-center justify-between mb-6">
           <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
-            Featured Tools
+            ★ Featured Picks
           </h2>
-          <a href="/category/writing" class="text-sm text-[#3B82F6] hover:underline">
-            View All →
+          <a href="/category/writing" class="text-sm text-[#3B82F6] hover:underline font-medium">
+            View All Tools →
           </a>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -74,23 +99,83 @@ for (const t of tools) {
       </section>
     )}
 
-    <!-- Stats section -->
-    <section class="mb-16 py-12 px-8 rounded-2xl bg-gradient-to-br from-[#3B82F6]/5 to-[#8B5CF6]/5 dark:from-[#3B82F6]/10 dark:to-[#8B5CF6]/10 border border-gray-200 dark:border-gray-800">
-      <div class="grid grid-cols-3 gap-8 text-center">
-        <div>
-          <div class="text-3xl font-bold text-[#3B82F6]">{tools.length}+</div>
-          <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">AI Tools Reviewed</div>
-        </div>
-        <div>
-          <div class="text-3xl font-bold text-[#8B5CF6]">{categories.length}</div>
-          <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Categories</div>
-        </div>
-        <div>
-          <div class="text-3xl font-bold text-[#3B82F6]">2026</div>
-          <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Continuously Updated</div>
+    <!-- Stats + Newsletter combo -->
+    <section class="mb-16">
+      <div class="rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+        <!-- Stats -->
+        <div class="py-10 px-8 bg-gradient-to-br from-[#3B82F6]/5 to-[#8B5CF6]/5 dark:from-[#3B82F6]/10 dark:to-[#8B5CF6]/10">
+          <div class="grid grid-cols-3 gap-8 text-center mb-10">
+            <div>
+              <div class="text-3xl font-bold text-[#3B82F6]">{tools.length}+</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">AI Tools Reviewed</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-[#8B5CF6]">{categories.length}</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Categories</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-[#3B82F6]">2026</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Continuously Updated</div>
+            </div>
+          </div>
+          
+          <!-- Newsletter -->
+          <div class="max-w-lg mx-auto text-center">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+              Stay Updated
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+              Get new AI tools and reviews delivered to your inbox.
+            </p>
+            <form id="newsletter-form" class="flex gap-2 max-w-md mx-auto" onsubmit="return false;">
+              <input type="email" id="newsletter-email" required placeholder="your@email.com" 
+                class="flex-1 px-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 
+                       bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100
+                       placeholder:text-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"/>
+              <button type="submit" class="px-5 py-2.5 rounded-lg bg-[#3B82F6] text-white text-sm font-medium hover:bg-[#2563EB] transition-colors whitespace-nowrap">
+                Subscribe
+              </button>
+            </form>
+            <p id="newsletter-status" class="text-xs text-gray-500 mt-2"></p>
+          </div>
         </div>
       </div>
     </section>
 
   </div>
 </BaseLayout>
+
+<script>
+(function() {
+  const form = document.getElementById('newsletter-form');
+  const email = document.getElementById('newsletter-email');
+  const status = document.getElementById('newsletter-status');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const val = email?.value?.trim();
+    if (!val) return;
+    
+    status.textContent = 'Subscribing...';
+    status.className = 'text-xs text-gray-500 mt-2';
+    
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ email: val, 'form-name': 'newsletter' }),
+      });
+      if (res.ok) {
+        status.textContent = 'Thanks! You\'re subscribed.';
+        status.className = 'text-xs text-emerald-600 dark:text-emerald-400 mt-2';
+        if (email) email.value = '';
+      } else {
+        throw new Error('Failed');
+      }
+    } catch {
+      status.textContent = 'Something went wrong. Try again later.';
+      status.className = 'text-xs text-red-500 mt-2';
+    }
+  });
+})();
+</script>

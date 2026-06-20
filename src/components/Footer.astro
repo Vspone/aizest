@@ -1,33 +1,60 @@
 <footer class="border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Brand -->
+      <div class="md:col-span-1">
         <span class="text-lg font-bold bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] bg-clip-text text-transparent">
           AI Zest
         </span>
-        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-          Curated AI tools directory. We help you discover the best AI tools for every task.
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+          Curated AI tools directory — honest reviews, side-by-side comparisons, and guides to help you find the perfect AI tool.
         </p>
+        <div class="flex items-center gap-4 mt-4 text-xs text-gray-400">
+          <span>{new Date().getFullYear()} AI Zest</span>
+          <a href="/about" class="hover:text-gray-600 dark:hover:text-gray-300">About</a>
+          <a href="mailto:admin@aizest.net" class="hover:text-gray-600 dark:hover:text-gray-300">Contact</a>
+        </div>
       </div>
+
+      <!-- Quick Links -->
       <div>
-        <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider">Quick Links</h3>
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider">Explore</h3>
         <ul class="mt-4 space-y-2">
           <li><a href="/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Home</a></li>
           <li><a href="/category/writing" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">All Categories</a></li>
-          <li><a href="/about" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">About</a></li>
+          <li><a href="/compare" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Compare Tools</a></li>
+          <li><a href="/best-ai-writing-tools-2026" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Best Of 2026</a></li>
         </ul>
       </div>
+
+      <!-- Categories -->
       <div>
-        <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider">Disclosure</h3>
-        <p class="mt-4 text-sm text-gray-600 dark:text-gray-400">
-          Some links on this site are affiliate links. We may earn a commission at no extra cost to you.
-        </p>
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider">Categories</h3>
+        <ul class="mt-4 space-y-2">
+          <li><a href="/category/writing" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Writing</a></li>
+          <li><a href="/category/image" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Image Generation</a></li>
+          <li><a href="/category/video" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Video Creation</a></li>
+          <li><a href="/category/coding" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Coding</a></li>
+          <li><a href="/category/design" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Design</a></li>
+        </ul>
       </div>
-    </div>
-    <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-      <p class="text-sm text-center text-gray-500 dark:text-gray-500">
-        &copy; {new Date().getFullYear()} AI Zest. All rights reserved.
-      </p>
+
+      <!-- Newsletter -->
+      <div>
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider">Stay Updated</h3>
+        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+          Get new tools and updates delivered to your inbox.
+        </p>
+        <a href="mailto:admin@aizest.net?subject=Subscribe%20to%20Newsletter" class="mt-3 inline-flex items-center gap-1.5 text-sm text-[#3B82F6] hover:underline font-medium">
+          Subscribe via Email →
+        </a>
+        <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+          <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider">Disclosure</h3>
+          <p class="mt-2 text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+            Some links on this site are affiliate links. We may earn a commission at no extra cost to you.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

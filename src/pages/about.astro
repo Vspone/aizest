@@ -2,9 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="About — AI Zest">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">About AI Zest</h1>
+<BaseLayout title="About — AI Zest" description="AI Zest is a curated directory of the best AI tools. We review, compare, and rank AI tools to help you find the perfect tool for your needs.">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Breadcrumb -->
+    <nav class="flex flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-[#3B82F6]">Home</a>
+      <span>/</span>
+      <span class="text-gray-900 dark:text-white font-medium">About</span>
+    </nav>
+
+    <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6">About AI Zest</h1>
     
     <div class="prose prose-gray dark:prose-invert max-w-none">
       <p>
@@ -20,9 +27,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
       
       <h2>Our Reviews</h2>
-      <p>
-        Every tool on AI Zest is evaluated based on:
-      </p>
+      <p>Every tool on AI Zest is evaluated based on:</p>
       <ul>
         <li>Feature completeness and quality</li>
         <li>Pricing and value for money</li>
@@ -30,6 +35,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <li>Customer reviews and reputation</li>
         <li>Regular updates and improvements</li>
       </ul>
+
+      <h2>Contact Us</h2>
+      <p>
+        Have a question, suggestion, or want to submit a tool for review? 
+        Reach out to us at <a href="mailto:admin@aizest.net">admin@aizest.net</a>.
+      </p>
       
       <h2>Disclaimer</h2>
       <p>

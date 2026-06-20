@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Contact Us — AI Zest"
+  description="Get in touch with AI Zest. Send us an email at admin@aizest.net for questions, suggestions, or tool review submissions."
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Breadcrumb -->
+    <nav class="flex flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-[#3B82F6]">Home</a>
+      <span>/</span>
+      <span class="text-gray-900 dark:text-white font-medium">Contact</span>
+    </nav>
+
+    <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">Contact Us</h1>
+    <p class="text-gray-500 dark:text-gray-400 mb-10">Have a question or suggestion? We'd love to hear from you.</p>
+
+    <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-8 mb-8">
+      <!-- Email -->
+      <div class="flex items-start gap-4 mb-8">
+        <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="font-semibold text-gray-900 dark:text-white mb-1">Email</h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Send us an email and we'll get back to you.</p>
+          <a href="mailto:admin@aizest.net" class="text-[#3B82F6] hover:underline font-medium text-sm">
+            admin@aizest.net →
+          </a>
+        </div>
+      </div>
+
+      <!-- Tool Submission -->
+      <div class="flex items-start gap-4 mb-8">
+        <div class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="font-semibold text-gray-900 dark:text-white mb-1">Submit a Tool</h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Know an AI tool we should review? Send us the details.</p>
+          <a href="mailto:admin@aizest.net?subject=Tool%20Submission" class="text-[#3B82F6] hover:underline font-medium text-sm">
+            admin@aizest.net (Subject: Tool Submission) →
+          </a>
+        </div>
+      </div>
+
+      <!-- Advertising -->
+      <div class="flex items-start gap-4">
+        <div class="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="font-semibold text-gray-900 dark:text-white mb-1">Advertising & Partnerships</h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Interested in partnering with AI Zest? Let's talk.</p>
+          <a href="mailto:admin@aizest.net?subject=Partnership" class="text-[#3B82F6] hover:underline font-medium text-sm">
+            admin@aizest.net (Subject: Partnership) →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-xs text-gray-400 text-center">
+      We typically respond within 24-48 hours on business days.
+    </p>
+  </div>
+</BaseLayout>

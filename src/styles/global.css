@@ -37,3 +37,92 @@
 @utility badge {
   @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
 }
+
+/* ============= Mobile & Touch Optimizations ============= */
+
+/* Remove tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Large tap targets for all interactive elements on mobile */
+@media (max-width: 767px) {
+  a, button, [role="button"], select, 
+  .btn-primary, .btn-outline, .card, .badge {
+    cursor: pointer;
+    min-height: 44px;
+  }
+  
+  /* Reduce tap highlight gap */
+  a, button {
+    -webkit-tap-highlight-color: rgba(59, 130, 246, 0.15);
+  }
+}
+
+/* Better scrollbar for mobile touch */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+/* Prevent text size adjustment on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Better font rendering on mobile */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Smooth image loading */
+img {
+  content-visibility: auto;
+}
+
+/* Utility: horizontal scroll container for mobile */
+.scroll-x-mobile {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+.scroll-x-mobile::-webkit-scrollbar {
+  height: 4px;
+}
+
+/* Subtle scroll hint animation for overflow containers */
+.scroll-hint::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 24px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.8));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.dark .scroll-hint::after {
+  background: linear-gradient(to right, transparent, rgba(17,24,39,0.8));
+}
+.scroll-hint:not(.scrolled-to-end)::after {
+  opacity: 1;
+}

@@ -67,7 +67,7 @@ const breadcrumbJsonLd = JSON.stringify({
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     
     <!-- Breadcrumb -->
-    <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+    <nav class="flex flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
       <a href="/" class="hover:text-[#3B82F6]">Home</a>
       <span>/</span>
       <a href={`/category/${category}`} class="hover:text-[#3B82F6]">{categoryLabels[category] || category}</a>
@@ -76,11 +76,11 @@ const breadcrumbJsonLd = JSON.stringify({
     </nav>
 
     <!-- Header -->
-    <div class="mt-6 mb-10">
+    <div class="mt-6 mb-8 sm:mb-10">
       <div class="flex items-start gap-4 flex-wrap">
         <div>
-          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">{name}</h1>
-          <p class="text-lg text-gray-600 dark:text-gray-400 mt-2">{description}</p>
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">{name}</h1>
+          <p class="text-base sm:text-lg text-gray-600 dark:text-gray-400 mt-2">{description}</p>
         </div>
       </div>
       
@@ -112,11 +112,11 @@ const breadcrumbJsonLd = JSON.stringify({
     <!-- Rest of the page content stays the same -->
     <!-- CTA -->
     {affiliate_url && (
-      <div class="mb-10 p-6 rounded-xl bg-gradient-to-r from-[#3B82F6]/10 to-[#8B5CF6]/10 border border-[#3B82F6]/20 text-center">
+      <div class="mb-8 sm:mb-10 p-5 sm:p-6 rounded-xl bg-gradient-to-r from-[#3B82F6]/10 to-[#8B5CF6]/10 border border-[#3B82F6]/20 text-center">
         <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
           Ready to try {name}?
         </p>
-        <a href={affiliate_url} target="_blank" rel="noopener noreferrer" class="btn-primary text-lg px-8 py-3">
+        <a href={affiliate_url} target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-auto px-8 py-3">
           Visit {name} →
         </a>
         <p class="text-xs text-gray-500 mt-2">Affiliate link. We may earn a commission.</p>
@@ -173,7 +173,7 @@ const breadcrumbJsonLd = JSON.stringify({
       <div class="space-y-6">
         
         {affiliate_url && (
-          <div class="card p-5">
+          <div class="card p-4 sm:p-5">
             <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Get Started</h3>
             <a href={affiliate_url} target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-center mb-2">
               Visit Website →
@@ -184,7 +184,7 @@ const breadcrumbJsonLd = JSON.stringify({
 
         <!-- Pricing Tiers -->
         {pricing_tiers && pricing_tiers.length > 0 && (
-          <div class="card p-5">
+          <div class="card p-4 sm:p-5">
             <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Pricing</h3>
             <div class="space-y-3">
               {pricing_tiers.map(tier => (
@@ -207,7 +207,7 @@ const breadcrumbJsonLd = JSON.stringify({
         )}
 
         <!-- Related tools section -->
-        <div class="card p-5">
+        <div class="card p-4 sm:p-5">
           <h3 class="font-semibold text-gray-900 dark:text-white mb-2">We Tested It</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400">
             Our reviews are based on hands-on testing and research. We provide honest assessments to help you make informed decisions.
@@ -215,7 +215,7 @@ const breadcrumbJsonLd = JSON.stringify({
         </div>
 
         <!-- Compare CTA -->
-        <div class="card p-5 bg-gradient-to-br from-[#3B82F6]/5 to-[#8B5CF6]/5 dark:from-[#3B82F6]/10 dark:to-[#8B5CF6]/10">
+        <div class="card p-4 sm:p-5 bg-gradient-to-br from-[#3B82F6]/5 to-[#8B5CF6]/5 dark:from-[#3B82F6]/10 dark:to-[#8B5CF6]/10">
           <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Compare {name}</h3>
           <p class="text-xs text-gray-500 dark:text-gray-400 mb-3">See how {name} stacks up against similar tools.</p>
           <a href="/compare" class="btn-outline text-xs w-full text-center">Compare Tools →</a>

@@ -1,59 +1,46 @@
 ---
 name: "ClickUp"
 slug: "clickup"
-description: "All-in-one productivity platform that combines project management, docs, whiteboards, chat, goals, and ClickUp AI into a single customizable workspace."
+description: "All-in-one project management platform with built-in AI assistant for task automation, content generation, and workflow optimization across teams."
 category: "productivity"
 website: "https://clickup.com"
-pricing: "Free / $7/mo"
+pricing: "Free / $7/user/mo"
+affiliate_url: https://clickup.com
 featured: false
-rating: 4.7
+rating: 4.5
 features:
-  - "15+ customizable views (List, Board, Gantt, Mind Map, Timeline)"
-  - "ClickUp AI for writing, summarizing, and automating tasks"
-  - "Built-in docs, whiteboards, goals, and chat"
-  - "1,000+ integrations with popular tools"
-  - "Goals, OKRs, and portfolio management"
+  - "AI-powered task automation and suggestion"
+  - "Customizable project views (List, Board, Calendar, Gantt, Mind Map)"
+  - "AI writing assistant for docs, comments, and descriptions"
+  - "Time tracking and goal setting with AI insights"
+  - "Built-in documentation and knowledge base"
+  - "1000+ integrations with popular tools"
 pricing_tiers:
-  - name: "Free"
+  - name: "Free Forever"
     price: "$0"
     features:
-      - "Unlimited tasks and members"
-      - "100MB storage"
+      - "Unlimited tasks"
+      - "100 automations/month"
       - "Collaborative docs"
-      - "Real-time chat"
   - name: "Unlimited"
-    price: "$7/mo"
+    price: "$7/user/mo"
     features:
       - "Unlimited storage"
-      - "Gantt, Dashboards, and Timeline views"
-      - "1,000+ integrations"
-      - "Guests with permissions"
+      - "1000 automations/month"
+      - "Gantt & timelines"
   - name: "Business"
-    price: "$12/mo"
+    price: "$12/user/mo"
     features:
-      - "Advanced automations"
-      - "Timelines and Goals"
-      - "Private and shared views"
-      - "Advanced permissions"
-  - name: "Enterprise"
-    price: "Custom"
-    features:
-      - "White labeling"
-      - "Advanced reporting"
-      - "Dedicated success manager"
-      - "Custom onboarding and training"
+      - "5000 automations/month"
+      - "Goal folders"
+      - "Google SSO"
 pros:
-  - "Extremely feature-rich, replaces many tools in one"
-  - "Generous free plan with unlimited tasks"
-  - "Large community and ecosystem with 1,000+ integrations"
+  - "Very generous free plan"
+  - "Extremely customizable"
+  - "AI features integrated throughout"
+  - "Good value for teams"
 cons:
-  - "Can be overwhelming for new users due to complexity"
-  - "Performance can lag with very large workspaces"
-  - "Mobile app is less capable than the desktop version"
+  - "Steep learning curve due to feature density"
+  - "Can feel overwhelming for simple projects"
+  - "Mobile app less capable than desktop"
 ---
-
-ClickUp is a comprehensive productivity platform that positions itself as "one app to replace them all." It combines project management, document collaboration, whiteboarding, goal tracking, chat, and an integrated AI assistant into a single unified workspace. Rather than juggling separate tools for task management, note-taking, and team communication, ClickUp provides nearly everything a team needs under one roof, eliminating context switching and streamlining workflows.
-
-The platform shines in its sheer depth of customization. Users can manage work through more than 15 different views — including traditional List and Board views, Gantt charts for timeline management, Mind Maps for brainstorming, and a Calendar view for scheduling — all drawing from the same set of tasks and projects. ClickUp AI adds another layer of capability, helping teams write project briefs, summarize meeting notes, generate status updates, and automate repetitive actions directly within the workflow. This makes it especially appealing for teams that want a single source of truth for all their work.
-
-However, ClickUp's breadth comes with a learning curve. New users can find the interface overwhelming, and performance sometimes struggles in large-scale workspaces with thousands of tasks. The mobile experience, while functional, lacks the full power of the desktop app. That said, for teams tired of toggling between a dozen tools and willing to invest in setup and training, ClickUp offers one of the most powerful all-in-one solutions available, with a generous free tier that makes it easy to start before scaling up.

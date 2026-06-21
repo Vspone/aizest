@@ -20,6 +20,23 @@ const {
 const siteUrl = 'https://aizest.net';
 const fullUrl = canonical ? `${siteUrl}${canonical}` : Astro.url.href;
 const fullImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+
+// WebSite Schema (homepage only)
+const websiteJsonLd = !canonical || canonical === '/' ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AI Zest",
+  "url": siteUrl,
+  "description": description,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${siteUrl}/?s={search_term_string}`
+    },
+    "query-input": "required name=search_term_string"
+  }
+}) : null;
 ---
 
 <meta charset="UTF-8" />
@@ -51,23 +68,7 @@ const fullImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
   <script type="application/ld+json" set:html={jsonLd} />
 )}
 
-<!-- WebSite Schema (homepage) -->
-{!canonical || canonical === '/' ? (
-  <script type="application/ld+json">
-    {JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "AI Zest",
-      "url": siteUrl,
-      "description": description,
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": `${siteUrl}/?s={search_term_string}`
-        },
-        "query-input": "required name=search_term_string"
-      }
-    })}
-  </script>
-) : null}
+<!-- WebSite Schema (homepage only) -->
+{websiteJsonLd && (
+  <script type="application/ld+json" set:html={websiteJsonLd} />
+)}

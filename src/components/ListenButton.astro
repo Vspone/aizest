@@ -17,7 +17,7 @@ const { articleSelector = 'article' } = Astro.props;
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
     <span id="listen-label">Listen to this article</span>
-    <span id="listen-status" class="text-xs text-gray-400 hidden"></span>
+    <span id="listen-ptotal" class="text-xs text-gray-400 hidden"></span>
   </button>
 </div>
 
@@ -28,116 +28,165 @@ const { articleSelector = 'article' } = Astro.props;
   var label = document.getElementById('listen-label');
   var playIcon = document.getElementById('listen-icon-play');
   var pauseIcon = document.getElementById('listen-icon-pause');
-  var statusEl = document.getElementById('listen-status');
   if (!btn || !label) return;
 
   var article = document.querySelector('article');
   if (!article) { btn.style.display = 'none'; return; }
 
-  var utterance = null;
+  var paragraphs = [];
+  var currentIdx = 0;
   var isPlaying = false;
   var isPaused = false;
+  var isStopping = false;
+  var currentVoices = [];
 
-  // Extract text from article (skip code blocks, buttons, navs)
-  function getArticleText() {
+  // Extract text preserving paragraph breaks
+  function extractParagraphs() {
     var clone = article.cloneNode(true);
     // Remove elements that shouldn't be read
-    clone.querySelectorAll('script, style, nav, .btn-primary, [id^="listen-"], pre, code, .btn-primary, a.btn-primary, .not-prose a.btn-primary, [class*="btn-"]').forEach(function(el) { el.remove(); });
-    return clone.textContent.replace(/\\s+/g, ' ').trim();
+    clone.querySelectorAll('script, style, nav, .btn-primary, [id^="listen-"], pre, code, [class*="btn-"]').forEach(function(el) { el.remove(); });
+
+    var html = clone.innerHTML;
+    // Replace closing block tags with double newlines (paragraph markers)
+    html = html.replace(/<\/(p|h[1-6]|li|blockquote|div|section)>/gi, '\n\n');
+    // Remove remaining HTML tags
+    html = html.replace(/<[^>]+>/g, '');
+    // Decode common entities
+    html = html.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ');
+    // Normalize whitespace
+    html = html.replace(/\n{3,}/g, '\n\n');
+    // Split into paragraphs
+    var raw = html.split('\n\n').map(function(s) { return s.trim(); }).filter(Boolean);
+    // Merge very short fragments into previous paragraph
+    var merged = [];
+    for (var i = 0; i < raw.length; i++) {
+      if (raw[i].length < 30 && merged.length > 0) {
+        merged[merged.length - 1] += ' ' + raw[i];
+      } else {
+        merged.push(raw[i]);
+      }
+    }
+    // Limit total text
+    var total = merged.join(' ').length;
+    if (total > 8000) {
+      var keep = [];
+      var len = 0;
+      for (var i = 0; i < merged.length; i++) {
+        if (len + merged[i].length > 8000) break;
+        keep.push(merged[i]);
+        len += merged[i].length;
+      }
+      merged = keep;
+    }
+    return merged;
   }
 
   function stop() {
+    isStopping = true;
+    isPlaying = false;
+    isPaused = false;
+    currentIdx = 0;
     if (window.speechSynthesis.speaking) {
       window.speechSynthesis.cancel();
     }
-    isPlaying = false;
-    isPaused = false;
     label.textContent = 'Listen to this article';
     playIcon.classList.remove('hidden');
     pauseIcon.classList.add('hidden');
-    statusEl.classList.add('hidden');
     btn.classList.remove('ring-2', 'ring-[#3B82F6]/50');
   }
 
-  function speak() {
-    var text = getArticleText();
-    if (!text) return;
+  function speakParagraph(index) {
+    if (isStopping || index >= paragraphs.length) {
+      if (index >= paragraphs.length) {
+        // Finished all paragraphs
+        isPlaying = false;
+        label.textContent = 'Listen again';
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+        btn.classList.remove('ring-2', 'ring-[#3B82F6]/50');
+      }
+      return;
+    }
 
-    // Limit to prevent extremely long readings
-    if (text.length > 8000) text = text.slice(0, 8000) + '...';
+    currentIdx = index;
+    var text = paragraphs[index];
 
-    utterance = new SpeechSynthesisUtterance(text);
-    utterance.rate = 0.85;  // Comfortable reading speed (0.85)
-    utterance.pitch = 1.0;
+    var utter = new SpeechSynthesisUtterance(text);
+    utter.rate = 0.85;
+    utter.pitch = 1.0;
 
-    // Try to pick a natural English voice
-    var voices = window.speechSynthesis.getVoices();
-    var preferred = voices.find(function(v) {
-      return v.lang.startsWith('en') && v.name.includes('Natural') || v.name.includes('Google UK');
-    }) || voices.find(function(v) { return v.lang.startsWith('en'); });
-    if (preferred) utterance.voice = preferred;
+    // Pick best English voice
+    var pref = currentVoices.find(function(v) { return v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google UK') || v.name.includes('Microsoft')); })
+            || currentVoices.find(function(v) { return v.lang.startsWith('en'); });
+    if (pref) utter.voice = pref;
 
-    utterance.onstart = function() {
-      isPlaying = true;
-      label.textContent = 'Playing…';
-      playIcon.classList.add('hidden');
-      pauseIcon.classList.remove('hidden');
-      statusEl.textContent = '';
-      statusEl.classList.remove('hidden');
-      btn.classList.add('ring-2', 'ring-[#3B82F6]/50');
-    };
-
-    utterance.onend = function() {
-      stop();
-      label.textContent = 'Listen again';
-      statusEl.classList.add('hidden');
-    };
-
-    utterance.onpause = function() {
-      isPaused = true;
-      label.textContent = 'Paused';
-      playIcon.classList.remove('hidden');
-      pauseIcon.classList.add('hidden');
-    };
-
-    utterance.onresume = function() {
-      isPaused = false;
-      label.textContent = 'Playing…';
-      playIcon.classList.add('hidden');
-      pauseIcon.classList.remove('hidden');
-    };
-
-    utterance.onerror = function(e) {
-      if (e.error !== 'canceled' && e.error !== 'interrupted') {
-        stop();
-        label.textContent = 'Error — try again';
+    utter.onstart = function() {
+      if (!isPlaying) {
+        isPlaying = true;
+        label.textContent = 'Playing…' + (paragraphs.length > 1 ? ' (' + (index + 1) + '/' + paragraphs.length + ')' : '');
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+        btn.classList.add('ring-2', 'ring-[#3B82F6]/50');
       }
     };
 
-    window.speechSynthesis.speak(utterance);
+    utter.onend = function() {
+      if (isStopping) return;
+      // 350ms pause between paragraphs for natural breathing
+      setTimeout(function() {
+        speakParagraph(index + 1);
+      }, 350);
+    };
+
+    utter.onerror = function(e) {
+      if (e.error === 'canceled' || e.error === 'interrupted') return;
+      // Skip this paragraph and continue
+      setTimeout(function() {
+        speakParagraph(index + 1);
+      }, 200);
+    };
+
+    window.speechSynthesis.speak(utter);
+  }
+
+  function start() {
+    isStopping = false;
+    currentIdx = 0;
+    paragraphs = extractParagraphs();
+    if (paragraphs.length === 0) { label.textContent = 'Nothing to read'; return; }
+    speakParagraph(0);
   }
 
   btn.addEventListener('click', function() {
     if (isPlaying && !isPaused) {
       // Pause
       window.speechSynthesis.pause();
+      isPaused = true;
+      label.textContent = 'Paused';
+      playIcon.classList.remove('hidden');
+      pauseIcon.classList.add('hidden');
     } else if (isPaused) {
       // Resume
       window.speechSynthesis.resume();
+      isPaused = false;
+      label.textContent = 'Playing…' + (paragraphs.length > 1 ? ' (' + (currentIdx + 1) + '/' + paragraphs.length + ')' : '');
+      playIcon.classList.add('hidden');
+      pauseIcon.classList.remove('hidden');
     } else {
       // Start fresh
       stop();
-      speak();
+      start();
     }
   });
 
   // Stop on page unload
   window.addEventListener('beforeunload', function() { window.speechSynthesis.cancel(); });
 
-  // Handle voice loading (async on some browsers)
-  if (window.speechSynthesis.getVoices().length === 0) {
+  // Load voices (async on some browsers)
+  currentVoices = window.speechSynthesis.getVoices();
+  if (currentVoices.length === 0) {
     window.speechSynthesis.addEventListener('voiceschanged', function() {
-      window.speechSynthesis.removeEventListener('voiceschanged', arguments.callee);
+      currentVoices = window.speechSynthesis.getVoices();
     }, { once: true });
   }
 })();

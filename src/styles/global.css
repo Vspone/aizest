@@ -129,7 +129,32 @@ img {
   animation: fadeInUpSlow 0.9s ease-out forwards;
 }
 
-/* Staggered child entrance: each child fades in one after another */
+/* ============= Hero Word-by-Word Entrance ============= */
+
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  animation: heroWordIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes heroWordIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.92); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Gradient shimmer for AI Tools */
+@keyframes shimmer {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* ============= Staggered child entrance ============= */
 .stagger-children > * {
   opacity: 0;
   animation: fadeInUp 0.5s ease-out forwards;

@@ -1,54 +1,161 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ArticleWrap from '../components/ArticleWrap.astro';
+import { getCollection } from 'astro:content';
+
+const tools = await getCollection('tools');
+const categories = [
+  { name: 'Writing & Content', icon: '✍️', slug: 'writing' },
+  { name: 'Image Generation', icon: '🎨', slug: 'image' },
+  { name: 'Video Creation', icon: '🎬', slug: 'video' },
+  { name: 'Audio & Voice', icon: '🎵', slug: 'audio' },
+  { name: 'Coding & Dev', icon: '💻', slug: 'coding' },
+  { name: 'Marketing & SEO', icon: '📈', slug: 'marketing' },
+  { name: 'Productivity', icon: '⚡', slug: 'productivity' },
+  { name: 'Data & Analytics', icon: '📊', slug: 'data' },
+  { name: 'Design & Creative', icon: '🎯', slug: 'design' },
+  { name: 'Business & Finance', icon: '💼', slug: 'business' },
+];
 ---
 
-<BaseLayout title="About — AI Zest" description="AI Zest is a curated directory of the best AI tools. We review, compare, and rank AI tools to help you find the perfect tool for your needs.">
-  
+<BaseLayout 
+  title="About — AI Zest" 
+  description="AI Zest is a curated directory of the best AI tools. We review, compare, and rank AI tools to help you find the perfect tool for your needs."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+
     <!-- Breadcrumb -->
-    <nav class="flex flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
-      <a href="/" class="hover:text-[#3B82F6]">Home</a>
+    <nav class="flex flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 mb-8" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-[#3B82F6] transition-colors">Home</a>
       <span>/</span>
       <span class="text-gray-900 dark:text-white font-medium">About</span>
     </nav>
 
-    <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6">About AI Zest</h1>
-    
-    <div class="prose prose-gray dark:prose-invert max-w-none">
-      <p>
-        AI Zest is a curated directory of the best AI tools available in 2026. We review, compare, 
-        and rank AI tools across every category — from writing assistants to image generators, 
-        from coding copilots to video creators.
-      </p>
-      
-      <h2>What We Do</h2>
-      <p>
-        We help you discover the right AI tool for your needs. With thousands of AI tools launching 
-        every month, finding the right one is harder than ever. We test them so you don't have to.
-      </p>
-      
-      <h2>Our Reviews</h2>
-      <p>Every tool on AI Zest is evaluated based on:</p>
-      <ul>
-        <li>Feature completeness and quality</li>
-        <li>Pricing and value for money</li>
-        <li>Ease of use</li>
-        <li>Customer reviews and reputation</li>
-        <li>Regular updates and improvements</li>
-      </ul>
-
-      <h2>Contact Us</h2>
-      <p>
-        Have a question, suggestion, or want to submit a tool for review? 
-        Reach out to us at <a href="mailto:admin@aizest.net">admin@aizest.net</a>.
-      </p>
-      
-      <h2>Disclaimer</h2>
-      <p>
-        Some of the links on this website are affiliate links. If you click through and make a 
-        purchase, we may earn a small commission at no extra cost to you. This helps us maintain 
-        and grow AI Zest. Our reviews remain unbiased — we only recommend tools we genuinely believe in.
+    <!-- Hero section -->
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[#3B82F6] to-[#8B5CF6] text-white text-2xl mb-4">
+        ⚡
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3">
+        About <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6]">AI Zest</span>
+      </h1>
+      <p class="text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        We help you cut through the noise and find the perfect AI tool for every task.
       </p>
     </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+      <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 text-center">
+        <div class="text-2xl sm:text-3xl font-bold text-[#3B82F6]">{tools.length}+</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">AI Tools Reviewed</div>
+      </div>
+      <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 text-center">
+        <div class="text-2xl sm:text-3xl font-bold text-[#8B5CF6]">{categories.length}</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Categories</div>
+      </div>
+      <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 text-center">
+        <div class="text-2xl sm:text-3xl font-bold text-[#3B82F6]">10</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">In-Depth Articles</div>
+      </div>
+    </div>
+
+    <!-- Mission section -->
+    <div class="mb-12">
+      <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 sm:p-10">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+          <span>🎯</span> Our Mission
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+          AI Zest was created because finding the right AI tool is harder than ever. With thousands of new 
+          AI products launching every month, it's overwhelming to separate the genuinely useful from the hype.
+        </p>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+          We test tools across every category — from writing assistants and image generators to coding copilots 
+          and video creators — so you can find what actually works for your specific needs. Every review is 
+          hands-on, honest, and updated regularly.
+        </p>
+      </div>
+    </div>
+
+    <!-- How we review -->
+    <div class="mb-12">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+        <span>🔍</span> How We Review
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0 text-lg">✓</div>
+          <div>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Feature Completeness</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">We test every feature, not just the marketing claims.</p>
+          </div>
+        </div>
+        <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 shrink-0 text-lg">$</div>
+          <div>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Pricing & Value</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Honest assessment of whether a tool is worth its price.</p>
+          </div>
+        </div>
+        <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0 text-lg">👤</div>
+          <div>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Ease of Use</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">We evaluate learning curve and day-to-day usability.</p>
+          </div>
+        </div>
+        <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600 dark:text-amber-400 shrink-0 text-lg">🔄</div>
+          <div>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Regular Updates</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">We revisit reviews as tools evolve and improve.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Categories overview -->
+    <div class="mb-12">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+        <span>📂</span> Categories We Cover
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {categories.map(cat => (
+          <a href={`/category/${cat.slug}`} 
+             class="flex items-center gap-3 p-3.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-[#3B82F6]/40 dark:hover:border-[#3B82F6]/40 transition-all duration-200 tap-feedback">
+            <span class="text-lg">{cat.icon}</span>
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{cat.name}</span>
+            <svg class="w-4 h-4 text-gray-400 ml-auto shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Contact section -->
+    <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-gradient-to-br from-[#3B82F6]/5 to-[#8B5CF6]/5 dark:from-[#3B82F6]/10 dark:to-[#8B5CF6]/10 p-8 sm:p-10 text-center mb-8">
+      <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white dark:bg-gray-800 shadow-sm mb-4">
+        <svg class="w-6 h-6 text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      </div>
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Get in Touch</h2>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 max-w-md mx-auto">
+        Have a question, suggestion, or want to submit a tool for review? We'd love to hear from you.
+      </p>
+      <a href="mailto:admin@aizest.net" class="inline-flex items-center gap-2 btn-primary text-sm">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        admin@aizest.net
+      </a>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="text-xs text-gray-400 dark:text-gray-500 leading-relaxed text-center">
+      <p>Some links on this website are affiliate links. If you click through and make a purchase, we may earn a small commission at no extra cost to you. This helps us maintain and grow AI Zest. Our reviews remain unbiased — we only recommend tools we genuinely believe in.</p>
+    </div>
+
   </div>
 </BaseLayout>

@@ -42,7 +42,7 @@ const { articleSelector = 'article' } = Astro.props;
   function getArticleText() {
     var clone = article.cloneNode(true);
     // Remove elements that shouldn't be read
-    clone.querySelectorAll('script, style, nav, .btn-primary, [id^=\"listen-\"], pre, code, .not-prose').forEach(function(el) { el.remove(); });
+    clone.querySelectorAll('script, style, nav, .btn-primary, [id^="listen-"], pre, code, .btn-primary, a.btn-primary, .not-prose a.btn-primary, [class*="btn-"]').forEach(function(el) { el.remove(); });
     return clone.textContent.replace(/\\s+/g, ' ').trim();
   }
 
@@ -67,7 +67,7 @@ const { articleSelector = 'article' } = Astro.props;
     if (text.length > 8000) text = text.slice(0, 8000) + '...';
 
     utterance = new SpeechSynthesisUtterance(text);
-    utterance.rate = 0.95;  // Slightly slower for clarity
+    utterance.rate = 0.85;  // Comfortable reading speed (0.85)
     utterance.pitch = 1.0;
 
     // Try to pick a natural English voice

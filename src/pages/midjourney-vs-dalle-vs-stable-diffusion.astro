@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleWrap from '../components/ArticleWrap.astro';
 
 // Article JSON-LD
 const jsonLd = JSON.stringify({
@@ -48,7 +49,7 @@ const canonical = "/midjourney-vs-dalle-vs-stable-diffusion";
   <!-- Breadcrumb JSON-LD (separate) -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
 
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
       <a href="/" class="hover:text-[#3B82F6]">Home</a>
@@ -56,7 +57,7 @@ const canonical = "/midjourney-vs-dalle-vs-stable-diffusion";
       <span class="text-gray-900 dark:text-white font-medium">Midjourney vs DALL-E 3 vs Stable Diffusion</span>
     </nav>
 
-    <article class="prose prose-gray dark:prose-invert max-w-none">
+    <ArticleWrap>
 
 <h1>Midjourney vs DALL-E 3 vs Stable Diffusion: Which AI Image Generator is Best in 2026?</h1>
 <p><em>Last updated: June 21, 2026</em></p>
@@ -155,6 +156,5 @@ const canonical = "/midjourney-vs-dalle-vs-stable-diffusion";
 
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 
-    </article>
-  </div>
+</ArticleWrap>
 </BaseLayout>

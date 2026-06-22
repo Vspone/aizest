@@ -1,0 +1,42 @@
+---
+// ArticleWrap — enhanced article layout shell
+// Import this instead of manually wrapping content with article tags
+import ListenButton from './ListenButton.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  jsonLd?: string;
+}
+---
+
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+  <ListenButton />
+  <article class="prose prose-gray dark:prose-invert max-w-none enhanced-prose">
+    <slot />
+  </article>
+</div>
+
+<!-- Reading progress bar -->
+<div id="reading-progress" class="fixed top-0 left-0 h-0.5 bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] z-[60]" style="width:0%"></div>
+
+<script>
+(function() {
+  'use strict';
+  // Reading progress bar
+  var bar = document.getElementById('reading-progress');
+  if (!bar) return;
+  function updateProgress() {
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) { bar.style.width = '0%'; return; }
+    var progress = Math.min((scrollTop / docHeight) * 100, 100);
+    bar.style.width = progress + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress, { passive: true });
+  updateProgress();
+})();
+</script>

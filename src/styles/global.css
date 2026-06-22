@@ -296,6 +296,198 @@ img {
   animation: breatheGradient 6s ease-in-out infinite;
 }
 
+/* ============= Enhanced Article Typography ============= */
+
+/* Container width — prose default is too wide, cap it */
+.enhanced-prose {
+  /* Better body copy */
+  --tw-prose-body: #374151;
+  --tw-prose-headings: #111827;
+  --tw-prose-links: #3B82F6;
+  --tw-prose-bold: #111827;
+  --tw-prose-quotes: #374151;
+  --tw-prose-quote-borders: #3B82F6;
+  --tw-prose-code: #dc2626;
+  --tw-prose-pre-code: #e5e7eb;
+  --tw-prose-pre-bg: #1f2937;
+  --tw-prose-hr: #e5e7eb;
+}
+.dark .enhanced-prose {
+  --tw-prose-body: #d1d5db;
+  --tw-prose-headings: #f9fafb;
+  --tw-prose-links: #60A5FA;
+  --tw-prose-bold: #f9fafb;
+  --tw-prose-quotes: #d1d5db;
+  --tw-prose-code: #f87171;
+  --tw-prose-pre-bg: #111827;
+  --tw-prose-hr: #374151;
+}
+
+/* Body — relaxed leading, comfortable font size */
+.enhanced-prose p {
+  line-height: 1.8;
+  margin-bottom: 1.25em;
+}
+
+/* Headings */
+.enhanced-prose h2 {
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--tw-prose-hr);
+  position: relative;
+}
+.enhanced-prose h2::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 0.15em;
+  bottom: 0.4em;
+  width: 3px;
+  background: linear-gradient(to bottom, #3B82F6, #8B5CF6);
+  border-radius: 2px;
+}
+@media (max-width: 767px) {
+  .enhanced-prose h2::before {
+    left: -0.75rem;
+  }
+}
+
+.enhanced-prose h3 {
+  font-size: 1.2em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: var(--tw-prose-headings);
+}
+
+/* Links — underlined for readability, not just color */
+.enhanced-prose a:not(.btn-primary):not(.no-underline) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(59, 130, 246, 0.3);
+  transition: text-decoration-color 0.2s;
+}
+.enhanced-prose a:not(.btn-primary):not(.no-underline):hover {
+  text-decoration-color: var(--tw-prose-links);
+}
+
+/* Blockquote — gradient left border */
+.enhanced-prose blockquote {
+  border-left: 3px solid;
+  border-image: linear-gradient(to bottom, #3B82F6, #8B5CF6) 1;
+  padding-left: 1.25em;
+  font-style: normal;
+  font-size: 1.05em;
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.04), transparent);
+  padding: 0.75em 1em 0.75em 1.5em;
+  border-radius: 0 6px 6px 0;
+}
+.enhanced-prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Lists — better spacing */
+.enhanced-prose ul, .enhanced-prose ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.25em;
+}
+.enhanced-prose li {
+  margin-bottom: 0.35em;
+  line-height: 1.7;
+}
+.enhanced-prose ul > li::marker {
+  color: #3B82F6;
+}
+
+/* Tables */
+.enhanced-prose table {
+  font-size: 0.9em;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.enhanced-prose thead {
+  background: #f3f4f6;
+}
+.dark .enhanced-prose thead {
+  background: #1f2937;
+}
+.enhanced-prose th {
+  padding: 0.65em 0.85em;
+  font-weight: 600;
+  text-align: left;
+  border-bottom: 2px solid #e5e7eb;
+}
+.dark .enhanced-prose th {
+  border-bottom-color: #374151;
+}
+.enhanced-prose td {
+  padding: 0.55em 0.85em;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+.dark .enhanced-prose td {
+  border-bottom-color: #374151;
+}
+.enhanced-prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Code inline */
+.enhanced-prose code {
+  font-size: 0.85em;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  background: #f3f4f6;
+  font-weight: 500;
+}
+.dark .enhanced-prose code {
+  background: #1f2937;
+}
+
+/* Pre/code blocks */
+.enhanced-prose pre {
+  border-radius: 8px;
+  padding: 1em 1.25em;
+  overflow-x: auto;
+  font-size: 0.85em;
+}
+.enhanced-prose pre code {
+  background: none;
+  padding: 0;
+  font-weight: 400;
+}
+
+/* HR — subtle */
+.enhanced-prose hr {
+  margin: 2.5em 0;
+  border-color: var(--tw-prose-hr);
+}
+
+/* First paragraph lead — slightly larger */
+.enhanced-prose > p:first-of-type {
+  font-size: 1.1em;
+  color: #4b5563;
+}
+.dark .enhanced-prose > p:first-of-type {
+  color: #9ca3af;
+}
+
+/* Image styling */
+.enhanced-prose img {
+  border-radius: 8px;
+  margin: 1.5em auto;
+}
+
+/* Strong */
+.enhanced-prose strong {
+  font-weight: 600;
+}
+
 /* Subtle scroll hint animation for overflow containers */
 .scroll-hint::after {
   content: '';

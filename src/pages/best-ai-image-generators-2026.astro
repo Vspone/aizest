@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleWrap from '../components/ArticleWrap.astro';
 
 const description = "We tested the top AI image generators of 2026 — Midjourney, Ideogram, DALL-E 3, Stable Diffusion, Recraft, and Leonardo AI. Find the best tool for your creative needs, from photorealistic art to vector graphics and game assets.";
 const canonical = "https://aizest.net/best-ai-image-generators-2026";
@@ -24,8 +25,7 @@ const breadcrumbJsonLd = JSON.stringify({
 ---
 
 <BaseLayout title="Best AI Image Generators 2026 — AI Zest" {description} {canonical} type="article" {jsonLd}>
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <article class="prose prose-gray dark:prose-invert max-w-none">
+  <ArticleWrap>
 
 <nav aria-label="Breadcrumb" class="not-prose mb-6">
   <ol class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
@@ -127,6 +127,5 @@ const breadcrumbJsonLd = JSON.stringify({
 <p>Each tool was evaluated on: image quality, prompt adherence, speed, pricing value, ease of use, and unique capabilities (text rendering, vector output, style consistency). Ratings reflect real-world testing across multiple scenarios from photorealistic portraits to typography-heavy designs.</p>
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 
-    </article>
-  </div>
+</ArticleWrap>
 </BaseLayout>

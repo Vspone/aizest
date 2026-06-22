@@ -1,0 +1,144 @@
+---
+// ListenButton — text-to-speech via Web Speech API
+// Place inside an article page; it reads the nearest <article> content
+export interface Props {
+  articleSelector?: string;
+}
+const { articleSelector = 'article' } = Astro.props;
+---
+
+<div id="listen-wrapper" class="mb-8">
+  <button id="listen-btn" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-[#3B82F6]/40 transition-all duration-200 tap-feedback">
+    <svg id="listen-icon-play" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <svg id="listen-icon-pause" class="hidden w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <span id="listen-label">Listen to this article</span>
+    <span id="listen-status" class="text-xs text-gray-400 hidden"></span>
+  </button>
+</div>
+
+<script>
+(function() {
+  'use strict';
+  var btn = document.getElementById('listen-btn');
+  var label = document.getElementById('listen-label');
+  var playIcon = document.getElementById('listen-icon-play');
+  var pauseIcon = document.getElementById('listen-icon-pause');
+  var statusEl = document.getElementById('listen-status');
+  if (!btn || !label) return;
+
+  var article = document.querySelector('article');
+  if (!article) { btn.style.display = 'none'; return; }
+
+  var utterance = null;
+  var isPlaying = false;
+  var isPaused = false;
+
+  // Extract text from article (skip code blocks, buttons, navs)
+  function getArticleText() {
+    var clone = article.cloneNode(true);
+    // Remove elements that shouldn't be read
+    clone.querySelectorAll('script, style, nav, .btn-primary, [id^=\"listen-\"], pre, code, .not-prose').forEach(function(el) { el.remove(); });
+    return clone.textContent.replace(/\\s+/g, ' ').trim();
+  }
+
+  function stop() {
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel();
+    }
+    isPlaying = false;
+    isPaused = false;
+    label.textContent = 'Listen to this article';
+    playIcon.classList.remove('hidden');
+    pauseIcon.classList.add('hidden');
+    statusEl.classList.add('hidden');
+    btn.classList.remove('ring-2', 'ring-[#3B82F6]/50');
+  }
+
+  function speak() {
+    var text = getArticleText();
+    if (!text) return;
+
+    // Limit to prevent extremely long readings
+    if (text.length > 8000) text = text.slice(0, 8000) + '...';
+
+    utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = 0.95;  // Slightly slower for clarity
+    utterance.pitch = 1.0;
+
+    // Try to pick a natural English voice
+    var voices = window.speechSynthesis.getVoices();
+    var preferred = voices.find(function(v) {
+      return v.lang.startsWith('en') && v.name.includes('Natural') || v.name.includes('Google UK');
+    }) || voices.find(function(v) { return v.lang.startsWith('en'); });
+    if (preferred) utterance.voice = preferred;
+
+    utterance.onstart = function() {
+      isPlaying = true;
+      label.textContent = 'Playing…';
+      playIcon.classList.add('hidden');
+      pauseIcon.classList.remove('hidden');
+      statusEl.textContent = '';
+      statusEl.classList.remove('hidden');
+      btn.classList.add('ring-2', 'ring-[#3B82F6]/50');
+    };
+
+    utterance.onend = function() {
+      stop();
+      label.textContent = 'Listen again';
+      statusEl.classList.add('hidden');
+    };
+
+    utterance.onpause = function() {
+      isPaused = true;
+      label.textContent = 'Paused';
+      playIcon.classList.remove('hidden');
+      pauseIcon.classList.add('hidden');
+    };
+
+    utterance.onresume = function() {
+      isPaused = false;
+      label.textContent = 'Playing…';
+      playIcon.classList.add('hidden');
+      pauseIcon.classList.remove('hidden');
+    };
+
+    utterance.onerror = function(e) {
+      if (e.error !== 'canceled' && e.error !== 'interrupted') {
+        stop();
+        label.textContent = 'Error — try again';
+      }
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  btn.addEventListener('click', function() {
+    if (isPlaying && !isPaused) {
+      // Pause
+      window.speechSynthesis.pause();
+    } else if (isPaused) {
+      // Resume
+      window.speechSynthesis.resume();
+    } else {
+      // Start fresh
+      stop();
+      speak();
+    }
+  });
+
+  // Stop on page unload
+  window.addEventListener('beforeunload', function() { window.speechSynthesis.cancel(); });
+
+  // Handle voice loading (async on some browsers)
+  if (window.speechSynthesis.getVoices().length === 0) {
+    window.speechSynthesis.addEventListener('voiceschanged', function() {
+      window.speechSynthesis.removeEventListener('voiceschanged', arguments.callee);
+    }, { once: true });
+  }
+})();
+</script>

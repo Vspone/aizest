@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleWrap from '../components/ArticleWrap.astro';
 
 // Article JSON-LD
 const jsonLd = JSON.stringify({
@@ -48,7 +49,7 @@ const canonical = "/jasper-vs-writesonic-vs-copyai";
   <!-- Breadcrumb JSON-LD (separate) -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
 
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
       <a href="/" class="hover:text-[#3B82F6]">Home</a>
@@ -56,7 +57,7 @@ const canonical = "/jasper-vs-writesonic-vs-copyai";
       <span class="text-gray-900 dark:text-white font-medium">Jasper vs Writesonic vs Copy.ai</span>
     </nav>
 
-    <article class="prose prose-gray dark:prose-invert max-w-none">
+    <ArticleWrap>
 
 <h1>Jasper vs Writesonic vs Copy.ai: Which AI Writing Tool is Best in 2026?</h1>
 <p><em>Last updated: June 21, 2026</em></p>
@@ -156,6 +157,5 @@ const canonical = "/jasper-vs-writesonic-vs-copyai";
 
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 
-    </article>
-  </div>
+</ArticleWrap>
 </BaseLayout>

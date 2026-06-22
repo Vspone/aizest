@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleWrap from '../components/ArticleWrap.astro';
 
 const title = "Best AI Audio Tools 2026 — AI Zest";
 const description = "We tested the top AI audio platforms in 2026. Compare ElevenLabs, Descript, Suno, Murf, and Podcastle with detailed reviews, ratings, and pricing.";
@@ -90,7 +91,7 @@ const breadcrumbJsonLd = JSON.stringify({
   <!-- FAQ JSON-LD -->
   <script type="application/ld+json" set:html={faqJsonLd} />
 
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
       <a href="/" class="hover:text-[#3B82F6]">Home</a>
@@ -98,7 +99,7 @@ const breadcrumbJsonLd = JSON.stringify({
       <span class="text-gray-900 dark:text-white font-medium">Best AI Audio Tools 2026</span>
     </nav>
 
-    <article class="prose prose-gray dark:prose-invert max-w-none">
+    <ArticleWrap>
 
 <h1>Best AI Audio Tools 2026</h1>
 <p><em>Last updated: June 2026</em></p>
@@ -192,6 +193,5 @@ const breadcrumbJsonLd = JSON.stringify({
 <p>Each AI audio platform was evaluated on: voice quality and realism, feature depth, ease of use, language support, pricing value, and output quality. Tests included text-to-speech generation, voice cloning accuracy, music composition quality, audio editing workflows, and real-world content production scenarios.</p>
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 
-    </article>
-  </div>
+</ArticleWrap>
 </BaseLayout>

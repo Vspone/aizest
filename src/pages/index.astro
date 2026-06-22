@@ -41,7 +41,7 @@ for (const t of tools) {
     </div>
 
     <!-- Categories -->
-    <section class="mb-16">
+    <section class="mb-16 reveal-on-scroll">
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
           Browse by Category
@@ -65,7 +65,7 @@ for (const t of tools) {
 
     <!-- Just Added -->
     {justAdded.length > 0 && (
-      <section class="mb-16">
+      <section class="mb-16 reveal-on-scroll">
         <div class="flex items-center gap-2 mb-6">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
@@ -82,7 +82,7 @@ for (const t of tools) {
 
     <!-- Featured Tools -->
     {featuredTools.length > 0 && (
-      <section class="mb-16">
+      <section class="mb-16 reveal-on-scroll">
         <div class="flex items-center justify-between mb-6">
           <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
             ★ Featured Picks
@@ -100,7 +100,7 @@ for (const t of tools) {
     )}
 
     <!-- Compare CTA -->
-    <section class="mb-16">
+    <section class="mb-16 reveal-on-scroll">
       <a href="/compare" class="group block rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-[#3B82F6]/30 dark:hover:border-[#3B82F6]/30 transition-all duration-200">
         <div class="py-8 px-8 bg-gradient-to-br from-[#3B82F6]/5 to-[#8B5CF6]/5 dark:from-[#3B82F6]/10 dark:to-[#8B5CF6]/10">
           <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -121,7 +121,7 @@ for (const t of tools) {
     </section>
 
     <!-- Articles & Reviews -->
-    <section class="mb-16">
+    <section class="mb-16 reveal-on-scroll">
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
           📝 Articles & Reviews
@@ -215,16 +215,16 @@ for (const t of tools) {
     </section>
 
     <!-- Stats + Newsletter combo -->
-    <section class="mb-16">
+    <section class="mb-16 reveal-on-scroll">
       <div class="rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
         <div class="py-10 px-8 bg-gradient-to-br from-[#3B82F6]/5 to-[#8B5CF6]/5 dark:from-[#3B82F6]/10 dark:to-[#8B5CF6]/10">
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center mb-6 sm:mb-10">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center mb-6 sm:mb-10" id="stats-grid">
             <div>
-              <div class="text-2xl sm:text-3xl font-bold text-[#3B82F6]">{tools.length}+</div>
+              <div class="text-2xl sm:text-3xl font-bold text-[#3B82F6]" id="stat-tools" data-count="{tools.length}">0</div>
               <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">AI Tools Reviewed</div>
             </div>
             <div>
-              <div class="text-2xl sm:text-3xl font-bold text-[#8B5CF6]">{categories.length}</div>
+              <div class="text-2xl sm:text-3xl font-bold text-[#8B5CF6]" id="stat-categories" data-count="{categories.length}">0</div>
               <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">Categories</div>
             </div>
             <div>
@@ -245,3 +245,76 @@ for (const t of tools) {
 
   </div>
 </BaseLayout>
+
+<script>
+(function() {
+  'use strict';
+
+  // ===== Scroll-Reveal: fade in sections as they enter viewport =====
+  var revealEls = document.querySelectorAll('.reveal-on-scroll');
+  if (revealEls.length > 0 && 'IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(function(el) { observer.observe(el); });
+  } else {
+    // Fallback: show everything immediately if no IO support
+    revealEls.forEach(function(el) { el.classList.add('revealed'); });
+  }
+
+  // ===== Stats Counter: animate numbers =====
+  var statTools = document.getElementById('stat-tools');
+  var statCats = document.getElementById('stat-categories');
+  if (statTools && statCats && 'IntersectionObserver' in window) {
+    var statsGrid = document.getElementById('stats-grid');
+    var counted = false;
+
+    var statsObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !counted) {
+          counted = true;
+          statsObserver.unobserve(entry.target);
+
+          var targetTools = parseInt(statTools.getAttribute('data-count'), 10);
+          var targetCats = parseInt(statCats.getAttribute('data-count'), 10);
+          var duration = 800; // ms
+          var startTime = performance.now();
+
+          function easeOutCubic(t) {
+            return 1 - Math.pow(1 - t, 3);
+          }
+
+          function update() {
+            var elapsed = performance.now() - startTime;
+            var progress = Math.min(elapsed / duration, 1);
+            var eased = easeOutCubic(progress);
+
+            statTools.textContent = Math.round(eased * targetTools) + '+';
+            statCats.textContent = Math.round(eased * targetCats);
+
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            } else {
+              statTools.textContent = targetTools + '+';
+              statCats.textContent = targetCats;
+            }
+          }
+
+          update();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    statsObserver.observe(statsGrid);
+  } else if (statTools && statCats) {
+    // No IO support: show final values immediately
+    statTools.textContent = statTools.getAttribute('data-count') + '+';
+    statCats.textContent = statCats.getAttribute('data-count');
+  }
+})();
+</script>

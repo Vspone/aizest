@@ -10,7 +10,7 @@ export interface Props {
 const { name, icon, slug, count, color } = Astro.props;
 ---
 
-<a href={`/category/${slug}`} class="card p-6 flex items-center gap-4 group hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+<a href={`/category/${slug}`} class="card p-6 flex items-center gap-4 group hover:-translate-y-1 hover:shadow-lg transition-all duration-200 tap-feedback">
   <div class={`w-12 h-12 rounded-xl flex items-center justify-center text-xl ${color}`}>
     {icon}
   </div>

@@ -236,6 +236,40 @@ img {
 .mobile-menu-open .mobile-nav-slide:nth-child(11) { transition-delay: 0.22s; }
 .mobile-menu-open .mobile-nav-slide:nth-child(12) { transition-delay: 0.24s; }
 
+/* ============= Article Card Left Accent Bar ============= */
+
+.article-card {
+  position: relative;
+  overflow: hidden;
+}
+.article-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #3B82F6, #8B5CF6);
+  border-radius: 0 3px 3px 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.25s ease-out;
+}
+.article-card:hover::before {
+  transform: scaleY(1);
+}
+
+/* ============= Compare CTA Breathe Animation ============= */
+
+@keyframes breatheGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.cta-breathe {
+  background-size: 200% 200%;
+  animation: breatheGradient 6s ease-in-out infinite;
+}
+
 /* Subtle scroll hint animation for overflow containers */
 .scroll-hint::after {
   content: '';

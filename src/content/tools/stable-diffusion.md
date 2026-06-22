@@ -5,6 +5,7 @@ description: "Open-source AI image generation model with customizable pipelines 
 category: "image"
 website: "https://stability.ai"
 pricing: "Free / $10+/mo"
+needs_vps: true
 affiliate_url: https://stability.ai
 featured: false
 rating: 4.5

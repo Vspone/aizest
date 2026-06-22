@@ -5,6 +5,7 @@ description: "China's most powerful open-weight AI model with cutting-edge reaso
 category: "writing"
 website: "https://chat.deepseek.com"
 pricing: "Free / API pay-per-use"
+needs_vps: true
 affiliate_url: https://chat.deepseek.com
 featured: true
 rating: 4.5

@@ -5,6 +5,7 @@ description: "AI-powered web app builder that generates full-stack applications 
 category: "coding"
 website: "https://bolt.new"
 pricing: "Free / $20/mo (Starter)"
+needs_vps: true
 affiliate_url: https://bolt.new
 featured: true
 rating: 4.5

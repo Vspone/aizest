@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 }
 const { tool } = Astro.props;
 const { Content } = await render(tool);
-const { name, slug, description, website, pricing, affiliate_url, rating, features, pricing_tiers, pros, cons, category } = tool.data;
+const { name, slug, description, website, pricing, affiliate_url, rating, features, pricing_tiers, pros, cons, category, needs_vps } = tool.data;
 
 const categoryLabels: Record<string, string> = {
   writing: 'Writing & Content', image: 'Image Generation', video: 'Video Creation',
@@ -167,6 +167,22 @@ const breadcrumbJsonLd = JSON.stringify({
         <section class="prose prose-gray dark:prose-invert max-w-none">
           <Content />
         </section>
+
+        <!-- VPS Recommendation (for self-hostable/deployable tools) -->
+        {needs_vps && (
+        <div class="not-prose mt-8 p-5 rounded-xl bg-gradient-to-br from-[#0D9488]/5 to-[#0891B2]/5 dark:from-[#0D9488]/10 dark:to-[#0891B2]/10 border border-gray-200 dark:border-gray-700">
+          <div class="flex items-start gap-3 sm:gap-4">
+            <span class="text-xl shrink-0 mt-0.5">☁️</span>
+            <div>
+              <p class="font-semibold text-gray-900 dark:text-white text-sm mb-1">Need a server to run {name}?</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Deploy {name} on a reliable cloud VPS with GPU support — DigitalOcean and Vultr offer simple pricing, global data centers, and per-second billing for AI workloads.</p>
+              <a href="/best-vps-for-ai-deployments-2026" class="inline-flex items-center gap-1.5 text-sm font-medium text-[#0D9488] hover:text-[#0F766E] transition-colors">
+                Best VPS for AI Deployments 2026 →
+              </a>
+            </div>
+          </div>
+        </div>
+        )}
       </div>
 
       <!-- Sidebar -->

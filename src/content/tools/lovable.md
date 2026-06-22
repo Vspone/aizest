@@ -5,6 +5,7 @@ description: "AI-powered full-stack web app builder that generates production-re
 category: "coding"
 website: "https://lovable.dev"
 pricing: "Free / $20/mo (Starter)"
+needs_vps: true
 affiliate_url: https://lovable.dev
 featured: true
 rating: 4.5

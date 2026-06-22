@@ -1,49 +1,54 @@
 ---
 name: "Uizard"
 slug: "uizard"
-description: "AI-powered UI design tool that transforms text prompts and hand-drawn sketches into editable mockups and prototypes in seconds."
+description: "AI-powered UI/UX design tool that turns wireframes, screenshots, and prompts into editable mockups and prototypes."
 category: "design"
 website: "https://uizard.io"
-pricing: "Free / $25/mo"
-rating: 4.2
+pricing: "Free / $12/mo (Pro)"
+affiliate_url: https://uizard.io
+featured: true
+rating: 4.3
 features:
-  - "Text-to-design — generate UI screens from natural language descriptions"
-  - "Autodesigner 2.0 with AI theme and brand kit generation"
-  - "Convert hand-drawn wireframes to digital designs"
-  - "Collaborative editing with developer handoff mode"
-  - "AI image generation and design review assistant"
+  - "Screenshot-to-design — convert app screenshots into editable mockups"
+  - "Wireframe-to-design — turn hand-drawn sketches into digital designs"
+  - "AI theme generation from text prompts"
+  - "Auto-layout and responsive design tools"
+  - "Interactive prototyping with transitions"
+  - "Collaboration with real-time editing and comments"
 pricing_tiers:
   - name: "Free"
     price: "$0"
     features:
-      - "3 AI generations per month"
       - "1 project"
-      - "Basic templates"
+      - "Basic UI components"
+      - "Screenshot-to-design (limited)"
+      - "Export as PNG"
   - name: "Pro"
-    price: "$25/mo"
+    price: "$12/mo"
     features:
       - "Unlimited projects"
-      - "All AI features (Autodesigner, text-to-design, wireframe conversion)"
-      - "AI image generation"
-  - name: "Business"
-    price: "$49/mo"
+      - "All AI features unlimited"
+      - "Export as Sketch, Figma, or HTML"
+      - "Custom components"
+  - name: "Enterprise"
+    price: "Custom"
     features:
-      - "All Pro features"
-      - "Team collaboration"
-      - "Priority support"
-      - "Advanced brand kit management"
+      - "Team management"
+      - "Brand kits"
+      - "Private cloud deployment"
+      - "Dedicated support"
 pros:
-  - "Extremely fast ideation from simple text prompts"
-  - "No design skills required, accessible to anyone"
-  - "Great for rapid prototyping and MVP creation"
+  - "Screenshot-to-design is magical — turn any app UI into an editable mockup"
+  - "Hand-drawn wireframe recognition is surprisingly accurate"
+  - "Very affordable compared to Figma or Sketch"
+  - "Great for rapid prototyping and iterating on ideas"
 cons:
-  - "Limited customization depth compared to professional tools like Figma"
-  - "AI-generated outputs often need manual refinement"
-  - "Free tier is very restricted with only 3 generations"
+  - "Not as full-featured as Figma for production design"
+  - "Component library is smaller than established tools"
+  - "Export quality can vary for complex designs"
+  - "Learning curve for AI features"
 ---
 
-Uizard is an AI-first UI design platform built for speed and accessibility. It lets product managers, founders, and non-designers go from idea to interactive mockup in minutes — simply by describing what they want in natural language or snapping a photo of a hand-drawn wireframe. Where traditional design tools demand hours of layout work, Uizard's AI engine interprets text prompts and sketches to produce editable, pixel-accurate UI screens ready for prototyping or handoff.
+Uizard is changing how designers prototype UI by leveraging AI at every step. Take a screenshot of any app or website, upload it to Uizard, and the AI deconstructs it into fully editable mockup components — buttons, text fields, images, and layouts — all separated and ready to modify. Similarly, snap a photo of a hand-drawn wireframe, and Uizard converts it into a polished digital design.
 
-At the core of Uizard is its text-to-design capability, which transforms plain English descriptions into fully formed app or web screens. The Autodesigner 2.0 feature takes this further by generating complete design systems — including color palettes, typography, and branded components — from a single prompt or an existing brand asset. For teams that still sketch ideas on paper, the wireframe scanner converts photographed hand-drawn layouts into digital designs in seconds, preserving structure and flow while making them editable in the Uizard editor.
-
-Uizard shines in fast-paced product environments where iterating on concepts quickly matters more than pixel perfection. Developer handoff mode gives engineers access to inspectable designs with measurements, assets, and style guides, reducing friction between design and development. While it doesn't offer the deep customization of tools like Figma — and its AI outputs often benefit from manual polish — Uizard is an excellent companion for early-stage prototyping, stakeholder demos, and any scenario where speed of communication beats production-ready fidelity. The free tier is quite limited (just 3 AI generations per month), but the Pro plan at $25/month unlocks the full AI toolkit for unlimited projects.
+For non-designers who need to quickly mock up an app idea, or for experienced designers who want to skip the tedious setup phase, Uizard dramatically accelerates the design process. At $12/month for Pro, it's a fraction of the cost of traditional design tools while offering unique AI capabilities they don't have.

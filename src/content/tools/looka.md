@@ -1,46 +1,54 @@
 ---
 name: "Looka"
 slug: "looka"
-description: "AI-powered logo maker and brand identity platform that generates professional logos, brand kits, and social media assets in minutes."
+description: "AI-powered logo maker and brand identity platform that generates professional logos, brand kits, and marketing assets."
 category: "design"
 website: "https://looka.com"
-pricing: "From $20"
+pricing: "Free / $20 (Brand Kit one-time)"
 affiliate_url: https://looka.com
-featured: false
-rating: 4.3
+featured: true
+rating: 4.2
 features:
-  - "AI logo generation from style and industry preferences"
-  - "Complete branding kit with colors, fonts, and social assets"
-  - "Business card, letterhead, and social media templates"
-  - "High-resolution vector exports (EPS, PDF, PNG, SVG)"
-  - "Brand guideline PDF for consistent usage"
+  - "AI logo generation from industry-specific prompts"
+  - "Hundreds of customizable logo templates"
+  - "Full brand kit — colors, fonts, and style guidelines"
+  - "Business card, social media, and letterhead designs"
+  - "High-resolution SVG and PNG downloads"
+  - "Trademark review service (paid add-on)"
 pricing_tiers:
-  - name: "Logo Package"
-    price: "$20 one-time"
+  - name: "Free"
+    price: "$0"
     features:
-      - "High-res PNG files (multiple sizes)"
-      - "AI-generated logo based on your preferences"
-      - "Color variations and file downloads"
+      - "AI logo generation"
+      - "Browse and preview logos"
+      - "Watermarked previews only"
   - name: "Brand Kit"
-    price: "$65 one-time"
+    price: "$20"
     features:
-      - "Full identity kit with vector files (EPS, PDF, PNG, SVG)"
-      - "Business card, letterhead, and email signature templates"
-      - "Social media profile and cover photo assets"
-      - "Brand guideline PDF"
-      - "Color palette and font specifications"
+      - "Full logo ownership"
+      - "SVG, PNG, and PDF files"
+      - "Brand kit with color palette"
+      - "Social media kit"
+      - "Business card design"
+  - name: "Enterprise"
+    price: "Custom"
+    features:
+      - "Trademark search"
+      - "Custom design support"
+      - "Volume licensing"
+      - "Dedicated designer"
 pros:
-  - "Very easy to use with intuitive AI-driven process"
-  - "Professional-quality output suitable for businesses"
-  - "One-time purchase with no recurring subscription"
+  - "AI generates genuinely good logo concepts — not just clip art"
+  - "Brand Kit at $20 one-time is excellent value for startups"
+  - "Saves hours of logo design exploration"
+  - "Full brand kit ensures visual consistency"
 cons:
-  - "Limited customization options after AI initial generation"
-  - "Better suited for simple brands than complex identities"
-  - "Full brand kit can be pricey for micro-businesses"
+  - "Customization options are limited compared to hiring a designer"
+  - "Many logos share similar design patterns"
+  - "Trademark review is a paid add-on"
+  - "No ongoing brand management features"
 ---
 
-Looka is an AI-powered logo maker and brand identity platform that lets startups, entrepreneurs, and small businesses create professional branding in minutes — no design experience required. By combining artificial intelligence with an intuitive editor, Looka turns a few simple style and industry preferences into a polished logo and a complete visual identity.
+Looka is the leading AI-powered logo maker that balances automation with customization. Unlike basic logo generators that serve up generic clip art, Looka's AI creates genuinely creative logo concepts based on your industry, style preferences, and brand name. You can customize colors, fonts, layouts, and icons after generation, tweaking until it feels right.
 
-The process begins with a short quiz where users select their preferred logo styles, colors, symbols, and industry. Looka's AI instantly generates dozens of logo concepts, which can be refined through a simple drag-and-drop editor for layout, typography, and color tweaks. Once a logo is finalized, users can expand it into a full Brand Kit that includes business cards, letterheads, social media profile images, email signatures, and a brand guideline PDF — everything needed to present a cohesive brand across channels.
-
-For small businesses needing a fast, affordable entry point to professional branding, Looka is one of the best options available. The one-time pricing model (starting at $20 for high-res PNGs, $65 for the complete Brand Kit with vector exports) means no recurring subscription fees, and the quality is high enough for use on websites, packaging, social media, and print materials. While it's not a replacement for a full-service design agency for complex brand identities, Looka delivers exceptional value for the vast majority of micro-businesses, freelancers, and side projects that need a polished look fast.
+The $20 Brand Kit package is exceptional value for startups — you get full ownership of your logo in multiple formats (SVG, PNG, PDF), plus a brand kit with color palette and typography guidelines, plus social media profile images and business card designs. For early-stage companies and side projects that need a professional-looking logo without the $500+ price tag of a designer, Looka is the best option.

@@ -1,46 +1,54 @@
 ---
 name: "Rytr"
 slug: "rytr"
-description: "Budget-friendly AI writing assistant with 40+ use cases, supporting 30+ languages, with built-in plagiarism checker and SERP analysis."
+description: "Affordable AI writing assistant for blogs, emails, social media, and copy — with 40+ use-case templates."
 category: "writing"
 website: "https://rytr.me"
-pricing: "Free / $9/mo"
+pricing: "Free / $9/mo (Saver)"
 affiliate_url: https://rytr.me
-featured: false
+featured: true
 rating: 4.2
 features:
-  - "40+ use case templates for different content types"
-  - "30+ language support"
+  - "40+ writing use-case templates"
   - "Built-in plagiarism checker"
-  - "SERP analysis for SEO optimization"
-  - "AI image generation"
-  - "20+ writing tones and styles"
+  - "20+ tone of voice options"
+  - "Multiple language support"
+  - "SEO keyword integration"
+  - "Browser extension for easy access"
 pricing_tiers:
   - name: "Free"
     price: "$0"
     features:
       - "10K characters/month"
-      - "40+ use cases"
-      - "30+ languages"
-  - name: "Unlimited"
+      - "40+ use-case templates"
+      - "20+ tones"
+      - "Plagiarism checker"
+  - name: "Saver"
     price: "$9/mo"
     features:
-      - "Unlimited characters"
-      - "Plagiarism checker"
+      - "100K characters/month"
+      - "Custom use-cases"
       - "Priority support"
-  - name: "Premium"
+      - "No credit card required"
+  - name: "Unlimited"
     price: "$29/mo"
     features:
       - "Unlimited characters"
-      - "SERP analysis"
-      - "AI image generator"
+      - "Dedicated account manager"
+      - "API access"
+      - "Team collaboration"
 pros:
-  - "Very affordable pricing"
-  - "Good for short-form content"
-  - "Multi-language support"
-  - "Free tier available"
+  - "Very affordable — $9/mo for 100K characters"
+  - "40+ templates cover most content needs"
+  - "Plagiarism checker included at all tiers"
+  - "Clean, simple interface — easy to use"
 cons:
-  - "Quality drops for long-form content"
-  - "Less polished output than premium tools"
-  - "Character-based limits on lower tiers"
+  - "Output quality is good but not best-in-class"
+  - "Limited editing features compared to Jasper or Copy.ai"
+  - "Character limits can be restrictive for heavy users"
+  - "Basic AI model — lacks advanced reasoning"
 ---
+
+Rytr is a budget-friendly AI writing assistant that punches above its weight class. For $9/month, you get 100,000 characters of AI-generated content across 40+ use-case templates — blog posts, emails, ad copy, social media captions, product descriptions, and more. It's not the most sophisticated AI writer on the market, but for freelancers, solopreneurs, and small businesses watching their budget, Rytr offers the best value.
+
+The plagiarism checker is a nice bonus at even the free tier, and the 20+ tone options give reasonable control over your output voice. For basic content needs where budget matters more than absolute quality, Rytr is hard to beat.

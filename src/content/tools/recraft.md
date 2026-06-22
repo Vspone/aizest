@@ -1,57 +1,55 @@
 ---
 name: "Recraft"
 slug: "recraft"
-description: "AI design platform that generates vector graphics, icons, logos, and illustrations with precise style control and brand consistency."
-category: "image"
+description: "AI design platform for creating vector graphics, logos, icons, and brand assets with consistent style control."
+category: "design"
 website: "https://www.recraft.ai"
-pricing: "Free / $20/mo"
-rating: 4.3
+pricing: "Free / $20/mo (Pro)"
+affiliate_url: https://www.recraft.ai
+featured: true
+rating: 4.5
 features:
-  - "AI vector graphic generation with SVG output"
-  - "Style control — train custom brand styles"
-  - "Icon, logo, and illustration generator"
-  - "Background removal and image editing"
-  - "Consistent character and style across generations"
+  - "AI vector graphic generation (SVG output)"
+  - "Brand style kit for consistent visual identity"
+  - "Logo and icon generation from text prompts"
+  - "Style reference and color palette control"
+  - "Mockup generation for products and apparel"
+  - "Batch generation with brand consistency"
 pricing_tiers:
   - name: "Free"
     price: "$0"
     features:
-      - "Basic raster generation only"
-      - "Limited daily generations"
-      - "Standard image quality"
+      - "Limited vector generations per day"
+      - "Basic styles and templates"
+      - "PNG export only"
   - name: "Pro"
     price: "$20/mo"
     features:
-      - "Vector and SVG output"
-      - "1,000 credits per month"
-      - "Style control and brand kits"
-      - "Background removal"
+      - "Unlimited vector generations"
+      - "SVG and high-res PNG export"
+      - "Brand kit with custom styles"
+      - "Commercial usage rights"
   - name: "Team"
-    price: "$48/mo"
+    price: "$40/mo per user"
     features:
-      - "Unlimited generations"
-      - "Full brand kits and team styles"
-      - "Collaborative workspace"
+      - "Shared brand kits and templates"
+      - "Team collaboration workspace"
+      - "Team style guides and approvals"
       - "Priority support"
-  - name: "Enterprise"
-    price: "Custom"
-    features:
-      - "Custom credit allocation"
-      - "Dedicated account manager"
-      - "SSO and advanced security"
-      - "Custom integrations"
 pros:
-  - "One of the few AI tools that outputs real vector graphics (SVG)"
-  - "Strong brand consistency features"
-  - "Good for designers who need scalable assets"
+  - "Only major AI tool that generates true vector graphics (SVG)"
+  - "Brand kit ensures visual consistency across generations"
+  - "Great for logos, icons, and marketing assets"
+  - "Style control is unmatched among design AI tools"
 cons:
-  - "Vector quality varies"
-  - "Free tier is raster-only"
-  - "Learning curve for style training"
+  - "Free tier limited to PNG output only"
+  - "SVG output quality varies for complex designs"
+  - "Learning curve for advanced style controls"
+  - "Not suitable for photorealistic image generation"
 ---
 
-Recraft fills a critical gap in the AI design landscape by offering something most generative tools cannot: real vector graphics output. While the market is saturated with raster-based AI image generators, Recraft produces actual SVG vectors — scalable, editable, and ready for professional design workflows. This makes it an essential tool for graphic designers, brand managers, and product teams who need icons, logos, illustrations, and other assets that must remain crisp at any size. The platform's style control feature lets users train custom brand styles, ensuring every generation stays on-brand across colors, shapes, and aesthetic direction.
+Recraft stands out in the crowded AI design space for one defining capability: it generates genuine vector graphics. While most AI image tools output raster images (PNG/JPG), Recraft produces scalable SVG files that can be edited in Illustrator, Figma, or any vector editor — a critical distinction for professional designers.
 
-Beyond vector generation, Recraft packs a full suite of practical design tools: background removal, image editing, and a dedicated icon and logo generator. Its standout capability is maintaining consistent character designs and visual styles across multiple generations — a notoriously difficult problem for most AI image models. For teams managing brand assets, this means a logo, icon set, or illustration series can maintain a unified look without manual retouching. The collaborative workspace on Team and Enterprise plans further supports design teams working at scale.
+The brand kit feature is Recraft's killer app. You define your brand's colors, fonts, and visual style once, and every generation respects those constraints automatically. This makes Recraft ideal for creating cohesive sets of icons, social media templates, website illustrations, and marketing collateral without manual consistency checking.
 
-Pricing starts with a Free tier that offers basic raster generation only, making it a good entry point for evaluation but limiting for professional use. The Pro plan at $20 per month unlocks vector and SVG output with 1,000 monthly credits, which covers most individual designer workloads. Team plans at $48 per month provide unlimited generations and full brand kit access. The main trade-offs are that vector quality can be inconsistent depending on complexity, the free tier is raster-only which limits its usefulness, and there is a learning curve involved in training effective custom styles. For graphic designers who need AI-generated assets that actually work in professional vector workflows, Recraft is the most capable option available today.
+For startups needing a quick logo, designers creating icon sets, or marketers producing branded visual assets, Recraft fills a niche that Midjourney and DALL-E simply can't touch. The $20/mo Pro plan with SVG export and commercial rights is a strong value for anyone doing professional design work.

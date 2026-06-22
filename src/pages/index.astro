@@ -7,7 +7,7 @@ import ToolCard from '../components/ToolCard.astro';
 import { getCollection } from 'astro:content';
 
 const tools = await getCollection('tools');
-const featuredTools = tools.filter(t => t.data.featured).slice(0, 6);
+const featuredTools = tools.filter(t => t.data.featured).slice(0, 9);
 
 // "Just Added" - newest tools (by pubDate or just last ones added)
 const justAdded = tools.slice(-4).reverse();

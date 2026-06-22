@@ -1,55 +1,55 @@
 ---
 name: "Descript"
 slug: "descript"
-description: "AI-powered audio and video editor that lets you edit media by editing text transcripts — remove filler words, overdub mistakes, and produce studio-quality content"
-category: "audio"
+description: "All-in-one AI-powered video and audio editor that treats media like a document — edit by editing the transcript."
+category: "video"
 website: "https://www.descript.com"
-pricing: "Free / $24/mo"
-featured: false
-rating: 4.5
+pricing: "Free / $24/mo (Business)"
+affiliate_url: https://www.descript.com
+featured: true
+rating: 4.6
 features:
-  - "Text-based audio and video editing by editing transcripts"
-  - "AI voice cloning (Overdub) to fix mistakes"
-  - "Studio Sound one-click noise removal"
-  - "Screen and remote recording with transcription"
-  - "AI clips, filler word removal, and captions"
+  - "Edit video by editing the transcript text"
+  - "AI voice cloning with Studio Sound"
+  - "Screen recording with automatic transcription"
+  - "Multi-track timeline and collaborative editing"
+  - "AI-powered filler word removal"
+  - "Export to all major formats and social platforms"
 pricing_tiers:
   - name: "Free"
     price: "$0"
     features:
+      - "1 hour transcription per month"
+      - "Basic editing tools"
       - "Watermarked export"
-      - "Basic transcription"
-      - "Limited video resolution"
   - name: "Hobbyist"
-    price: "$24/mo (annual)"
+    price: "$24/mo"
+    features:
+      - "10 hours transcription per month"
+      - "AI features including Studio Sound"
+      - "No watermark"
+      - "Screen recording"
+  - name: "Business"
+    price: "$40/mo"
     features:
       - "Unlimited transcription"
-      - "10 hours of video"
-      - "Pro export quality"
-  - name: "Creator"
-    price: "$30/mo (annual)"
-    features:
-      - "4K export resolution"
-      - "20 hours of video"
-      - "All premium features"
-  - name: "Business"
-    price: "$40/mo (annual)"
-    features:
-      - "Custom branding"
-      - "Advanced collaboration"
-      - "Priority support"
+      - "Team collaboration"
+      - "Brand kits and templates"
+      - "Custom export presets"
 pros:
-  - "Text-based editing is revolutionary for content creators"
-  - "Studio Sound produces incredible audio quality"
-  - "All-in-one workflow replaces multiple tools"
+  - "Edit video like editing a Word doc — incredibly intuitive"
+  - "Studio Sound removes background noise magically"
+  - "Filler word removal saves hours of manual editing"
+  - "Collaboration features great for team workflows"
 cons:
-  - "Free plan includes watermarks on exports"
-  - "Can be resource-heavy on older computers"
-  - "Overdub limited to 1,000 words on lower tiers"
+  - "Can be resource-intensive on older computers"
+  - "Not ideal for complex visual effects or animations"
+  - "Free tier is very limited"
+  - "Some AI features require good audio quality to work well"
 ---
 
-Descript transforms audio and video production by letting you edit media the same way you edit a text document. Every spoken word is transcribed and displayed in an editable script — delete words to remove them from the recording, type new ones to insert them into the timeline, and use the overdub feature to generate realistic voice replacements in your own voice. This paradigm shift from timeline-based editing to text-based editing dramatically speeds up the production process for podcasters, YouTubers, and content creators who regularly edit spoken-word content.
+Descript revolutionized video editing with a simple but powerful idea: make video editable like a document. Instead of cutting clips on a timeline, you edit the transcript — delete words from the text, and the corresponding video is removed automatically. This paradigm shift makes video editing accessible to anyone who can type.
 
-Beyond its core text-based editing, Descript bundles a powerful suite of AI production tools. Studio Sound removes background noise, room echo, and microphone inconsistencies with a single click, producing broadcast-quality audio from recordings made on any microphone. The screen recording and remote recording features capture high-resolution video with automatic transcription, making it ideal for software tutorials, video calls, and interviews. Additional features like automatic filler word removal, AI-generated captions, and smart clip creation let creators repurpose long-form content into shorter social media snippets without leaving the application.
+Beyond the core transcript-based editing, Descript packs a suite of AI features that dramatically speed up post-production. Studio Sound cleans up poor-quality audio and makes it sound studio-grade. The filler word removal tool automatically eliminates "ums," "uhs," and long pauses with a single click. AI eye contact correction adjusts your gaze to look at the camera.
 
-Descript is best suited for podcasters, educators, marketers, and video creators who produce conversation-based content and want to skip the steep learning curve of traditional nonlinear editors like Premiere Pro or DaVinci Resolve. Its all-in-one approach replaces separate tools for recording, transcription, audio cleanup, video editing, captioning, and clip generation, streamlining the post-production workflow. While it may not replace professional NLEs for cinematic video work, Descript excels at the kind of talking-head and dialogue-driven content that dominates modern digital media.
+For podcasters, YouTubers, course creators, and anyone producing talking-head content, Descript is the most efficient editing tool available. The workflow from recording to publishing is dramatically faster than traditional video editors.

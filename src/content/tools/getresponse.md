@@ -4,6 +4,7 @@ slug: "getresponse"
 description: "All-in-one email marketing and automation platform powered by AI — with campaign builder, landing pages, webinars, and sales funnels."
 category: "marketing"
 website: "https://www.getresponse.com"
+affiliate_url: https://www.getresponse.com
 pricing: "Free / $19/mo"
 rating: 4.5
 features:

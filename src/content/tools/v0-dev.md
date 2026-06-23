@@ -4,6 +4,7 @@ slug: "v0-dev"
 description: "AI-powered development tool by Vercel that generates production-ready React and Next.js UI components from natural language prompts."
 category: "coding"
 website: "https://v0.dev"
+affiliate_url: https://v0.dev
 pricing: "Free / $20/mo"
 rating: 4.7
 features:

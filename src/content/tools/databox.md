@@ -4,6 +4,7 @@ slug: "databox"
 description: "AI-powered analytics platform that connects 130+ business tools into unified dashboards with Genie AI analyst for plain-language data queries."
 category: "data"
 website: "https://databox.com"
+affiliate_url: https://databox.com
 pricing: "Free / $59/mo"
 featured: false
 rating: 4.4

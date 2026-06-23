@@ -4,6 +4,7 @@ slug: "lusha"
 description: "B2B sales intelligence platform providing verified contact data (phone numbers and emails) through a Chrome extension for instant LinkedIn and website enrichment."
 category: "business"
 website: "https://www.lusha.com"
+affiliate_url: https://www.lusha.com
 pricing: "Free / $37.45/mo"
 featured: false
 rating: 4.3

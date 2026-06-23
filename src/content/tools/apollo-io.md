@@ -4,6 +4,7 @@ slug: "apollo-io"
 description: "AI-powered sales intelligence platform with 275M+ B2B contacts, lead scoring, email sequences, and CRM automation for prospecting and outreach."
 category: "business"
 website: "https://www.apollo.io"
+affiliate_url: https://www.apollo.io
 pricing: "Free / $49/user/mo"
 featured: false
 rating: 4.5

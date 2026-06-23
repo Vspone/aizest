@@ -1,0 +1,312 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const tools = await getCollection('tools');
+---
+
+<BaseLayout 
+  title="How We Review AI Tools — AI Zest"
+  description="Our rigorous review methodology for AI tools — see how we test, rate, and compare every tool on AI Zest. Transparent scoring criteria and editorial standards."
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <!-- Breadcrumb -->
+    <nav class="flex flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-[#3B82F6]">Home</a>
+      <span>/</span>
+      <span class="text-gray-900 dark:text-white font-medium">How We Review AI Tools</span>
+    </nav>
+
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#3B82F6] to-[#8B5CF6] text-white text-2xl mb-4">
+        📋
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3">
+        How We Review <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6]">AI Tools</span>
+      </h1>
+      <p class="text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        We review every AI tool with a consistent, transparent methodology — so you can trust that our ratings reflect real hands-on experience, not just marketing claims.
+      </p>
+      <p class="text-xs text-gray-400 dark:text-gray-500 mt-2">Last updated: June 23, 2026</p>
+    </div>
+
+    <!-- Our Rating System -->
+    <section class="mb-10">
+      <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 sm:p-10">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+          <span>⭐</span> Our Rating System
+        </h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">
+          Every tool on AI Zest receives a rating out of 5.0, calculated as an average of five equally-weighted dimensions. Below is exactly what each dimension means.
+        </p>
+
+        <!-- Dimension 1 -->
+        <div class="mb-6 pb-6 border-b border-gray-100 dark:border-gray-700 last:border-0 last:pb-0 last:mb-0">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center shrink-0">
+              <span class="text-blue-600 dark:text-blue-400 font-bold text-sm">✓</span>
+            </div>
+            <h3 class="font-semibold text-gray-900 dark:text-white">Feature Completeness <span class="font-normal text-gray-400 text-sm">(25% of score)</span></h3>
+          </div>
+          <div class="ml-11">
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-2">
+              We evaluate whether an AI tool delivers on the features it advertises and how those features compare to competitors in the same category.
+            </p>
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-3 text-xs text-gray-500 dark:text-gray-400">
+              <strong class="text-gray-700 dark:text-gray-300">Scoring guide:</strong>
+              <ul class="list-disc list-inside mt-1 space-y-0.5">
+                <li><strong>5.0</strong> — Industry leader: all promised features work flawlessly, unique capabilities not found elsewhere</li>
+                <li><strong>4.0–4.9</strong> — Strong: core features solid, one or two minor gaps vs competitors</li>
+                <li><strong>3.0–3.9</strong> — Adequate: does the basics well but lacks advanced or differentiating features</li>
+                <li><strong>2.0–2.9</strong> — Below average: missing key features that competitors offer for free</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dimension 2 -->
+        <div class="mb-6 pb-6 border-b border-gray-100 dark:border-gray-700 last:border-0 last:pb-0 last:mb-0">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center shrink-0">
+              <span class="text-purple-600 dark:text-purple-400 font-bold text-sm">$</span>
+            </div>
+            <h3 class="font-semibold text-gray-900 dark:text-white">Pricing & Value <span class="font-normal text-gray-400 text-sm">(25% of score)</span></h3>
+          </div>
+          <div class="ml-11">
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-2">
+              We assess whether the pricing aligns with the value delivered — including free tiers, upgrade paths, and pricing relative to alternatives.
+            </p>
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-3 text-xs text-gray-500 dark:text-gray-400">
+              <strong class="text-gray-700 dark:text-gray-300">Scoring guide:</strong>
+              <ul class="list-disc list-inside mt-1 space-y-0.5">
+                <li><strong>5.0</strong> — Generous free tier, fair pricing, significantly cheaper than comparable tools</li>
+                <li><strong>4.0–4.9</strong> — Good value: reasonable pricing that reflects capability, free tier available</li>
+                <li><strong>3.0–3.9</strong> — Fair: pricing matches market average, free tier limited or absent</li>
+                <li><strong>2.0–2.9</strong> — Overpriced relative to features or has expensive mandatory upgrades</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dimension 3 -->
+        <div class="mb-6 pb-6 border-b border-gray-100 dark:border-gray-700 last:border-0 last:pb-0 last:mb-0">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center shrink-0">
+              <span class="text-green-600 dark:text-green-400 font-bold text-sm">👤</span>
+            </div>
+            <h3 class="font-semibold text-gray-900 dark:text-white">Ease of Use <span class="font-normal text-gray-400 text-sm">(25% of score)</span></h3>
+          </div>
+          <div class="ml-11">
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-2">
+              We evaluate the onboarding experience, learning curve, interface design, and how quickly a new user can achieve meaningful results.
+            </p>
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-3 text-xs text-gray-500 dark:text-gray-400">
+              <strong class="text-gray-700 dark:text-gray-300">Scoring guide:</strong>
+              <ul class="list-disc list-inside mt-1 space-y-0.5">
+                <li><strong>5.0</strong> — Intuitive: zero learning curve, clean UI, produces great results on first try</li>
+                <li><strong>4.0–4.9</strong> — User-friendly: minor friction points, but most users will figure it out quickly</li>
+                <li><strong>3.0–3.9</strong> — Moderate: functional but has a noticeable learning curve or clunky parts</li>
+                <li><strong>2.0–2.9</strong> — Difficult: poor UX, confusing navigation, steep learning curve</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dimension 4 -->
+        <div class="mb-6 pb-6 border-b border-gray-100 dark:border-gray-700 last:border-0 last:pb-0 last:mb-0">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center shrink-0">
+              <span class="text-amber-600 dark:text-amber-400 font-bold text-sm">⚡</span>
+            </div>
+            <h3 class="font-semibold text-gray-900 dark:text-white">Performance & Quality <span class="font-normal text-gray-400 text-sm">(25% of score)</span></h3>
+          </div>
+          <div class="ml-11">
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-2">
+              This measures output quality, speed, reliability, and accuracy. Does the tool actually produce good results consistently?
+            </p>
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-3 text-xs text-gray-500 dark:text-gray-400">
+              <strong class="text-gray-700 dark:text-gray-300">Scoring guide:</strong>
+              <ul class="list-disc list-inside mt-1 space-y-0.5">
+                <li><strong>5.0</strong> — Exceptional quality, fast response times, highly reliable with minimal errors</li>
+                <li><strong>4.0–4.9</strong> — High quality outputs, occasional minor issues, generally reliable</li>
+                <li><strong>3.0–3.9</strong> — Acceptable quality but inconsistent or noticeably slower than alternatives</li>
+                <li><strong>2.0–2.9</strong> — Poor output quality, frequent errors, or unreliable service</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Regular Updates note -->
+        <div class="mt-6 p-4 rounded-xl bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-900/20">
+          <p class="text-sm text-blue-700 dark:text-blue-300 flex items-start gap-2">
+            <span class="shrink-0">🔄</span>
+            <span><strong>Regular updates:</strong> We revisit and update reviews as tools evolve. Ratings may change as new versions, features, or pricing changes are released. Every review page includes a "Last reviewed" date so you know how current the information is.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Standards -->
+    <section class="mb-10">
+      <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 sm:p-10">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+          <span>📜</span> Editorial Standards
+        </h2>
+
+        <div class="space-y-6">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center shrink-0 mt-0.5">
+              <span class="text-emerald-600 dark:text-emerald-400 font-bold text-sm">①</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white text-sm mb-1">Hands-On Testing</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Every tool we review is tested firsthand. We create accounts, use the features, and evaluate the experience ourselves. We do not publish reviews based solely on demos, marketing materials, or other reviews.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center shrink-0 mt-0.5">
+              <span class="text-emerald-600 dark:text-emerald-400 font-bold text-sm">②</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white text-sm mb-1">Independence & Objectivity</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">We do not accept payment for reviews, ratings, or placement. No tool can "buy" a higher rating. Affiliate commissions do not influence our scores or recommendations — we earn a commission only if you choose to purchase after reading our honest review.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center shrink-0 mt-0.5">
+              <span class="text-emerald-600 dark:text-emerald-400 font-bold text-sm">③</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white text-sm mb-1">Transparency</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">We clearly disclose when a link is an affiliate link. Our pricing information is researched from official sources, and we note when pricing may have changed. We also publish both pros and cons for every tool — no tool is perfect.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center shrink-0 mt-0.5">
+              <span class="text-emerald-600 dark:text-emerald-400 font-bold text-sm">④</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white text-sm mb-1">Regular Updates</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">AI tools evolve fast. We review our content regularly and update ratings, features, pricing, and recommendations as tools change. If a tool's quality drops or improves significantly, we adjust its rating accordingly.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center shrink-0 mt-0.5">
+              <span class="text-emerald-600 dark:text-emerald-400 font-bold text-sm">⑤</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white text-sm mb-1">Corrections & Feedback</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">If we make a mistake or a tool has significantly changed, we correct the record promptly. We welcome feedback from both users and tool developers via admin@aizest.net.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About the Editor -->
+    <section class="mb-10">
+      <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 sm:p-10">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+          <span>✍️</span> About the Editor
+        </h2>
+        <div class="flex flex-col sm:flex-row items-start gap-5">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#3B82F6] to-[#8B5CF6] flex items-center justify-center text-white text-2xl shrink-0">
+            V
+          </div>
+          <div>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-2">
+              AI Zest is a <strong>one-person project</strong> — researched, written, and maintained by a passionate AI enthusiast and software developer. Every review on this site is based on hands-on testing by a single individual, not a large editorial team. This means every review you read reflects one person's genuine, unbiased experience with the tool.
+            </p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-2">
+              With a background in software development and a deep fascination with AI tools — from LLMs and code generators to image models and automation platforms — the site was built to help others navigate the overwhelming landscape of AI products.
+            </p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              Questions, suggestions, or want to submit a tool for review? Reach out at <a href="mailto:admin@aizest.net" class="text-[#3B82F6] hover:underline">admin@aizest.net</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Methodology -->
+    <section class="mb-10">
+      <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 sm:p-10">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+          <span>⚖️</span> How We Compare Tools
+        </h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+          Our side-by-side comparisons evaluate tools across the same five dimensions above, using consistent criteria for fair comparison. When you use our <a href="/compare" class="text-[#3B82F6] hover:underline">Compare Tool</a>, the data reflects our real assessment of each tool at the time of review.
+        </p>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+          Comparison articles (e.g., "ChatGPT vs Claude vs Gemini") are written based on our hands-on testing of all tools in the comparison. We highlight differences in features, pricing, user experience, and ideal use cases to help you choose the right tool for your specific needs.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+        <span>❓</span> Frequently Asked Questions
+      </h2>
+      <div class="space-y-4">
+        <details class="group rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 overflow-hidden">
+          <summary class="flex items-center justify-between p-4 cursor-pointer text-sm font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+            Are your reviews paid or sponsored?
+            <svg class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-4 pb-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            No. We never accept payment for reviews, ratings, or placement. Affiliate commissions are only earned if you choose to purchase through our links — this never affects our scores or recommendations.
+          </div>
+        </details>
+
+        <details class="group rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 overflow-hidden">
+          <summary class="flex items-center justify-between p-4 cursor-pointer text-sm font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+            How often do you update reviews?
+            <svg class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-4 pb-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            We review our tool coverage quarterly and update individual reviews as tools release major updates or change pricing. We flag reviews that are older than 6 months for priority review. Each review page includes a "Last reviewed" date.
+          </div>
+        </details>
+
+        <details class="group rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 overflow-hidden">
+          <summary class="flex items-center justify-between p-4 cursor-pointer text-sm font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+            Can a tool developer request a review?
+            <svg class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-4 pb-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            Yes. We welcome submissions at <a href="mailto:admin@aizest.net" class="text-[#3B82F6] hover:underline">admin@aizest.net</a>. However, submitting a tool does not guarantee a positive review. All submitted tools go through the same testing and scoring process as tools we discover independently.
+          </div>
+        </details>
+
+        <details class="group rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 overflow-hidden">
+          <summary class="flex items-center justify-between p-4 cursor-pointer text-sm font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+            What if I disagree with a rating?
+            <svg class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-4 pb-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            We respect different perspectives. If you believe our review is inaccurate or outdated, please contact us with specific feedback. We consider all constructive input and update reviews when warranted.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-gradient-to-br from-[#3B82F6]/5 to-[#8B5CF6]/5 dark:from-[#3B82F6]/10 dark:to-[#8B5CF6]/10 p-8 sm:p-10 text-center">
+      <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Start Exploring</h2>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mb-5 max-w-md mx-auto">
+        Ready to find your next AI tool? Browse our curated directory of {tools.length} reviews.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/" class="inline-flex items-center gap-2 btn-primary text-sm px-6 py-2.5">Browse All Tools</a>
+        <a href="/compare" class="inline-flex items-center gap-2 text-sm px-6 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:border-[#3B82F6]/40 transition-colors">Compare Tools</a>
+      </div>
+    </div>
+
+  </div>
+</BaseLayout>

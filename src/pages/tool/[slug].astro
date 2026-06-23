@@ -176,6 +176,15 @@ const breadcrumbJsonLd = JSON.stringify({
           <Content />
         </section>
 
+        <!-- Related Articles -->
+        <div class="not-prose mt-10 p-5 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3 text-sm">📄 Related Articles</h3>
+          <div class="space-y-2">
+            <a href="/compare" class="block text-sm text-[#3B82F6] hover:underline">Compare {name} with similar tools →</a>
+            <a href="/how-we-review" class="block text-sm text-[#3B82F6] hover:underline">How we test and review AI tools →</a>
+          </div>
+        </div>
+
         <!-- VPS Recommendation (for self-hostable/deployable tools) -->
         {needs_vps && (
         <div class="not-prose mt-8 p-5 rounded-xl bg-gradient-to-br from-[#0D9488]/5 to-[#0891B2]/5 dark:from-[#0D9488]/10 dark:to-[#0891B2]/10 border border-gray-200 dark:border-gray-700">

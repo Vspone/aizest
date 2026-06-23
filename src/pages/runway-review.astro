@@ -34,6 +34,54 @@ const breadcrumbJsonLd = JSON.stringify({
   ]
 });
 
+// FAQ JSON-LD
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Runway?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Runway is a cloud-based AI video creation platform that combines generative video models (Gen-3 Alpha) with a full-featured video editor, motion graphics tools, and visual effects. It runs entirely in the browser, meaning you don't need a powerful GPU. It's used by individual creators, marketing teams, and Hollywood studios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Gen-3 Alpha?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gen-3 Alpha is Runway's flagship AI video model that generates 1080p video from text prompts, images, or video references. It produces sharp video with good temporal consistency — objects and characters remain coherent across frames. Key capabilities include text-to-video, image-to-video, video-to-video style transformation, camera control, and multi-frame generation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Runway cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Runway offers Free (5 credits/month, 720p, watermarked), Standard at $12/month (125 credits, 1080p, no watermark), Pro at $28/month (500 credits, priority processing), Unlimited at $76/month (unlimited generations), and Enterprise with custom pricing (up to 4K, API access, SLA). Credits vary by generation type."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Runway better than Sora?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Runway offers a more complete all-in-one platform with built-in video editing tools, while Sora has an edge on pure visual fidelity and photorealism. Runway is more controllable with better editing integration, making it better for actual production workflows. Sora is better for generating stunning standalone clips."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Runway have video editing tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Runway includes a built-in timeline-based editor with trim, cut, and layering capabilities, green screen chroma key, motion tracking, inpainting/outpainting, AI effects (style transfers, depth-of-field, slow-motion interpolation), auto-caption generation, and text overlays. It handles about 80% of common editing tasks for short-form content."
+      }
+    }
+  ]
+});
+
 const title = "Runway Review 2026: Is It the Best AI Video Tool? — AI Zest";
 const description = "Our in-depth Runway review covers Gen-3 Alpha, video editing tools, text-to-video quality, pricing plans, and whether it's the best AI video generation platform in 2026.";
 const canonical = "/runway-review";
@@ -48,6 +96,9 @@ const canonical = "/runway-review";
 >
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">

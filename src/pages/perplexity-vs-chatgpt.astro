@@ -25,6 +25,54 @@ const jsonLd = JSON.stringify({
   }
 });
 
+// FAQ JSON-LD for rich snippets
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the main difference between Perplexity and ChatGPT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Perplexity is built as an AI-powered search engine that finds and synthesizes real-time web information with cited sources you can verify. ChatGPT is a general-purpose AI assistant that handles everything from writing and coding to image generation, analysis, and conversations. They serve fundamentally different primary use cases."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is better for research, Perplexity or ChatGPT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Perplexity is better for research because it provides real-time web answers with in-line citations from authoritative sources. You can verify each claim and drill down into sources. ChatGPT can also browse the web (on Plus/Pro) but its citations are less structured and it's not optimized as a search engine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Perplexity AI free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Perplexity has a generous free tier with unlimited searches and limited Pro searches per day. Perplexity Pro costs $20/month and includes unlimited Pro searches, higher-quality AI models, and file upload capabilities. ChatGPT offers a free tier with GPT-4o access and ChatGPT Plus at $20/month for additional features."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use ChatGPT instead of Perplexity for web research?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can use ChatGPT for web research if you have ChatGPT Plus (browsing feature), but Perplexity is purpose-built for research with superior source attribution, citation management, and follow-up queries. For serious research, Perplexity is more efficient. Many users combine Perplexity for research with ChatGPT for content creation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which tool is better for content creation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ChatGPT is significantly better for content creation. It excels at writing articles, social media posts, marketing copy, email campaigns, and creative content. Perplexity's strength is finding and synthesizing information, not generating polished content. The ideal workflow is using Perplexity for research and ChatGPT for content creation."
+      }
+    }
+  ]
+});
+
 // Breadcrumb JSON-LD
 const breadcrumbJsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -49,6 +97,7 @@ const canonical = "/perplexity-vs-chatgpt";
 >
   <!-- Breadcrumb JSON-LD (separate) -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
   
     <!-- Breadcrumb -->

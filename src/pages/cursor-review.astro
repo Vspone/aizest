@@ -34,6 +34,54 @@ const breadcrumbJsonLd = JSON.stringify({
   ]
 });
 
+// FAQ JSON-LD
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Cursor worth $20 per month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Cursor's Pro tier at $20/month is well worth it for professional developers. With unlimited completions, 500 premium AI requests per month, full Agent mode, and codebase indexing, it typically pays for itself in productivity gains within the first week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Cursor compare to Windsurf and GitHub Copilot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cursor has the best Agent mode and fastest tab completion among the three. Windsurf offers better persistent context with its Flows model and multi-model Arena mode. GitHub Copilot is cheaper at $10/mo but has more limited agent features. Cursor and Copilot both support the full VS Code extension marketplace, while Windsurf uses curated plugins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Cursor's Agent mode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cursor's Agent mode is an autonomous coding assistant that can plan and implement changes across multiple files. Ask it to add a feature and it creates components, updates imports, adds CSS, and persists data — all in one pass. It can also run terminal commands like installing packages and running migrations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Cursor support VS Code extensions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, because Cursor is a VS Code fork, it supports the entire VS Code marketplace — thousands of extensions work out of the box including ESLint, Prettier, GitLens, Docker, Thunder Client, and language-specific extensions for Python, Go, Rust, and more."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who should use Cursor in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cursor is ideal for professional software developers who write production code daily and need reliable, fast AI assistance that integrates with their existing VS Code workflow. It might not be the best choice if you want AI that learns your coding style across sessions (choose Windsurf) or if you're on a tight budget (GitHub Copilot's free or cheaper tiers may suffice)."
+      }
+    }
+  ]
+});
+
 const title = "Cursor Review 2026: Is It Worth $20/mo? — AI Zest";
 const description = "Hands-on Cursor review 2026. We test Agent mode, tab completion, extension ecosystem, and pricing. Find out if Cursor is the best AI code editor for you.";
 const canonical = "/cursor-review";
@@ -48,6 +96,8 @@ const canonical = "/cursor-review";
 >
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">

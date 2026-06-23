@@ -34,6 +34,54 @@ const breadcrumbJsonLd = JSON.stringify({
   ]
 });
 
+// FAQ JSON-LD
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Claude?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude is an AI assistant developed by Anthropic, built on a foundation of 'constitutional AI' that emphasizes helpfulness, honesty, and harmlessness. Claude is available in three model tiers: Claude Opus 4 (flagship), Claude 3.5 Sonnet (balanced workhorse), and Claude 3.5 Haiku (lightweight speedster), accessible via claude.ai, API, and integrations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Claude's 200K context window?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude's 200,000-token context window is enough to process an entire novel in a single prompt. Unlike many competitors, Claude actually uses this context well — it retrieves information from across the entire document accurately, avoiding the 'lost-in-the-middle' problem that affects other AI models."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How good is Claude's writing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude's writing is considered best-in-class for long-form content. Its prose is natural, varied, and appropriately toned, maintaining consistent voice and argument structure over thousands of words. In blind A/B tests, Claude was preferred by editors in 62% of comparisons against GPT-5 and Gemini 2.0 for writing tasks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Claude cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude offers a Free tier (limited Haiku access), Pro at $20/month (full Sonnet and Haiku access), Team at $30/user/month (includes Opus 4 access, higher limits, team knowledge base), and Enterprise with custom pricing (unlimited Opus 4, SSO, SOC 2, custom safety policies)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Claude better than ChatGPT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude excels in writing quality, reasoning depth, and context window utilization, making it ideal for knowledge workers who prioritize accuracy and nuance. However, ChatGPT offers broader multimodal capabilities (image generation, video analysis, audio), real-time web search, and a larger third-party ecosystem. Neither is objectively better — the choice depends on your use case."
+      }
+    }
+  ]
+});
+
 const title = "Claude Review 2026: Is It Still the Best AI Assistant? — AI Zest";
 const description = "Our comprehensive Claude review for 2026. 200K context tested, writing quality evaluated, reasoning benchmarks, safety features, and pricing analysis.";
 const canonical = "/claude-review";
@@ -48,6 +96,9 @@ const canonical = "/claude-review";
 >
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">

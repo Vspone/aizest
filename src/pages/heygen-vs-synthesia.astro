@@ -24,6 +24,54 @@ const jsonLd = JSON.stringify({
   }
 });
 
+// FAQ JSON-LD for rich snippets
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which AI avatar platform is better, HeyGen or Synthesia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HeyGen is better for content creators, marketers, and solo entrepreneurs who need creative flexibility, voice cloning, real-time streaming, and support for 175+ languages at a lower price point. Synthesia is better for enterprise teams needing SOC 2 Type II compliance, 240+ avatars, structured template-based editing, and enterprise-grade reliability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does HeyGen vs Synthesia cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HeyGen plans start at $24/month (Creator), $49/month (Business), and custom Enterprise pricing. Synthesia starts at $22/month (Starter), $59/month (Creator), $99/month (Pro), and custom Enterprise plans. HeyGen offers better value for solo creators, while Synthesia's enterprise features justify its higher tiers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which platform has better avatar quality?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Synthesia offers 240+ avatars with polished, studio-quality appearance. HeyGen has 100+ avatars that feel slightly more natural and expressive in motion. Both offer custom avatar creation. HeyGen has an edge in voice cloning quality and real-time streaming capabilities, while Synthesia excels at avatar variety and consistency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I create AI avatars from my own photos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, both platforms support custom avatar creation. HeyGen offers personalized avatar creation from existing video or photo assets with its Instant Avatar feature. Synthesia also supports custom avatars through their studio recording process. Both require a paid plan for custom avatar creation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI avatar platform supports more languages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HeyGen supports over 175 languages and accents, making it the clear winner for multilingual content creation. Synthesia supports 140+ languages and voices. Both offer extensive language support, but HeyGen's broader coverage and superior voice cloning give it an advantage for global content teams."
+      }
+    }
+  ]
+});
+
 // Breadcrumb JSON-LD
 const breadcrumbJsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -48,6 +96,7 @@ const canonical = "/heygen-vs-synthesia";
 >
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">

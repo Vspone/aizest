@@ -25,6 +25,54 @@ const jsonLd = JSON.stringify({
   }
 });
 
+// FAQ JSON-LD for rich snippets
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which AI image generator has the best image quality?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Midjourney is widely considered to have the best overall artistic quality with its signature painterly aesthetic, rich colors, and dramatic lighting. DALL-E 3 excels at prompt accuracy and text rendering. Stable Diffusion offers the most control through customization but requires more technical expertise to achieve top-tier results."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the main differences between Midjourney, DALL-E 3, and Stable Diffusion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Midjourney produces the most artistic and visually stunning images with a distinctive style. DALL-E 3 follows complex prompts with exceptional accuracy and has the best text rendering. Stable Diffusion is open-source, fully customizable, can run locally on your own hardware, and offers the most control through fine-tuning and community models."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI image generator is best for photorealism?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Midjourney V6 and the latest Stable Diffusion models (SDXL/SD3) both produce excellent photorealistic results. Midjourney has an edge in lighting and composition, while Stable Diffusion offers more control through LoRAs and custom checkpoints. DALL-E 3 is surprisingly good at photorealism in version 3 but doesn't match the specialized outputs of the other two."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Stable Diffusion free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Stable Diffusion is free and open-source. You can download and run it on your own computer with a capable GPU, or use web-based interfaces that offer free tiers. Midjourney requires a paid subscription starting at $10/month. DALL-E 3 is bundled with ChatGPT Plus at $20/month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI image generator is best for commercial use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All three can be used commercially but with different terms. Midjourney grants commercial rights on all paid plans. DALL-E 3's terms allow commercial use through OpenAI's platform. Stable Diffusion's open-source license allows broad commercial use, making it the most flexible option. Always review the latest terms for your specific use case."
+      }
+    }
+  ]
+});
+
 // Breadcrumb JSON-LD
 const breadcrumbJsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -49,6 +97,7 @@ const canonical = "/midjourney-vs-dalle-vs-stable-diffusion";
 >
   <!-- Breadcrumb JSON-LD (separate) -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
   
     <!-- Breadcrumb -->

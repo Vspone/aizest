@@ -38,6 +38,54 @@ const breadcrumbJsonLd = JSON.stringify({
     { "@type": "ListItem", "position": 2, "name": "Best AI Video Generators 2026" }
   ]
 });
+
+// FAQ JSON-LD
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best AI video generator overall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Runway Gen-3 Alpha is the best overall AI video platform in 2026. It offers comprehensive text-to-video generation, video-to-video stylization, inpainting, motion tracking, and professional editing tools — all in one browser-based workspace."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI video generator has the best AI avatars?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Synthesia leads the AI avatar space with over 160 realistic AI presenters across 140+ languages. Type a script, choose an avatar, and get a professional video in minutes without cameras, studios, or actors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a good free AI video generator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, CapCut is a surprisingly powerful free video editor with AI features including auto-captions, text-to-speech, background removal, and AI effects. It rivals premium tools and is ideal for short-form content on TikTok, Instagram Reels, and YouTube Shorts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best AI tool for realistic talking head videos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HeyGen is the best tool for realistic talking head videos with precise lip-sync. Its AI translation preserves your voice and lip movements in 50+ languages, making it ideal for multilingual content, personalized videos, and sales outreach."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI video generator is best for creative effects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pika focuses on creative AI video effects and stylization. Upload an image or video and transform it with unique artistic styles, motion effects, and AI-generated animations — perfect for adding visual flair to social media content."
+      }
+    }
+  ]
+});
 ---
 
 <BaseLayout
@@ -49,6 +97,8 @@ const breadcrumbJsonLd = JSON.stringify({
 >
   <!-- Breadcrumb JSON-LD (separate) -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
   
     <!-- Breadcrumb -->

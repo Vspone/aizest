@@ -25,6 +25,54 @@ const jsonLd = JSON.stringify({
   }
 });
 
+// FAQ JSON-LD for rich snippets
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which AI writing tool is best for marketing copy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jasper is the best choice for marketing copy. It offers the highest quality output with strong brand voice consistency, a deep understanding of marketing frameworks like AIDA and PAS, and a Brand Voice feature that maintains consistency across all content. It's the gold standard for professional marketing teams."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Jasper, Writesonic, and Copy.ai?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jasper focuses on high-quality marketing copy with brand voice consistency and is best for professional marketers. Writesonic offers excellent features at the lowest price, making it the best value option. Copy.ai is designed for workflow-driven content pipelines at scale, with strengths in automation and content operations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI writing tool offers the best value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Writesonic offers the best value with its competitive pricing starting at $12.67/month for the Unlimited plan, which includes 50+ tools, GPT-4 access, and extensive features. Jasper starts at $39/month for the Creator plan, while Copy.ai starts at $36/month. For budget-conscious teams, Writesonic delivers the most features per dollar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can these AI writing tools write long-form content?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all three tools support long-form content creation. Jasper excels at long-form content with its Boss Mode and custom templates for blog posts and articles. Writesonic offers Article Writer and long-form editing capabilities. Copy.ai is stronger at short-form and workflow-based content but can handle long-form with its Chat interface."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which tool has the best integrations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jasper integrates with Surfer SEO, Grammarly, and major CMS platforms like WordPress and HubSpot. Writesonic offers Zapier integration and API access. Copy.ai provides native integrations with HubSpot, Salesforce, and various marketing platforms. Jasper has the deepest integration ecosystem for SEO-focused content teams."
+      }
+    }
+  ]
+});
+
 // Breadcrumb JSON-LD
 const breadcrumbJsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -49,6 +97,7 @@ const canonical = "/jasper-vs-writesonic-vs-copyai";
 >
   <!-- Breadcrumb JSON-LD (separate) -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
   
     <!-- Breadcrumb -->

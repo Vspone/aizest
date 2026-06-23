@@ -25,6 +25,54 @@ const jsonLd = JSON.stringify({
   }
 });
 
+// FAQ JSON-LD for rich snippets
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which AI productivity tool is best for project management?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ClickUp is the best all-in-one project management platform with the most customizable workflows, a generous free plan, and AI features integrated across every view (List, Board, Gantt, Calendar, etc.). Notion AI excels at knowledge management and documentation. Gamma is specialized for AI-powered presentations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Notion AI, ClickUp, and Gamma?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Notion AI embeds intelligence into notes, wikis, and databases — ideal for knowledge management and collaborative documentation. ClickUp brings AI to project management with task automation, smart suggestions, and AI-powered writing across every view. Gamma is purpose-built for creating presentations from prompts with beautiful, polished design."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which tool is best for creating presentations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gamma is the clear winner for presentations. It can turn a simple prompt into a complete, beautifully designed presentation in seconds with slides, images, and layouts. Notion AI can help outline content but lacks presentation features. ClickUp offers dashboard views but no presentation capabilities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI productivity tool is most affordable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ClickUp offers the most generous free plan with unlimited tasks and users. Notion has a solid free plan with limited AI credits. Gamma offers a free tier with limited generations. ClickUp's paid plans start at $7/month, Notion Plus at $10/month, and Gamma Pro at $8/month. ClickUp offers the best value for full project management."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can these tools work together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, many teams use these tools in combination. For example, you might use ClickUp for project management and task tracking, Notion AI for documentation and knowledge management, and Gamma for creating presentation decks. They all offer integrations and API access for building connected workflows."
+      }
+    }
+  ]
+});
+
 // Breadcrumb JSON-LD
 const breadcrumbJsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -49,6 +97,7 @@ const canonical = "/notion-vs-clickup-vs-gamma";
 >
   <!-- Breadcrumb JSON-LD (separate) -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
   
     <!-- Breadcrumb -->

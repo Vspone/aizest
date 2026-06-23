@@ -34,6 +34,54 @@ const breadcrumbJsonLd = JSON.stringify({
   ]
 });
 
+// FAQ JSON-LD
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is ElevenLabs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ElevenLabs is an AI speech synthesis platform that offers text-to-speech, voice cloning, speech-to-speech conversion, AI dubbing, and sound effects generation. It supports 32 languages with native-sounding accents, and its latest Turbo v3 model delivers sub-200ms latency for real-time applications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How good is ElevenLabs voice cloning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ElevenLabs' voice cloning is the best in the industry. Professional Voice Cloning can capture not just pitch and timbre but also subtle speech patterns, breathing, and emotional inflections from as little as 1 minute of reference audio. Instant Voice Cloning 2.0 can generate a usable clone from just 30 seconds of clean audio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does ElevenLabs support multiple languages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, ElevenLabs supports 32 languages grouped into High-Fidelity (English, Spanish, French, German, Japanese, Mandarin, Arabic, Hindi, Portuguese, Korean) and Standard tiers. High-Fidelity languages benefit from dedicated models that capture regional accents and dialects. AI Dubbing also allows translating and re-voicing videos in different languages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does ElevenLabs cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ElevenLabs offers a Free tier (10,000 characters/month), Starter at $5/month (30,000 chars), Creator at $22/month (100,000 chars), Pro at $99/month (500,000 chars), and Enterprise with custom pricing. Each plan includes different numbers of professional voice cloning slots."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is ElevenLabs worth it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ElevenLabs remains the best AI voice generator in 2026 for any use case where voice quality is paramount — professional content, audiobooks, customer-facing applications. However, pricing is a serious consideration for volume users. The Creator plan ($22/month) works well for regular content creators, but heavy users may find the Pro plan expensive."
+      }
+    }
+  ]
+});
+
 const title = "ElevenLabs Review 2026: Best AI Voice Generator? — AI Zest";
 const description = "Our detailed ElevenLabs review covers voice cloning quality, multilingual support, API capabilities, pricing plans, and whether it remains the best AI voice generator in 2026.";
 const canonical = "/elevenlabs-review";
@@ -48,6 +96,9 @@ const canonical = "/elevenlabs-review";
 >
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">

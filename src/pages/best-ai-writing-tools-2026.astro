@@ -1,9 +1,57 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best AI writing tool overall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ChatGPT by OpenAI is the most versatile AI writing tool available, handling everything from blog posts and emails to code and creative writing. With a 4.8/5 rating, it's the best all-round choice for most users."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI writing tool is best for marketing copy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jasper AI is the best AI writing tool for marketing copy, social media content, and blog posts. Its brand voice feature ensures consistency across all your content, making it ideal for marketing teams and bloggers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a free AI writing tool that's good?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, ChatGPT offers a strong free tier, and several other tools including Copy.ai and Writesonic have free plans. Grammarly also has a free version that provides excellent grammar checking, tone suggestions, and clarity improvements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI writing tool is best for editing and proofreading?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Grammarly is the best AI writing tool for editing and proofreading. It goes beyond basic grammar checking to offer tone suggestions, clarity improvements, and rewriting capabilities — perfect for professionals and students alike."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best value AI writing tool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Writesonic offers the best value for money at $16/mo, providing powerful AI writing features at an affordable price point. For budget-conscious creators and small businesses, it's an excellent choice."
+      }
+    }
+  ]
+});
 ---
 
 <BaseLayout title="Best AI Writing Tools 2026 — AI Zest">
+  <script type="application/ld+json" set:html={faqJsonLd} />
   <ArticleWrap>
 
 <h1>Best AI Writing Tools 2026</h1>

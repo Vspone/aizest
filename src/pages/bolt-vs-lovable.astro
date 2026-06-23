@@ -34,6 +34,54 @@ const breadcrumbJsonLd = JSON.stringify({
   ]
 });
 
+// FAQ JSON-LD
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Bolt.new?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bolt.new, built by StackBlitz, is a browser-based full-stack development environment powered by AI. It operates in your browser via WebContainers and generates complete full-stack web applications from a single prompt. It supports React, Vue, Svelte, Next.js, and many other frameworks, making it ideal for developers who value speed and code transparency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Lovable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lovable (formerly GPT Engineer) is a beginner-friendly AI app builder with deep, native Supabase integration. It features a visual editor for drag-and-drop UI component management, structured planning where AI first creates a plan before generating code, and one-click backend scaffolding with authentication, database tables, and Row-Level Security policies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is faster: Bolt.new or Lovable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bolt.new is noticeably faster for raw generation speed. Thanks to WebContainers running everything in-browser with no cold starts, Bolt can render a full SaaS landing page in under 12 seconds. Lovable takes longer because it first generates a structured plan before building the page in stages, typically around 25 seconds for similar tasks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is better for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lovable is significantly better for beginners and non-technical users. Its visual editor and guided planning make it accessible immediately — users can drag components, tweak layouts visually, and prompt the AI in natural language. Bolt.new's code-oriented interface is more intimidating for non-developers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which has better Supabase integration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lovable has superior Supabase integration with one-click backend scaffolding. A single prompt can add authentication, database tables, and RLS policies automatically. Bolt.new requires manual Supabase project setup, environment variable configuration, and code scaffolding, giving more control but requiring more effort."
+      }
+    }
+  ]
+});
+
 const title = "Bolt vs Lovable 2026: Which AI App Builder Is Better? — AI Zest";
 const description = "We tested Bolt.new and Lovable head-to-head on speed, ease of use, Supabase integration, and output quality. Find out which AI app builder wins in 2026.";
 const canonical = "/bolt-vs-lovable";
@@ -48,6 +96,9 @@ const canonical = "/bolt-vs-lovable";
 >
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">

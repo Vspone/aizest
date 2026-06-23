@@ -34,6 +34,54 @@ const breadcrumbJsonLd = JSON.stringify({
   ]
 });
 
+// FAQ JSON-LD
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is ChatGPT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ChatGPT is OpenAI's conversational AI assistant, powered by its family of GPT models. In 2026, ChatGPT is a full-featured AI platform with text generation, image analysis, image generation (DALL-E 4), voice conversations (Advanced Voice Mode), real-time web search, file upload and analysis, and a growing ecosystem of third-party integrations called GPTs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's new in ChatGPT 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The biggest change is GPT-5, which offers significant improvements in reasoning quality, faster response times, better instruction following, improved factual accuracy, a 128K token context window, and native tool use. The free tier has also been revamped with GPT-4o access and reasonable rate limits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is ChatGPT free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, ChatGPT has a generous free tier that includes GPT-4o access with reasonable rate limits, web browsing, file uploads, basic voice conversations, and GPT store access. It's good enough for casual research, light writing assistance, simple coding help, and data analysis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does ChatGPT Plus cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ChatGPT Plus costs $20/month and includes GPT-5 access with higher limits, DALL-E 4 image generation, Advanced Voice Mode, custom GPTs, and higher file upload limits. There's also a Pro plan at $200/month for unlimited access and a Team plan at $30/user/month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is ChatGPT better than Claude?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ChatGPT with GPT-5 is more versatile than Claude, offering broader multimodal capabilities, integrated search, and a larger third-party ecosystem. However, Claude still has an edge in writing quality for long-form nuanced prose and has a larger 200K context window with better utilization. The choice depends on your specific needs."
+      }
+    }
+  ]
+});
+
 const title = "ChatGPT Review 2026: What's New and Is It Worth It? — AI Zest";
 const description = "Our 2026 ChatGPT review covers GPT-5 performance, free tier capabilities, multimodal features, integrated search, and the growing third-party integration ecosystem.";
 const canonical = "/chatgpt-review";
@@ -48,6 +96,9 @@ const canonical = "/chatgpt-review";
 >
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">

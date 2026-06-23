@@ -24,6 +24,54 @@ const jsonLd = JSON.stringify({
   }
 });
 
+// FAQ JSON-LD for rich snippets
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which AI video generator is better, Runway or Kling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kling is better for raw generation quality, motion physics, realistic character movement, and image-to-video output. Runway is better for comprehensive post-generation editing, reliable text-to-video, fast generation speeds, and a mature production pipeline with features like video-to-video and motion brush. Many professionals use both."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Runway vs Kling cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Runway offers a free tier with limited credits, then $15/month (Standard), $35/month (Pro), and custom Enterprise plans. Kling offers a free tier and competitive paid pricing. Kling is generally more affordable for generation volume, while Runway's pricing reflects its broader editing toolset."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which platform has better video quality?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kling has the edge in motion physics and image-to-video quality, producing smoother, more realistic character movements. Runway's Gen-3 Alpha and Turbo models produce excellent video quality with better prompt adherence for text-to-video. Kling excels at realism in motion; Runway excels at creative interpretation of prompts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I edit videos after generation in Runway and Kling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Runway offers a comprehensive browser-based editor with video-to-video, inpainting, outpainting, motion brush, and green screen features, allowing extensive post-generation editing. Kling has more limited editing capabilities and is primarily focused on generation. Runway is the clear choice if you need an all-in-one video creation and editing platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI video generator is best for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Runway is more beginner-friendly due to its intuitive interface, comprehensive editing tools, and extensive tutorials. Kling's interface is simpler for pure generation but lacks the editing ecosystem that makes Runway a full production platform. For quick generations, both are accessible, but Runway offers more room to grow."
+      }
+    }
+  ]
+});
+
 // Breadcrumb JSON-LD
 const breadcrumbJsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -48,6 +96,7 @@ const canonical = "/runway-vs-kling";
 >
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">

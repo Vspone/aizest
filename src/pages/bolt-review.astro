@@ -34,6 +34,54 @@ const breadcrumbJsonLd = JSON.stringify({
   ]
 });
 
+// FAQ JSON-LD
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Bolt.new?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bolt.new is an AI-powered web app builder developed by StackBlitz. Unlike traditional AI coding assistants that work inside an IDE, Bolt.new operates in your browser — you describe what you want to build in natural language, and it generates a complete, runnable full-stack web application with frontend UI, backend API routes, database schema, authentication, and deployment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast is Bolt.new for building apps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Speed is Bolt.new's superpower. A full-stack app with authentication, a database, and multiple pages generates in 60-90 seconds. Incremental changes like 'add a blog section' or 'make the navbar sticky' take 10-30 seconds. For comparison, manually building the same app would take hours for an experienced developer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Bolt.new support Supabase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Bolt.new has deep Supabase integration. When you describe a data model, Bolt.new creates the Supabase project, generates the PostgreSQL schema with proper foreign keys and indexes, creates Row Level Security (RLS) policies based on your access patterns, writes Supabase client queries with error handling, and sets up real-time subscriptions if needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are Bolt.new's pricing plans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bolt.new offers a Free tier (100 prompts/month), Pro at $20/month (500 prompts/month, private apps, advanced AI model), Teams at $50/month (2,000 prompts shared across team), and Enterprise with custom pricing (self-hosted option, dedicated AI model, SSO)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Bolt.new good for production use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bolt.new is excellent for prototyping and rapid development, but generated code should be reviewed before production use. Simple CRUD apps come out excellent, medium-complexity apps are good but may miss edge cases, and complex apps require manual refinement. It's best thought of as a prototyping and acceleration tool, not a production coding assistant."
+      }
+    }
+  ]
+});
+
 const title = "Bolt.new Review 2026: Best AI App Builder? — AI Zest";
 const description = "Our hands-on Bolt.new review covers full-stack generation speed, AI code quality, Supabase integration, pricing tiers, and whether it's the best AI-powered app builder in 2026.";
 const canonical = "/bolt-review";
@@ -48,6 +96,9 @@ const canonical = "/bolt-review";
 >
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">

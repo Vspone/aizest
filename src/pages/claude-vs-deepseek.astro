@@ -24,6 +24,54 @@ const jsonLd = JSON.stringify({
   }
 });
 
+// FAQ JSON-LD for rich snippets
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the main difference between Claude and DeepSeek?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude (by Anthropic) focuses on safety, high-quality reasoning, and thoughtful responses with a 200K token context window. DeepSeek (by DeepSeek AI) offers open-weight models with GPT-4-class performance at drastically lower API pricing — roughly $0.28 per million tokens vs Claude's $15 per million tokens, a 50x difference."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is DeepSeek better than Claude for coding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DeepSeek V4 matches or beats Claude on many coding benchmarks, especially for algorithmic tasks and competitive programming. Claude has stronger reasoning for complex software architecture decisions. For pure coding speed and cost, DeepSeek is compelling; for enterprise-grade code quality and safety, Claude has advantages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is DeepSeek safe to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DeepSeek is developed by a Chinese AI company, which raises data privacy and security considerations for enterprise use. However, DeepSeek V4 is open-weight, meaning you can self-host the model to maintain full data control. Claude from Anthropic is generally considered more aligned with Western privacy standards and enterprise compliance requirements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI assistant is more affordable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DeepSeek is dramatically more affordable. Its web chat is free, and API pricing is about $0.28 per million tokens. Claude Opus costs $15 per million tokens for API access, and Claude Pro is $20/month. DeepSeek's 50x cost advantage makes it ideal for high-volume applications and cost-sensitive projects."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which has a larger context window, Claude or DeepSeek?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude offers a 200K token context window, while DeepSeek V4 provides a 128K token context window. Claude's larger context window is better for analyzing very long documents, entire codebases, or extended conversations. Both offer substantial context capacity that covers most practical use cases."
+      }
+    }
+  ]
+});
+
 // Breadcrumb JSON-LD
 const breadcrumbJsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -48,6 +96,7 @@ const canonical = "/claude-vs-deepseek";
 >
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">

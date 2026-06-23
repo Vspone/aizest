@@ -34,6 +34,54 @@ const breadcrumbJsonLd = JSON.stringify({
   ]
 });
 
+// FAQ JSON-LD
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Midjourney?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Midjourney is an AI-powered image generation platform that creates stunning visuals from text descriptions. Unlike most competitors, Midjourney operates through Discord — you type prompts in a Discord server and the bot returns generated images. Midjourney V7, released in early 2026, introduces a completely new model architecture with improved prompt adherence and the sref (style reference) system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's new in Midjourney V7?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Midjourney V7 is a ground-up rebuild of the model architecture. Key improvements include dramatically better prompt adherence (faithfully rendering complex multi-element scenes), better anatomy (hands, faces, body proportions), enhanced texture rendering, improved lighting and shadows, and about 30% faster generation speeds compared to V6."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Midjourney cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Midjourney offers Basic at $10/month (3.3 hours fast GPU), Standard at $30/month (15 hours fast GPU, unlimited relaxed generation, stealth mode), Pro at $60/month (30 hours fast GPU, priority queue, concurrent jobs), and Mega at $120/month (60 hours fast GPU, maximum concurrent jobs). All plans include a commercial license."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Midjourney better than DALL-E?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Midjourney V7 produces superior artistic quality and has better style control with its sref and cref system. However, DALL-E 4 offers better photorealism, superior human anatomy, excellent prompt adherence, and a web-based interface included with ChatGPT Plus at $20/month. For most creative professionals, Midjourney is better for artistic work, while DALL-E is better for photorealistic scenes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Midjourney have a web interface?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, Midjourney operates exclusively through Discord. There is no native web app or desktop client. This is one of the most controversial aspects of the platform — some users love the community aspect of Discord, while others find it a significant barrier to entry. Midjourney has added a personal gallery web app and DM support, but the core generation workflow remains Discord-dependent."
+      }
+    }
+  ]
+});
+
 const title = "Midjourney Review 2026: Is It Still Worth It? — AI Zest";
 const description = "Our 2026 Midjourney review tests V7 model quality, artistic output, sref styling features, and Discord interface. Is Midjourney still the king of AI image generation?";
 const canonical = "/midjourney-review";
@@ -48,6 +96,9 @@ const canonical = "/midjourney-review";
 >
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">

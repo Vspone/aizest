@@ -24,6 +24,54 @@ const jsonLd = JSON.stringify({
   }
 });
 
+// FAQ JSON-LD for rich snippets
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which AI code editor is better, Cursor or Windsurf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cursor is better for professional developers who need a mature, battle-tested AI code editor with deep VS Code extension compatibility and a powerful Agent mode for multi-file changes. Windsurf is better for developers who want persistent AI context through its Cascade Flows model and faster experimentation with Arena mode."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Cursor vs Windsurf cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both Cursor and Windsurf are priced at $20/month for Pro plans. Cursor offers a free Hobby tier and $40/user/month for Business. Windsurf offers a free tier, $20/month Pro, $200/month Max, and $40/user/month for Teams. As of March 2026, Windsurf matched Cursor's Pro pricing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use VS Code extensions with Cursor and Windsurf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cursor has full compatibility with the entire VS Code marketplace, giving you access to thousands of extensions. Windsurf has over 40 built-in plugins but also supports VS Code extensions, though not as comprehensively as Cursor. If you rely heavily on specific VS Code extensions, Cursor is the safer choice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Windsurf's Cascade Flows feature?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cascade Flows is Windsurf's context persistence model. Instead of treating each interaction separately, Cascade maintains persistent context about what you've been working on throughout a session. It remembers your coding style, preferences, and project patterns, theoretically getting better the more you use it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI code editor is best for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Windsurf might be slightly more beginner-friendly due to its Cascade Flows context model and Arena mode for comparing AI model outputs. However, both tools are VS Code-based, so if you're familiar with VS Code, either will feel natural. Cursor's mature Agent mode is powerful once you learn it."
+      }
+    }
+  ]
+});
+
 // Breadcrumb JSON-LD
 const breadcrumbJsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -48,6 +96,7 @@ const canonical = "/cursor-vs-windsurf";
 >
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">

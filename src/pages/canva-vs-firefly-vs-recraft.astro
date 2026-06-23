@@ -25,6 +25,54 @@ const jsonLd = JSON.stringify({
   }
 });
 
+// FAQ JSON-LD for rich snippets
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which AI design tool is best for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Canva AI is the best choice for beginners. Its intuitive drag-and-drop interface, massive template library of 600,000+ templates, and accessible AI features like Magic Design make it easy to create professional designs without any design experience. Adobe Firefly requires familiarity with Creative Cloud tools, and Recraft has a steeper learning curve for its vector capabilities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Canva AI, Adobe Firefly, and Recraft?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Canva AI is an all-in-one design platform with AI features baked into a template ecosystem, ideal for social media and marketing content. Adobe Firefly is a generative AI engine integrated into Creative Cloud, best for professionals who need commercial-grade AI generation. Recraft specializes in vector graphics (SVG output) and brand-consistent design systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Adobe Firefly free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Adobe Firefly offers free generations up to a daily limit with watermarked outputs. Full access requires a Creative Cloud subscription starting at $59.99/month or a Firefly-specific plan. Canva AI has a generous free tier, while Recraft offers a free plan with limited monthly credits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which tool is best for vector graphics and brand consistency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Recraft is the best tool for vector graphics and brand consistency. It's the only AI design tool that outputs SVG files natively, making it ideal for logos and scalable vector assets. Its brand style control features allow you to maintain consistent brand colors, fonts, and design language across all assets."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use these AI design tools for commercial projects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all three tools offer commercial usage rights on paid plans. Canva AI includes commercial use with Pro plans ($13/month). Adobe Firefly is legally trained and commercially safe for marketing and content creation. Recraft's paid plans include commercial licensing. Always review the specific terms for your use case."
+      }
+    }
+  ]
+});
+
 // Breadcrumb JSON-LD
 const breadcrumbJsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -49,6 +97,7 @@ const canonical = "/canva-vs-firefly-vs-recraft";
 >
   <!-- Breadcrumb JSON-LD (separate) -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
   <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">

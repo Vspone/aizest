@@ -34,6 +34,54 @@ const breadcrumbJsonLd = JSON.stringify({
   ]
 });
 
+// FAQ JSON-LD
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Canva?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Canva is an online design and visual communication platform that started as a simple drag-and-drop design tool and has grown into a comprehensive suite including graphic design, presentations, document creation, video editing, website building, and print services. With over 100 million monthly active users in 2026, it's the most widely used design platform globally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Canva Magic Studio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Magic Studio is Canva's AI suite that includes Magic Design (AI generates complete templates from prompts), Magic Eraser, Magic Expand, Magic Morph, Magic Write (AI copywriting), Magic Video (AI-generated short clips), and Magic Translate (one-click multilingual content adaptation). These AI tools are integrated directly into the editing interface."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Canva AI free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Canva's Free tier includes basic AI features with limited Magic Media credits (~50 credits/month). Pro users get approximately 500 Magic Media credits per month, and Teams users get 500 credits per user per month. Additional credits can be purchased on any plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Canva Pro cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Canva Pro costs $13/month ($10/month if billed annually). It includes 100M+ stock assets, 1TB storage, full Magic Studio AI features, brand kits, background removal, and is for individual users. Teams costs $13/user/month ($10/user/month annually) and adds collaboration features."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Canva good for team collaboration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Canva Teams includes real-time editing with multiple team members working simultaneously, brand templates and kits for centralized assets, design review and approval workflows, content scheduling for social media, shared asset libraries, and advanced analytics. It's a compelling alternative to Adobe's ecosystem at a fraction of the cost."
+      }
+    }
+  ]
+});
+
 const title = "Canva Review 2026: Is Canva AI Worth It? — AI Zest";
 const description = "Our comprehensive Canva review covers Magic Studio AI features, team collaboration tools, pricing plans, and whether the premium tiers deliver real value for designers and businesses in 2026.";
 const canonical = "/canva-review";
@@ -48,6 +96,9 @@ const canonical = "/canva-review";
 >
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">

@@ -25,6 +25,54 @@ const jsonLd = JSON.stringify({
   }
 });
 
+// FAQ JSON-LD for rich snippets
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which AI assistant is best for coding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ChatGPT is generally considered the best for coding due to its deep code understanding, broad language support, and ability to debug complex problems. Claude also excels at architectural decisions and code review. Gemini is competent but typically trails behind ChatGPT and Claude for complex programming tasks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the key differences between ChatGPT, Claude, and Gemini?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ChatGPT is the most versatile all-rounder with the widest capability set including web browsing, DALL-E image generation, and code execution. Claude excels at creative writing, long document analysis (200K token context), and thoughtful reasoning with strong safety alignment. Gemini offers native multimodal processing from the ground up and deep integration with Google's ecosystem (Gmail, Docs, Drive)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI assistant has the best free tier?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ChatGPT offers a generous free tier with GPT-4o access, web browsing, and file uploads. Claude provides free access to its Sonnet model with message limits. Gemini offers free access to Gemini 2.0 Pro with Google ecosystem integration. For free users, Gemini's integration with Google services gives it a unique advantage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Claude better than ChatGPT for creative writing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many users find Claude superior for creative writing because its outputs tend to be more nuanced, natural, and less formulaic. Claude produces thoughtful, well-structured prose with deeper reasoning. ChatGPT is more versatile and can write in many styles but can feel more formulaic. The choice often comes down to personal preference."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which AI assistant offers the best value for money?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ChatGPT Plus at $20/month offers the broadest feature set. Claude Pro at $20/month provides excellent writing quality and a 200K context window. Gemini Advanced at $19.99/month comes bundled with Google One and 2TB cloud storage. For most users, ChatGPT Plus offers the best overall value due to its versatility."
+      }
+    }
+  ]
+});
+
 // Breadcrumb JSON-LD
 const breadcrumbJsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -45,6 +93,7 @@ const breadcrumbJsonLd = JSON.stringify({
 >
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
   
     

@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects
+# Redirect /sitemap.xml to the actual sitemap index
+/sitemap.xml /sitemap-index.xml 301

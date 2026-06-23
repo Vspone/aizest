@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 const title = "Best AI Design Tools 2026 — AI Zest";
 const description = "We tested the top AI design platforms in 2026. Compare Canva AI, Adobe Firefly, Figma AI, Looka, and Uizard with detailed reviews, ratings, and pricing.";
@@ -121,31 +122,46 @@ const breadcrumbJsonLd = JSON.stringify({
 <p><strong>Rating: 4.6/5</strong></p>
 <p>Canva AI is the most accessible all-in-one design platform, making professional design available to everyone. Its AI features — Magic Design (generates complete designs from text), Magic Eraser (removes objects from images), AI image generation, Magic Write (AI copywriting), and Brand Kit (maintains brand consistency) — are built into an intuitive drag-and-drop interface backed by a library of over 250,000 templates. Whether you need social media graphics, presentations, flyers, or videos, Canva AI handles it all with minimal effort.</p>
 <p><strong>Best for:</strong> Non-designers, social media content, quick designs<br/><strong>Pricing:</strong> Free / $13/mo</p>
-<p><a href="/tool/canva" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/canva" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="canva" />
+  </p>
 
 <h2>2. Adobe Firefly — Best for Creative Cloud Professionals</h2>
 <p><strong>Rating: 4.3/5</strong></p>
 <p>Adobe Firefly is Adobe's family of generative AI models, designed with commercial safety as a core principle — trained on licensed content like Adobe Stock. Key features include text-to-image generation, generative fill (seamlessly extend or modify images), text effects (apply styles to text), recolor vectors, and 3D-to-image conversion. Firefly is deeply integrated with Creative Cloud apps like Photoshop, Illustrator, and Express, making it the natural choice for professional designers already in the Adobe ecosystem.</p>
 <p><strong>Best for:</strong> Professional designers in the Adobe ecosystem<br/><strong>Pricing:</strong> Free / $4.99/mo</p>
-<p><a href="/tool/adobe-firefly" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/adobe-firefly" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="adobe-firefly" />
+  </p>
 
 <h2>3. Figma AI — Best for UI/UX Design</h2>
 <p><strong>Rating: 4.6/5</strong></p>
 <p>Figma AI brings artificial intelligence directly into the industry-standard interface design tool. It can generate complete UI layouts from text prompts, create and suggest design system components, auto-name layers, and generate realistic placeholder content. Built on top of Figma's powerful collaboration features — real-time multiplayer editing, commenting, and version history — Figma AI makes it faster than ever to go from concept to polished interface design without leaving your workspace.</p>
 <p><strong>Best for:</strong> UI/UX designers and product teams<br/><strong>Pricing:</strong> Free / $12/mo</p>
-<p><a href="/tool/figma-ai" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/figma-ai" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="figma-ai" />
+  </p>
 
 <h2>4. Looka — Best for Logo and Brand Identity</h2>
 <p><strong>Rating: 4.3/5</strong></p>
 <p>Looka (formerly Logojoy) is a specialized AI-powered platform for logo design and brand identity creation. You start by entering your company name and selecting design preferences, and Looka's AI generates hundreds of logo variations in seconds. From there, you can refine colors, fonts, icons, and layouts to create a professional brand identity that includes social media assets, business card designs, and brand guidelines — all without hiring a designer.</p>
 <p><strong>Best for:</strong> Startups needing a logo and brand identity fast<br/><strong>Pricing:</strong> From $20</p>
-<p><a href="/tool/looka" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/looka" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="looka" />
+  </p>
 
 <h2>5. Uizard — Best for Rapid Prototyping</h2>
 <p><strong>Rating: 4.2/5</strong></p>
 <p>Uizard is an AI-powered prototyping tool that turns text prompts, wireframes, and even hand-drawn sketches into interactive mockups. Describe your app or website in natural language, or upload a photo of a sketch on paper, and Uizard generates a digital, clickable prototype within minutes. It supports collaboration, theme customization, and export to developer handoff, making it ideal for early-stage product design where speed matters more than pixel-perfection.</p>
 <p><strong>Best for:</strong> Rapid prototyping and wireframing<br/><strong>Pricing:</strong> Free / $25/mo</p>
-<p><a href="/tool/uizard" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/uizard" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="uizard" />
+  </p>
 
 <h2>Quick Comparison</h2>
 <table>

@@ -13,6 +13,14 @@ const { tool } = Astro.props;
 const { Content } = await render(tool);
 const { name, slug, description, website, pricing, affiliate_url, rating, features, pricing_tiers, pros, cons, category, needs_vps } = tool.data;
 
+// Determine best CTA text based on pricing
+function ctaText(p: string): string {
+  const lower = p.toLowerCase();
+  if (lower.includes('free')) return 'Try Free';
+  if (lower.includes('trial')) return 'Start Free Trial';
+  return 'Get Started';
+}
+
 const categoryLabels: Record<string, string> = {
   writing: 'Writing & Content', image: 'Image Generation', video: 'Video Creation',
   audio: 'Audio & Voice', coding: 'Coding & Development', productivity: 'Productivity',
@@ -117,7 +125,7 @@ const breadcrumbJsonLd = JSON.stringify({
           Ready to try {name}?
         </p>
         <a href={affiliate_url} target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-auto px-8 py-3">
-          Visit {name} →
+          {ctaText(pricing)} →
         </a>
         <p class="text-xs text-gray-500 mt-2">Affiliate link. We may earn a commission.</p>
       </div>
@@ -190,9 +198,9 @@ const breadcrumbJsonLd = JSON.stringify({
         
         {affiliate_url && (
           <div class="card p-4 sm:p-5">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Get Started</h3>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-3">{ctaText(pricing)}</h3>
             <a href={affiliate_url} target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-center mb-2">
-              Visit Website →
+              {ctaText(pricing)} →
             </a>
             <p class="text-xs text-gray-500 text-center">{pricing}</p>
           </div>

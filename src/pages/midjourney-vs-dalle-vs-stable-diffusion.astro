@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 // Article JSON-LD
 const jsonLd = JSON.stringify({
@@ -153,6 +154,14 @@ const canonical = "/midjourney-vs-dalle-vs-stable-diffusion";
 <p>There's no single "best" AI image generator — the right choice depends entirely on your use case. For most beginners and marketers, <strong>DALL-E 3</strong> is the easiest path to great results. For creative professionals who judge by visual quality, <strong>Midjourney</strong> remains the gold standard. For power users who want ultimate control and zero ongoing costs, <strong>Stable Diffusion</strong> is the only real option.</p>
 
 <p>The good news: DALL-E 3 (via ChatGPT Free) and Stable Diffusion (self-hosted) are both available for free, so you can try before you commit. Many creators use two or all three — each has strengths that complement the others.</p>
+
+
+<div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm font-medium text-gray-900 dark:text-white mb-4">Ready to try them?</p>
+  <div class="flex flex-wrap items-center gap-3">
+    <AffiliateBtn slug="midjourney" /> <AffiliateBtn slug="dalle" /> <AffiliateBtn slug="stable-diffusion" />
+  </div>
+</div>
 
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 

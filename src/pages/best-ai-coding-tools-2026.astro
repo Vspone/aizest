@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 const title = "Best AI Coding Tools 2026 — AI Zest";
 const description = "We tested the top AI coding assistants in 2026. Compare Claude Code, GitHub Copilot, Cursor, Replit, and v0.dev with detailed reviews, ratings, and pricing.";
@@ -121,31 +122,46 @@ const breadcrumbJsonLd = JSON.stringify({
 <p><strong>Rating: 4.7/5</strong></p>
 <p>Cursor is a purpose-built AI code editor that goes far beyond simple autocomplete. It understands your entire codebase, lets you edit multiple files at once with natural language, and features a powerful Composer mode that can implement complex features across your project. Built on VS Code, it integrates seamlessly with existing extensions and workflows while adding deep AI capabilities that make it feel like pair programming with a senior engineer.</p>
 <p><strong>Best for:</strong> Professional developers, complex projects, multi-file refactoring<br/><strong>Pricing:</strong> Free / $20/mo</p>
-<p><a href="/tool/cursor" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/cursor" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="cursor" />
+  </p>
 
 <h2>2. Claude Code — Best Agentic Coding Assistant</h2>
 <p><strong>Rating: 4.6/5</strong></p>
 <p>Claude Code by Anthropic brings powerful agentic coding directly to your terminal. Unlike IDE plugins that wait for prompts, Claude Code can autonomously explore your codebase, plan implementations, write tests, fix bugs, and run commands. It excels at complex multi-step tasks like setting up new projects, refactoring large codebases, and debugging across multiple files — all through natural language conversation in the terminal.</p>
 <p><strong>Best for:</strong> Complex multi-step tasks, terminal-native workflows, autonomous coding<br/><strong>Pricing:</strong> Pay-per-use / Subscription available</p>
-<p><a href="/tool/claude-code" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/claude-code" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="claude-code" />
+  </p>
 
 <h2>3. GitHub Copilot — Best IDE Integration</h2>
 <p><strong>Rating: 4.5/5</strong></p>
 <p>GitHub Copilot remains the most widely adopted AI coding assistant, integrated directly into VS Code, JetBrains, Neovim, and other major IDEs. Its Copilot Chat feature provides contextual assistance, code explanations, and debugging help without leaving your editor. With powerful autocomplete that learns your coding patterns and supports hundreds of languages, Copilot is the go-to choice for developers who want AI help without switching tools.</p>
 <p><strong>Best for:</strong> Daily coding, multi-language support, team adoption<br/><strong>Pricing:</strong> Free / $10/mo individual / $19/mo business</p>
-<p><a href="/tool/copilot" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/copilot" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="copilot" />
+  </p>
 
 <h2>4. v0.dev — Best for UI Component Generation</h2>
 <p><strong>Rating: 4.4/5</strong></p>
 <p>v0.dev by Vercel is a specialized AI tool for generating production-ready UI components from natural language descriptions. Describe what you want — a pricing table, dashboard layout, or sign-up form — and v0 generates clean React/Next.js code with Tailwind CSS styling. It's particularly powerful for frontend developers who want to rapidly prototype interfaces, generate responsive layouts, and iterate on design ideas in real time.</p>
 <p><strong>Best for:</strong> Frontend developers, UI prototyping, React/Next.js projects<br/><strong>Pricing:</strong> Free / $20/mo</p>
-<p><a href="/tool/v0-dev" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/v0-dev" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="v0-dev" />
+  </p>
 
 <h2>5. Replit — Best Cloud-Based AI Coding</h2>
 <p><strong>Rating: 4.3/5</strong></p>
 <p>Replit is a complete cloud development environment with built-in AI coding assistance. Its AI Agent can build entire applications from a single prompt — generating code, setting up the environment, configuring dependencies, and even deploying. The collaborative features let multiple developers work in the same environment in real time, making it ideal for teams, education, and rapid prototyping.</p>
 <p><strong>Best for:</strong> Beginners, rapid prototyping, collaborative coding, education<br/><strong>Pricing:</strong> Free / $25/mo</p>
-<p><a href="/tool/replit" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/replit" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="replit" />
+  </p>
 
 <h2>Quick Comparison</h2>
 <table>

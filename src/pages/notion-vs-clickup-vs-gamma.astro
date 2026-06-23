@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 // Article JSON-LD
 const jsonLd = JSON.stringify({
@@ -152,6 +153,14 @@ const canonical = "/notion-vs-clickup-vs-gamma";
 <p>These three tools serve fundamentally different productivity needs, though their paths cross in AI-powered collaboration. <strong>Notion AI</strong> is the best choice for knowledge management teams who want AI woven into their notes and docs. <strong>ClickUp</strong> is the powerhouse for project-centric teams who need customizable workflows and generous free features. <strong>Gamma</strong> is the specialist for anyone who needs beautiful, AI-generated presentations fast.</p>
 
 <p>If you're a Notion power user, the $10/mo AI add-on is transformative. If you're starting fresh and need a project management hub, ClickUp's free plan is unbeatable. If presentations are your pain point, Gamma will save you hours every week.</p>
+
+
+<div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm font-medium text-gray-900 dark:text-white mb-4">Ready to try them?</p>
+  <div class="flex flex-wrap items-center gap-3">
+    <AffiliateBtn slug="notion-ai" /> <AffiliateBtn slug="clickup" /> <AffiliateBtn slug="gamma" />
+  </div>
+</div>
 
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 

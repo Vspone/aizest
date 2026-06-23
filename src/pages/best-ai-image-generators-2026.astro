@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 const description = "We tested the top AI image generators of 2026 — Midjourney, Ideogram, DALL-E 3, Stable Diffusion, Recraft, and Leonardo AI. Find the best tool for your creative needs, from photorealistic art to vector graphics and game assets.";
 const canonical = "https://aizest.net/best-ai-image-generators-2026";
@@ -65,7 +66,10 @@ const breadcrumbJsonLd = JSON.stringify({
 <p>Midjourney remains the gold standard for artistic AI image generation. Version 6 delivers stunning photorealism, cinematic lighting, and compositional depth that competitors struggle to match. Its Discord-based interface has a learning curve, but the output quality is worth it.</p>
 <p><strong>Best for:</strong> Artists, designers, creative professionals<br/>
 <strong>Pricing:</strong> $10/mo</p>
-<p><a href="/tool/midjourney" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/midjourney" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="midjourney" />
+  </p>
 <p><a href="https://www.midjourney.com" target="_blank" rel="noopener noreferrer" class="btn-outline">Visit Website</a></p>
 
 <h2>2. Ideogram — Best Text in Images</h2>
@@ -73,35 +77,50 @@ const breadcrumbJsonLd = JSON.stringify({
 <p>Ideogram solves the biggest pain point of AI image generation: legible text. Its text rendering accuracy (~90%) far outperforms Midjourney (~30%) and DALL-E, making it the go-to choice for posters, logos, ads, and social media graphics with embedded text. The Ideogram 4.0 models also deliver strong image quality across Turbo, Balanced, and Quality tiers.</p>
 <p><strong>Best for:</strong> Marketers, social media creators, logo designers<br/>
 <strong>Pricing:</strong> Free / $15/mo</p>
-<p><a href="/tool/ideogram" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/ideogram" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="ideogram" />
+  </p>
 
 <h2>3. DALL-E 3 — Best for Beginners</h2>
 <p><strong>Rating: 4.5/5</strong></p>
 <p>OpenAI's DALL-E 3 sets the standard for ease of use. Its natural language understanding is exceptional — you describe what you want, and it delivers with minimal prompt engineering. Tight integration with ChatGPT makes it accessible to anyone. While it may not match Midjourney's artistic depth, its reliability and simplicity are unmatched.</p>
 <p><strong>Best for:</strong> Beginners, ChatGPT users, quick ideation<br/>
 <strong>Pricing:</strong> Included with ChatGPT Plus $20/mo</p>
-<p><a href="/tool/dalle" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/dalle" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="dalle" />
+  </p>
 
 <h2>4. Recraft — Best for Vector Graphics</h2>
 <p><strong>Rating: 4.3/5</strong></p>
 <p>Recraft stands out by generating actual vector graphics (SVG), not just raster images. This makes it invaluable for graphic designers who need scalable icons, logos, and illustrations. Its style control and brand kit features let you maintain consistency across all generated assets — something no other AI image tool offers.</p>
 <p><strong>Best for:</strong> Graphic designers, branding, icon creation<br/>
 <strong>Pricing:</strong> Free / $20/mo</p>
-<p><a href="/tool/recraft" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/recraft" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="recraft" />
+  </p>
 
 <h2>5. Stable Diffusion — Best Free / Open-Source</h2>
 <p><strong>Rating: 4.4/5</strong></p>
 <p>Stable Diffusion 3.5 remains the most powerful open-source image generator. It offers unparalleled customization through fine-tuning, LoRAs, and ControlNet. Run it locally on your own hardware or through cloud services. The trade-off is technical complexity — it's not plug-and-play like the commercial alternatives.</p>
 <p><strong>Best for:</strong> Power users, developers, those who want full control<br/>
 <strong>Pricing:</strong> Free (open-source)</p>
-<p><a href="/tool/stable-diffusion" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/stable-diffusion" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="stable-diffusion" />
+  </p>
 
 <h2>6. Leonardo AI — Best for Game Assets</h2>
 <p><strong>Rating: 4.3/5</strong></p>
 <p>Leonardo AI is purpose-built for game development and creative assets. Its canvas editor, model training, and asset generation features make it the favorite among indie game developers and content creators. The platform offers fine-tuned models for specific art styles, from pixel art to realistic renders.</p>
 <p><strong>Best for:</strong> Game developers, asset creators, world builders<br/>
 <strong>Pricing:</strong> Free / $12/mo</p>
-<p><a href="/tool/leonardo" class="btn-primary">Read Full Review →</a></p>
+<p class="flex items-center gap-2 flex-wrap">
+    <a href="/tool/leonardo" class="btn-primary">Read Full Review →</a>
+    <AffiliateBtn slug="leonardo" />
+  </p>
 
 <h2>Quick Comparison</h2>
 <table>

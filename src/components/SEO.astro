@@ -63,6 +63,11 @@ const websiteJsonLd = !canonical || canonical === '/' ? JSON.stringify({
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={fullImage} />
 
+<!-- Search Console / Webmaster Verification -->
+<!-- TODO: Uncomment and add codes from Google Search Console & Bing Webmaster -->
+<!-- <meta name="google-site-verification" content="GOOGLE_CODE_HERE" /> -->
+<!-- <meta name="msvalidate.01" content="BING_CODE_HERE" /> -->
+
 <!-- Structured Data -->
 {jsonLd && (
   <script type="application/ld+json" set:html={jsonLd} />

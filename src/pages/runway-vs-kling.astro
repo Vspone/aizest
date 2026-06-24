@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 // Article JSON-LD
 const jsonLd = JSON.stringify({
@@ -215,6 +216,13 @@ const canonical = "/runway-vs-kling";
 <p>For most creators in 2026, the smartest approach is to treat them as a stack: Kling for generation quality, Runway for editing and polish. At a combined cost of $57/month (Kling Pro + Runway Standard), you get the best of both worlds — superior motion physics and a professional editing pipeline — for less than a single Runway Unlimited subscription.</p>
 
 <p>The good news is that both platforms continue to improve rapidly. Whichever you choose — or however you combine them — you'll be producing AI video quality that was unimaginable just two years ago.</p>
+
+<div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm font-medium text-gray-900 dark:text-white mb-4">Ready to try them?</p>
+  <div class="flex flex-wrap items-center gap-3">
+    <AffiliateBtn slug="runway" /> <AffiliateBtn slug="kling" />
+  </div>
+</div>
 
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const tools = await getCollection('tools');
+const categoryLabels: Record<string, string> = {
+  writing: 'Writing & Content', image: 'Image Generation', video: 'Video Creation',
+  audio: 'Audio & Voice', coding: 'Coding & Development', productivity: 'Productivity',
+  data: 'Data & Analytics', design: 'Design & Creative', marketing: 'Marketing & SEO', business: 'Business & Finance',
+};
+
+// Get top tools by featured + rating
+const topTools = tools
+  .filter(t => t.data.featured)
+  .sort((a, b) => (b.data.rating || 0) - (a.data.rating || 0))
+  .slice(0, 30);
+---
+<BaseLayout title="AI Tools Alternatives — Compare Similar AI Tools — AI Zest">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-[#3B82F6]">Home</a>
+      <span>/</span>
+      <span class="text-gray-900 dark:text-white font-medium">Alternatives</span>
+    </nav>
+    <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3">AI Tool Alternatives</h1>
+    <p class="text-gray-600 dark:text-gray-400 mb-8">Browse alternatives for popular AI tools. Find similar tools, compare features and pricing.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      {topTools.map(t => (
+        <a href={`/alternatives/${t.data.slug}`} class="group flex items-center gap-3 p-3.5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-[#3B82F6]/40 dark:hover:border-[#3B82F6]/40 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200">
+          <div class="flex-1 min-w-0">
+            <div class="text-sm font-semibold text-gray-900 dark:text-white group-hover:text-[#3B82F6] transition-colors truncate">{t.data.name} Alternatives</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400 truncate">{categoryLabels[t.data.category] || t.data.category}</div>
+          </div>
+          <span class="text-xs text-[#3B82F6] shrink-0 group-hover:translate-x-0.5 transition-transform">→</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

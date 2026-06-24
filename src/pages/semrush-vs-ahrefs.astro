@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 // Article JSON-LD
 const jsonLd = JSON.stringify({
@@ -211,6 +212,13 @@ const canonical = "/semrush-vs-ahrefs";
 <p>There is no single winner between Semrush and Ahrefs — they're different tools designed for slightly different workflows. Semrush is the more complete marketing platform with mature AI content features, better competitive intelligence, and PPC support. Ahrefs is the more focused SEO tool with the best backlink data, a cleaner interface, and a more accessible price point.</p>
 
 <p>For most SEO professionals in 2026, the right choice depends on your primary use case: content marketing and competitive analysis leans Semrush; backlink analysis and budget-conscious SEO leans Ahrefs. If you can afford both, they complement each other beautifully. If you can only choose one, start with a free trial of each and see which interface and feature set feels more natural for your daily workflow.</p>
+
+<div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm font-medium text-gray-900 dark:text-white mb-4">Ready to try them?</p>
+  <div class="flex flex-wrap items-center gap-3">
+    <AffiliateBtn slug="semrush" /> <AffiliateBtn slug="ahrefs" />
+  </div>
+</div>
 
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 

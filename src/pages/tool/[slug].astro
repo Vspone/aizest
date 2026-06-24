@@ -13,6 +13,12 @@ const { tool } = Astro.props;
 const { Content } = await render(tool);
 const { name, slug, description, website, pricing, affiliate_url, rating, features, pricing_tiers, pros, cons, category, needs_vps } = tool.data;
 
+// Get all tools for alternatives section
+const allTools = await getCollection('tools');
+const alternatives = allTools
+  .filter(t => t.data.category === category && t.data.slug !== slug)
+  .slice(0, 4);
+
 // Determine best CTA text based on pricing
 function ctaText(p: string): string {
   const lower = p.toLowerCase();
@@ -26,6 +32,36 @@ const categoryLabels: Record<string, string> = {
   audio: 'Audio & Voice', coding: 'Coding & Development', productivity: 'Productivity',
   data: 'Data & Analytics', design: 'Design & Creative', marketing: 'Marketing & SEO', business: 'Business & Finance',
 };
+
+// Build FAQ data programmatically
+const pricingSummary = pricing_tiers && pricing_tiers.length > 0
+  ? pricing_tiers.map(t => `${t.name} — ${t.price}`).join(', ')
+  : pricing;
+
+const topFeatures = features.slice(0, 3).join(', ');
+
+const faqItems = [
+  {
+    name: `What is ${name}?`,
+    acceptedAnswer: { text: `${name} is an AI tool in the ${categoryLabels[category] || category} category. ${description}` }
+  },
+  {
+    name: `How much does ${name} cost?`,
+    acceptedAnswer: { text: pricing_tiers && pricing_tiers.length > 0 ? `${name} offers ${pricing_tiers.length} pricing tiers: ${pricingSummary}. ${pricing_tiers[0].features.slice(0, 2).join('. ')}.` : `${name} is priced at ${pricing}.` }
+  },
+  {
+    name: `What are the main features of ${name}?`,
+    acceptedAnswer: { text: `Key features of ${name} include: ${topFeatures}. For a complete list, see the features section above.` }
+  },
+  {
+    name: `What are the pros and cons of ${name}?`,
+    acceptedAnswer: { text: pros && cons ? `Pros include: ${pros.slice(0, 2).join(', ')}. Cons include: ${cons.slice(0, 2).join(', ')}. See the full pros/cons breakdown above.` : `${name} is rated ${rating}/5. Check the pros and cons section above for a detailed breakdown.` }
+  },
+  {
+    name: `Is ${name} worth it?`,
+    acceptedAnswer: { text: `${name} has a rating of ${rating}/5 on AI Zest. ${rating >= 4.5 ? 'It is highly rated and considered one of the best tools in its category.' : rating >= 4.0 ? 'It is a solid choice with good reviews from users.' : 'It has average ratings — consider trying the free tier first.'} Visit the official website to explore pricing and start a free trial if available.` }
+  },
+];
 
 // JSON-LD SoftwareApplication Schema
 const jsonLd = JSON.stringify({
@@ -50,6 +86,13 @@ const jsonLd = JSON.stringify({
   }
 });
 
+// FAQPage JSON-LD for rich snippets
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems
+});
+
 // Breadcrumb JSON-LD
 const breadcrumbJsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -64,13 +107,15 @@ const breadcrumbJsonLd = JSON.stringify({
 
 <BaseLayout 
   title={`${name} Review 2026 — Pricing, Features & Rating — AI Zest`}
-  description={`${name} review: ${description}. Pricing: ${pricing}. Rating: ${rating}/5. Compare features, pros, cons, and find the best AI tool for your needs.`}
+  description={`${name} review: ${description}. Pricing: ${pricing}. Rating: ${rating}/5. Compare features, pros, cons, alternatives, and find the best AI tool for your needs.`}
   canonical={`/tool/${slug}`}
   type="article"
   jsonLd={jsonLd}
 >
-  <!-- Breadcrumb JSON-LD (separate) -->
+  <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json" set:html={faqJsonLd} />
 
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     
@@ -117,7 +162,6 @@ const breadcrumbJsonLd = JSON.stringify({
       </div>
     </div>
 
-    <!-- Rest of the page content stays the same -->
     <!-- CTA -->
     {affiliate_url && (
       <div class="mb-8 sm:mb-10 p-5 sm:p-6 rounded-xl bg-gradient-to-r from-[#3B82F6]/10 to-[#8B5CF6]/10 border border-[#3B82F6]/20 text-center">
@@ -176,10 +220,50 @@ const breadcrumbJsonLd = JSON.stringify({
           <Content />
         </section>
 
+        <!-- FAQ Section -->
+        <section class="not-prose mt-10">
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Frequently Asked Questions</h2>
+          <div class="space-y-3">
+            {faqItems.map((item, i) => (
+              <details class="group rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+                <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                  <span class="text-sm font-medium text-gray-900 dark:text-white pr-4">{item.name}</span>
+                  <svg class="w-4 h-4 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div class="px-4 pb-4">
+                  <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{item.acceptedAnswer.text}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <!-- Alternatives Section -->
+        {alternatives.length > 0 && (
+          <section class="not-prose mt-10">
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">{name} Alternatives</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Explore other AI tools in the {categoryLabels[category] || category} category similar to {name}.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {alternatives.map(alt => (
+                <a href={`/tool/${alt.data.slug}`} class="group flex items-center gap-3 p-3.5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-[#3B82F6]/40 dark:hover:border-[#3B82F6]/40 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200">
+                  <div class="flex-1 min-w-0">
+                    <div class="text-sm font-semibold text-gray-900 dark:text-white group-hover:text-[#3B82F6] transition-colors truncate">{alt.data.name}</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400 truncate">{alt.data.rating}/5 · {alt.data.pricing}</div>
+                  </div>
+                  <span class="text-xs text-[#3B82F6] shrink-0 group-hover:translate-x-0.5 transition-transform">→</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
         <!-- Related Articles -->
         <div class="not-prose mt-10 p-5 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
           <h3 class="font-semibold text-gray-900 dark:text-white mb-3 text-sm">📄 Related Articles</h3>
           <div class="space-y-2">
+            <a href={`/alternatives/${slug}`} class="block text-sm text-[#3B82F6] hover:underline">Top {name} Alternatives →</a>
             <a href="/compare" class="block text-sm text-[#3B82F6] hover:underline">Compare {name} with similar tools →</a>
             <a href="/how-we-review" class="block text-sm text-[#3B82F6] hover:underline">How we test and review AI tools →</a>
           </div>
@@ -239,7 +323,21 @@ const breadcrumbJsonLd = JSON.stringify({
           </div>
         )}
 
-        <!-- Related tools section -->
+        <!-- Alternatives in sidebar -->
+        {alternatives.length > 0 && (
+          <div class="card p-4 sm:p-5">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Alternatives</h3>
+            <div class="space-y-2">
+              {alternatives.slice(0, 4).map(alt => (
+                <a href={`/tool/${alt.data.slug}`} class="block text-sm text-[#3B82F6] hover:underline truncate">
+                  {alt.data.name} →
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- We Tested It -->
         <div class="card p-4 sm:p-5">
           <h3 class="font-semibold text-gray-900 dark:text-white mb-2">We Tested It</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400">

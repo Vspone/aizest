@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 // Article JSON-LD
 const jsonLd = JSON.stringify({
@@ -215,6 +216,13 @@ const canonical = "/descript-vs-podcastle-vs-veed";
 <p>Descript, Podcastle, and VEED represent three distinct philosophies for AI-powered media editing. Descript is the most powerful and mature — it's what you graduate to when you need serious video production capabilities. Podcastle is the most focused and affordable — it's the best tool for podcasters who want a complete, streamlined workflow. VEED is the most accessible and fastest — it's the browser-based Swiss Army knife for content that needs to go out today.</p>
 
 <p>There's no single winner because these tools aren't really direct competitors — they overlap on text-based editing but serve fundamentally different primary use cases. Descript for video, Podcastle for audio/podcasts, VEED for social/short-form. The good news: all three have generous free or trial tiers, so you can test each one with your actual workflow before committing.</p>
+
+<div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm font-medium text-gray-900 dark:text-white mb-4">Ready to try them?</p>
+  <div class="flex flex-wrap items-center gap-3">
+    <AffiliateBtn slug="descript" /> <AffiliateBtn slug="podcastle" /> <AffiliateBtn slug="veed" />
+  </div>
+</div>
 
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 

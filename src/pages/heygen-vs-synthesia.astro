@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 // Article JSON-LD
 const jsonLd = JSON.stringify({
@@ -215,6 +216,13 @@ const canonical = "/heygen-vs-synthesia";
 <p>HeyGen and Synthesia are both excellent platforms, but they're optimized for different audiences. HeyGen is the better choice for creators and teams who value creative control, voice cloning, real-time streaming, and multilingual reach. Synthesia is the better choice for enterprise teams who need a polished, compliant, and structured solution with the largest avatar library available.</p>
 
 <p>Our recommendation: start with HeyGen's free tier to test the waters. If you need enterprise compliance features or the largest avatar selection, Synthesia is worth the investment. For most content creators in 2026, HeyGen offers better value, more features, and greater creative flexibility — but Synthesia remains the gold standard for enterprise AI video production.</p>
+
+<div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm font-medium text-gray-900 dark:text-white mb-4">Ready to try them?</p>
+  <div class="flex flex-wrap items-center gap-3">
+    <AffiliateBtn slug="heygen" /> <AffiliateBtn slug="synthesia" />
+  </div>
+</div>
 
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 

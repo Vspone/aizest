@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 // Article JSON-LD
 const jsonLd = JSON.stringify({
@@ -212,7 +213,14 @@ const canonical = "/bolt-vs-lovable";
 
 <p>For most people in 2026, we recommend trying both free tiers. Start with Bolt.new if you're a developer who values speed — you'll be amazed at how fast you can go from idea to working prototype. Start with Lovable if you want a guided experience that handles the backend for you — the Supabase integration alone can save you days of setup work.</p>
 
-<p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
+    <div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border border-gray-200 dark:border-gray-700">
+      <p class="text-sm font-medium text-gray-900 dark:text-white mb-4">Ready to try them?</p>
+      <div class="flex flex-wrap items-center gap-3">
+        <AffiliateBtn slug="bolt" /> <AffiliateBtn slug="lovable" />
+      </div>
+    </div>
+
+    <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 
 </ArticleWrap>
 </BaseLayout>

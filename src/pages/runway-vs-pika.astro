@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 // Article JSON-LD
 const jsonLd = JSON.stringify({
@@ -215,6 +216,13 @@ const canonical = "/runway-vs-pika";
 <p>For professional creators and studios, Runway is the clear recommendation — its combination of generation quality, editing tools, and production speed is unmatched. For beginners, hobbyists, and creators who prioritize camera movement and creative expression over editing capabilities, Pika offers a compelling, lower-cost entry point with a generous free tier.</p>
 
 <p>The good news is that both platforms continue to improve rapidly, and at a combined cost that's less than a single Runway Unlimited subscription, you can have access to both — using each for what it does best.</p>
+
+<div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm font-medium text-gray-900 dark:text-white mb-4">Ready to try them?</p>
+  <div class="flex flex-wrap items-center gap-3">
+    <AffiliateBtn slug="runway" /> <AffiliateBtn slug="pika" />
+  </div>
+</div>
 
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 

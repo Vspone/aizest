@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 // Article JSON-LD
 const jsonLd = JSON.stringify({
@@ -218,6 +219,13 @@ const canonical = "/elevenlabs-vs-murf-vs-playht";
 <p>The AI voice generator market in 2026 offers three excellent options, each optimized for different use cases. ElevenLabs remains the quality leader — no other platform matches its natural expressiveness and emotional range. Murf is the most practical all-rounder, especially for teams producing voiceover content at scale with video. PlayHT dominates on breadth and developer tooling, making it the go-to for multilingual projects and API-driven applications.</p>
 
 <p>For most users, we recommend starting with ElevenLabs' free tier (10K chars/month) to experience its unmatched quality, then evaluating Murf's free trial if you need editing and video integration. Developers building voice applications should begin with PlayHT's free tier and API documentation to assess the technical fit. The good news: all three platforms offer generous free tiers, so you can try them before committing.</p>
+
+<div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm font-medium text-gray-900 dark:text-white mb-4">Ready to try them?</p>
+  <div class="flex flex-wrap items-center gap-3">
+    <AffiliateBtn slug="elevenlabs" /> <AffiliateBtn slug="murf" /> <AffiliateBtn slug="playht" />
+  </div>
+</div>
 
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 // Article JSON-LD
 const jsonLd = JSON.stringify({
@@ -204,6 +205,13 @@ const canonical = "/invideo-vs-capcut";
 <p>The InVideo vs CapCut comparison isn't really a direct competition — they're different tools that serve different parts of the video creation workflow. InVideo is an AI video generator that handles the entire pipeline from idea to export. CapCut is an AI-enhanced video editor that supercharges the editing process for existing footage.</p>
 
 <p>If you had to pick just one: choose InVideo if you want to create videos without recording anything yourself. Choose CapCut if you record or download footage and need the best AI editing tools for social media. But the smartest approach for serious content creators is to use both — InVideo for generation and CapCut for refinement.</p>
+
+<div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm font-medium text-gray-900 dark:text-white mb-4">Ready to try them?</p>
+  <div class="flex flex-wrap items-center gap-3">
+    <AffiliateBtn slug="invideo" /> <AffiliateBtn slug="capcut" />
+  </div>
+</div>
 
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 

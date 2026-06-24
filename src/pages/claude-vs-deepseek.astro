@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 // Article JSON-LD
 const jsonLd = JSON.stringify({
@@ -217,6 +218,13 @@ const canonical = "/claude-vs-deepseek";
 <p>If cost efficiency, coding performance, and open-weight flexibility drive your decision, DeepSeek V4 is the winner — and by a significant margin. At 50x cheaper API pricing with competitive performance, DeepSeek is the pragmatic choice for anyone operating at scale or on a budget.</p>
 
 <p>For most users in 2026, we recommend: use Claude for your important, nuanced work and DeepSeek for your high-volume, code-heavy, or cost-sensitive tasks. Both are excellent tools serving different masters — and together, they cover the full spectrum of AI assistant needs.</p>
+
+<div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm font-medium text-gray-900 dark:text-white mb-4">Ready to try them?</p>
+  <div class="flex flex-wrap items-center gap-3">
+    <AffiliateBtn slug="claude" /> <AffiliateBtn slug="deepseek" />
+  </div>
+</div>
 
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 

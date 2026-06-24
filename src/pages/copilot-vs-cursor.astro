@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 // Article JSON-LD
 const jsonLd = JSON.stringify({
@@ -217,6 +218,13 @@ const canonical = "/copilot-vs-cursor";
 <p>GitHub Copilot vs Cursor isn't a question of which tool is better — it's a question of which approach fits your workflow. Copilot is the more accessible, affordable, and portable option that enhances your existing editor without forcing you to change how you work. Cursor is the more powerful, AI-native option that reimagines the editor around AI capabilities.</p>
 
 <p>For individual developers on a budget or multi-IDE users, Copilot at $10/month is an easy recommendation. For VS Code loyalists who want cutting-edge AI features and autonomous agent capabilities, Cursor at $20/month is worth every penny. The good news: both tools are excellent, and choosing either will make you significantly more productive than coding without AI assistance.</p>
+
+<div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm font-medium text-gray-900 dark:text-white mb-4">Ready to try them?</p>
+  <div class="flex flex-wrap items-center gap-3">
+    <AffiliateBtn slug="copilot" /> <AffiliateBtn slug="cursor" />
+  </div>
+</div>
 
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 

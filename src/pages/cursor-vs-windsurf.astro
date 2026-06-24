@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 // Article JSON-LD
 const jsonLd = JSON.stringify({
@@ -216,6 +217,13 @@ const canonical = "/cursor-vs-windsurf";
 <p>At the same $20/month price point, the Cursor vs Windsurf decision is genuinely close — closer than it was a year ago. Cursor remains the safer choice for professional developers who need reliability and ecosystem support. Windsurf is the more innovative platform for developers who value contextual awareness and experimentation.</p>
 
 <p>For most developers in 2026, we recommend starting with Cursor's free tier, trying Windsurf's free tier alongside it, and seeing which one feels more natural for your workflow. The good news: both are excellent tools, and choosing either will make you significantly more productive than using traditional IDEs.</p>
+
+<div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm font-medium text-gray-900 dark:text-white mb-4">Ready to try them?</p>
+  <div class="flex flex-wrap items-center gap-3">
+    <AffiliateBtn slug="cursor" /> <AffiliateBtn slug="windsurf" />
+  </div>
+</div>
 
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 

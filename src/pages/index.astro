@@ -63,14 +63,19 @@ for (const t of tools) {
       </div>
     </section>
 
-    <!-- Just Added -->
+    <!-- New This Week -->
     {justAdded.length > 0 && (
       <section class="mb-16 reveal-on-scroll">
-        <div class="flex items-center gap-2 mb-6">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
-            Just Added
-          </h2>
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+              New This Week
+            </h2>
+          </div>
+          <span class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1">
+            <span>📅</span> Updated daily
+          </span>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-grid">
           {justAdded.map(tool => (

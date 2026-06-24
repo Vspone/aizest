@@ -6,6 +6,7 @@ category: "audio"
 website: "https://speechify.com"
 pricing: "Free / $11.58/mo (Premium)"
 affiliate_url: https://speechify.com
+last_verified: 2026-06-24
 featured: true
 rating: 4.5
 features:

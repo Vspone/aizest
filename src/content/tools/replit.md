@@ -6,6 +6,7 @@ category: "coding"
 website: "https://replit.com"
 pricing: "Free / $20/mo"
 affiliate_url: https://replit.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.4
 features:

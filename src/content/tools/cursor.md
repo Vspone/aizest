@@ -6,6 +6,7 @@ category: "coding"
 website: "https://cursor.com"
 pricing: "Free / $20/mo"
 affiliate_url: https://cursor.com
+last_verified: 2026-06-24
 featured: true
 rating: 4.7
 features:

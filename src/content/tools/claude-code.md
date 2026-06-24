@@ -6,6 +6,7 @@ category: "coding"
 website: "https://docs.anthropic.com/en/docs/claude-code/overview"
 pricing: "Included with Claude Pro / $20/mo"
 affiliate_url: https://docs.anthropic.com/en/docs/claude-code/overview
+last_verified: 2026-06-24
 featured: false
 rating: 4.6
 features:

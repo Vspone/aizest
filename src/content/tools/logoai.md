@@ -6,6 +6,7 @@ category: "design"
 website: "https://logoai.com"
 pricing: "Free / $29/mo"
 affiliate_url: https://logoai.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.4
 features: ["AI logo generation based on industry and style", "Business card and stationery design", "Brand color palette generation", "Custom typography recommendations", "High-resolution vector file exports", "Social media kit creation"]

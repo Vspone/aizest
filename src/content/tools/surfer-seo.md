@@ -6,6 +6,7 @@ category: "marketing"
 website: "https://surferseo.com"
 pricing: "$69/mo"
 affiliate_url: https://surferseo.com/?ref=aizest
+last_verified: 2026-06-24
 featured: false
 rating: 4.3
 features:

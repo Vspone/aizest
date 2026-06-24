@@ -6,6 +6,7 @@ category: "video"
 website: "https://filmora.wondershare.com"
 pricing: "Free / $49.99/yr"
 affiliate_url: https://filmora.wondershare.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features:

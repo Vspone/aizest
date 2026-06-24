@@ -6,6 +6,7 @@ category: "business"
 website: "https://www.lusha.com"
 affiliate_url: https://www.lusha.com
 pricing: "Free / $37.45/mo"
+last_verified: 2026-06-24
 featured: false
 rating: 4.3
 features:

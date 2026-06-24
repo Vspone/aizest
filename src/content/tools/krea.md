@@ -6,6 +6,7 @@ category: "image"
 website: "https://krea.ai"
 pricing: "Free / $20/mo"
 affiliate_url: https://krea.ai
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features:

@@ -6,6 +6,7 @@ category: "data"
 website: "https://www.browse.ai"
 pricing: "Free / $19.99/mo (Personal)"
 affiliate_url: https://www.browse.ai
+last_verified: 2026-06-24
 featured: true
 rating: 4.3
 features:

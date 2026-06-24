@@ -6,6 +6,7 @@ category: "business"
 website: "https://salesloft.com"
 pricing: "Custom / Contact for pricing"
 affiliate_url: https://salesloft.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features: ["Multi-channel cadence automation (email, call, social)", "AI-powered lead scoring and prioritization", "Real-time conversation intelligence", "Pipeline management and forecasting", "Salesforce and CRM deep integration", "Team performance analytics and coaching"]

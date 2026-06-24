@@ -1,22 +1,71 @@
 ---
-// Empty — entirely client-side
+// Client-side search + filters
+interface CategoryLabels {
+  [key: string]: string;
+}
+const categoryLabels: CategoryLabels = {
+  writing: 'Writing & Content', image: 'Image Generation', video: 'Video Creation',
+  audio: 'Audio & Voice', coding: 'Coding & Dev', productivity: 'Productivity',
+  data: 'Data & Analytics', design: 'Design & Creative', marketing: 'Marketing & SEO', business: 'Business & Finance',
+};
+const categories = Object.entries(categoryLabels);
 ---
 
-<div class="relative max-w-2xl mx-auto" id="search-wrapper">
-  <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-  </svg>
-  <input
-    type="text"
-    id="search-input"
-    placeholder="Search AI tools..."
-    autocomplete="off"
-    class="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-300 dark:border-gray-600 
-           bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100
-           placeholder:text-gray-400 dark:placeholder:text-gray-500
-           focus:outline-none focus:ring-2 focus:ring-[#3B82F6] focus:border-transparent
-           transition-all shadow-sm"
-  />
+<div class="relative max-w-3xl mx-auto" id="search-wrapper">
+  <!-- Search input row -->
+  <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+    <div class="relative flex-1">
+      <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search AI tools by name, feature, or use case..."
+        autocomplete="off"
+        class="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-300 dark:border-gray-600 
+               bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100
+               placeholder:text-gray-400 dark:placeholder:text-gray-500
+               focus:outline-none focus:ring-2 focus:ring-[#3B82F6] focus:border-transparent
+               transition-all shadow-sm text-sm"
+      />
+    </div>
+  </div>
+
+  <!-- Filter row -->
+  <div class="flex flex-wrap items-center gap-2 mt-3" id="filter-row">
+    <!-- Category filter -->
+    <select id="filter-category" class="px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs focus:outline-none focus:ring-1 focus:ring-[#3B82F6]">
+      <option value="">All Categories</option>
+      {categories.map(([slug, label]) => (
+        <option value={slug}>{label}</option>
+      ))}
+    </select>
+
+    <!-- Pricing filter -->
+    <select id="filter-pricing" class="px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs focus:outline-none focus:ring-1 focus:ring-[#3B82F6]">
+      <option value="">Any Price</option>
+      <option value="free">Free</option>
+      <option value="freemium">Freemium</option>
+      <option value="paid">Paid</option>
+    </select>
+
+    <!-- Rating filter -->
+    <select id="filter-rating" class="px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs focus:outline-none focus:ring-1 focus:ring-[#3B82F6]">
+      <option value="">Any Rating</option>
+      <option value="4.5">4.5 ★ & up</option>
+      <option value="4">4.0 ★ & up</option>
+      <option value="3.5">3.5 ★ & up</option>
+    </select>
+
+    <button id="filter-clear" class="px-3 py-2 rounded-lg text-xs text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors hidden">
+      Clear
+    </button>
+
+    <span id="filter-count" class="text-xs text-gray-400 ml-auto"></span>
+  </div>
+
+  <!-- Results -->
   <div id="search-results" class="absolute z-50 top-full mt-2 left-0 right-0 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 max-h-96 overflow-y-auto hidden"></div>
 </div>
 
@@ -25,12 +74,18 @@
   #search-results::-webkit-scrollbar-track { background: transparent; }
   #search-results::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
   .dark #search-results::-webkit-scrollbar-thumb { background: #4b5563; }
+  select { cursor: pointer; }
 </style>
 
 <script>
 (function() {
   const input = document.getElementById('search-input');
   const results = document.getElementById('search-results');
+  const filterCategory = document.getElementById('filter-category');
+  const filterPricing = document.getElementById('filter-pricing');
+  const filterRating = document.getElementById('filter-rating');
+  const filterClear = document.getElementById('filter-clear');
+  const filterCount = document.getElementById('filter-count');
   let tools = [];
   let selectedIndex = -1;
 
@@ -40,14 +95,60 @@
     .then(data => { tools = data; })
     .catch(() => {});
 
+  function getPricingTier(pricing) {
+    const p = (pricing || '').toLowerCase();
+    if (p.includes('free') && (p.includes('/') || p.includes('paid') || p.includes('$') || p.includes('pro') || p.includes('premium') || p.includes('business'))) return 'freemium';
+    if (p.includes('free') || p === '$0') return 'free';
+    if (p.includes('custom') || p.includes('contact')) return 'paid';
+    if (p.includes('$') || p.includes('€') || p.includes('£') || p.includes('¥')) return 'paid';
+    return 'free';
+  }
+
   function filterTools(query) {
-    if (!query || query.length < 1) return [];
-    const q = query.toLowerCase();
-    return tools.filter(t =>
-      t.name.toLowerCase().includes(q) ||
-      t.description.toLowerCase().includes(q) ||
-      t.category.toLowerCase().includes(q)
-    ).slice(0, 8);
+    const q = (query || '').toLowerCase().trim();
+    const cat = filterCategory.value;
+    const pr = filterPricing.value;
+    const rt = parseFloat(filterRating.value) || 0;
+
+    let matches = tools;
+
+    // Category filter
+    if (cat) {
+      matches = matches.filter(t => t.category === cat);
+    }
+
+    // Pricing filter
+    if (pr) {
+      matches = matches.filter(t => getPricingTier(t.pricing) === pr);
+    }
+
+    // Rating filter
+    if (rt > 0) {
+      matches = matches.filter(t => (t.rating || 0) >= rt);
+    }
+
+    // Text search
+    if (q) {
+      matches = matches.filter(t =>
+        t.name.toLowerCase().includes(q) ||
+        t.description.toLowerCase().includes(q) ||
+        t.category.toLowerCase().includes(q) ||
+        (t.features || []).some(f => f.toLowerCase().includes(q))
+      );
+    }
+
+    // Apply active filters text search too
+    matches = matches.slice(0, 12);
+
+    // Update count
+    const hasFilters = cat || pr || rt > 0;
+    if (hasFilters || q) {
+      filterCount.textContent = `${matches.length} tool${matches.length !== 1 ? 's' : ''}`;
+    } else {
+      filterCount.textContent = '';
+    }
+
+    return matches;
   }
 
   function renderResults(matches) {
@@ -61,8 +162,10 @@
           <div class="flex items-center gap-2">
             <span class="font-medium text-sm text-gray-900 dark:text-white">${escapeHtml(t.name)}</span>
             <span class="text-xs px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-300 capitalize">${t.category}</span>
+            <span class="text-xs text-yellow-500">★${t.rating}</span>
           </div>
           <p class="text-xs text-gray-500 dark:text-gray-400 truncate mt-0.5">${escapeHtml(t.description)}</p>
+          <p class="text-xs text-gray-400 mt-0.5">${escapeHtml(t.pricing || '')}</p>
         </div>
         <svg class="w-4 h-4 text-gray-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -73,15 +176,31 @@
   }
 
   function escapeHtml(str) {
+    if (!str) return '';
     const div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
   }
 
-  input.addEventListener('input', function() {
+  function update() {
     selectedIndex = -1;
-    const matches = filterTools(this.value);
+    const matches = filterTools(input.value);
     renderResults(matches);
+    filterClear.classList.toggle('hidden', !filterCategory.value && !filterPricing.value && !filterRating.value && !input.value.trim());
+  }
+
+  input.addEventListener('input', update);
+  filterCategory.addEventListener('change', update);
+  filterPricing.addEventListener('change', update);
+  filterRating.addEventListener('change', update);
+
+  filterClear.addEventListener('click', function() {
+    filterCategory.value = '';
+    filterPricing.value = '';
+    filterRating.value = '';
+    input.value = '';
+    input.focus();
+    update();
   });
 
   input.addEventListener('keydown', function(e) {
@@ -91,12 +210,12 @@
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
-      renderResults(filterTools(this.value));
+      renderResults(filterTools(input.value));
       items[selectedIndex]?.scrollIntoView({ block: 'nearest' });
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       selectedIndex = Math.max(selectedIndex - 1, 0);
-      renderResults(filterTools(this.value));
+      renderResults(filterTools(input.value));
       items[selectedIndex]?.scrollIntoView({ block: 'nearest' });
     } else if (e.key === 'Enter' && selectedIndex >= 0) {
       e.preventDefault();
@@ -108,8 +227,8 @@
   });
 
   input.addEventListener('focus', function() {
-    if (this.value.trim()) {
-      const matches = filterTools(this.value);
+    const matches = filterTools(this.value);
+    if (matches.length > 0) {
       renderResults(matches);
     }
   });

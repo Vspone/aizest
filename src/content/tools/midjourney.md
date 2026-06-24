@@ -6,6 +6,7 @@ category: "image"
 website: "https://www.midjourney.com"
 pricing: "$10/mo"
 affiliate_url: https://www.midjourney.com
+last_verified: 2026-06-24
 featured: true
 rating: 4.7
 features:

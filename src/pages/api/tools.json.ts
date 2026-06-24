@@ -9,6 +9,10 @@ export async function GET() {
     slug: tool.data.slug,
     description: tool.data.description,
     category: tool.data.category,
+    pricing: tool.data.pricing,
+    rating: tool.data.rating,
+    features: tool.data.features?.slice(0, 3) || [],
+    featured: tool.data.featured || false,
   }));
   return new Response(JSON.stringify(index));
 }

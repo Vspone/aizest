@@ -6,6 +6,7 @@ category: "writing"
 website: "https://anyword.com"
 pricing: "$39/mo"
 affiliate_url: https://anyword.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.3
 features:

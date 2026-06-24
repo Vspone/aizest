@@ -6,6 +6,7 @@ category: "productivity"
 website: "https://taskade.com"
 pricing: "Free / $10/mo"
 affiliate_url: https://taskade.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.4
 features:

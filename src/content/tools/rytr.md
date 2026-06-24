@@ -6,6 +6,7 @@ category: "writing"
 website: "https://rytr.me"
 pricing: "Free / $9/mo (Saver)"
 affiliate_url: https://rytr.me
+last_verified: 2026-06-24
 featured: true
 rating: 4.2
 features:

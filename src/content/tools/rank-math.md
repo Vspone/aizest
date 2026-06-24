@@ -6,6 +6,7 @@ category: "marketing"
 website: "https://rankmath.com"
 pricing: "Free / $59/yr"
 affiliate_url: https://rankmath.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.6
 features:

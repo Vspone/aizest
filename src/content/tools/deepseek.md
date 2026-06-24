@@ -7,6 +7,7 @@ website: "https://chat.deepseek.com"
 pricing: "Free / API pay-per-use"
 needs_vps: true
 affiliate_url: https://chat.deepseek.com
+last_verified: 2026-06-24
 featured: true
 rating: 4.5
 features:

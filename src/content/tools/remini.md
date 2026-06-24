@@ -6,6 +6,7 @@ category: "design"
 website: "https://remini.ai"
 pricing: "Free / $9.99/mo"
 affiliate_url: https://remini.ai
+last_verified: 2026-06-24
 featured: false
 rating: 4.6
 features: ["AI face enhancement and sharpening", "Old photo restoration and colorization", "Image upscaling up to 4K resolution", "Batch processing for multiple photos", "Video enhancement capabilities", "One-tap automatic enhancement"]

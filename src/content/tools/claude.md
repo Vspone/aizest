@@ -6,6 +6,7 @@ category: "writing"
 website: "https://claude.ai"
 pricing: "Free / $20/mo"
 affiliate_url: https://claude.ai
+last_verified: 2026-06-24
 featured: true
 rating: 4.7
 features:

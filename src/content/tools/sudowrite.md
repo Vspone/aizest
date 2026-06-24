@@ -6,6 +6,7 @@ category: "writing"
 website: "https://sudowrite.com"
 pricing: "Free / $29/mo"
 affiliate_url: https://sudowrite.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.6
 features:

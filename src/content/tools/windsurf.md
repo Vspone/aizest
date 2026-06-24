@@ -6,6 +6,7 @@ category: "coding"
 website: "https://codeium.com/windsurf"
 pricing: "Free / $15/mo (Pro)"
 affiliate_url: https://codeium.com/windsurf
+last_verified: 2026-06-24
 featured: true
 rating: 4.4
 features:

@@ -6,6 +6,7 @@ category: "audio"
 website: "https://www.podcastle.ai"
 pricing: "Free / $11.99/mo"
 affiliate_url: https://www.podcastle.ai
+last_verified: 2026-06-24
 featured: false
 rating: 4.4
 features:

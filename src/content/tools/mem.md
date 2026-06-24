@@ -6,6 +6,7 @@ category: "productivity"
 website: "https://mem.ai"
 pricing: "Free / $15/mo"
 affiliate_url: https://mem.ai
+last_verified: 2026-06-24
 featured: false
 rating: 4.4
 features:

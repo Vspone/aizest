@@ -6,6 +6,7 @@ category: "data"
 website: "https://mode.com"
 pricing: "Free / $120/mo"
 affiliate_url: https://mode.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.4
 features: ["Collaborative SQL editor with version history", "AI-assisted query generation and optimization", "Interactive dashboards with custom visualizations", "Python and R integration for advanced analysis", "Automated scheduled reports and alerts", "Data catalog and lineage tracking"]

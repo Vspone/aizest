@@ -6,6 +6,7 @@ category: "business"
 website: "https://gong.io"
 pricing: "Custom / Contact for pricing"
 affiliate_url: https://gong.io
+last_verified: 2026-06-24
 featured: false
 rating: 4.6
 features: ["Automatic call recording and transcription", "AI conversation analysis and scoring", "Deal risk detection and forecasting", "Revenue intelligence dashboards", "CRM integration and data enrichment", "Coaching and training recommendations"]

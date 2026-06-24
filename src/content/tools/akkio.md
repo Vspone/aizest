@@ -6,6 +6,7 @@ category: "data"
 website: "https://akkio.com"
 pricing: "Free / $49/mo"
 affiliate_url: https://akkio.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.3
 features: ["No-code AI model building and training", "Automated data analysis and insight generation", "Predictive analytics with natural language queries", "Drag-and-drop data preparation and cleaning", "Customizable dashboards and reports", "API deployment for production models"]

@@ -6,6 +6,7 @@ category: "design"
 website: "https://www.canva.com"
 pricing: "Free / $13/mo"
 affiliate_url: https://www.canva.com
+last_verified: 2026-06-24
 featured: true
 rating: 4.6
 features:

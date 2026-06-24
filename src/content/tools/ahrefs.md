@@ -6,6 +6,7 @@ category: "marketing"
 website: "https://ahrefs.com"
 pricing: "From $99/mo"
 affiliate_url: https://ahrefs.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features:

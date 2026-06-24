@@ -6,6 +6,7 @@ category: "video"
 website: "https://pictory.ai"
 pricing: "$35/mo"
 affiliate_url: https://pictory.ai
+last_verified: 2026-06-24
 featured: false
 rating: 4.4
 features:

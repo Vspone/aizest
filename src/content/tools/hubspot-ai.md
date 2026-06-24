@@ -6,6 +6,7 @@ category: "marketing"
 website: "https://www.hubspot.com"
 pricing: "Free / $45/mo"
 affiliate_url: https://www.hubspot.com
+last_verified: 2026-06-24
 featured: true
 rating: 4.4
 features:

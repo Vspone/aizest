@@ -6,6 +6,7 @@ category: "video"
 website: "https://opus.pro"
 pricing: "Free / $19/mo"
 affiliate_url: https://opus.pro
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features:

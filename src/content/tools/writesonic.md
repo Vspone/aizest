@@ -6,6 +6,7 @@ category: "writing"
 website: "https://writesonic.com"
 pricing: "$20/mo"
 affiliate_url: https://writesonic.com/?ref=aizest
+last_verified: 2026-06-24
 featured: false
 rating: 4.2
 features:

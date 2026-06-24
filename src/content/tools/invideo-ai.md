@@ -6,6 +6,7 @@ category: "video"
 website: "https://invideo.io"
 pricing: "Free / $20/mo (Plus)"
 affiliate_url: https://invideo.io
+last_verified: 2026-06-24
 featured: true
 rating: 4.4
 features:

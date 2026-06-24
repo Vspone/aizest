@@ -6,6 +6,7 @@ category: "writing"
 website: "https://quillbot.com"
 pricing: "Free / $9.95/mo (Premium)"
 affiliate_url: https://quillbot.com
+last_verified: 2026-06-24
 featured: true
 rating: 4.3
 features:

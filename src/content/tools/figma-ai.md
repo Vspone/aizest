@@ -6,6 +6,7 @@ category: "design"
 website: "https://www.figma.com"
 pricing: "Free / $12/mo"
 affiliate_url: https://www.figma.com
+last_verified: 2026-06-24
 featured: true
 rating: 4.6
 features:

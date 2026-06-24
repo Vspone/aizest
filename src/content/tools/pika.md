@@ -6,6 +6,7 @@ category: "video"
 website: "https://pika.art"
 pricing: "Free / $10/mo"
 affiliate_url: https://pika.art
+last_verified: 2026-06-24
 featured: false
 rating: 4.2
 features:

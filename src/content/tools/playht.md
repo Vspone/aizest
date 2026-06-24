@@ -6,6 +6,7 @@ category: "audio"
 website: "https://play.ht"
 pricing: "Free / $31.20/mo (Creator)"
 affiliate_url: https://play.ht
+last_verified: 2026-06-24
 featured: true
 rating: 4.3
 features:

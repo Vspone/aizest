@@ -6,6 +6,7 @@ category: "data"
 website: "https://hex.tech"
 pricing: "Free / $50/mo"
 affiliate_url: https://hex.tech
+last_verified: 2026-06-24
 featured: false
 rating: 4.4
 features: ["Collaborative data notebooks with version control", "AI-assisted SQL and Python code generation", "Interactive data apps and dashboards", "Built-in data catalog and connections", "Permission-controlled sharing and publishing", "Scheduled runs and automated reporting"]

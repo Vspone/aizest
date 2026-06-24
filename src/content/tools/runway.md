@@ -6,6 +6,7 @@ category: "video"
 website: "https://runwayml.com"
 pricing: "Free / $15/mo"
 affiliate_url: https://runwayml.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.4
 features:

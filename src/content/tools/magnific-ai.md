@@ -6,6 +6,7 @@ category: "image"
 website: "https://magnific.ai"
 pricing: "Free / $39/mo"
 affiliate_url: https://magnific.ai
+last_verified: 2026-06-24
 featured: false
 rating: 4.7
 features:

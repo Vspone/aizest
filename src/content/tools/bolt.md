@@ -7,6 +7,7 @@ website: "https://bolt.new"
 pricing: "Free / $20/mo (Starter)"
 needs_vps: true
 affiliate_url: https://bolt.new
+last_verified: 2026-06-24
 featured: true
 rating: 4.5
 features:

@@ -11,7 +11,13 @@ export async function getStaticPaths() {
 }
 const { tool } = Astro.props;
 const { Content } = await render(tool);
-const { name, slug, description, website, pricing, affiliate_url, rating, features, pricing_tiers, pros, cons, category, needs_vps } = tool.data;
+const { name, slug, description, website, pricing, affiliate_url, rating, features, pricing_tiers, pros, cons, category, needs_vps, last_verified } = tool.data;
+
+// Check if last_verified is stale (> 3 months)
+const lastVerified = last_verified ? new Date(last_verified) : null;
+const threeMonthsAgo = new Date();
+threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
+const isStale = lastVerified && lastVerified < threeMonthsAgo;
 
 // Get all tools for alternatives section
 const allTools = await getCollection('tools');
@@ -161,6 +167,17 @@ const breadcrumbJsonLd = JSON.stringify({
         </span>
       </div>
     </div>
+
+    <!-- Last Verified Banner -->
+    {lastVerified ? (
+      <div class="mb-4 flex items-center gap-2 text-xs text-gray-400">
+        <span>✅</span>
+        <span>Information verified and updated on <time datetime={last_verified}>{lastVerified.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></span>
+        {isStale && (
+          <span class="text-amber-500 font-medium">— Pricing and features may have changed since verification</span>
+        )}
+      </div>
+    ) : null}
 
     <!-- CTA -->
     {affiliate_url && (

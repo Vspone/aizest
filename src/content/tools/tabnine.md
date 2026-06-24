@@ -6,6 +6,7 @@ category: "coding"
 website: "https://tabnine.com"
 pricing: "Free / $12/mo"
 affiliate_url: https://tabnine.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features:

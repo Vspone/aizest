@@ -6,6 +6,7 @@ category: "audio"
 website: "https://suno.com"
 pricing: "Free / $10/mo"
 affiliate_url: https://suno.com
+last_verified: 2026-06-24
 featured: true
 rating: 4.5
 features:

@@ -6,6 +6,7 @@ category: "audio"
 website: "https://kits.ai"
 pricing: "Free / $24/mo"
 affiliate_url: https://kits.ai
+last_verified: 2026-06-24
 featured: false
 rating: 4.4
 features:

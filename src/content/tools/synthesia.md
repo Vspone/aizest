@@ -6,6 +6,7 @@ category: "video"
 website: "https://www.synthesia.io"
 pricing: "$29/mo"
 affiliate_url: https://www.synthesia.io/?via=aizest
+last_verified: 2026-06-24
 featured: false
 rating: 4.4
 features:

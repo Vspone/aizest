@@ -6,6 +6,7 @@ category: "image"
 website: "https://leonardo.ai"
 pricing: "Free / $10/mo"
 affiliate_url: https://leonardo.ai
+last_verified: 2026-06-24
 featured: false
 rating: 4.4
 features:

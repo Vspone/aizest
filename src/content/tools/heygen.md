@@ -6,6 +6,7 @@ category: "video"
 website: "https://heygen.com"
 pricing: "Free / $24/mo (Creator)"
 affiliate_url: https://heygen.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features:

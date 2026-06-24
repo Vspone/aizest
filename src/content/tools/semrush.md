@@ -6,6 +6,7 @@ category: "marketing"
 website: "https://www.semrush.com"
 pricing: "$129.95/mo"
 affiliate_url: https://www.semrush.com/?ref=aizest
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features:

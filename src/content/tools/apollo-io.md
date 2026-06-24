@@ -6,6 +6,7 @@ category: "business"
 website: "https://www.apollo.io"
 affiliate_url: https://www.apollo.io
 pricing: "Free / $49/user/mo"
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features:

@@ -6,6 +6,7 @@ category: "marketing"
 website: "https://www.getresponse.com"
 affiliate_url: https://www.getresponse.com
 pricing: "Free / $19/mo"
+last_verified: 2026-06-24
 rating: 4.5
 features:
   - "AI email generator and subject line optimizer"

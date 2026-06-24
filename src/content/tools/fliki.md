@@ -6,6 +6,7 @@ category: "video"
 website: "https://fliki.ai"
 pricing: "Free / $28/mo"
 affiliate_url: https://fliki.ai
+last_verified: 2026-06-24
 featured: false
 rating: 4.4
 features:

@@ -6,6 +6,7 @@ category: "writing"
 website: "https://hyperwriteai.com"
 pricing: "Free / $19.99/mo"
 affiliate_url: https://hyperwriteai.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.3
 features:

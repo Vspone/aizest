@@ -6,6 +6,7 @@ category: "marketing"
 website: "https://simplified.com"
 pricing: "Free / $23/mo"
 affiliate_url: https://simplified.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features: ["AI content generation for social media and blogs", "Drag-and-drop design editor with AI templates", "AI copywriting assistant with multiple tones", "Team collaboration and brand kit management", "Social media scheduling and publishing", "AI image generation and background removal"]

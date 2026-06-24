@@ -6,6 +6,7 @@ category: "coding"
 website: "https://github.com/features/copilot"
 pricing: "$10/mo"
 affiliate_url: https://github.com/features/copilot
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features:

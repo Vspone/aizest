@@ -6,6 +6,7 @@ category: "image"
 website: "https://openai.com/dall-e-3"
 pricing: "Included with ChatGPT / $20/mo"
 affiliate_url: https://openai.com/dall-e-3
+last_verified: 2026-06-24
 featured: true
 rating: 4.6
 features:

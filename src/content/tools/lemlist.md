@@ -6,6 +6,7 @@ category: "business"
 website: "https://lemlist.com"
 pricing: "Free / $32/mo"
 affiliate_url: https://lemlist.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.3
 features: ["AI-powered email personalization with custom images", "Multi-channel outreach (email + LinkedIn)", "Smart follow-up sequences with A/B testing", "Email warmup and deliverability optimization", "Lead database and prospecting tools", "Real-time campaign analytics and reporting"]

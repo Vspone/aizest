@@ -6,6 +6,7 @@ category: "productivity"
 website: "https://clickup.com"
 pricing: "Free / $7/user/mo"
 affiliate_url: https://clickup.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features:

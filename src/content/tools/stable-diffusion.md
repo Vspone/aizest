@@ -7,6 +7,7 @@ website: "https://stability.ai"
 pricing: "Free / $10+/mo"
 needs_vps: true
 affiliate_url: https://stability.ai
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features:

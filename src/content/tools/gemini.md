@@ -6,6 +6,7 @@ category: "writing"
 website: "https://gemini.google.com"
 pricing: "Free / $19.99/mo (Advanced)"
 affiliate_url: https://gemini.google.com
+last_verified: 2026-06-24
 featured: true
 rating: 4.7
 features:

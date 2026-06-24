@@ -6,6 +6,7 @@ category: "data"
 website: "https://databox.com"
 affiliate_url: https://databox.com
 pricing: "Free / $59/mo"
+last_verified: 2026-06-24
 featured: false
 rating: 4.4
 features:

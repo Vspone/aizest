@@ -6,6 +6,7 @@ category: "business"
 website: "https://fireflies.ai"
 pricing: "Free / $10/mo"
 affiliate_url: https://fireflies.ai
+last_verified: 2026-06-24
 featured: true
 rating: 4.2
 features:

@@ -6,6 +6,7 @@ category: "writing"
 website: "https://chat.openai.com"
 pricing: "Free / $20/mo"
 affiliate_url: https://chat.openai.com
+last_verified: 2026-06-24
 featured: true
 rating: 4.8
 features:

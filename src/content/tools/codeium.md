@@ -6,6 +6,7 @@ category: "coding"
 website: "https://codeium.com"
 pricing: "Free / $15/mo"
 affiliate_url: https://codeium.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features:

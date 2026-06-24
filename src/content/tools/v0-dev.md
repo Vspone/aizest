@@ -6,6 +6,7 @@ category: "coding"
 website: "https://v0.dev"
 affiliate_url: https://v0.dev
 pricing: "Free / $20/mo"
+last_verified: 2026-06-24
 rating: 4.7
 features:
   - "Text-to-component — describe any UI and get working React code"

@@ -6,6 +6,7 @@ category: "design"
 website: "https://looka.com"
 pricing: "Free / $20 (Brand Kit one-time)"
 affiliate_url: https://looka.com
+last_verified: 2026-06-24
 featured: true
 rating: 4.2
 features:

@@ -6,6 +6,7 @@ category: "video"
 website: "https://www.descript.com"
 pricing: "Free / $24/mo (Business)"
 affiliate_url: https://www.descript.com
+last_verified: 2026-06-24
 featured: true
 rating: 4.6
 features:

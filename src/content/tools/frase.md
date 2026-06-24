@@ -6,6 +6,7 @@ category: "marketing"
 website: "https://www.frase.io"
 pricing: "$14.99/mo (Solo)"
 affiliate_url: https://www.frase.io
+last_verified: 2026-06-24
 featured: true
 rating: 4.4
 features:

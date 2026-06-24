@@ -6,6 +6,7 @@ category: "design"
 website: "https://framer.com"
 pricing: "Free / $15/mo"
 affiliate_url: https://framer.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.7
 features: ["AI-powered website generation from prompts", "Visual drag-and-drop site builder", "Responsive design with auto-layout", "Built-in CMS and SEO tools", "Custom animations and interactions", "One-click publishing with custom domains"]

@@ -6,6 +6,7 @@ category: "writing"
 website: "https://grammarly.com"
 pricing: "Free / $12/mo"
 affiliate_url: https://grammarly.com/?ref=aizest
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features:

@@ -6,6 +6,7 @@ category: "marketing"
 website: "https://writer.com"
 pricing: "Free / $18/mo"
 affiliate_url: https://writer.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.5
 features:

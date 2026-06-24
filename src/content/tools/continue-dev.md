@@ -6,6 +6,7 @@ category: "coding"
 website: "https://continue.dev"
 pricing: "Free / Custom"
 affiliate_url: https://continue.dev
+last_verified: 2026-06-24
 featured: false
 rating: 4.3
 features:

@@ -6,6 +6,7 @@ category: "audio"
 website: "https://elevenlabs.io"
 pricing: "Free / $5/mo"
 affiliate_url: https://elevenlabs.io
+last_verified: 2026-06-24
 featured: false
 rating: 4.7
 features:

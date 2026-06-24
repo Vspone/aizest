@@ -6,6 +6,7 @@ category: "data"
 website: "https://julius.ai"
 pricing: "Free / $17.99/mo"
 affiliate_url: https://julius.ai
+last_verified: 2026-06-24
 featured: false
 rating: 4.2
 features:

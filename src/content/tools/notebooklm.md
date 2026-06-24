@@ -6,6 +6,7 @@ category: "productivity"
 website: "https://notebooklm.google.com"
 pricing: "Free"
 affiliate_url: https://notebooklm.google.com
+last_verified: 2026-06-24
 featured: true
 rating: 4.6
 features:

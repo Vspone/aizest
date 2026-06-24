@@ -6,6 +6,7 @@ category: "video"
 website: "https://capcut.com"
 pricing: "Free / $7.99/mo"
 affiliate_url: https://capcut.com
+last_verified: 2026-06-24
 featured: false
 rating: 4.3
 features:

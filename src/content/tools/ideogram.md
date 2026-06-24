@@ -6,6 +6,7 @@ category: "image"
 website: "https://ideogram.ai"
 pricing: "Free / $20/mo (Plus)"
 affiliate_url: https://ideogram.ai
+last_verified: 2026-06-24
 featured: true
 rating: 4.5
 features:

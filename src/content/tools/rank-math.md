@@ -6,6 +6,13 @@ category: "marketing"
 website: "https://rankmath.com"
 pricing: "Free / $59/yr"
 affiliate_url: https://rankmath.com
+scores:
+  ease_of_use: 8.9
+  pricing_value: 9.9
+  quality: 9.5
+  speed: 8.7
+  overall: 9.2
+best_for: "Marketers, SEO professionals, and growth teams"
 last_verified: 2026-06-24
 featured: false
 rating: 4.6

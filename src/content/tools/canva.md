@@ -6,6 +6,13 @@ category: "design"
 website: "https://www.canva.com"
 pricing: "Free / $13/mo"
 affiliate_url: https://www.canva.com
+scores:
+  ease_of_use: 9.7
+  pricing_value: 9.9
+  quality: 9.5
+  speed: 8.7
+  overall: 9.2
+best_for: "Designers, creative professionals, and brand teams"
 last_verified: 2026-06-24
 featured: true
 rating: 4.6

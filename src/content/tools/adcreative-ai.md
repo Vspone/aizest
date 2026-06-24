@@ -6,6 +6,13 @@ category: "marketing"
 website: "https://www.adcreative.ai"
 pricing: "$29/mo"
 affiliate_url: https://www.adcreative.ai
+scores:
+  ease_of_use: 9.3
+  pricing_value: 8.3
+  quality: 9.1
+  speed: 8.3
+  overall: 8.8
+best_for: "Marketers, SEO professionals, and growth teams"
 last_verified: 2026-06-24
 featured: false
 rating: 4.4

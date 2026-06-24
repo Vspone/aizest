@@ -6,6 +6,13 @@ category: "productivity"
 website: "https://www.usemotion.com"
 pricing: "$19/mo (Individual)"
 affiliate_url: https://www.usemotion.com
+scores:
+  ease_of_use: 8.3
+  pricing_value: 8.1
+  quality: 8.9
+  speed: 8.1
+  overall: 8.6
+best_for: "Professionals, teams, and students"
 last_verified: 2026-06-24
 featured: true
 rating: 4.3

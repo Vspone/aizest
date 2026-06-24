@@ -6,6 +6,13 @@ category: "business"
 website: "https://lemlist.com"
 pricing: "Free / $32/mo"
 affiliate_url: https://lemlist.com
+scores:
+  ease_of_use: 8.3
+  pricing_value: 9.3
+  quality: 8.9
+  speed: 8.1
+  overall: 8.6
+best_for: "Sales teams, business professionals, and entrepreneurs"
 last_verified: 2026-06-24
 featured: false
 rating: 4.3

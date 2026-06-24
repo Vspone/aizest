@@ -6,6 +6,13 @@ category: "audio"
 website: "https://speechify.com"
 pricing: "Free / $11.58/mo (Premium)"
 affiliate_url: https://speechify.com
+scores:
+  ease_of_use: 8.7
+  pricing_value: 9.7
+  quality: 9.3
+  speed: 8.5
+  overall: 9.0
+best_for: "Podcasters, musicians, and audio creators"
 last_verified: 2026-06-24
 featured: true
 rating: 4.5

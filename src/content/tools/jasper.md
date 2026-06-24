@@ -6,6 +6,13 @@ category: "writing"
 website: "https://www.jasper.ai"
 pricing: "$39/mo"
 affiliate_url: https://www.jasper.ai/?ref=aizest
+scores:
+  ease_of_use: 9.7
+  pricing_value: 8.7
+  quality: 9.5
+  speed: 8.7
+  overall: 9.2
+best_for: "Content creators, writers, bloggers, and marketing teams"
 last_verified: 2026-06-24
 featured: true
 rating: 4.6

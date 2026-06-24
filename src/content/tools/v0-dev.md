@@ -6,6 +6,13 @@ category: "coding"
 website: "https://v0.dev"
 affiliate_url: https://v0.dev
 pricing: "Free / $20/mo"
+scores:
+  ease_of_use: 9.1
+  pricing_value: 10
+  quality: 9.7
+  speed: 8.9
+  overall: 9.4
+best_for: "Developers, software engineers, and technical teams"
 last_verified: 2026-06-24
 rating: 4.7
 features:

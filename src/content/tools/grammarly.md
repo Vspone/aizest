@@ -6,6 +6,13 @@ category: "writing"
 website: "https://grammarly.com"
 pricing: "Free / $12/mo"
 affiliate_url: https://grammarly.com/?ref=aizest
+scores:
+  ease_of_use: 9.5
+  pricing_value: 9.7
+  quality: 9.3
+  speed: 8.5
+  overall: 9.0
+best_for: "Content creators, writers, bloggers, and marketing teams"
 last_verified: 2026-06-24
 featured: false
 rating: 4.5

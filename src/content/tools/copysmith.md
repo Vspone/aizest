@@ -6,6 +6,13 @@ category: "marketing"
 website: "https://copysmith.ai"
 pricing: "Free / $19/mo"
 affiliate_url: https://copysmith.ai
+scores:
+  ease_of_use: 8.1
+  pricing_value: 9.1
+  quality: 8.7
+  speed: 7.9
+  overall: 8.4
+best_for: "Marketers, SEO professionals, and growth teams"
 last_verified: 2026-06-24
 featured: false
 rating: 4.2

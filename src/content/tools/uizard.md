@@ -6,6 +6,13 @@ category: "design"
 website: "https://uizard.io"
 pricing: "Free / $12/mo (Pro)"
 affiliate_url: https://uizard.io
+scores:
+  ease_of_use: 8.3
+  pricing_value: 9.3
+  quality: 8.9
+  speed: 8.1
+  overall: 8.6
+best_for: "Designers, creative professionals, and brand teams"
 last_verified: 2026-06-24
 featured: true
 rating: 4.3

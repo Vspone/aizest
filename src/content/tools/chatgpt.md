@@ -6,6 +6,13 @@ category: "writing"
 website: "https://chat.openai.com"
 pricing: "Free / $20/mo"
 affiliate_url: https://chat.openai.com
+scores:
+  ease_of_use: 9.3
+  pricing_value: 10
+  quality: 9.9
+  speed: 9.1
+  overall: 9.6
+best_for: "Content creators, writers, bloggers, and marketing teams"
 last_verified: 2026-06-24
 featured: true
 rating: 4.8

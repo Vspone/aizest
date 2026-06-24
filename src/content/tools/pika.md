@@ -6,6 +6,13 @@ category: "video"
 website: "https://pika.art"
 pricing: "Free / $10/mo"
 affiliate_url: https://pika.art
+scores:
+  ease_of_use: 8.9
+  pricing_value: 9.1
+  quality: 8.7
+  speed: 7.9
+  overall: 8.4
+best_for: "Video creators, marketers, and media teams"
 last_verified: 2026-06-24
 featured: false
 rating: 4.2

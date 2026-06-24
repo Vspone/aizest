@@ -6,6 +6,13 @@ category: "data"
 website: "https://www.perplexity.ai"
 pricing: "Free / $20/mo"
 affiliate_url: https://www.perplexity.ai
+scores:
+  ease_of_use: 8.9
+  pricing_value: 9.9
+  quality: 9.5
+  speed: 8.7
+  overall: 9.2
+best_for: "Data analysts, scientists, and researchers"
 last_verified: 2026-06-24
 featured: false
 rating: 4.6

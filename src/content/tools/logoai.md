@@ -6,6 +6,13 @@ category: "design"
 website: "https://logoai.com"
 pricing: "Free / $29/mo"
 affiliate_url: https://logoai.com
+scores:
+  ease_of_use: 8.5
+  pricing_value: 9.5
+  quality: 9.1
+  speed: 8.3
+  overall: 8.8
+best_for: "Designers, creative professionals, and brand teams"
 last_verified: 2026-06-24
 featured: false
 rating: 4.4

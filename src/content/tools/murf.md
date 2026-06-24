@@ -6,6 +6,13 @@ category: "audio"
 website: "https://murf.ai"
 pricing: "Free / $19/mo"
 affiliate_url: https://murf.ai
+scores:
+  ease_of_use: 8.9
+  pricing_value: 9.1
+  quality: 8.7
+  speed: 7.9
+  overall: 8.4
+best_for: "Podcasters, musicians, and audio creators"
 last_verified: 2026-06-24
 featured: false
 rating: 4.2

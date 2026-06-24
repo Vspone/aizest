@@ -6,6 +6,13 @@ category: "business"
 website: "https://fireflies.ai"
 pricing: "Free / $10/mo"
 affiliate_url: https://fireflies.ai
+scores:
+  ease_of_use: 8.9
+  pricing_value: 9.1
+  quality: 8.7
+  speed: 7.9
+  overall: 8.4
+best_for: "Sales teams, business professionals, and entrepreneurs"
 last_verified: 2026-06-24
 featured: true
 rating: 4.2

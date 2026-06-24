@@ -6,6 +6,13 @@ category: "image"
 website: "https://www.midjourney.com"
 pricing: "$10/mo"
 affiliate_url: https://www.midjourney.com
+scores:
+  ease_of_use: 9.1
+  pricing_value: 8.9
+  quality: 9.7
+  speed: 8.9
+  overall: 9.4
+best_for: "Designers, artists, and content creators"
 last_verified: 2026-06-24
 featured: true
 rating: 4.7

@@ -6,6 +6,13 @@ category: "productivity"
 website: "https://reclaim.ai"
 pricing: "Free / $10/seat/mo"
 affiliate_url: https://reclaim.ai
+scores:
+  ease_of_use: 9.7
+  pricing_value: 9.9
+  quality: 9.5
+  speed: 8.7
+  overall: 9.2
+best_for: "Professionals, teams, and students"
 last_verified: 2026-06-24
 featured: false
 rating: 4.6

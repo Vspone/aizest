@@ -6,6 +6,13 @@ category: "audio"
 website: "https://respeecher.com"
 pricing: "Free / $29/mo"
 affiliate_url: https://respeecher.com
+scores:
+  ease_of_use: 9.7
+  pricing_value: 9.9
+  quality: 9.5
+  speed: 8.7
+  overall: 9.2
+best_for: "Podcasters, musicians, and audio creators"
 last_verified: 2026-06-24
 featured: false
 rating: 4.6

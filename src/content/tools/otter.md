@@ -6,6 +6,13 @@ category: "business"
 website: "https://otter.ai"
 pricing: "Free / $16.99/mo"
 affiliate_url: https://otter.ai
+scores:
+  ease_of_use: 8.5
+  pricing_value: 9.5
+  quality: 9.1
+  speed: 8.3
+  overall: 8.8
+best_for: "Sales teams, business professionals, and entrepreneurs"
 last_verified: 2026-06-24
 featured: true
 rating: 4.4

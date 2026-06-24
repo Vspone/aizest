@@ -6,6 +6,13 @@ category: "marketing"
 website: "https://www.getresponse.com"
 affiliate_url: https://www.getresponse.com
 pricing: "Free / $19/mo"
+scores:
+  ease_of_use: 9.5
+  pricing_value: 9.7
+  quality: 9.3
+  speed: 8.5
+  overall: 9.0
+best_for: "Marketers, SEO professionals, and growth teams"
 last_verified: 2026-06-24
 rating: 4.5
 features:

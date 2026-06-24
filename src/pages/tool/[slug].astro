@@ -165,6 +165,11 @@ const breadcrumbJsonLd = JSON.stringify({
         <span class="text-sm text-gray-500" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
           <span itemprop="price">{pricing}</span>
         </span>
+        {tool.data.best_for && (
+          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-xs font-medium">
+            🎯 {tool.data.best_for}
+          </span>
+        )}
       </div>
     </div>
 
@@ -351,6 +356,47 @@ const breadcrumbJsonLd = JSON.stringify({
                 </a>
               ))}
             </div>
+          </div>
+        )}
+
+        <!-- AI Zest Score -->
+        {tool.data.scores && (
+          <div class="card p-4 sm:p-5">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+              <span>📊</span> AI Zest Score
+            </h3>
+            <div class="flex items-center justify-center mb-4">
+              <div class="relative w-20 h-20">
+                <svg class="w-20 h-20 -rotate-90" viewBox="0 0 36 36">
+                  <circle cx="18" cy="18" r="15.5" fill="none" stroke="#e5e7eb" stroke-width="2.5" class="dark:stroke-gray-600"/>
+                  <circle cx="18" cy="18" r="15.5" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-dasharray={`${tool.data.scores.overall * 10} ${100 - tool.data.scores.overall * 10}`}
+                    class="text-[#3B82F6]"/>
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <span class="text-2xl font-bold text-gray-900 dark:text-white">{tool.data.scores.overall}</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2">
+              {[
+                {label: 'Ease of Use', key: 'ease_of_use'},
+                {label: 'Pricing Value', key: 'pricing_value'},
+                {label: 'Quality', key: 'quality'},
+                {label: 'Speed', key: 'speed'},
+              ].map(s => (
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-gray-500 dark:text-gray-400">{s.label}</span>
+                  <div class="flex items-center gap-2">
+                    <div class="w-20 h-1.5 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                      <div class="h-full rounded-full bg-[#3B82F6]" style={`width: ${(tool.data.scores[s.key] || 0) * 10}%`}></div>
+                    </div>
+                    <span class="text-gray-700 dark:text-gray-300 font-medium w-5 text-right">{tool.data.scores[s.key]}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p class="text-xs text-gray-400 mt-3 text-center">Based on hands-on testing and transparent methodology. <a href="/how-we-review" class="text-[#3B82F6] hover:underline">How we score →</a></p>
           </div>
         )}
 

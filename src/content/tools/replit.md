@@ -6,6 +6,13 @@ category: "coding"
 website: "https://replit.com"
 pricing: "Free / $20/mo"
 affiliate_url: https://replit.com
+scores:
+  ease_of_use: 8.5
+  pricing_value: 9.5
+  quality: 9.1
+  speed: 8.3
+  overall: 8.8
+best_for: "Developers, software engineers, and technical teams"
 last_verified: 2026-06-24
 featured: false
 rating: 4.4

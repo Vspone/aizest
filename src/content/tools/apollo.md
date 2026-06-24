@@ -6,6 +6,13 @@ category: "business"
 website: "https://www.apollo.io"
 pricing: "Free / $49/mo (Basic)"
 affiliate_url: https://www.apollo.io
+scores:
+  ease_of_use: 8.3
+  pricing_value: 9.3
+  quality: 8.9
+  speed: 8.1
+  overall: 8.6
+best_for: "Sales teams, business professionals, and entrepreneurs"
 last_verified: 2026-06-24
 featured: true
 rating: 4.3

@@ -6,6 +6,13 @@ category: "audio"
 website: "https://www.podcastle.ai"
 pricing: "Free / $11.99/mo"
 affiliate_url: https://www.podcastle.ai
+scores:
+  ease_of_use: 9.3
+  pricing_value: 9.5
+  quality: 9.1
+  speed: 8.3
+  overall: 8.8
+best_for: "Podcasters, musicians, and audio creators"
 last_verified: 2026-06-24
 featured: false
 rating: 4.4

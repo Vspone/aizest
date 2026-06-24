@@ -6,6 +6,13 @@ category: "marketing"
 website: "https://simplified.com"
 pricing: "Free / $23/mo"
 affiliate_url: https://simplified.com
+scores:
+  ease_of_use: 9.5
+  pricing_value: 9.7
+  quality: 9.3
+  speed: 8.5
+  overall: 9.0
+best_for: "Marketers, SEO professionals, and growth teams"
 last_verified: 2026-06-24
 featured: false
 rating: 4.5

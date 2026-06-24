@@ -6,6 +6,13 @@ category: "audio"
 website: "https://elevenlabs.io"
 pricing: "Free / $5/mo"
 affiliate_url: https://elevenlabs.io
+scores:
+  ease_of_use: 9.1
+  pricing_value: 10
+  quality: 9.7
+  speed: 8.9
+  overall: 9.4
+best_for: "Podcasters, musicians, and audio creators"
 last_verified: 2026-06-24
 featured: false
 rating: 4.7

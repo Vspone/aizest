@@ -6,6 +6,13 @@ category: "marketing"
 website: "https://writer.com"
 pricing: "Free / $18/mo"
 affiliate_url: https://writer.com
+scores:
+  ease_of_use: 8.7
+  pricing_value: 9.7
+  quality: 9.3
+  speed: 8.5
+  overall: 9.0
+best_for: "Marketers, SEO professionals, and growth teams"
 last_verified: 2026-06-24
 featured: false
 rating: 4.5

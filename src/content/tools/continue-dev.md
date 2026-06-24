@@ -6,6 +6,13 @@ category: "coding"
 website: "https://continue.dev"
 pricing: "Free / Custom"
 affiliate_url: https://continue.dev
+scores:
+  ease_of_use: 9.1
+  pricing_value: 9.3
+  quality: 8.9
+  speed: 8.1
+  overall: 8.6
+best_for: "Developers, software engineers, and technical teams"
 last_verified: 2026-06-24
 featured: false
 rating: 4.3

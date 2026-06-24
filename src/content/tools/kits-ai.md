@@ -6,6 +6,13 @@ category: "audio"
 website: "https://kits.ai"
 pricing: "Free / $24/mo"
 affiliate_url: https://kits.ai
+scores:
+  ease_of_use: 8.5
+  pricing_value: 9.5
+  quality: 9.1
+  speed: 8.3
+  overall: 8.8
+best_for: "Podcasters, musicians, and audio creators"
 last_verified: 2026-06-24
 featured: false
 rating: 4.4

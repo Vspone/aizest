@@ -6,6 +6,13 @@ category: "video"
 website: "https://www.veed.io"
 pricing: "Free / $18/mo (Pro)"
 affiliate_url: https://www.veed.io
+scores:
+  ease_of_use: 8.3
+  pricing_value: 9.3
+  quality: 8.9
+  speed: 8.1
+  overall: 8.6
+best_for: "Video creators, marketers, and media teams"
 last_verified: 2026-06-24
 featured: true
 rating: 4.3

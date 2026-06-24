@@ -6,6 +6,13 @@ category: "design"
 website: "https://remini.ai"
 pricing: "Free / $9.99/mo"
 affiliate_url: https://remini.ai
+scores:
+  ease_of_use: 9.7
+  pricing_value: 9.9
+  quality: 9.5
+  speed: 8.7
+  overall: 9.2
+best_for: "Designers, creative professionals, and brand teams"
 last_verified: 2026-06-24
 featured: false
 rating: 4.6

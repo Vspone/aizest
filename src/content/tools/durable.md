@@ -6,6 +6,13 @@ category: "productivity"
 website: "https://durable.co"
 pricing: "Free / $12/mo"
 affiliate_url: https://durable.co
+scores:
+  ease_of_use: 8.1
+  pricing_value: 9.1
+  quality: 8.7
+  speed: 7.9
+  overall: 8.4
+best_for: "Professionals, teams, and students"
 last_verified: 2026-06-24
 featured: false
 rating: 4.2

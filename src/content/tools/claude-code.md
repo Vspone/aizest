@@ -6,6 +6,13 @@ category: "coding"
 website: "https://docs.anthropic.com/en/docs/claude-code/overview"
 pricing: "Included with Claude Pro / $20/mo"
 affiliate_url: https://docs.anthropic.com/en/docs/claude-code/overview
+scores:
+  ease_of_use: 8.9
+  pricing_value: 8.7
+  quality: 9.5
+  speed: 8.7
+  overall: 9.2
+best_for: "Developers, software engineers, and technical teams"
 last_verified: 2026-06-24
 featured: false
 rating: 4.6

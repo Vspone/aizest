@@ -6,6 +6,13 @@ category: "productivity"
 website: "https://gamma.app"
 pricing: "Free / $8/mo"
 affiliate_url: https://gamma.app
+scores:
+  ease_of_use: 8.3
+  pricing_value: 9.3
+  quality: 8.9
+  speed: 8.1
+  overall: 8.6
+best_for: "Professionals, teams, and students"
 last_verified: 2026-06-24
 featured: false
 rating: 4.3

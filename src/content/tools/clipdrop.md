@@ -6,6 +6,13 @@ category: "image"
 website: "https://clipdrop.co"
 pricing: "Free / $9/mo (Pro)"
 affiliate_url: https://clipdrop.co
+scores:
+  ease_of_use: 8.9
+  pricing_value: 9.1
+  quality: 8.7
+  speed: 7.9
+  overall: 8.4
+best_for: "Designers, artists, and content creators"
 last_verified: 2026-06-24
 featured: true
 rating: 4.2

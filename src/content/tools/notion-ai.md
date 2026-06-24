@@ -6,6 +6,13 @@ category: "productivity"
 website: "https://www.notion.so/product/ai"
 pricing: "$10/mo (add-on)"
 affiliate_url: https://www.notion.so
+scores:
+  ease_of_use: 8.5
+  pricing_value: 8.3
+  quality: 9.1
+  speed: 8.3
+  overall: 8.8
+best_for: "Professionals, teams, and students"
 last_verified: 2026-06-24
 featured: false
 rating: 4.4

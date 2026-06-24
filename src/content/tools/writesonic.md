@@ -6,6 +6,13 @@ category: "writing"
 website: "https://writesonic.com"
 pricing: "$20/mo"
 affiliate_url: https://writesonic.com/?ref=aizest
+scores:
+  ease_of_use: 8.9
+  pricing_value: 7.9
+  quality: 8.7
+  speed: 7.9
+  overall: 8.4
+best_for: "Content creators, writers, bloggers, and marketing teams"
 last_verified: 2026-06-24
 featured: false
 rating: 4.2

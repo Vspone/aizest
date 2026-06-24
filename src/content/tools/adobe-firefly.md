@@ -6,6 +6,13 @@ category: "design"
 website: "https://firefly.adobe.com"
 pricing: "Free / $4.99/mo"
 affiliate_url: https://firefly.adobe.com
+scores:
+  ease_of_use: 9.1
+  pricing_value: 9.3
+  quality: 8.9
+  speed: 8.1
+  overall: 8.6
+best_for: "Designers, creative professionals, and brand teams"
 last_verified: 2026-06-24
 featured: false
 rating: 4.3

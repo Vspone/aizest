@@ -13,7 +13,7 @@ scores:
   speed: 7.9
   overall: 8.4
 best_for: "Sales teams, business professionals, and entrepreneurs"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: true
 rating: 4.2
 features:

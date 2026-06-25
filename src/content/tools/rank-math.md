@@ -13,7 +13,7 @@ scores:
   speed: 8.7
   overall: 9.2
 best_for: "Marketers, SEO professionals, and growth teams"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: false
 rating: 4.6
 features:

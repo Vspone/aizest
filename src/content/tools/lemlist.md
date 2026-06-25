@@ -13,7 +13,7 @@ scores:
   speed: 8.1
   overall: 8.6
 best_for: "Sales teams, business professionals, and entrepreneurs"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: false
 rating: 4.3
 features: ["AI-powered email personalization with custom images", "Multi-channel outreach (email + LinkedIn)", "Smart follow-up sequences with A/B testing", "Email warmup and deliverability optimization", "Lead database and prospecting tools", "Real-time campaign analytics and reporting"]

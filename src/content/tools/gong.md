@@ -13,7 +13,7 @@ scores:
   speed: 8.7
   overall: 9.2
 best_for: "Sales teams, business professionals, and entrepreneurs"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: false
 rating: 4.6
 features: ["Automatic call recording and transcription", "AI conversation analysis and scoring", "Deal risk detection and forecasting", "Revenue intelligence dashboards", "CRM integration and data enrichment", "Coaching and training recommendations"]

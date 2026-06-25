@@ -34,7 +34,7 @@ for (const t of tools) {
 <BaseLayout title="AI Zest — Discover the Best AI Tools">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <Hero />
+    <Hero count={tools.length} />
     
     <div class="mt-4 mb-16">
       <SearchBar />
@@ -487,6 +487,48 @@ for (const t of tools) {
           <a href="/about" class="text-sm text-[#3B82F6] hover:underline font-medium">
             Learn more about AI Zest →
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Trust AI Zest -->
+    <section class="mb-16 reveal-on-scroll">
+      <div class="rounded-2xl border border-gray-200 dark:border-gray-800 p-8 sm:p-10">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Why Trust AI Zest</h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+            We review {tools.length}+ AI tools with a consistent, transparent methodology.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="text-center p-5">
+            <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+              <span class="text-xl">🔬</span>
+            </div>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Hands-On Testing</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              Every tool is evaluated through real hands-on testing. We don't just copy specs — we actually use each tool before rating it.
+            </p>
+          </div>
+          <div class="text-center p-5">
+            <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+              <span class="text-xl">📋</span>
+            </div>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Transparent Methodology</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              Our 5-dimension scoring system rates Feature Completeness, Pricing, Ease of Use, Performance, and Trust & Privacy.
+            </p>
+            <a href="/how-we-review" class="inline-block mt-2 text-sm font-medium text-[#3B82F6] hover:underline">See how we rate →</a>
+          </div>
+          <div class="text-center p-5">
+            <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+              <span class="text-xl">🔄</span>
+            </div>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Always Updated</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              We continuously update ratings, pricing, and reviews. Check the "last verified" date on each tool to see when it was last reviewed.
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -13,7 +13,7 @@ scores:
   speed: 8.5
   overall: 9.0
 best_for: "Sales teams, business professionals, and entrepreneurs"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: false
 rating: 4.5
 features: ["Multi-channel cadence automation (email, call, social)", "AI-powered lead scoring and prioritization", "Real-time conversation intelligence", "Pipeline management and forecasting", "Salesforce and CRM deep integration", "Team performance analytics and coaching"]

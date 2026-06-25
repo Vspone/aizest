@@ -13,7 +13,7 @@ scores:
   speed: 8.1
   overall: 8.6
 best_for: "Data analysts, scientists, and researchers"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: false
 rating: 4.3
 features: ["No-code AI model building and training", "Automated data analysis and insight generation", "Predictive analytics with natural language queries", "Drag-and-drop data preparation and cleaning", "Customizable dashboards and reports", "API deployment for production models"]

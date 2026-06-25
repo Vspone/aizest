@@ -13,7 +13,7 @@ scores:
   speed: 8.1
   overall: 8.6
 best_for: "Professionals, teams, and students"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: true
 rating: 4.3
 features:

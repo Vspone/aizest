@@ -13,7 +13,7 @@ scores:
   speed: 8.5
   overall: 9.0
 best_for: "Designers, artists, and content creators"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: true
 rating: 4.5
 features:

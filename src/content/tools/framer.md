@@ -13,7 +13,7 @@ scores:
   speed: 8.9
   overall: 9.4
 best_for: "Designers, creative professionals, and brand teams"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: false
 rating: 4.7
 features: ["AI-powered website generation from prompts", "Visual drag-and-drop site builder", "Responsive design with auto-layout", "Built-in CMS and SEO tools", "Custom animations and interactions", "One-click publishing with custom domains"]

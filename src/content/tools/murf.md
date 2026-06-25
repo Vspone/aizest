@@ -13,7 +13,7 @@ scores:
   speed: 7.9
   overall: 8.4
 best_for: "Podcasters, musicians, and audio creators"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: false
 rating: 4.2
 features:

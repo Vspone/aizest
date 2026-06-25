@@ -13,7 +13,7 @@ scores:
   speed: 7.9
   overall: 8.4
 best_for: "Video creators, marketers, and media teams"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: false
 rating: 4.2
 features:

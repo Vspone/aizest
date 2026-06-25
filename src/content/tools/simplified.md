@@ -13,7 +13,7 @@ scores:
   speed: 8.5
   overall: 9.0
 best_for: "Marketers, SEO professionals, and growth teams"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: false
 rating: 4.5
 features: ["AI content generation for social media and blogs", "Drag-and-drop design editor with AI templates", "AI copywriting assistant with multiple tones", "Team collaboration and brand kit management", "Social media scheduling and publishing", "AI image generation and background removal"]

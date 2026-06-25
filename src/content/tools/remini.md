@@ -13,7 +13,7 @@ scores:
   speed: 8.7
   overall: 9.2
 best_for: "Designers, creative professionals, and brand teams"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: false
 rating: 4.6
 features: ["AI face enhancement and sharpening", "Old photo restoration and colorization", "Image upscaling up to 4K resolution", "Batch processing for multiple photos", "Video enhancement capabilities", "One-tap automatic enhancement"]

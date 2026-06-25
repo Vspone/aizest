@@ -13,7 +13,7 @@ scores:
   speed: 8.9
   overall: 9.4
 best_for: "Content creators, writers, bloggers, and marketing teams"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: true
 rating: 4.7
 features:

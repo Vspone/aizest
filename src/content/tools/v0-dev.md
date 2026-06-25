@@ -13,7 +13,7 @@ scores:
   speed: 8.9
   overall: 9.4
 best_for: "Developers, software engineers, and technical teams"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 rating: 4.7
 features:
   - "Text-to-component — describe any UI and get working React code"

@@ -1,13 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const tools = await getCollection('tools');
 ---
 
-<BaseLayout
+<BaseLayout 
   title="Editorial Policy — AI Zest"
-  description="Our editorial standards, review policies, and commitment to honest, unbiased AI tool reviews."
+  description="Our editorial policy for AI Zest: content integrity, AI assistance disclosure, corrections policy, affiliate disclosure, and review update practices."
 >
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-    
     <!-- Breadcrumb -->
     <nav class="flex flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
       <a href="/" class="hover:text-[#3B82F6]">Home</a>
@@ -18,52 +20,133 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- Hero -->
     <div class="text-center mb-10">
       <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#3B82F6] to-[#8B5CF6] text-white text-2xl mb-4">
-        📝
+        📜
       </div>
       <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3">
         Editorial <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6]">Policy</span>
       </h1>
       <p class="text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-        Our commitment to honest, transparent, and independent AI tool reviews.
+        Our commitment to transparency, integrity, and editorial independence — how we create, review, and maintain content on AI Zest.
       </p>
-      <p class="text-xs text-gray-400 dark:text-gray-500 mt-2">Last updated: June 24, 2026</p>
+      <p class="text-xs text-gray-400 dark:text-gray-500 mt-2">Last updated: June 25, 2026</p>
     </div>
 
-    <!-- Content -->
-    <div class="prose prose-gray dark:prose-invert max-w-none">
-      
-      <h2>Our Independence</h2>
-      <p>AI Zest operates independently. We are not owned by, funded by, or affiliated with any of the AI tools we review. Our editorial decisions are made solely by our team, based on our research, testing, and analysis.</p>
-      <p>No company can pay for a positive review, a higher rating, or placement on our Best Of lists. We maintain full editorial control over all content published on the site.</p>
+    <!-- Content Integrity -->
+    <section class="mb-10">
+      <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 sm:p-10">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+          <span>🛡️</span> Content Integrity
+        </h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+          We do not accept payment for positive reviews. Every tool on AI Zest is evaluated on its own merit based on hands-on testing and objective criteria. No tool, developer, or company can buy a favorable rating or placement.
+        </p>
+        <div class="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-900/20">
+          <p class="text-sm text-blue-700 dark:text-blue-300 flex items-start gap-2">
+            <span class="shrink-0">✅</span>
+            <span><strong>Sponsored content</strong> is clearly and conspicuously labeled as such. Any paid partnership or sponsored post will always be identified, so you know exactly what you're reading.</span>
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <h2>How We Select Tools for Review</h2>
-      <p>We select tools based on:</p>
-      <ul>
-        <li><strong>Popularity and search demand</strong> — tools that users are actively searching for</li>
-        <li><strong>Industry significance</strong> — tools that represent meaningful innovations in their category</li>
-        <li><strong>Reader requests</strong> — we welcome suggestions from our audience</li>
-        <li><strong>Market relevance</strong> — tools that solve real problems for our readers</li>
-      </ul>
-      <p>We strive to cover both well-established platforms and emerging tools that show promise. Being listed on AI Zest does not imply endorsement — every tool receives an objective rating based on our methodology.</p>
+    <!-- AI Assistance -->
+    <section class="mb-10">
+      <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 sm:p-10">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+          <span>🤖</span> AI Assistance
+        </h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+          We use AI tools to assist with research and content drafting, but every review, comparison, and article on AI Zest is reviewed and edited by a human editor before publication. A human makes the final call on all ratings, opinions, and editorial decisions.
+        </p>
+        <div class="p-4 rounded-xl bg-purple-50 dark:bg-purple-900/10 border border-purple-100 dark:border-purple-900/20">
+          <p class="text-sm text-purple-700 dark:text-purple-300 flex items-start gap-2">
+            <span class="shrink-0">💡</span>
+            <span>We are transparent about AI use because we believe honesty matters. AI helps us scale our coverage in a fast-moving space, but it never replaces human judgment, testing, or editorial oversight.</span>
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <h2>Review Methodology</h2>
-      <p>Every tool on AI Zest is evaluated using our <a href="/how-we-review">consistent, transparent methodology</a>. Each tool receives a rating out of 5.0 across five equally-weighted dimensions: Feature Completeness, Pricing & Value, Ease of Use, Performance & Quality, and Support & Community.</p>
-      <p>Our reviews are based on hands-on testing whenever possible. For tools we cannot fully test (e.g., enterprise-only platforms), we rely on thorough research, expert consultations, and verified user feedback.</p>
+    <!-- Corrections -->
+    <section class="mb-10">
+      <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 sm:p-10">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+          <span>✏️</span> Corrections
+        </h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+          We strive for accuracy, but mistakes can happen. If an error is found — whether in a review, comparison, pricing detail, or any other content — we correct it promptly and transparently. Every correction is noted with the date it was made so readers can track changes.
+        </p>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+          If you spot an error, please let us know at <a href="mailto:admin@aizest.net" class="text-[#3B82F6] hover:underline">admin@aizest.net</a>. We appreciate your help in keeping our content accurate and trustworthy.
+        </p>
+      </div>
+    </section>
 
-      <h2>Affiliate Disclosure</h2>
-      <p>Some links on AI Zest are affiliate links. When you click an affiliate link and make a purchase, we may earn a commission at no additional cost to you. This is a standard practice across the review and directory industry.</p>
-      <p><strong>Critically, affiliate relationships never influence our ratings, reviews, or placement.</strong> We do not accept payment for higher ratings, featured placement, or positive reviews. Our affiliate partners have no input into our editorial content.</p>
-      <p>We clearly identify affiliate links with a disclosure notice on every page where they appear.</p>
+    <!-- Affiliate Disclosure -->
+    <section class="mb-10">
+      <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 sm:p-10">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+          <span>🔗</span> Affiliate Disclosure
+        </h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+          Some links on aizest.net are affiliate links. If you click on an affiliate link and make a purchase, we may earn a small commission at no extra cost to you. We participate in affiliate programs including <strong>Awin</strong> and other networks.
+        </p>
+        <div class="p-4 rounded-xl bg-amber-50 dark:bg-amber-900/10 border border-amber-100 dark:border-amber-900/20">
+          <p class="text-sm text-amber-700 dark:text-amber-300 flex items-start gap-2">
+            <span class="shrink-0">⚖️</span>
+            <span><strong>Affiliate commissions do not affect our ratings, reviews, or recommendations.</strong> We evaluate every tool solely on its merits. Our editorial independence is non-negotiable — we recommend tools we genuinely believe in, regardless of affiliate relationships.</span>
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <h2>Corrections Policy</h2>
-      <p>We strive for accuracy in every review and article. If you identify an error — whether in pricing, features, ratings, or factual claims — please <a href="/contact">contact us</a>. We aim to review and correct errors within 2 business days. Significant corrections are noted at the bottom of the affected page.</p>
+    <!-- Review Updates -->
+    <section class="mb-10">
+      <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 sm:p-10">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+          <span>🔄</span> Review Updates
+        </h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+          AI tools change rapidly — features are added, pricing shifts, and new competitors emerge. We review and update our content regularly to keep it accurate and relevant. Each tool page includes a <strong>"last verified"</strong> date so you know how current the information is.
+        </p>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+          If a tool undergoes significant changes — a major version release, pricing overhaul, or notable shift in quality — we prioritize updating its review. Older content is flagged for review on a recurring basis to ensure nothing falls out of date.
+        </p>
+      </div>
+    </section>
 
-      <h2>Sponsored Content</h2>
-      <p>AI Zest does not accept sponsored reviews or paid placements that influence editorial content. Any sponsored or promotional content would be clearly labeled as such. As of June 2026, we have no sponsored content on the site.</p>
+    <!-- Contact -->
+    <section class="mb-10">
+      <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 sm:p-10">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+          <span>📬</span> Contact
+        </h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+          If you have questions about this editorial policy, want to report an error, or have concerns about any content on AI Zest, please reach out:
+        </p>
+        <div class="flex items-center gap-3 p-4 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-700">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#3B82F6] to-[#8B5CF6] flex items-center justify-center text-white text-base shrink-0">
+            ✉️
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-gray-900 dark:text-white">Email</p>
+            <a href="mailto:admin@aizest.net" class="text-sm text-[#3B82F6] hover:underline">admin@aizest.net</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <h2>Contact</h2>
-      <p>Questions about this policy? <a href="/contact">Get in touch</a>.</p>
-
+    <!-- CTA -->
+    <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-gradient-to-br from-[#3B82F6]/5 to-[#8B5CF6]/5 dark:from-[#3B82F6]/10 dark:to-[#8B5CF6]/10 p-8 sm:p-10 text-center">
+      <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Trust Matters</h2>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mb-5 max-w-md mx-auto">
+        We believe transparency builds trust. Browse {tools.length} AI tool reviews you can rely on.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/" class="inline-flex items-center gap-2 btn-primary text-sm px-6 py-2.5">Browse All Tools</a>
+        <a href="/how-we-review" class="inline-flex items-center gap-2 text-sm px-6 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:border-[#3B82F6]/40 transition-colors">How We Review</a>
+      </div>
     </div>
+
   </div>
 </BaseLayout>

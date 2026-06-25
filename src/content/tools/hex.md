@@ -13,7 +13,7 @@ scores:
   speed: 8.3
   overall: 8.8
 best_for: "Data analysts, scientists, and researchers"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: false
 rating: 4.4
 features: ["Collaborative data notebooks with version control", "AI-assisted SQL and Python code generation", "Interactive data apps and dashboards", "Built-in data catalog and connections", "Permission-controlled sharing and publishing", "Scheduled runs and automated reporting"]

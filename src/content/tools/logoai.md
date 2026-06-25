@@ -13,7 +13,7 @@ scores:
   speed: 8.3
   overall: 8.8
 best_for: "Designers, creative professionals, and brand teams"
-last_verified: 2026-06-24
+last_verified: 2026-06-25
 featured: false
 rating: 4.4
 features: ["AI logo generation based on industry and style", "Business card and stationery design", "Brand color palette generation", "Custom typography recommendations", "High-resolution vector file exports", "Social media kit creation"]

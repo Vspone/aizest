@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 }
 const { tool } = Astro.props;
 const { Content } = await render(tool);
-const { name, slug, description, website, pricing, affiliate_url, rating, features, pricing_tiers, pros, cons, category, needs_vps, last_verified } = tool.data;
+const { name, slug, description, website, pricing, affiliate_url, rating, features, pricing_tiers, pros, cons, category, needs_vps, last_verified, affiliate = false } = tool.data;
 
 // Check if last_verified is stale (> 3 months)
 const lastVerified = last_verified ? new Date(last_verified) : null;
@@ -191,9 +191,11 @@ const breadcrumbJsonLd = JSON.stringify({
           Ready to try {name}?
         </p>
         <a href={affiliate_url} target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-auto px-8 py-3">
-          {ctaText(pricing)} →
+          {affiliate ? `${ctaText(pricing)} →` : 'Visit Official Website →'}
         </a>
-        <p class="text-xs text-gray-500 mt-2">Affiliate link. We may earn a commission.</p>
+        {affiliate && (
+          <p class="text-xs text-gray-500 mt-2">Affiliate link. We may earn a commission.</p>
+        )}
       </div>
     )}
 

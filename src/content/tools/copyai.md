@@ -6,6 +6,7 @@ category: "writing"
 website: "https://www.copy.ai"
 pricing: "$49/mo"
 affiliate_url: https://www.copy.ai/?ref=aizest
+affiliate: true
 scores:
   ease_of_use: 8.3
   pricing_value: 8.1

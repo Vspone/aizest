@@ -1,0 +1,520 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleWrap from '../components/ArticleWrap.astro';
+
+// Article JSON-LD
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Canva Pricing 2026: Free vs Pro vs Enterprise",
+  "description": "Canva pricing breakdown: Free, Pro ($13/mo), and Enterprise plans compared. Features, limits, and which plan is right for you.",
+  "datePublished": "2026-06-26",
+  "dateModified": "2026-06-26",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Zest"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Zest",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aizest.net/logo.png"
+    }
+  }
+});
+
+// Breadcrumb JSON-LD
+const breadcrumbJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aizest.net/" },
+    { "@type": "ListItem", "position": 2, "name": "Canva Pricing 2026: Free vs Pro vs Enterprise" }
+  ]
+});
+
+// FAQ JSON-LD
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does Canva Pro cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Canva Pro costs $13 per month when billed monthly, or $10 per month when billed annually ($120/year). It includes 100M+ premium stock assets, 1TB storage, full Magic Studio AI features (AI image generation, Magic Eraser, Magic Write, Magic Morph, Magic Expand), Brand Kits, background removal, and transparent background export."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Canva Free actually free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Canva Free is genuinely free with no time limit or trial. It includes access to 250,000+ free templates, 5GB of cloud storage, basic AI Magic tools (with limited Magic Media credits — roughly 50 per month), and the ability to create designs across all formats. The free tier is ad-supported and does not include premium stock assets, Brand Kits, or advanced AI features."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Canva Pro and Canva Enterprise?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Canva Pro ($13/mo) is for individual creators and includes 100M+ stock assets, 1TB storage, full Magic Studio AI, Brand Kits, and background removal. Canva Enterprise (custom pricing) builds on Pro with unlimited storage, unlimited Brand Kits, advanced brand controls, Single Sign-On (SSO) integration, SAML/SCIM user provisioning, dedicated account management, advanced analytics and reporting, custom approval workflows, prioritized support with SLA, and 24/7 enterprise-level support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get Canva for free as a student or educator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Canva offers Canva for Education completely free for verified K-12 teachers and students. It includes all Canva Pro features at no cost, plus classroom-specific tools like lesson plans, student management, and educational templates. Higher education institutions may qualify for Canva Campus, which offers discounted pricing for universities. Nonprofits can also apply for Canva for Nonprofits, which provides Pro-level access at no cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Canva offer a free trial of Canva Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Canva offers a 30-day free trial of Canva Pro for new users. The trial includes full access to all Pro features — AI image generation, Magic Studio tools, Brand Kits, 1TB storage, and premium stock assets. No credit card is required to start the trial. After 30 days, it automatically converts to a paid Pro subscription unless canceled."
+      }
+    }
+  ]
+});
+
+const title = "Canva Pricing 2026: Free vs Pro vs Enterprise — AI Zest";
+const description = "Canva pricing breakdown: Free, Pro ($13/mo), and Enterprise plans compared. Features, limits, and which plan is right for you.";
+const canonical = "/canva-pricing";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  canonical={canonical}
+  type="article"
+  jsonLd={jsonLd}
+>
+  <!-- Breadcrumb JSON-LD -->
+  <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json" set:html={faqJsonLd} />
+
+  <!-- Breadcrumb -->
+  <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto pt-8" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-[#3B82F6]">Home</a>
+    <span>/</span>
+    <span class="text-gray-900 dark:text-white font-medium">Canva Pricing</span>
+  </nav>
+
+  <ArticleWrap>
+
+    <h1>Canva Pricing 2026: Free vs Pro vs Enterprise</h1>
+    <p><em>Last updated: June 26, 2026</em></p>
+
+    <p>
+      Canva has grown from a simple drag-and-drop design tool into one of the world's most popular visual communication platforms, with over 100 million monthly active users. In 2026, Canva offers three main pricing tiers — <strong>Free</strong>, <strong>Pro ($13/mo)</strong>, and <strong>Enterprise (custom)</strong> — plus specialized plans for education and nonprofits. Whether you're a casual designer creating social media posts, a marketing professional producing daily content, or a large organization rolling out brand management across hundreds of users, Canva has a tier designed for you.
+    </p>
+
+    <p>
+      This guide breaks down every Canva plan in detail — what you get at each price point, the key limitations, how AI features are gated, and which plan offers the best value for different types of users. We also answer the most common questions about Canva's pricing structure.
+    </p>
+
+    <div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/10 dark:to-purple-900/10 border border-gray-200 dark:border-gray-700">
+      <p class="text-sm font-medium text-gray-900 dark:text-white mb-2">💰 Pricing at a Glance</p>
+      <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+        <li><strong>Free:</strong> $0 — 250K+ templates, 5GB storage, basic AI tools (~50 AI credits/mo)</li>
+        <li><strong>Pro:</strong> $13/mo ($10/mo annual) — 100M+ assets, 1TB storage, full Magic Studio AI, Brand Kits</li>
+        <li><strong>Enterprise:</strong> Custom pricing — Unlimited storage, SSO, advanced brand controls, dedicated support</li>
+        <li><strong>Education & Nonprofits:</strong> Free Pro-level access for eligible institutions</li>
+        <li><strong>Bottom line:</strong> Free is genuinely usable; Pro is excellent value for regular content creators</li>
+      </ul>
+    </div>
+
+    <h2>Detailed Pricing Breakdown</h2>
+    <p>Below is a complete breakdown of what each Canva plan includes in 2026. All prices are in US dollars unless otherwise noted.</p>
+
+    <h3>Canva Free — $0</h3>
+    <div class="not-prose my-6 p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <p class="text-lg font-bold text-gray-900 dark:text-white">Free</p>
+          <p class="text-3xl font-bold text-gray-900 dark:text-white">$0<span class="text-base font-normal text-gray-500">/month</span></p>
+        </div>
+        <span class="px-3 py-1 text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 rounded-full">No credit card required</span>
+      </div>
+      <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+        <li class="flex items-start gap-2">✅ <span><strong>250,000+ free templates</strong> across all categories</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>5GB cloud storage</strong> for designs and assets</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Basic AI Magic tools</strong> — Magic Write, Magic Eraser (limited)</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>~50 Magic Media credits</strong> per month for AI image generation</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>1 user</strong> — personal use only</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Free stock photos, graphics, and audio</strong></span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Collaboration</strong> — share and comment on designs</span></li>
+        <li class="flex items-start gap-2">❌ <span>No premium stock assets</span></li>
+        <li class="flex items-start gap-2">❌ <span>No Brand Kit (custom fonts/colors)</span></li>
+        <li class="flex items-start gap-2">❌ <span>No background removal</span></li>
+        <li class="flex items-start gap-2">❌ <span>No transparent PNG export</span></li>
+        <li class="flex items-start gap-2">❌ <span>No AI image generation beyond basic credits</span></li>
+      </ul>
+      <p class="mt-3 text-xs text-gray-500"><strong>Best for:</strong> Casual users, students, one-off designs, exploring the platform</p>
+    </div>
+
+    <h3>Canva Pro — $13/mo</h3>
+    <div class="not-prose my-6 p-6 rounded-xl border-2 border-[#3B82F6] dark:border-blue-500 bg-blue-50 dark:bg-blue-900/10">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <p class="text-lg font-bold text-gray-900 dark:text-white">Pro</p>
+            <span class="px-2 py-0.5 text-xs font-semibold bg-[#3B82F6] text-white rounded">Most Popular</span>
+          </div>
+          <p class="text-3xl font-bold text-gray-900 dark:text-white">$13<span class="text-base font-normal text-gray-500">/month</span></p>
+          <p class="text-sm text-gray-500">or $10/month billed annually ($120/yr)</p>
+        </div>
+      </div>
+      <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+        <li class="flex items-start gap-2">✅ <span><strong>Everything in Free</strong>, plus:</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>100M+ premium stock assets</strong> — photos, videos, graphics, audio</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>1TB cloud storage</strong> — 200x more than Free</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Full Magic Studio AI suite</strong> — unlimited Magic Write, Magic Eraser, Magic Expand, Magic Morph, Magic Design</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>~500 Magic Media credits</strong> per month for AI image generation (10x Free tier)</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Brand Kit</strong> — store logos, colors, fonts, and brand guidelines</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Background removal</strong> — one-click, high accuracy</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Transparent PNG export</strong></span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Resize designs</strong> — one-click resize for any format</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Schedule social media content</strong> directly from Canva</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Magic Studio</strong> — AI-powered image and video generation</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>1 user</strong> — individual license</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Priority support</strong></span></li>
+      </ul>
+      <p class="mt-3 text-xs text-gray-500"><strong>Best for:</strong> Freelancers, content creators, marketers, small business owners, regular content producers</p>
+    </div>
+
+    <h3>Canva Enterprise — Custom Pricing</h3>
+    <div class="not-prose my-6 p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <p class="text-lg font-bold text-gray-900 dark:text-white">Enterprise</p>
+          <p class="text-3xl font-bold text-gray-900 dark:text-white">Custom<span class="text-base font-normal text-gray-500">/month per user</span></p>
+        </div>
+        <span class="px-3 py-1 text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400 rounded-full">Contact sales</span>
+      </div>
+      <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+        <li class="flex items-start gap-2">✅ <span><strong>Everything in Pro</strong>, plus:</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Unlimited storage</strong> — no cap on assets or designs</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Unlimited Brand Kits</strong> — separate brand spaces for departments or campaigns</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Advanced brand controls</strong> — lock templates, restrict fonts/colors, enforce brand compliance</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Single Sign-On (SSO)</strong> — SAML, Okta, Azure AD, Google Workspace integration</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>SCIM user provisioning</strong> — automated onboarding/offboarding</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Advanced analytics</strong> — usage reports, template performance, team activity, brand compliance scores</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Custom approval workflows</strong> — multi-stage review processes</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Dedicated account manager</strong> — personalized onboarding and training</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>24/7 priority enterprise support</strong> with SLA</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Custom integrations</strong> via Canva API and connectors</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Unlimited teams and folders</strong> with granular permissions</span></li>
+        <li class="flex items-start gap-2">✅ <span><strong>Audit logs and data export</strong> for compliance</span></li>
+      </ul>
+      <p class="mt-3 text-xs text-gray-500"><strong>Best for:</strong> Large organizations, global brands, enterprises with complex brand management needs</p>
+    </div>
+
+    <h2>Feature Comparison — All Plans Side by Side</h2>
+    <p>Here's how Canva's three pricing tiers stack up against each other across the most important categories.</p>
+
+    <div class="not-prose overflow-x-auto my-6">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="bg-gray-100 dark:bg-gray-800">
+            <th class="text-left p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Feature</th>
+            <th class="text-center p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 bg-green-50 dark:bg-green-900/10">Free</th>
+            <th class="text-center p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 bg-blue-50 dark:bg-blue-900/10">Pro</th>
+            <th class="text-center p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 bg-purple-50 dark:bg-purple-900/10">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Monthly price</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">$0</td>
+            <td class="p-3 text-center text-gray-900 dark:text-white font-medium border border-gray-200 dark:border-gray-700">$13</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">Custom</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Annual price (per month)</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">$0</td>
+            <td class="p-3 text-center text-gray-900 dark:text-white font-medium border border-gray-200 dark:border-gray-700">$10</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">Custom</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Templates</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">250K+ (free)</td>
+            <td class="p-3 text-center text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">250K+ free + 100M+ premium</td>
+            <td class="p-3 text-center text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">250K+ free + 100M+ premium</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Cloud storage</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">5 GB</td>
+            <td class="p-3 text-center text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">1 TB</td>
+            <td class="p-3 text-center text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Unlimited</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">AI image generation (Magic Media)</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">~50 credits/mo</td>
+            <td class="p-3 text-center text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">~500 credits/mo</td>
+            <td class="p-3 text-center text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Custom limits</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Magic Write (AI copywriting)</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">Limited</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">Unlimited</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">Unlimited</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Magic Eraser & Expand</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">Limited</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">Unlimited</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">Unlimited</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Background removal</td>
+            <td class="p-3 text-center text-red-500 dark:text-red-400 border border-gray-200 dark:border-gray-700">❌</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Brand Kit</td>
+            <td class="p-3 text-center text-red-500 dark:text-red-400 border border-gray-200 dark:border-gray-700">❌</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅ (1 kit)</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅ (Unlimited)</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Transparent PNG export</td>
+            <td class="p-3 text-center text-red-500 dark:text-red-400 border border-gray-200 dark:border-gray-700">❌</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">One-click resize</td>
+            <td class="p-3 text-center text-red-500 dark:text-red-400 border border-gray-200 dark:border-gray-700">❌</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Social media scheduling</td>
+            <td class="p-3 text-center text-red-500 dark:text-red-400 border border-gray-200 dark:border-gray-700">❌</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Real-time collaboration</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">View only</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Approval workflows</td>
+            <td class="p-3 text-center text-red-500 dark:text-red-400 border border-gray-200 dark:border-gray-700">❌</td>
+            <td class="p-3 text-center text-red-500 dark:text-red-400 border border-gray-200 dark:border-gray-700">❌</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅ (Custom)</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Single Sign-On (SSO)</td>
+            <td class="p-3 text-center text-red-500 dark:text-red-400 border border-gray-200 dark:border-gray-700">❌</td>
+            <td class="p-3 text-center text-red-500 dark:text-red-400 border border-gray-200 dark:border-gray-700">❌</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅ (SAML, Okta, Azure AD)</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">SCIM provisioning</td>
+            <td class="p-3 text-center text-red-500 dark:text-red-400 border border-gray-200 dark:border-gray-700">❌</td>
+            <td class="p-3 text-center text-red-500 dark:text-red-400 border border-gray-200 dark:border-gray-700">❌</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Advanced analytics</td>
+            <td class="p-3 text-center text-red-500 dark:text-red-400 border border-gray-200 dark:border-gray-700">❌</td>
+            <td class="p-3 text-center text-red-500 dark:text-red-400 border border-gray-200 dark:border-gray-700">❌</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">✅</td>
+          </tr>
+          <tr class="bg-gray-50 dark:bg-gray-800/30">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Dedicated support</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">Standard</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">Priority</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">24/7 with SLA</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Which Plan Should You Choose?</h2>
+
+    <p>Choosing the right Canva plan depends on how you create visual content, who you're creating for, and what features you actually need. Here's our guidance for different user profiles.</p>
+
+    <h3>Choose Canva Free if...</h3>
+    <ul>
+      <li>You create designs occasionally — a few times per month</li>
+      <li>You don't need premium stock photos, videos, or graphics</li>
+      <li>Brand consistency (custom fonts, colors, logos) isn't critical</li>
+      <li>You're exploring Canva for the first time and want to test it</li>
+      <li>5GB of storage is sufficient for your design files</li>
+      <li>You're a student working on school projects</li>
+    </ul>
+    <p>The Free tier is surprisingly generous. With 250,000+ templates and basic AI tools, it's enough for casual social media posts, simple presentations, and personal projects. The main limitations are storage (5GB fills up quickly if you work with images) and the lack of background removal, Brand Kits, and premium assets.</p>
+
+    <h3>Choose Canva Pro if...</h3>
+    <ul>
+      <li>You create content regularly — multiple times per week or daily</li>
+      <li>You need high-quality stock photos, videos, and graphics for professional work</li>
+      <li>Brand consistency matters — you want Brand Kits with custom fonts, colors, and logos</li>
+      <li>You use AI features heavily — Magic Write, Magic Eraser, Magic Design, AI image generation</li>
+      <li>You need background removal and transparent PNG exports regularly</li>
+      <li>1TB of storage gives you room to grow without worrying about limits</li>
+      <li>You're a freelancer, marketer, small business owner, or content creator</li>
+    </ul>
+    <p>At $13/month ($10/month if billed annually), Canva Pro is one of the best value subscriptions in the design software space. The jump from Free to Pro unlocks the full power of Canva — the AI features alone justify the cost for anyone creating content regularly. Compared to Adobe Creative Cloud ($60+/month), Canva Pro is a fraction of the price and far easier to use.</p>
+
+    <h3>Choose Canva Enterprise if...</h3>
+    <ul>
+      <li>You have 50+ users who need Canva access</li>
+      <li>Your organization requires Single Sign-On (SSO) and SCIM provisioning</li>
+      <li>You need advanced brand controls — locked templates, restricted fonts, enforced brand guidelines</li>
+      <li>Custom approval workflows are required for compliance or quality control</li>
+      <li>You want dedicated account management and 24/7 support with SLA guarantees</li>
+      <li>Advanced analytics and usage reports are needed for team oversight</li>
+      <li>You need unlimited storage and unlimited Brand Kits for multiple departments or brands</li>
+    </ul>
+    <p>Enterprise pricing is custom-quoted based on user count, storage needs, and required integrations. Most organizations find Canva Enterprise significantly more affordable than enterprise Adobe licensing while offering better collaboration features and a faster onboarding experience.</p>
+
+    <h3>Special Plans: Education & Nonprofits</h3>
+    <p>Canva offers two specialized plans worth noting:</p>
+    <ul>
+      <li><strong>Canva for Education</strong> — Free for verified K-12 teachers and students. Includes all Pro features plus classroom-specific tools like lesson plans, student management, and educational templates. Higher education institutions can apply for Canva Campus with discounted pricing.</li>
+      <li><strong>Canva for Nonprofits</strong> — Free for registered nonprofit organizations. Provides Pro-level access including Brand Kits, premium assets, and AI features. Verification of nonprofit status is required.</li>
+    </ul>
+
+    <h2>AI Feature Credits by Plan</h2>
+    <p>A key consideration in 2026 is how Canva meters AI usage. Unlike the unlimited basic AI tools (Magic Write, Magic Eraser, Magic Expand), AI image generation via <strong>Magic Media</strong> uses a credit system:</p>
+
+    <div class="not-prose overflow-x-auto my-6">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="bg-gray-100 dark:bg-gray-800">
+            <th class="text-left p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">AI Feature</th>
+            <th class="text-center p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Free</th>
+            <th class="text-center p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Pro</th>
+            <th class="text-center p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Magic Media (image gen)</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">50 credits/mo</td>
+            <td class="p-3 text-center text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">500 credits/mo</td>
+            <td class="p-3 text-center text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Custom</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Magic Write</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">Limited</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">Unlimited</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">Unlimited</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Magic Eraser / Expand / Morph</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">Limited</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">Unlimited</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">Unlimited</td>
+          </tr>
+          <tr class="bg-gray-50 dark:bg-gray-800/30">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Magic Design (AI templates)</td>
+            <td class="p-3 text-center text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">Limited</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">Unlimited</td>
+            <td class="p-3 text-center text-green-600 dark:text-green-400 border border-gray-200 dark:border-gray-700">Unlimited</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Additional AI credits can be purchased as add-ons on any plan, but the per-credit cost is lower on Pro and Enterprise. For heavy AI image generation users, the Pro plan's 500 monthly credits cover roughly 15-20 designs per day — sufficient for most content creators.</p>
+
+    <h2>Frequently Asked Questions About Canva Pricing</h2>
+
+    <div class="not-prose space-y-4 my-6">
+      <div class="p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+        <p class="font-semibold text-gray-900 dark:text-white">How much does Canva Pro cost?</p>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Canva Pro costs $13 per month when billed monthly, or $10 per month when billed annually ($120/year). It includes 100M+ premium stock assets, 1TB storage, full Magic Studio AI features (AI image generation, Magic Eraser, Magic Write, Magic Morph, Magic Expand), Brand Kits, background removal, and transparent background export.</p>
+      </div>
+
+      <div class="p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+        <p class="font-semibold text-gray-900 dark:text-white">Is Canva Free actually free?</p>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Yes, Canva Free is genuinely free with no time limit or trial. It includes access to 250,000+ free templates, 5GB of cloud storage, basic AI Magic tools (with limited Magic Media credits — roughly 50 per month), and the ability to create designs across all formats. The free tier is ad-supported and does not include premium stock assets, Brand Kits, or advanced AI features.</p>
+      </div>
+
+      <div class="p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+        <p class="font-semibold text-gray-900 dark:text-white">What is the difference between Canva Pro and Canva Enterprise?</p>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Canva Pro ($13/mo) is for individual creators and includes 100M+ stock assets, 1TB storage, full Magic Studio AI, Brand Kits, and background removal. Canva Enterprise (custom pricing) builds on Pro with unlimited storage, unlimited Brand Kits, advanced brand controls, Single Sign-On (SSO) integration, SAML/SCIM user provisioning, dedicated account management, advanced analytics and reporting, custom approval workflows, prioritized support with SLA, and 24/7 enterprise-level support.</p>
+      </div>
+
+      <div class="p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+        <p class="font-semibold text-gray-900 dark:text-white">Can I get Canva for free as a student or educator?</p>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Yes, Canva offers Canva for Education completely free for verified K-12 teachers and students. It includes all Canva Pro features at no cost, plus classroom-specific tools like lesson plans, student management, and educational templates. Higher education institutions may qualify for Canva Campus, which offers discounted pricing for universities. Nonprofits can also apply for Canva for Nonprofits, which provides Pro-level access at no cost.</p>
+      </div>
+
+      <div class="p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+        <p class="font-semibold text-gray-900 dark:text-white">Does Canva offer a free trial of Canva Pro?</p>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Yes, Canva offers a 30-day free trial of Canva Pro for new users. The trial includes full access to all Pro features — AI image generation, Magic Studio tools, Brand Kits, 1TB storage, and premium stock assets. No credit card is required to start the trial. After 30 days, it automatically converts to a paid Pro subscription unless canceled.</p>
+      </div>
+    </div>
+
+    <h2>How Canva Pricing Compares to Alternatives</h2>
+    <p>To help you evaluate Canva's pricing in context, here's how it compares to other major design platforms in 2026:</p>
+
+    <div class="not-prose overflow-x-auto my-6">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="bg-gray-100 dark:bg-gray-800">
+            <th class="text-left p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Platform</th>
+            <th class="text-left p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Free Tier</th>
+            <th class="text-left p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Pro/Paid Plan</th>
+            <th class="text-left p-3 font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Canva</td>
+            <td class="p-3 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">✅ Generous (250K templates, AI, 5GB)</td>
+            <td class="p-3 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">$13/mo Pro</td>
+            <td class="p-3 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">All-in-one design, social, marketing</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Adobe Creative Cloud</td>
+            <td class="p-3 text-red-500 dark:text-red-400 border border-gray-200 dark:border-gray-700">❌ No free tier</td>
+            <td class="p-3 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">$60+/mo</td>
+            <td class="p-3 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">Professional design, photo editing, video</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Figma</td>
+            <td class="p-3 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">✅ Free (limited projects)</td>
+            <td class="p-3 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">$12/mo Professional</td>
+            <td class="p-3 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">UI/UX design, prototyping</td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">VistaCreate (ex-Crello)</td>
+            <td class="p-3 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">✅ Free (limited)</td>
+            <td class="p-3 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">$10/mo Pro</td>
+            <td class="p-3 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">Graphic design for non-designers</td>
+          </tr>
+          <tr class="bg-gray-50 dark:bg-gray-800/30">
+            <td class="p-3 font-medium text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700">Snappa</td>
+            <td class="p-3 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">✅ Free (3 downloads/mo)</td>
+            <td class="p-3 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">$10/mo Pro</td>
+            <td class="p-3 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">Simple social media graphics</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Canva's pricing is highly competitive. The Free tier is more generous than any alternative (Adobe has no free tier, Figma's free tier limits projects, Snappa limits downloads). At $13/month, Pro is cheaper than Adobe CC ($60+) and comparable to Figma ($12), while offering a broader set of features including AI image generation, stock assets, and social media scheduling that none of the alternatives bundle at this price point.</p>
+
+    <p>For a full review of Canva's features and AI capabilities, see our <a href="/canva-review">Canva Review 2026</a>.</p>
+
+    <p><em>Disclosure: Some links on this page are referral links. We may earn a commission at no extra cost to you. Pricing information is accurate as of June 26, 2026, but may change. Always check <a href="https://www.canva.com" target="_blank" rel="noopener noreferrer">Canva's official pricing page</a> for the most current information.</em></p>
+
+  </ArticleWrap>
+</BaseLayout>

@@ -69,7 +69,17 @@ const faqItems = [
   },
 ];
 
-// JSON-LD SoftwareApplication Schema
+// Build review body from pros/cons
+const prosList = pros && pros.length > 0 ? pros.slice(0, 3).join(', ') : '';
+const consList = cons && cons.length > 0 ? cons.slice(0, 3).join(', ') : '';
+const reviewBody = `${name} is an AI ${categoryLabels[category]?.toLowerCase() || ''} tool rated ${rating}/5 by AI Zest.`
+  + (prosList ? ` Key strengths: ${prosList}.` : '')
+  + (consList ? ` Areas for improvement: ${consList}.` : '')
+  + ` Features include: ${topFeatures}. See the full review above for detailed analysis, pricing, and alternatives.`;
+
+const reviewDate = last_verified ? last_verified.toISOString().split('T')[0] : '2026-01-01';
+
+// JSON-LD SoftwareApplication Schema with Review
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -88,7 +98,24 @@ const jsonLd = JSON.stringify({
     "@type": "AggregateRating",
     "ratingValue": rating,
     "bestRating": 5,
-    "ratingCount": 1
+    "worstRating": 1
+  },
+  "review": {
+    "@type": "Review",
+    "@id": `https://aizest.net/tool/${slug}#review`,
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": rating,
+      "bestRating": 5,
+      "worstRating": 1
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "AI Zest",
+      "url": "https://aizest.net"
+    },
+    "datePublished": reviewDate,
+    "reviewBody": reviewBody
   }
 });
 

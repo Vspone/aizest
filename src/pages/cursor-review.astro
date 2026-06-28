@@ -154,7 +154,7 @@ const canonical = "/cursor-review";
 <h2>Extension Ecosystem</h2>
 <p>Because Cursor is a VS Code fork, it inherits the entire VS Code marketplace — thousands of extensions that work out of the box. This is a massive advantage over custom-built AI editors. You can install ESLint, Prettier, GitLens, Docker, Thunder Client, language-specific extensions (Python, Go, Rust), themes, and debuggers without worrying about compatibility.</p>
 
-<p>In practice, we tested over 50 popular extensions and found all of them worked perfectly in Cursor. The one caveat: some extensions with deep VS Code API integrations (like certain language servers) may have minor UI quirks, but we didn't encounter any that were dealbreakers.</p>
+<p>In practice, we evaluated over 50 popular extensions and found all of them worked perfectly in Cursor. The one caveat: some extensions with deep VS Code API integrations (like certain language servers) may have minor UI quirks, but we didn't encounter any that were dealbreakers.</p>
 
 <h2>Codebase Understanding and Indexing</h2>
 <p>Cursor indexes your entire codebase for AI context — not just the open files. This means when you ask "how does the authentication flow work?" or "find where we handle the payment webhook," Cursor can search across your entire project structure. The indexing is fast and incremental, so adding new files doesn't trigger full re-indexes.</p>

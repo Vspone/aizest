@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const categories = [
+  { slug: 'writing', label: 'Writing & Content', emoji: '✍️', desc: 'AI writing assistants, content generators, and copywriting tools', count: 14 },
+  { slug: 'image', label: 'Image Generation', emoji: '🎨', desc: 'AI image generators, art creators, and visual design tools', count: 9 },
+  { slug: 'video', label: 'Video Creation', emoji: '🎬', desc: 'AI video creation, editing, and animation platforms', count: 14 },
+  { slug: 'audio', label: 'Audio & Voice', emoji: '🎵', desc: 'AI voice generation, music creation, and audio editing', count: 9 },
+  { slug: 'coding', label: 'Coding & Development', emoji: '💻', desc: 'AI code assistants, development tools, and debugging aids', count: 11 },
+  { slug: 'productivity', label: 'Productivity', emoji: '⚡', desc: 'AI productivity tools, automation, and workflow enhancement', count: 11 },
+  { slug: 'data', label: 'Data & Analytics', emoji: '📊', desc: 'AI analytics, data processing, and business intelligence tools', count: 7 },
+  { slug: 'design', label: 'Design & Creative', emoji: '🎯', desc: 'AI design tools for UI/UX, graphics, and creative work', count: 9 },
+  { slug: 'marketing', label: 'Marketing & SEO', emoji: '📈', desc: 'AI marketing, SEO, and advertising optimization platforms', count: 11 },
+  { slug: 'business', label: 'Business & Finance', emoji: '💼', desc: 'AI business tools for finance, operations, and management', count: 8 },
+];
+
+const breadcrumbJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@position": 1, name: "Home", item: "https://aizest.net/" },
+    { "@position": 2, name: "AI Tools Categories" }
+  ]
+});
+---
+
+<BaseLayout 
+  title="AI Tools Categories — Browse by Type — AI Zest"
+  description="Browse AI tools by category: writing, image generation, video creation, audio, coding, productivity, data analytics, design, marketing, and business. Find the right AI tool for your needs."
+  canonical="/category"
+>
+  <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-[#3B82F6]">Home</a>
+      <span>/</span>
+      <span class="text-gray-900 dark:text-white font-medium">Categories</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-10">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">AI Tools by Category</h1>
+      <p class="mt-2 text-gray-600 dark:text-gray-400 max-w-2xl">Browse {categories.length} categories covering the full spectrum of AI tools — from writing and coding to video creation and business analytics. Each category includes tool reviews, comparisons, and curated best-of lists.</p>
+    </div>
+
+    <!-- Category grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {categories.map(cat => (
+        <a href={`/category/${cat.slug}`} class="group flex items-start gap-4 p-5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-[#3B82F6]/40 dark:hover:border-[#3B82F6]/40 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200">
+          <span class="text-2xl shrink-0 mt-0.5">{cat.emoji}</span>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2">
+              <h2 class="text-base font-semibold text-gray-900 dark:text-white group-hover:text-[#3B82F6] transition-colors">{cat.label}</h2>
+              <span class="text-xs text-gray-400 shrink-0">({cat.count})</span>
+            </div>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5 leading-relaxed">{cat.desc}</p>
+            <div class="mt-2 flex flex-wrap gap-1.5">
+              {cat.slug === 'writing' && <><span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">Best AI Writing</span><span class="text-xs px-2 py-0.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400">Free Tools</span></>}
+              {cat.slug === 'image' && <><span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">Best AI Image</span><span class="text-xs px-2 py-0.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400">Free Tools</span></>}
+              {cat.slug === 'video' && <><span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">Best AI Video</span><span class="text-xs px-2 py-0.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400">Free Tools</span></>}
+              {cat.slug === 'audio' && <><span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">Best AI Audio</span><span class="text-xs px-2 py-0.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400">Free Tools</span></>}
+              {cat.slug === 'coding' && <><span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">Best AI Coding</span><span class="text-xs px-2 py-0.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400">Free Tools</span></>}
+              {cat.slug === 'productivity' && <><span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">Best AI Productivity</span><span class="text-xs px-2 py-0.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400">Free Tools</span></>}
+              {cat.slug === 'data' && <><span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">Best AI Data</span><span class="text-xs px-2 py-0.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400">Free Tools</span></>}
+              {cat.slug === 'design' && <><span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">Best AI Design</span><span class="text-xs px-2 py-0.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400">Free Tools</span></>}
+              {cat.slug === 'marketing' && <><span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">Best AI Marketing</span><span class="text-xs px-2 py-0.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400">Free Tools</span></>}
+              {cat.slug === 'business' && <><span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">Best AI Business</span><span class="text-xs px-2 py-0.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400">Free Tools</span></>}
+            </div>
+          </div>
+          <span class="text-[#3B82F6] shrink-0 group-hover:translate-x-0.5 transition-transform">→</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

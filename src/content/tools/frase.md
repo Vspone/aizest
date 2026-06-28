@@ -46,7 +46,7 @@ pricing_tiers:
       - "Content workflows"
       - "API access"
 pros:
-  - "Best-in-class SERP analysis for content planning"
+  - "Leading SERP analysis for content planning"
   - "Content briefs save hours of competitive research"
   - "Optimization scoring ensures content is competitive"
   - "Affordable starting at $14.99/mo"

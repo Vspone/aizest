@@ -48,7 +48,7 @@ pricing_tiers:
       - "Custom templates and integrations"
 pros:
   - "Excellent free tier with professional-level features"
-  - "AI captions and text-to-speech are best-in-class"
+  - "Top-tier AI captions and text-to-speech"
   - "Massive library of templates for trending social media formats"
   - "Cross-platform — web, desktop, and mobile"
 cons:

@@ -51,7 +51,7 @@ pricing_tiers:
       - "10,000+ tracked keywords"
       - "All Advanced features"
 pros:
-  - "Best-in-class backlink analysis with the largest index"
+  - "Leading backlink analysis with a comprehensive index"
   - "Comprehensive keyword research with accurate search volumes"
   - "Excellent site audit tool with clear prioritization"
   - "Generous free Webmaster Tools tier"

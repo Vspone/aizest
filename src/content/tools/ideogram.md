@@ -17,7 +17,7 @@ last_verified: 2026-06-25
 featured: true
 rating: 4.5
 features:
-  - "Best-in-class text rendering in generated images"
+  - "Excellent text rendering in generated images"
   - "High-resolution output (up to 1536x1536)"
   - "Style selection (realistic, design, 3D, anime, etc.)"
   - "Image-to-image editing and inpainting"

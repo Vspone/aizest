@@ -49,9 +49,9 @@ pricing_tiers:
       - "Google Data Studio integration"
       - "Extended limits"
 pros:
-  - "Most comprehensive SEO toolkit available"
+  - "Highly comprehensive SEO toolkit"
   - "AI content writing actually produces decent drafts"
-  - "Competitive research is unmatched"
+  - "Competitive research is strong"
   - "Regular updates and new features"
 cons:
   - "Expensive — the entry price is a barrier for freelancers"

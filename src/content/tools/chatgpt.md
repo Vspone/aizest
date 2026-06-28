@@ -44,7 +44,7 @@ pricing_tiers:
       - "Video analysis"
       - "Higher limits"
 pros:
-  - "Most capable AI model"
+  - "Highly capable AI model"
   - "Versatile across all tasks"
   - "Strong developer ecosystem"
   - "Free tier available"

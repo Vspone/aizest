@@ -45,7 +45,7 @@ pricing_tiers:
       - "Dedicated capacity"
       - "Data privacy assurances"
 pros:
-  - "Best-in-class text-to-image quality and realism"
+  - "Leading text-to-image quality and realism"
   - "Excellent understanding of complex, multi-part prompts"
   - "Accurately renders text within images"
   - "Integrated directly into ChatGPT for ease of use"

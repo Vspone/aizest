@@ -45,7 +45,7 @@ pricing_tiers:
       - "Student discount pricing"
       - "Verified through .edu email"
 pros:
-  - "Best-in-class natural voices that are pleasant to listen to"
+  - "High-quality natural voices that are pleasant to listen to"
   - "OCR scanning is magical — photo any document and hear it read"
   - "High-speed listening preserves voice quality at 3x+"
   - "Works everywhere: phone, desktop, browser extension"

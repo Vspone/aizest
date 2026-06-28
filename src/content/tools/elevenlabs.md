@@ -43,7 +43,7 @@ pricing_tiers:
       - "Voice library"
       - "Turbo mode"
 pros:
-  - "Most realistic AI voices available"
+  - "Highly realistic AI voices"
   - "Expressive emotional range"
   - "Fast generation speed"
   - "Good free tier for testing"

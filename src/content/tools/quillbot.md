@@ -40,7 +40,7 @@ pricing_tiers:
       - "Advanced grammar checker"
       - "Citation generator"
 pros:
-  - "Best-in-class paraphrasing — natural rewording, not synonym swapping"
+  - "Leading paraphrasing — natural rewording, not synonym swapping"
   - "Multiple modes handle different writing contexts"
   - "Extremely affordable at $9.95/mo"
   - "Chrome extension works everywhere you write"

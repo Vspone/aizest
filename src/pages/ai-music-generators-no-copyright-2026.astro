@@ -28,6 +28,7 @@ const jsonLd = JSON.stringify({
     }
   }
 });
+import RelatedContent from '../components/RelatedContent.astro';
 ---
 
 <BaseLayout {title} {description} {canonical} type="article" {jsonLd}>
@@ -251,6 +252,8 @@ const jsonLd = JSON.stringify({
 
 <p>The bottom line: in 2026, there's no reason to risk copyright strikes on your content. AI music generators with no copyright restrictions make it easy, affordable, and legal to create custom music for any project.</p>
 
+
+        <RelatedContent category="audio" />
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 
 </ArticleWrap>

@@ -85,6 +85,7 @@ const faqJsonLd = JSON.stringify({
 const title = "Canva Pricing 2026: Free vs Pro vs Enterprise — AI Zest";
 const description = "Canva pricing breakdown: Free, Pro ($13/mo), and Enterprise plans compared. Features, limits, and which plan is right for you.";
 const canonical = "/canva-pricing";
+import RelatedContent from '../components/RelatedContent.astro';
 ---
 
 <BaseLayout 
@@ -524,5 +525,7 @@ const canonical = "/canva-pricing";
 
     <p><em>Disclosure: Some links on this page are referral links. We may earn a commission at no extra cost to you. Pricing information is accurate as of June 26, 2026, but may change. Always check <a href="https://www.canva.com" target="_blank" rel="noopener noreferrer">Canva's official pricing page</a> for the most current information.</em></p>
 
+
+        <RelatedContent category="design" />
   </ArticleWrap>
 </BaseLayout>

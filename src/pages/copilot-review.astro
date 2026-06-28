@@ -86,6 +86,7 @@ const faqJsonLd = JSON.stringify({
 const title = "GitHub Copilot Review 2026: Is It Worth $10/mo? — AI Zest";
 const description = "GitHub Copilot review 2026. A look at code completions, chat quality, multi-editor support, and pricing. Find out if Copilot is the best AI coding assistant for your workflow.";
 const canonical = "/copilot-review";
+import RelatedContent from '../components/RelatedContent.astro';
 ---
 
 <BaseLayout 
@@ -264,6 +265,8 @@ const canonical = "/copilot-review";
 <div class="not-prose my-8 text-center">
   <p class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Ready to try GitHub Copilot?</p>
   <AffiliateBtn slug="copilot" />
+
+        <RelatedContent category="coding" />
 </div>
 
 </ArticleWrap>

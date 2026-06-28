@@ -61,6 +61,7 @@ const faqJsonLd = JSON.stringify({
     }
   ]
 });
+import RelatedContent from '../components/RelatedContent.astro';
 ---
 
 <BaseLayout
@@ -197,6 +198,8 @@ const faqJsonLd = JSON.stringify({
 
         <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you.</em></p>
 
+
+        <RelatedContent category="image" />
       </ArticleWrap>
     </article>
   </div>

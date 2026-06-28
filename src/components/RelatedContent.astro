@@ -1,0 +1,43 @@
+---
+export interface Props {
+  category: string;
+}
+
+const { category } = Astro.props;
+---
+
+<div class="not-prose mt-10 p-5 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
+  <h3 class="font-semibold text-gray-900 dark:text-white mb-3 text-sm">📄 Related Content</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    <div>
+      <p class="text-xs text-gray-400 mb-1.5 uppercase tracking-wider font-medium">🏆 Best Of</p>
+      <div class="space-y-1.5">
+        {category === 'writing' && <><a href="/best-ai-writing-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Best AI Writing Tools →</a><a href="/free-ai-writing-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Free AI Writing Tools →</a></>}
+        {category === 'image' && <><a href="/best-ai-image-generators-2026" class="block text-sm text-[#3B82F6] hover:underline">Best AI Image Generators →</a><a href="/free-ai-image-generators-2026" class="block text-sm text-[#3B82F6] hover:underline">Free AI Image Generators →</a></>}
+        {category === 'video' && <><a href="/best-ai-video-generators-2026" class="block text-sm text-[#3B82F6] hover:underline">Best AI Video Generators →</a><a href="/free-ai-video-generators-2026" class="block text-sm text-[#3B82F6] hover:underline">Free AI Video Generators →</a></>}
+        {category === 'audio' && <><a href="/best-ai-audio-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Best AI Audio Tools →</a><a href="/free-ai-audio-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Free AI Audio Tools →</a></>}
+        {category === 'coding' && <><a href="/best-ai-coding-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Best AI Coding Tools →</a><a href="/free-ai-coding-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Free AI Coding Tools →</a></>}
+        {category === 'productivity' && <><a href="/best-ai-productivity-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Best AI Productivity Tools →</a><a href="/free-ai-productivity-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Free AI Productivity Tools →</a></>}
+        {category === 'data' && <><a href="/best-ai-data-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Best AI Data Tools →</a><a href="/free-ai-data-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Free AI Data Tools →</a></>}
+        {category === 'design' && <><a href="/best-ai-design-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Best AI Design Tools →</a><a href="/free-ai-design-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Free AI Design Tools →</a></>}
+        {category === 'marketing' && <><a href="/best-ai-marketing-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Best AI Marketing Tools →</a><a href="/free-ai-marketing-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Free AI Marketing Tools →</a></>}
+        {category === 'business' && <><a href="/best-ai-business-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Best AI Business Tools →</a><a href="/free-ai-business-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Free AI Business Tools →</a></>}
+        {!['writing','image','video','audio','coding','productivity','data','design','marketing','business'].includes(category) && <a href="/compare" class="block text-sm text-[#3B82F6] hover:underline">Compare AI Tools →</a>}
+      </div>
+    </div>
+    <div>
+      <p class="text-xs text-gray-400 mb-1.5 uppercase tracking-wider font-medium">⚖️ Comparisons</p>
+      <div class="space-y-1.5">
+        {category === 'writing' && <><a href="/chatgpt-vs-claude-vs-gemini" class="block text-sm text-[#3B82F6] hover:underline">ChatGPT vs Claude vs Gemini →</a><a href="/jasper-vs-writesonic-vs-copyai" class="block text-sm text-[#3B82F6] hover:underline">Jasper vs Writesonic vs Copy.ai →</a><a href="/claude-vs-deepseek" class="block text-sm text-[#3B82F6] hover:underline">Claude vs DeepSeek →</a></>}
+        {category === 'image' && <><a href="/midjourney-vs-dalle-vs-stable-diffusion" class="block text-sm text-[#3B82F6] hover:underline">Midjourney vs DALL-E vs SD →</a><a href="/midjourney-vs-flux" class="block text-sm text-[#3B82F6] hover:underline">Midjourney vs Flux →</a><a href="/canva-vs-firefly-vs-recraft" class="block text-sm text-[#3B82F6] hover:underline">Canva AI vs Adobe Firefly vs Recraft →</a></>}
+        {category === 'video' && <><a href="/runway-vs-kling" class="block text-sm text-[#3B82F6] hover:underline">Runway vs Kling →</a><a href="/heygen-vs-synthesia" class="block text-sm text-[#3B82F6] hover:underline">HeyGen vs Synthesia →</a><a href="/descript-vs-podcastle-vs-veed" class="block text-sm text-[#3B82F6] hover:underline">Descript vs Podcastle vs VEED →</a></>}
+        {category === 'audio' && <><a href="/elevenlabs-vs-murf-vs-playht" class="block text-sm text-[#3B82F6] hover:underline">ElevenLabs vs Murf vs PlayHT →</a><a href="/descript-vs-podcastle-vs-veed" class="block text-sm text-[#3B82F6] hover:underline">Descript vs Podcastle vs VEED →</a></>}
+        {category === 'coding' && <><a href="/copilot-vs-cursor" class="block text-sm text-[#3B82F6] hover:underline">Copilot vs Cursor →</a><a href="/bolt-vs-lovable" class="block text-sm text-[#3B82F6] hover:underline">Bolt vs Lovable →</a><a href="/cursor-vs-windsurf" class="block text-sm text-[#3B82F6] hover:underline">Cursor vs Windsurf →</a></>}
+        {category === 'productivity' && <><a href="/notion-vs-clickup-vs-gamma" class="block text-sm text-[#3B82F6] hover:underline">Notion AI vs ClickUp vs Gamma →</a><a href="/zapier-vs-make" class="block text-sm text-[#3B82F6] hover:underline">Zapier vs Make →</a></>}
+        {category === 'design' && <><a href="/canva-vs-firefly-vs-recraft" class="block text-sm text-[#3B82F6] hover:underline">Canva AI vs Adobe Firefly vs Recraft →</a><a href="/uizard-vs-canva" class="block text-sm text-[#3B82F6] hover:underline">Uizard vs Canva →</a></>}
+        {category === 'marketing' && <><a href="/semrush-vs-ahrefs" class="block text-sm text-[#3B82F6] hover:underline">Semrush vs Ahrefs →</a><a href="/jasper-vs-writesonic-vs-copyai" class="block text-sm text-[#3B82F6] hover:underline">Jasper vs Writesonic vs Copy.ai →</a></>}
+        {!['writing','image','video','audio','coding','productivity','design','marketing','data','business'].includes(category) && <a href="/compare" class="block text-sm text-[#3B82F6] hover:underline">View all comparisons →</a>}
+      </div>
+    </div>
+  </div>
+</div>

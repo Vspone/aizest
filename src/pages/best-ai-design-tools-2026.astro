@@ -94,6 +94,7 @@ const faqJsonLd = JSON.stringify({
     }
   ]
 });
+import RelatedContent from '../components/RelatedContent.astro';
 ---
 
 <BaseLayout title="Best AI Design Tools 2026 — AI Zest" {description} {canonical} type="article" {jsonLd}>
@@ -416,6 +417,8 @@ const faqJsonLd = JSON.stringify({
 <li><strong>Reviewers:</strong> AI Zest Editorial Team — AI tools reviewed since 2023</li>
 </ul>
 
+
+        <RelatedContent category="design" />
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you. Our rankings are based on thorough testing and are not influenced by affiliate relationships.</em></p>
 </ArticleWrap>
 </BaseLayout>

@@ -51,6 +51,8 @@ cons:
   - "Exporting long episodes can be slow"
 ---
 
+> **品牌升级通知:** Podcastle 已正式更名为 **Async**，域名和功能不变。本文仍沿用 Podcastle 品牌名，内容同样适用于 Async。
+
 Podcastle is a complete podcast creation workflow tool that brings recording, editing, and publishing into a single platform. Designed for podcasters of all levels, it streamlines the entire production pipeline with AI-powered features that save hours of manual work.
 
 At the heart of Podcastle is its text-based audio editing — upload or record your episode, and the transcript doubles as an editing interface. Cut, rearrange, or delete words in the transcript and the corresponding audio is edited automatically. This makes podcast editing as simple as editing a document. The Magic Dust feature performs one-click audio cleanup, removing background noise, echo, and inconsistencies across all tracks with impressive results.

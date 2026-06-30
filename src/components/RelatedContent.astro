@@ -8,7 +8,7 @@ const { category } = Astro.props;
 
 <div class="not-prose mt-10 p-5 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
   <h3 class="font-semibold text-gray-900 dark:text-white mb-3 text-sm">📄 Related Content</h3>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
     <div>
       <p class="text-xs text-gray-400 mb-1.5 uppercase tracking-wider font-medium">🏆 Best Of</p>
       <div class="space-y-1.5">
@@ -37,6 +37,22 @@ const { category } = Astro.props;
         {category === 'design' && <><a href="/canva-vs-firefly-vs-recraft" class="block text-sm text-[#3B82F6] hover:underline">Canva AI vs Adobe Firefly vs Recraft →</a><a href="/uizard-vs-canva" class="block text-sm text-[#3B82F6] hover:underline">Uizard vs Canva →</a></>}
         {category === 'marketing' && <><a href="/semrush-vs-ahrefs" class="block text-sm text-[#3B82F6] hover:underline">Semrush vs Ahrefs →</a><a href="/jasper-vs-writesonic-vs-copyai" class="block text-sm text-[#3B82F6] hover:underline">Jasper vs Writesonic vs Copy.ai →</a></>}
         {!['writing','image','video','audio','coding','productivity','design','marketing','data','business'].includes(category) && <a href="/compare" class="block text-sm text-[#3B82F6] hover:underline">View all comparisons →</a>}
+      </div>
+    </div>
+    <div>
+      <p class="text-xs text-gray-400 mb-1.5 uppercase tracking-wider font-medium">📝 Reviews</p>
+      <div class="space-y-1.5">
+        {category === 'writing' && <><a href="/chatgpt-review" class="block text-sm text-[#3B82F6] hover:underline">ChatGPT Review →</a><a href="/claude-review" class="block text-sm text-[#3B82F6] hover:underline">Claude Review →</a><a href="/gemini-review" class="block text-sm text-[#3B82F6] hover:underline">Gemini Review →</a><a href="/deepseek-review" class="block text-sm text-[#3B82F6] hover:underline">DeepSeek Review →</a><a href="/writesonic-review" class="block text-sm text-[#3B82F6] hover:underline">Writesonic Review →</a></>}
+        {category === 'image' && <><a href="/midjourney-review" class="block text-sm text-[#3B82F6] hover:underline">Midjourney Review →</a><a href="/canva-review" class="block text-sm text-[#3B82F6] hover:underline">Canva Review →</a></>}
+        {category === 'video' && <><a href="/runway-review" class="block text-sm text-[#3B82F6] hover:underline">Runway Review →</a><a href="/heygen-review" class="block text-sm text-[#3B82F6] hover:underline">HeyGen Review →</a><a href="/capcut-review" class="block text-sm text-[#3B82F6] hover:underline">CapCut Review →</a><a href="/synthesia-review" class="block text-sm text-[#3B82F6] hover:underline">Synthesia Review →</a><a href="/descript-review" class="block text-sm text-[#3B82F6] hover:underline">Descript Review →</a></>}
+        {category === 'audio' && <><a href="/elevenlabs-review" class="block text-sm text-[#3B82F6] hover:underline">ElevenLabs Review →</a><a href="/descript-review" class="block text-sm text-[#3B82F6] hover:underline">Descript Review →</a></>}
+        {category === 'coding' && <><a href="/bolt-review" class="block text-sm text-[#3B82F6] hover:underline">Bolt.new Review →</a><a href="/cursor-review" class="block text-sm text-[#3B82F6] hover:underline">Cursor Review →</a><a href="/windsurf-review" class="block text-sm text-[#3B82F6] hover:underline">Windsurf Review →</a><a href="/copilot-review" class="block text-sm text-[#3B82F6] hover:underline">Copilot Review →</a></>}
+        {category === 'design' && <><a href="/canva-review" class="block text-sm text-[#3B82F6] hover:underline">Canva Review →</a><a href="/uizard-review" class="block text-sm text-[#3B82F6] hover:underline">Uizard Review →</a></>}
+        {category === 'marketing' && <><a href="/semrush-review" class="block text-sm text-[#3B82F6] hover:underline">Semrush Review →</a><a href="/writesonic-review" class="block text-sm text-[#3B82F6] hover:underline">Writesonic Review →</a></>}
+        {category === 'productivity' && <><a href="/best-ai-productivity-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Best AI Productivity Tools →</a></>}
+        {category === 'data' && <><a href="/best-ai-data-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Best AI Data Tools →</a></>}
+        {category === 'business' && <><a href="/best-ai-business-tools-2026" class="block text-sm text-[#3B82F6] hover:underline">Best AI Business Tools →</a></>}
+        {!['writing','image','video','audio','coding','productivity','data','design','marketing','business'].includes(category) && <a href="/compare" class="block text-sm text-[#3B82F6] hover:underline">View all tools →</a>}
       </div>
     </div>
   </div>

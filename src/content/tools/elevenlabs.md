@@ -5,7 +5,7 @@ description: "AI voice synthesis platform producing natural, human-like speech w
 category: "audio"
 website: "https://elevenlabs.io"
 pricing: "Free / $5/mo"
-affiliate_url: https://elevenlabs.io
+affiliate_url: https://try.elevenlabs.io/aizest
 scores:
   ease_of_use: 9.1
   pricing_value: 10

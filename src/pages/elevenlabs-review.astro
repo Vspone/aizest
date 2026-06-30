@@ -172,6 +172,12 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <p>SDKs are available for Python, JavaScript, and Node.js, plus community-maintained wrappers for other languages. In 2026, ElevenLabs also launched a low-code integration via Zapier and Make, making it accessible to non-developers.</p>
 
+<h2>AI Dubbing &amp; Sound Effects</h2>
+
+<p>AI Dubbing is one of ElevenLabs' most impactful additions in 2026. Upload a video in one language, and ElevenLabs automatically transcribes the original audio, translates it to your target language, and re-voices it using a cloned voice matched to the original speaker — all synced to the original timing and pacing. The dubbing quality is impressive for a fully automated pipeline, handling emotional tone and natural pauses well.</p>
+<p>Lip-sync accuracy varies by language pair. English-to-Spanish and English-to-French produce excellent results. English-to-Mandarin and English-to-Japanese are serviceable but occasionally desync in fast dialogue. For professional video localization, ElevenLabs AI Dubbing dramatically reduces the time and cost compared to traditional studio dubbing, though high-budget productions may still want human refinement.</p>
+<p>ElevenLabs also added a <strong>Sound Effects Generator</strong> in 2026. Describe the sound you need — "rustling leaves in a gentle breeze," "a futuristic door opening," "crowd cheering in a stadium" — and the AI produces a 5-15 second audio clip. The quality is good for ambient sounds and UI audio, though complex multi-layer soundscapes can feel thin compared to dedicated SFX libraries. For content creators who need quick sound assets without licensing fees, it's a convenient addition to the platform.</p>
+
 <h2>Pricing: Generous Free Tier, Expensive at Scale</h2>
 
 <table>
@@ -190,6 +196,41 @@ import RelatedContent from '../components/RelatedContent.astro';
 <p>The Free tier is generous enough for casual experimentation. Content creators typically land on the Creator plan ($22/mo) for 100K characters and multiple cloned voices. The Pro plan ($99/mo) is where serious usage begins. At enterprise scale, custom pricing starts around $500/month depending on volume and infrastructure needs.</p>
 
 <p>The pricing has drawn criticism in 2026 — the Pro tier is expensive for indie developers, and character limits can be consumed faster than expected with longer-form content. Audiobook creators, in particular, find the limits restrictive on mid-tier plans.</p>
+
+<h2>ElevenLabs vs Play.ht vs Murf</h2>
+
+<p>While ElevenLabs leads in voice quality, Play.ht and Murf offer competitive alternatives at lower price points. Here's how they compare.</p>
+
+<table>
+<thead><tr><th>Criteria</th><th>ElevenLabs</th><th>Play.ht</th><th>Murf</th></tr></thead>
+<tbody>
+<tr><td><strong>Voice Quality</strong></td><td>🏆 Best-in-class, nearly human</td><td>Very good, slightly synthetic</td><td>Good, natural but less expressive</td></tr>
+<tr><td><strong>Voice Cloning</strong></td><td>Professional + Instant (30s sample)</td><td>Instant cloning</td><td>Limited (premium voices only)</td></tr>
+<tr><td><strong>Languages</strong></td><td>32 languages</td><td>100+ voices, 30+ languages</td><td>20+ languages</td></tr>
+<tr><td><strong>API Latency</strong></td><td>Sub-200ms streaming</td><td>~300ms</td><td>~500ms</td></tr>
+<tr><td><strong>AI Dubbing</strong></td><td>Yes (excellent)</td><td>No</td><td>No</td></tr>
+<tr><td><strong>Sound Effects</strong></td><td>Yes (new in 2026)</td><td>No</td><td>No</td></tr>
+<tr><td><strong>Free Tier</strong></td><td>10,000 chars/mo</td><td>5,000 words/mo</td><td>10 min audio (no download)</td></tr>
+<tr><td><strong>Starting Price</strong></td><td>$5/mo (Starter)</td><td>$6/mo (Creator)</td><td>$19/mo (Basic)</td></tr>
+<tr><td><strong>Mid-Tier Price</strong></td><td>$22/mo (100K chars)</td><td>$25/mo (100K words)</td><td>$39/mo (unlimited)</td></tr>
+</tbody>
+</table>
+
+<p><strong>Choose ElevenLabs if:</strong> Voice quality is your top priority — for audiobooks, professional content, customer-facing applications, or any use case where unnatural-sounding speech would damage credibility. The API is also the best in class for real-time applications.</p>
+<p><strong>Choose Play.ht if:</strong> You need solid TTS quality at a lower price point with the broadest language coverage. Play.ht's 30+ language support and lower mid-tier pricing make it a strong alternative for multilingual content.</p>
+<p><strong>Choose Murf if:</strong> You prefer a simpler, more predictable pricing model with unlimited words on the mid-tier plan. Murf is also easier for non-technical users who don't need API access or voice cloning.</p>
+
+<h2>Who Should Use ElevenLabs?</h2>
+
+<p>ElevenLabs is the premium option in AI voice generation — it's best suited for scenarios where audio quality directly impacts your product or content:</p>
+<ul>
+  <li><strong>Audiobook and podcast producers</strong> who need natural, expressive narration that listeners won't distinguish from a human reader</li>
+  <li><strong>Video content creators</strong> localizing content for global audiences — AI Dubbing dramatically accelerates the translation and re-voicing process</li>
+  <li><strong>Game developers</strong> needing quick character voice generation with the Voice Design and Instant Cloning features</li>
+  <li><strong>Enterprise teams</strong> building voice-enabled products that demand low-latency, high-quality speech synthesis via the API</li>
+  <li><strong>Accessibility applications</strong> where natural-sounding speech improves user experience for screen readers and assistive tools</li>
+</ul>
+<p>If your need is simpler — occasional text-to-speech for internal use, basic voiceovers, or tight budget constraints — Play.ht or Murf may serve you well at lower cost. ElevenLabs' strength is in production-quality voice content where authenticity matters.</p>
 
 <h2>Pros and Cons</h2>
 

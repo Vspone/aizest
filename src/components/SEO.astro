@@ -18,7 +18,28 @@ const {
 } = Astro.props;
 
 const siteUrl = 'https://aizest.net';
-const fullUrl = canonical ? `${siteUrl}${canonical}` : Astro.url.href;
+
+// Normalize canonical URL to include trailing slash (Cloudflare redirects non-slash → slash)
+// Root '/' already has slash; skip for full absolute URLs
+function addTrailingSlash(url: string): string {
+  if (url === '/' || url.endsWith('/')) return url;
+  const parsed = new URL(url, siteUrl);
+  const path = parsed.pathname;
+  if (!path.endsWith('/') && !path.includes('.')) return `${url}/`;
+  return url;
+}
+
+// Support both relative (e.g., '/tool/chatgpt') and absolute (e.g., 'https://aizest.net/best-ai')
+// canonical props. Prepend siteUrl only if relative; absolutize if needed first.
+function resolveCanonical(input: string | undefined, fallbackUrl: URL): string {
+  if (!input) return addTrailingSlash(fallbackUrl.href);
+  // If already absolute, use as-is
+  if (input.startsWith('http://') || input.startsWith('https://')) return addTrailingSlash(input);
+  // Relative path: prepend siteUrl
+  return addTrailingSlash(`${siteUrl}${input}`);
+}
+
+const fullUrl = resolveCanonical(canonical, Astro.url);
 const fullImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 
 // WebSite Schema (homepage only)

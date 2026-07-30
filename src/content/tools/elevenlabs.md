@@ -6,6 +6,7 @@ category: "audio"
 website: "https://elevenlabs.io"
 pricing: "Free / $5/mo"
 affiliate_url: https://try.elevenlabs.io/aizest
+affiliate: true
 scores:
   ease_of_use: 9.1
   pricing_value: 10

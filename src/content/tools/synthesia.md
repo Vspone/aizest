@@ -6,6 +6,7 @@ category: "video"
 website: "https://www.synthesia.io"
 pricing: "$18/mo (Starter) / $59/mo (Creator)"
 affiliate_url: https://www.synthesia.io/?via=aizest
+affiliate: true
 scores:
   ease_of_use: 9.0
   pricing_value: 8.5

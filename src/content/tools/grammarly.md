@@ -5,8 +5,8 @@ description: "AI writing assistant for grammar correction, tone adjustment, and 
 category: "writing"
 website: "https://grammarly.com"
 pricing: "Free / $12/mo"
-affiliate_url: https://grammarly.com/?ref=aizest
-affiliate: true
+affiliate_url: https://grammarly.com
+affiliate: false
 scores:
   ease_of_use: 9.5
   pricing_value: 9.7

@@ -137,21 +137,12 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <!-- Test methodology banner -->
 <div class="not-prose my-8 p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-  <p class="text-sm text-gray-600 dark:text-gray-400"><strong>📋 Evaluation criteria:</strong> Each tool was evaluated on 200+ prompts across portraits, typography, product design, illustrations, and game assets. Results scored on image quality, prompt adherence, speed, text rendering, and ease of use. <em>Full methodology below.</em></p>
+  <p class="text-sm text-gray-600 dark:text-gray-400"><strong>📋 Evaluation criteria:</strong> Each tool was assessed on documented features, public pricing, and real-world use cases across portraits, typography, product design, illustrations, and game assets. Results scored on image quality, prompt adherence, speed, text rendering, and ease of use. <em>Full methodology below.</em></p>
 </div>
 
 <h2>1. Midjourney — 🏆 Editor's Choice</h2>
 <p>Midjourney remains the gold standard for artistic AI image generation. Version 7 delivers stunning photorealism, cinematic lighting, and compositional depth that competitors struggle to match. Its Discord-based interface has a learning curve, but the output quality is worth it.</p>
 
-<h3>Test Results</h3>
-<p><strong>Prompt used:</strong> "A futuristic cyberpunk city at sunset with neon signs, flying cars, and rain-slicked streets — cinematic, 8K"</p>
-<ul>
-<li>Generation time: ~22 seconds</li>
-<li>Prompt adherence: 9.5/10</li>
-<li>Lighting: 9.8/10 — exceptional cinematic quality</li>
-<li>Text rendering: 2/10 — traditional weakness</li>
-<li>Facial consistency: 9/10 across multiple generations</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -181,14 +172,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 <h2>2. Ideogram — 🎨 Best for Text in Images</h2>
 <p>Ideogram solves the biggest pain point of AI image generation: legible text. Its text rendering accuracy (~90%) far outperforms Midjourney (~30%) and DALL-E, making it the go-to choice for posters, logos, ads, and social media graphics with embedded text. The Ideogram 4.0 models deliver strong image quality across Turbo, Balanced, and Quality tiers.</p>
 
-<h3>Test Results</h3>
-<p><strong>Prompt used:</strong> "A modern coffee shop poster with the text 'FRESH BREW DAILY' in bold typography, minimalist design, warm colors"</p>
-<ul>
-<li>Text accuracy: 9/10 — clear, legible text</li>
-<li>Generation time: ~12 seconds (Turbo)</li>
-<li>Prompt adherence: 9/10</li>
-<li>Design quality: 8.5/10 — professional layouts</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -218,14 +201,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 <h2>3. DALL-E 3 — 🌟 Best for Beginners</h2>
 <p>OpenAI's DALL-E 3 sets the standard for ease of use. Its natural language understanding is exceptional — you describe what you want, and it delivers with minimal prompt engineering. Tight integration with ChatGPT makes it accessible to anyone. While it may not match Midjourney's artistic depth, its reliability and simplicity are standout.</p>
 
-<h3>Test Results</h3>
-<p><strong>Prompt used:</strong> "A realistic orange cat wearing a space helmet, floating in a starry nebula — cartoon style with vibrant colors"</p>
-<ul>
-<li>Prompt adherence: 9.5/10 — best natural language understanding</li>
-<li>Generation time: ~8 seconds</li>
-<li>Style flexibility: 9/10</li>
-<li>Text rendering: 6/10 — functional but imprecise</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -255,14 +230,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 <h2>4. Recraft — 🚀 Best for Vector Graphics</h2>
 <p>Recraft stands out by generating actual vector graphics (SVG), not just raster images. This makes it invaluable for graphic designers who need scalable icons, logos, and illustrations. Its style control and brand kit features let you maintain consistency across all generated assets — something no other AI image tool offers.</p>
 
-<h3>Test Results</h3>
-<p><strong>Prompt used:</strong> "A minimalist SVG icon of a delivery truck for a logistics company website — clean lines, flat design"</p>
-<ul>
-<li>SVG output quality: 9/10 — true scalable vectors</li>
-<li>Brand consistency: 9/10 — excellent style matching</li>
-<li>Generation time: ~10 seconds</li>
-<li>Style variety: 8.5/10 — multiple design styles</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -292,14 +259,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 <h2>5. Stable Diffusion — 💰 Best Free / Open-Source</h2>
 <p>Stable Diffusion 3.5 remains the most powerful open-source image generator. It offers unparalleled customization through fine-tuning, LoRAs, and ControlNet. Run it locally on your own hardware or through cloud services. The trade-off is technical complexity — it's not plug-and-play like the commercial alternatives.</p>
 
-<h3>Test Results</h3>
-<p><strong>Prompt used:</strong> "Fantasy landscape with floating islands, waterfalls, and ancient ruins — detailed, high contrast"</p>
-<ul>
-<li>ControlNet precision: 9.5/10 — standout pose/edge control</li>
-<li>Generation time: ~30 seconds (local RTX 4090)</li>
-<li>Customization: 10/10 — full model control</li>
-<li>Out-of-box quality: 7/10 — requires fine-tuning for best results</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -329,14 +288,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 <h2>6. Leonardo AI — 🎮 Best for Game Assets</h2>
 <p>Leonardo AI is purpose-built for game development and creative assets. Its canvas editor, model training, and asset generation features make it the favorite among indie game developers and content creators. The platform offers fine-tuned models for specific art styles, from pixel art to realistic renders.</p>
 
-<h3>Test Results</h3>
-<p><strong>Prompt used:</strong> "Pixel art character sprite — a knight with sword and shield, walking animation, 32x32 grid, game-ready"</p>
-<ul>
-<li>Asset variety: 9/10 — excellent model selection</li>
-<li>Generation time: ~8 seconds</li>
-<li>Style customization: 9/10 — fine-tuned models</li>
-<li>Canvas editor: 8.5/10 — useful for iterative design</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -423,10 +374,10 @@ import RelatedContent from '../components/RelatedContent.astro';
 </ul>
 
 <h2>How We Evaluate</h2>
-<p>Our testing methodology is designed to be reproducible and transparent.</p>
+<p>Our evaluation focuses on documented features, public pricing, and real-world suitability for the intended audience.</p>
 <ul>
-<li><strong>Sample size:</strong> 200+ standardized prompts across 5 categories — portraits, typography, product design, illustrations, and game assets</li>
-<li><strong>Method:</strong> Each prompt was run independently on each platform using identical wording</li>
+<li><strong>Scope:</strong> Feature depth, free tier generosity, ease of use, and value for the intended audience</li>
+<li><strong>Method:</strong> Each tool was assessed against its documented features, public pricing, and real-world use cases</li>
 <li><strong>Metrics:</strong> Image quality, prompt adherence, generation speed, text rendering accuracy, ease of use, and unique capabilities</li>
 <li><strong>Period:</strong> June 2026 using the latest available models (Midjourney V7, Ideogram 4.0, DALL-E 3, Stable Diffusion 3.5, Recraft V3, Leonardo AI latest)</li>
 <li><strong>Reviewers:</strong> AI Zest Editorial Team — AI tools reviewed since 2023</li>

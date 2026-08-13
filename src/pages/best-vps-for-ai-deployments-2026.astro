@@ -106,7 +106,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <p>Running AI models in production requires the right infrastructure. Whether you're deploying a fine-tuned LLM as an API, running Stable Diffusion inference at scale, training custom models, or serving embeddings for a RAG pipeline — your choice of VPS or cloud GPU provider directly impacts performance, cost, and developer experience.</p>
 
-<p>We evaluated 6 major VPS and cloud GPU providers — DigitalOcean, Vultr, RunPod, Hetzner, AWS EC2, and Google Cloud — across real AI workloads including LLM inference, model fine-tuning, image generation, and API serving. Here's everything we found.</p>
+<p>This guide covers the leading tools in this category</p>
 
 <div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border border-gray-200 dark:border-gray-700">
   <p class="text-sm font-medium text-gray-900 dark:text-white mb-3">🔑 Quick Verdict</p>
@@ -132,7 +132,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <!-- Test methodology banner -->
 <div class="not-prose my-8 p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-  <p class="text-sm text-gray-600 dark:text-gray-400"><strong>📋 Evaluation criteria:</strong> Each provider was evaluated on real AI workloads — LLM inference (Llama 3 70B), image generation (Stable Diffusion XL), and model fine-tuning (LoRA). Scored on performance, pricing, GPU availability, ease of use, and support. <em>Full methodology below.</em></p>
+  <p class="text-sm text-gray-600 dark:text-gray-400"><strong>📋 Evaluation criteria:</strong> Each provider was assessed on documented features, public pricing, and real-world use cases<em>Full methodology below.</em></p>
 </div>
 
 <h2>1. DigitalOcean — 🏆 Best Overall for AI Deployments</h2>
@@ -140,14 +140,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <p>Since January 2026, DigitalOcean moved to <strong>per-second billing</strong> (minimum $0.01 per instance), making it cost-effective for short-lived AI tasks like batch inference, model evaluation, and CI/CD pipelines. Combined with managed Kubernetes, PostgreSQL, Redis, and Spaces object storage, you get a full AI infrastructure stack without hyperscaler complexity.</p>
 
-<h3>Test Results</h3>
-<p><strong>Workload tested:</strong> Llama 3 70B inference (4-bit quantized) on L40S GPU Droplet</p>
-<ul>
-<li>Tokens per second: 42 tok/s — smooth real-time inference</li>
-<li>Time to first token: ~320ms</li>
-<li>Concurrent users supported: 8–12 before quality degradation</li>
-<li>Setup time: ~5 minutes from account creation to running model</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -179,14 +171,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <p>Vultr offers a broad GPU lineup including NVIDIA A100 (80GB), A40 (48GB), and AMD Instinct GPUs, available as both virtual machines and bare metal. Their <strong>Cloud GPU</strong> instances start at $90/month, and CPU-only <strong>Cloud Compute</strong> instances start at $2.50/month (IPv6-only) — making Vultr one of the cheapest options for lightweight AI API hosting.</p>
 
-<h3>Test Results</h3>
-<p><strong>Workload tested:</strong> Stable Diffusion XL inference on A100 GPU instance</p>
-<ul>
-<li>Image generation (512×512): ~3.2 seconds per image</li>
-<li>Image generation (1024×1024): ~7.8 seconds per image</li>
-<li>Batch throughput (4 images): ~11 seconds total</li>
-<li>Latency (p99): 145ms to nearest US region from New York</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -218,14 +202,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <p>RunPod's community cloud offers the most competitive pricing — RTX 4090 instances starting at $0.29/hour and A100 80GB starting at $1.64/hour. Their Serverless product lets you deploy models as auto-scaling endpoints that only bill when handling requests, ideal for production inference with variable traffic patterns.</p>
 
-<h3>Test Results</h3>
-<p><strong>Workload tested:</strong> LoRA fine-tuning of Llama 3 8B on RTX 4090 (community cloud)</p>
-<ul>
-<li>Fine-tuning time (1000 steps, batch size 4): ~14 minutes</li>
-<li>Per-step cost: ~$0.00007 (at $0.29/hr)</li>
-<li>Total fine-tuning cost: ~$0.07</li>
-<li>Memory usage: 19.2GB / 24GB VRAM</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -257,14 +233,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <p>The trade-off is simplicity — Hetzner provides raw infrastructure without the managed ecosystem of DigitalOcean or AWS. You'll need to handle Kubernetes setup, monitoring, and scaling yourself. But if you have DevOps experience, the cost savings are substantial: up to 50–60% less than AWS for equivalent GPU compute.</p>
 
-<h3>Test Results</h3>
-<p><strong>Workload tested:</strong> Llama 3 70B inference (4-bit quantized) on dedicated A100 80GB server</p>
-<ul>
-<li>Tokens per second: 48 tok/s — faster than DigitalOcean L40S</li>
-<li>Time to first token: ~280ms</li>
-<li>Monthly cost estimate (24/7 usage): ~€650 vs ~€2,400 on AWS p4d.2xlarge</li>
-<li>Setup time: ~30 minutes (manual server provisioning + Docker setup)</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -296,14 +264,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <p>The trade-offs are significant: complex pricing (spot, reserved, on-demand), opaque cost forecasting, and a steep learning curve. AWS is overkill for most small-to-medium AI deployments, but indispensable for large-scale training jobs, distributed inference at enterprise scale, or organizations with existing AWS commitments.</p>
 
-<h3>Test Results</h3>
-<p><strong>Workload tested:</strong> Distributed training of Llama-style 7B model on 4× A100 (p4d.24xlarge)</p>
-<ul>
-<li>Training throughput: ~15,000 tokens/second (4 GPU, FSDP)</li>
-<li>On-demand cost: $32.77/hr</li>
-<li>Spot instance cost: ~$9.80/hr (70% savings)</li>
-<li>Setup complexity: High — required VPC, EFS, EKS, and custom AMI configuration</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -335,14 +295,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <p>Google Cloud's Vertex AI platform provides a fully managed ML lifecycle, and their recent Deep Google VMs offer competitive H100 and A100 pricing. However, the console experience is notoriously complex, and pricing (especially for TPUs) can be difficult to forecast for variable workloads.</p>
 
-<h3>Test Results</h3>
-<p><strong>Workload tested:</strong> Gemini-class model training simulation on TPU v6 (8×TPU slice)</p>
-<ul>
-<li>Training throughput: ~48,000 tokens/second (8×TPU, model-parallel)</li>
-<li>TPU v6 on-demand cost: ~$45.00/hr</li>
-<li>GKE setup time: ~20 minutes with standard node pool config</li>
-<li>Best for: Large-scale transformer training, not small inference deployments</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -429,10 +381,10 @@ import RelatedContent from '../components/RelatedContent.astro';
 </ul>
 
 <h2>How We Evaluate</h2>
-<p>Our testing methodology is designed to be reproducible and transparent.</p>
+<p>Our evaluation focuses on documented features, public pricing, and real-world suitability for the intended audience.</p>
 <ul>
-<li><strong>Sample size:</strong> Each provider was tested on 3 real AI workloads — LLM inference (Llama 3 70B 4-bit quantized), image generation (Stable Diffusion XL 512×512 and 1024×1024), and model fine-tuning (LoRA on Llama 3 8B)</li>
-<li><strong>Method:</strong> Standardized prompts and model configurations were used across all providers. GPU instances were selected at the closest available tier. CPU-only instances were tested for basic API serving workloads.</li>
+<li><strong>Scope:</strong> Feature depth, free tier generosity, ease of use, and value for the intended audience</li>
+<li><strong>Method:</strong> Each tool was assessed against its documented features, public pricing, and real-world use cases</li>
 <li><strong>Metrics:</strong> Performance (tokens/sec, generation time, latency), pricing transparency and per-unit cost, GPU availability and variety, ease of setup and developer experience (API, CLI, dashboard quality), and customer support responsiveness</li>
 <li><strong>Period:</strong> June 2026 using the latest available GPU instances and pricing as of publication</li>
 <li><strong>Reviewers:</strong> AI Zest Editorial Team — cloud and AI infrastructure reviewed since 2023</li>

@@ -135,21 +135,12 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <!-- Test methodology banner -->
 <div class="not-prose my-8 p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-  <p class="text-sm text-gray-600 dark:text-gray-400"><strong>📋 Evaluation criteria:</strong> Each tool was evaluated on 150+ prompts across code generation, debugging, refactoring, web development, and full-stack prototyping. Results scored on code quality, speed, ease of use, debugging capability, and value. <em>Full methodology below.</em></p>
+  <p class="text-sm text-gray-600 dark:text-gray-400"><strong>📋 Evaluation criteria:</strong> Each tool was assessed on documented features, public pricing, and real-world use cases across code generation, debugging, refactoring, web development, and full-stack prototyping. Results scored on code quality, speed, ease of use, debugging capability, and value. <em>Full methodology below.</em></p>
 </div>
 
 <h2>1. Cursor — 🏆 Editor's Choice</h2>
 <p>Cursor is a purpose-built AI code editor that goes far beyond simple autocomplete. It understands your entire codebase, lets you edit multiple files at once with natural language, and features a powerful Agent mode that can autonomously implement complex features across your project. Built on VS Code, it integrates seamlessly with existing extensions and workflows while adding deep AI capabilities that make it feel like pair programming with a senior engineer.</p>
 
-<h3>Test Results</h3>
-<p><strong>Prompt used:</strong> "Create a REST API endpoint for user authentication with JWT tokens, including login, register, and token refresh routes in a Node.js/Express app"</p>
-<ul>
-<li>Code quality: 9.5/10 — clean, well-structured output</li>
-<li>Generation time: ~8 seconds</li>
-<li>Multi-file accuracy: 9.5/10 — correctly wired across files</li>
-<li>Bug-free on first run: 9/10</li>
-<li>Context awareness: 9.5/10 — understood project structure</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -179,15 +170,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 <h2>2. GitHub Copilot — 🥈 Best IDE Integration</h2>
 <p>GitHub Copilot remains the most widely adopted AI coding assistant, integrated directly into VS Code, JetBrains, Neovim, and other major IDEs. Its Copilot Chat feature provides contextual assistance, code explanations, and debugging help without leaving your editor. With powerful autocomplete that learns your coding patterns and supports hundreds of languages, Copilot is the go-to choice for developers who want AI help without switching tools.</p>
 
-<h3>Test Results</h3>
-<p><strong>Prompt used:</strong> "Write a Python function that fetches data from a paginated REST API, handles rate limiting with exponential backoff, and returns a combined list of results"</p>
-<ul>
-<li>Code quality: 9/10 — clean, idiomatic Python</li>
-<li>Generation time: ~5 seconds</li>
-<li>Error handling: 9/10 — properly implemented backoff</li>
-<li>Language support: 10/10 — excellent across all tested languages</li>
-<li>Context awareness: 8.5/10 — strong but not codebase-wide</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -217,15 +199,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 <h2>3. Bolt.new — 🥉 Best Prompt-to-App Builder</h2>
 <p>Bolt.new by StackBlitz revolutionizes application development by generating complete, full-stack applications from a single natural language prompt. Unlike traditional code assistants that help line by line, Bolt.new creates entire projects — frontend, backend, database, and deployment — with a live preview window where you can see your app working in real time. It's less like autocomplete and more like having a full-stack engineering team that works at the speed of thought.</p>
 
-<h3>Test Results</h3>
-<p><strong>Prompt used:</strong> "Build a task management app with user authentication, a PostgreSQL database, drag-and-drop kanban board, and dark mode — using React and Node.js"</p>
-<ul>
-<li>App generation speed: ~45 seconds for full stack</li>
-<li>Code quality: 8.5/10 — production-ready scaffolding</li>
-<li>Prompt adherence: 9/10 — all features implemented</li>
-<li>Live preview accuracy: 10/10 — real-time updates</li>
-<li>Deployment readiness: 9/10 — one-click deploy</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -255,15 +228,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 <h2>4. Windsurf — 🚀 Best Agentic IDE</h2>
 <p>Windsurf is the next-generation AI-powered IDE built by Codeium. Its signature innovation is Cascade Flows — an agentic workflow system that lets developers describe multi-step objectives and watch as Windsurf autonomously plans, executes, and iterates across multiple files. Arena mode lets you run multiple AI models side-by-side on the same task and compare outputs in real time. With deep codebase indexing and cross-file context awareness, Windsurf is a powerful competitor to Cursor at a more affordable price.</p>
 
-<h3>Test Results</h3>
-<p><strong>Prompt used:</strong> "Add OAuth authentication with Google and GitHub providers, a password reset flow, and protected route middleware to the existing Express app"</p>
-<ul>
-<li>Multi-file execution: 9/10 — autonomous across 6 files</li>
-<li>Code quality: 9/10 — clean, well-structured output</li>
-<li>Generation time: ~15 seconds for full flow</li>
-<li>Cross-file awareness: 9/10 — excellent context retention</li>
-<li>Agent reliability: 8.5/10 — generally accurate</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -293,15 +257,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 <h2>5. Replit — 🌟 Best Cloud-Based AI Coding</h2>
 <p>Replit is a complete cloud development environment with built-in AI coding assistance. Its AI Agent can build entire applications from a single prompt — generating code, setting up the environment, configuring dependencies, and even deploying. The collaborative features let multiple developers work in the same environment in real time. With zero setup required — just open a browser and start coding — Replit is ideal for beginners, education, and rapid prototyping.</p>
 
-<h3>Test Results</h3>
-<p><strong>Prompt used:</strong> "Create a Discord bot that responds to commands, fetches weather data from an API, and stores user preferences in a database"</p>
-<ul>
-<li>Setup time: ~2 seconds — instant environment</li>
-<li>Code quality: 8/10 — functional, well-structured</li>
-<li>Generation time: ~25 seconds for full bot</li>
-<li>Deployment: 9/10 — instant URL sharing</li>
-<li>Collaboration: 9/10 — excellent real-time co-editing</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -331,15 +286,6 @@ import RelatedContent from '../components/RelatedContent.astro';
 <h2>6. Codeium — 💰 Best Free Code Completion</h2>
 <p>Codeium has rapidly gained popularity as a compelling free alternative to GitHub Copilot, offering unlimited AI code completions without any daily usage caps or artificial restrictions. It provides whole-line and multi-line code suggestions across more than 70 programming languages with extensions for VS Code, JetBrains IDEs, Vim, and Neovim. Its standout feature is natural language code search — type queries like "find the user authentication middleware" and get precise results pointing to relevant code sections.</p>
 
-<h3>Test Results</h3>
-<p><strong>Prompt used:</strong> "Implement a caching layer using Redis for an Express.js REST API with TTL-based expiration and cache invalidation on write operations"</p>
-<ul>
-<li>Code quality: 8.5/10 — solid, clean implementation</li>
-<li>Generation time: ~4 seconds — fastest in test</li>
-<li>Code search accuracy: 9/10 — excellent NL queries</li>
-<li>Language support: 8.5/10 — broad but less depth on niche languages</li>
-<li>Free tier value: 10/10 — truly unlimited</li>
-</ul>
 
 <h3>Multi-Dimension Rating</h3>
 <table>
@@ -420,10 +366,10 @@ import RelatedContent from '../components/RelatedContent.astro';
 </ul>
 
 <h2>How We Evaluate</h2>
-<p>Our testing methodology is designed to be reproducible and transparent.</p>
+<p>Our evaluation focuses on documented features, public pricing, and real-world suitability for the intended audience.</p>
 <ul>
-<li><strong>Sample size:</strong> 150+ standardized prompts across 5 categories — code generation, debugging, refactoring, web development, and full-stack prototyping</li>
-<li><strong>Method:</strong> Each prompt was run independently on each platform using identical wording</li>
+<li><strong>Scope:</strong> Feature depth, free tier generosity, ease of use, and value for the intended audience</li>
+<li><strong>Method:</strong> Each tool was assessed against its documented features, public pricing, and real-world use cases</li>
 <li><strong>Metrics:</strong> Code quality, generation speed, ease of use, debugging capability, multi-file awareness, and overall developer experience</li>
 <li><strong>Period:</strong> June 2026 using the latest available models and versions</li>
 <li><strong>Reviewers:</strong> AI Zest Editorial Team — AI tools reviewed since 2023</li>

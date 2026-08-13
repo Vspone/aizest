@@ -5,8 +5,8 @@ description: "AI writing assistant specialized in marketing copy, blog content, 
 category: "writing"
 website: "https://www.jasper.ai"
 pricing: "$39/mo"
-affiliate_url: https://www.jasper.ai/?ref=aizest
-affiliate: true
+affiliate_url: https://www.jasper.ai
+affiliate: false
 scores:
   ease_of_use: 9.7
   pricing_value: 8.7

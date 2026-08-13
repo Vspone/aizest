@@ -5,8 +5,8 @@ description: "AI-powered copywriting platform for marketing content and sales co
 category: "writing"
 website: "https://www.copy.ai"
 pricing: "$49/mo"
-affiliate_url: https://www.copy.ai/?ref=aizest
-affiliate: true
+affiliate_url: https://www.copy.ai
+affiliate: false
 scores:
   ease_of_use: 8.3
   pricing_value: 8.1

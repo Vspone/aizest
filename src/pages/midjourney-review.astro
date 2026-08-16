@@ -7,9 +7,9 @@ const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Midjourney Review 2026: Is It Still Worth It?",
-  "description": "Comprehensive Midjourney review 2026 covering V7 model quality, artistic output, sref styling features, Discord interface, and pricing. Is Midjourney still the best AI image generator?",
+  "description": "Comprehensive Midjourney review 2026 covering V8.1 model quality, artistic output, sref styling features, web app and Discord, and pricing. Is Midjourney still the best AI image generator?",
   "datePublished": "2026-06-23",
-  "dateModified": "2026-06-23",
+  "dateModified": "2026-08-16",
   "author": {
     "@type": "Organization",
     "name": "AI Zest"
@@ -44,15 +44,15 @@ const faqJsonLd = JSON.stringify({
       "name": "What is Midjourney?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Midjourney is an AI-powered image generation platform that creates stunning visuals from text descriptions. Unlike most competitors, Midjourney operates through Discord — you type prompts in a Discord server and the bot returns generated images. Midjourney V7, released in early 2026, introduces a completely new model architecture with improved prompt adherence and the sref (style reference) system."
+        "text": "Midjourney is an AI-powered image generation platform that creates stunning visuals from text descriptions. Midjourney now offers a full web application at midjourney.com, with Discord remaining an optional entry point where you can still type prompts in a server and the bot returns generated images. Midjourney V7, released in April 2025, introduced a new model architecture with improved prompt adherence and the sref (style reference) system; the current default model is V8.1 (default since June 11, 2026), with V8.2 released July 24, 2026."
       }
     },
     {
       "@type": "Question",
-      "name": "What's new in Midjourney V7?",
+      "name": "What's new in Midjourney V8.1?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Midjourney V7 is a ground-up rebuild of the model architecture. Key improvements include dramatically better prompt adherence (faithfully rendering complex multi-element scenes), better anatomy (hands, faces, body proportions), enhanced texture rendering, improved lighting and shadows, and about 30% faster generation speeds compared to V6."
+        "text": "Midjourney's default model is now V8.1, which became the default on June 11, 2026; V8.2 followed on July 24, 2026 as the newest version, and V8 debuted in alpha on March 17, 2026. The V8 line builds on the ground-up rebuild of V7 (April 2025), which brought dramatically better prompt adherence, better anatomy, enhanced texture rendering, and improved lighting and shadows."
       }
     },
     {
@@ -65,10 +65,10 @@ const faqJsonLd = JSON.stringify({
     },
     {
       "@type": "Question",
-      "name": "Is Midjourney better than DALL-E?",
+      "name": "Is Midjourney better than GPT Image 2?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Midjourney V7 produces superior artistic quality and has better style control with its sref and cref system. However, DALL-E 4 offers better photorealism, superior human anatomy, excellent prompt adherence, and a web-based interface included with ChatGPT Plus at $20/month. For most creative professionals, Midjourney is better for artistic work, while DALL-E is better for photorealistic scenes."
+        "text": "Midjourney produces superior artistic quality and has better style control with its sref and cref system. However, GPT Image 2 (there is no 'DALL-E 4') offers better photorealism, superior human anatomy, excellent prompt adherence, and a web-based interface included with ChatGPT Plus at $20/month. For most creative professionals, Midjourney is better for artistic work, while GPT Image 2 is better for photorealistic scenes."
       }
     },
     {
@@ -76,14 +76,14 @@ const faqJsonLd = JSON.stringify({
       "name": "Does Midjourney have a web interface?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No, Midjourney operates exclusively through Discord. There is no native web app or desktop client. This is one of the most controversial aspects of the platform — some users love the community aspect of Discord, while others find it a significant barrier to entry. Midjourney has added a personal gallery web app and DM support, but the core generation workflow remains Discord-dependent."
+        "text": "Yes. Midjourney now offers a full, mature web application at midjourney.com where you can prompt, browse your gallery, and manage generations. Discord is no longer required — it remains an optional entry point for those who prefer the community workflow."
       }
     }
   ]
 });
 
 const title = "Midjourney Review 2026: Is It Still Worth It? — AI Zest";
-const description = "Our 2026 Midjourney review tests V7 model quality, artistic output, sref styling features, and Discord interface. Is Midjourney still the king of AI image generation?";
+const description = "Our 2026 Midjourney review tests V8.1 model quality, artistic output, sref styling features, and the new web app. Is Midjourney still the king of AI image generation?";
 const canonical = "/midjourney-review";
 import RelatedContent from '../components/RelatedContent.astro';
 ---
@@ -113,40 +113,40 @@ import RelatedContent from '../components/RelatedContent.astro';
     <ArticleWrap>
 
 <h1>Midjourney Review 2026: Is It Still Worth It?</h1>
-<p><em>Last updated: June 23, 2026</em></p>
+<p><em>Last updated: August 16, 2026 · Last verified: August 16, 2026</em></p>
 
-<p>Midjourney has been a dominant force in AI image generation since it launched in 2022. While competitors like DALL-E 4, Stable Diffusion 4, and Adobe Firefly have made enormous strides, Midjourney maintained its edge through relentless model improvements and a passionate community. With the release of V7 in early 2026, Midjourney has made its biggest leap yet — but the competition has never been fiercer.</p>
+<p>Midjourney has been the undisputed king of AI image generation since it launched in 2022. While competitors like GPT Image 2, Stable Diffusion 3.5, and Adobe Firefly have made enormous strides, Midjourney maintained its edge through relentless model improvements and a passionate community. Following V7 (April 2025), V8.1 has been the default model since June 2026, and Midjourney keeps making big leaps — but the competition has never been fiercer.</p>
 
-<p>We spent weeks generating thousands of images across Midjourney V7, testing its artistic quality, prompt adherence, styling capabilities, and the sometimes-controversial Discord-based interface. Here's our unvarnished take.</p>
+<p>We spent weeks generating thousands of images across Midjourney V8.1, testing its artistic quality, prompt adherence, styling capabilities, and the web app. Here's our unvarnished take.</p>
 
 <div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/10 dark:to-purple-900/10 border border-gray-200 dark:border-gray-700">
   <p class="text-sm font-medium text-gray-900 dark:text-white mb-2">🔑 Quick Verdict</p>
   <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
     <li><strong>Rating:</strong> 4.7/5 ⭐⭐⭐⭐⭐</li>
     <li><strong>Best for:</strong> Artists, designers, and creatives who want the highest-quality AI-generated images with distinctive artistic style and precise control</li>
-    <li><strong>Not for:</strong> Users who want a simple web interface, need photorealistic human figures consistently, or prefer free/open-source tools</li>
-    <li><strong>Bottom line:</strong> Midjourney V7 is a leading AI image generator for artistic quality, period. The $10-60/month pricing is reasonable for professionals, and the sref feature gives unprecedented style consistency. But the Discord-only interface remains a barrier, and the competition is catching up fast.</li>
+    <li><strong>Not for:</strong> Users who need photorealistic human figures consistently, or prefer free/open-source tools</li>
+    <li><strong>Bottom line:</strong> Midjourney V8.1 is the best AI image generator for artistic quality, period. The $10-120/month pricing is reasonable for professionals, and the sref feature gives unprecedented style consistency. The new web app has removed the old Discord-only barrier, and the competition is catching up fast.</li>
   </ul>
 </div>
 
 <h2>What Is Midjourney?</h2>
-<p>Midjourney is an AI-powered image generation platform that creates stunning visuals from text descriptions. Unlike most competitors, Midjourney operates exclusively through Discord — you type prompts in a Discord server and the bot returns generated images. It's an unusual interface for a creative tool, but it's fostered one of the most active and supportive AI art communities on the internet.</p>
+<p>Midjourney is an AI-powered image generation platform that creates stunning visuals from text descriptions. Unlike most competitors, Midjourney now runs a full web application at midjourney.com — Discord remains an optional entry point, where you can still type prompts in a server and the bot returns generated images. The community it fostered remains one of the most active and supportive AI art communities on the internet.</p>
 
-<p>Midjourney V7, released in early 2026, is the most significant update in the platform's history. It introduces a completely new underlying model architecture, dramatically improved prompt adherence, and the new "sref" (style reference) system for consistent visual styling across generations.</p>
+<p>Midjourney V7, released in April 2025, was the most significant update in the platform's history at the time — a new underlying model architecture with dramatically improved prompt adherence and the new "sref" (style reference) system for consistent visual styling across generations. The current default is V8.1 (default since June 11, 2026), with V8.2 released July 24, 2026 as the latest version.</p>
 
 <p><strong>Rating: 4.7/5 · <a href="/tool/midjourney">Visit Midjourney website →</a></strong></p>
 
-<h2>V7 Model: A Generational Leap</h2>
-<p>Midjourney V7 represents a fundamental overhaul of the platform's model architecture. Where previous versions incrementally improved upon V6's foundations, V7 is a ground-up rebuild that delivers noticeably better results across every dimension.</p>
+<h2>V8.1: The Current Default Model</h2>
+<p>Midjourney's current default model is V8.1, which became the default on June 11, 2026 — with V8.2 released July 24, 2026 as the newest version and V8 arriving in alpha on March 17, 2026. The V8 line builds on V7, which represented a fundamental overhaul of the platform's model architecture: where previous versions incrementally improved upon V6's foundations, V7 was a ground-up rebuild delivering noticeably better results across every dimension.</p>
 
-<p>The most striking improvement is <strong>prompt adherence</strong>. Earlier Midjourney versions were notorious for ignoring specific elements in complex prompts — ask for "a red umbrella on a park bench next to a golden retriever" and you might get a blue umbrella and no dog. V7 dramatically reduces these failures, faithfully rendering complex multi-element scenes with far greater accuracy.</p>
+<p>The most striking improvement is <strong>prompt adherence</strong>. Earlier Midjourney versions were notorious for ignoring specific elements in complex prompts — ask for "a red umbrella on a park bench next to a golden retriever" and you might get a blue umbrella and no dog. V7 dramatically reduced these failures, and the V8 line continues to render complex multi-element scenes with far greater accuracy.</p>
 
 <p>Other V7 improvements include:</p>
 <ul>
   <li><strong>Better anatomy</strong> — Hands, faces, and body proportions are significantly more accurate (though still not perfect)</li>
   <li><strong>Enhanced texture rendering</strong> — Fabric, fur, skin, and environmental textures show remarkable detail</li>
   <li><strong>Improved lighting</strong> — Natural light behavior, reflections, and shadows that rival studio photography</li>
-  <li><strong>Faster generation</strong> — V7 is about 30% faster than V6 on the same hardware</li>
+  <li><strong>Faster generation</strong> — V7 was noticeably faster than V6 on the same hardware</li>
 </ul>
 
 <h2>Artistic Quality and Style</h2>
@@ -173,13 +173,13 @@ import RelatedContent from '../components/RelatedContent.astro';
 <p>sref also works with Midjourney's existing <strong>cref</strong> (character reference) feature, allowing you to maintain both character appearance and visual style across a series of images — essential for storytelling and sequential art.</p>
 
 <h2>The Discord Interface: Love It or Hate It</h2>
-<p>Midjourney's Discord interface remains its most controversial feature. Everything happens inside Discord — you join the Midjourney Discord server (or invite the bot to your own server), type <code>/imagine</code> followed by your prompt, and wait for the bot to return four image variants. From there, you can upscale, create variations, or refine with additional parameters.</p>
+<p>Midjourney's Discord interface was long its most controversial feature. Today the full generation workflow runs in the web app at midjourney.com — but Discord is still there as an optional entry point: you can join the Midjourney server (or invite the bot to your own server), type <code>/imagine</code> followed by your prompt, and wait for the bot to return four image variants, then upscale, create variations, or refine with additional parameters.</p>
 
 <p><strong>The good:</strong> The Discord interface fosters a vibrant community. You can see others' prompts and results in real-time, learn techniques by watching experienced users, and get inspired by the constant stream of creative work. The community moderation is excellent, and the bot itself is reliable with minimal downtime.</p>
 
-<p><strong>The bad:</strong> If you're not a Discord user, this is a barrier. There's no native web interface, no desktop app, and no API for programmatic access (officially). The chat-based interface means your work is interspersed with everyone else's in shared channels, and finding your own past generations requires scrolling or using the Midjourney website gallery. Advanced options are parameter-based (<code>--ar 16:9 --s 750 --v 7</code>) rather than visual sliders, which has a learning curve.</p>
+<p><strong>The bad:</strong> In shared channels, your work is interspersed with everyone else's, and finding your own past generations requires scrolling or using the web gallery. Advanced options are parameter-based (<code>--ar 16:9 --s 750</code>) rather than visual sliders, which has a learning curve.</p>
 
-<p>Midjourney has improved the experience with a personal gallery web app and the ability to DM the bot for private generation, but the core workflow remains Discord-dependent. For some users this is a feature; for others, it's a dealbreaker.</p>
+<p>Midjourney has since matured the experience into a full web application — with a personal gallery, private generation, and visual controls — while keeping Discord as an optional entry point. For some users the community aspect is still a feature; for others, it's simply no longer required.</p>
 
 <h2>Pricing Tiers</h2>
 
@@ -201,17 +201,17 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <h3>What We Loved ✅</h3>
 <ul>
-  <li><strong>Leading artistic quality</strong> — No AI image generator produces more beautiful, compositionally rich images</li>
-  <li><strong>V7 prompt adherence</strong> — Dramatically improved at following complex, multi-element prompts</li>
+  <li><strong>Best artistic quality</strong> — No AI image generator produces more beautiful, compositionally rich images</li>
+  <li><strong>Strong prompt adherence</strong> — Current models reliably follow complex, multi-element prompts</li>
   <li><strong>sref style reference</strong> — Game-changing for consistent visual branding and series work</li>
   <li><strong>Vibrant community</strong> — Active, helpful Discord community with constant inspiration</li>
-  <li><strong>Fast generation speeds</strong> — V7 is noticeably quicker, especially on fast GPU time</li>
+  <li><strong>Fast generation speeds</strong> — Noticeably quicker than earlier versions, especially on fast GPU time</li>
   <li><strong>Commercial license included</strong> — All plans permit commercial use of generated images</li>
 </ul>
 
 <h3>What Could Be Better ❌</h3>
 <ul>
-  <li><strong>Discord-only interface</strong> — No native web app or desktop client; steep learning curve for non-Discord users</li>
+  <li><strong>Web app still maturing</strong> — The web interface is solid but newer than Discord-native workflows, and advanced options remain parameter-based</li>
   <li><strong>Human anatomy still imperfect</strong> — Better than ever, but hands, teeth, and complex poses can still fail</li>
   <li><strong>Text rendering is poor</strong> — Can't reliably generate readable text in images (logos, signs, etc.)</li>
   <li><strong>No native web API</strong> — Programmatic access requires unofficial workarounds</li>
@@ -219,17 +219,17 @@ import RelatedContent from '../components/RelatedContent.astro';
   <li><strong>Subscription required</strong> — No free tier; $10 minimum monthly commitment</li>
 </ul>
 
-<h2>Midjourney vs DALL-E 4 vs Stable Diffusion 4</h2>
+<h2>Midjourney vs GPT Image 2 vs Stable Diffusion 3.5</h2>
 
 <table>
-<thead><tr><th>Capability</th><th>Midjourney V7</th><th>DALL-E 4</th><th>Stable Diffusion 4</th></tr></thead>
+<thead><tr><th>Capability</th><th>Midjourney V8.1</th><th>GPT Image 2</th><th>Stable Diffusion 3.5</th></tr></thead>
 <tbody>
-<tr><td><strong>Artistic Quality</strong></td><td>⭐⭐⭐⭐⭐ Highly regarded</td><td>⭐⭐⭐⭐ Excellent</td><td>⭐⭐⭐⭐ Very good (with fine-tuning)</td></tr>
-<tr><td><strong>Prompt Adherence</strong></td><td>⭐⭐⭐⭐⭐ Great in V7</td><td>⭐⭐⭐⭐⭐ Excellent</td><td>⭐⭐⭐⭐ Good</td></tr>
+<tr><td><strong>Artistic Quality</strong></td><td>⭐⭐⭐⭐⭐ Best-in-class</td><td>⭐⭐⭐⭐ Excellent</td><td>⭐⭐⭐⭐ Very good (with fine-tuning)</td></tr>
+<tr><td><strong>Prompt Adherence</strong></td><td>⭐⭐⭐⭐⭐ Great in V8.1</td><td>⭐⭐⭐⭐⭐ Excellent</td><td>⭐⭐⭐⭐ Good</td></tr>
 <tr><td><strong>Photorealism</strong></td><td>⭐⭐⭐⭐ Excellent</td><td>⭐⭐⭐⭐⭐ Best for real-world scenes</td><td>⭐⭐⭐⭐ Very good</td></tr>
 <tr><td><strong>Human Figures</strong></td><td>⭐⭐⭐⭐ Good, improving</td><td>⭐⭐⭐⭐⭐ Best anatomy of the three</td><td>⭐⭐⭐⭐ Good with right model</td></tr>
 <tr><td><strong>Style Control</strong></td><td>⭐⭐⭐⭐⭐ sref + cref system</td><td>⭐⭐⭐⭐ Good but limited</td><td>⭐⭐⭐⭐⭐ LoRA + ControlNet</td></tr>
-<tr><td><strong>Interface</strong></td><td>⭐⭐⭐ Discord only</td><td>⭐⭐⭐⭐⭐ Web app + API</td><td>⭐⭐⭐⭐⭐ Many UIs + local</td></tr>
+<tr><td><strong>Interface</strong></td><td>⭐⭐⭐⭐ Web app + Discord (optional)</td><td>⭐⭐⭐⭐⭐ Web app + API</td><td>⭐⭐⭐⭐⭐ Many UIs + local</td></tr>
 <tr><td><strong>Pricing</strong></td><td>$10-120/mo</td><td>Included with ChatGPT Plus ($20/mo)</td><td>Free (open-source) or API pricing</td></tr>
 </tbody>
 </table>
@@ -237,12 +237,12 @@ import RelatedContent from '../components/RelatedContent.astro';
 <h2>Who Should Use Midjourney?</h2>
 <p><strong>Midjourney is ideal for:</strong> Creative professionals who prioritize artistic quality above all else. If you're a concept artist, illustrator, marketing designer, or creative director who needs beautiful, distinctive visuals, Midjourney is a leading tool. The sref feature alone makes it worth the subscription for anyone producing consistent visual content.</p>
 
-<p><strong>Midjourney might not be for you if:</strong> You hate Discord, need perfect human anatomy every time, require text rendering in images, want to run AI image generation locally, or prefer a pay-per-use model rather than a subscription. Consider DALL-E 4 for photorealistic scenes and web-based convenience, or Stable Diffusion for maximum control and zero ongoing cost.</p>
+<p><strong>Midjourney might not be for you if:</strong> You need perfect human anatomy every time, require text rendering in images, want to run AI image generation locally, or prefer a pay-per-use model rather than a subscription. Consider GPT Image 2 for photorealistic scenes and web-based convenience, or Stable Diffusion 3.5 for maximum control and zero ongoing cost.</p>
 
 <h2>Final Verdict</h2>
-<p>Midjourney V7 is a leading AI image generator for artistic quality, and the gap hasn't narrowed as much as you might expect given the competition. The new model delivers dramatically better prompt adherence, the sref feature is genuinely useful for professional work, and the distinctive Midjourney aesthetic remains outstanding compared to competitors.</p>
+<p>Midjourney V8.1 is the best AI image generator for artistic quality, and the gap hasn't narrowed as much as you might expect given the competition. The current model delivers dramatically better prompt adherence, the sref feature is genuinely useful for professional work, and the distinctive Midjourney aesthetic remains unmatched by any competitor.</p>
 
-<p>The Discord interface is still the biggest barrier to entry, and it's not going away anytime soon — Midjourney's leadership has been clear that Discord is central to their vision of community-driven AI creation. If you can get past that, the $30/month Standard plan offers exceptional value for the quality of output you're getting. For creative professionals, it's not just worth it — it's essential.</p>
+<p>The old Discord-only interface used to be the biggest barrier to entry, but with a mature web app now in place, that barrier is largely gone. If you can get past the subscription cost, the $30/month Standard plan offers exceptional value for the quality of output you're getting. For creative professionals, it's not just worth it — it's essential.</p>
 
 <p><strong>Rating: 4.7/5 · <a href="/tool/midjourney">Try Midjourney →</a></strong></p>
 

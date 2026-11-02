@@ -73,7 +73,7 @@ const faqItems = [
   },
   {
     name: `Is ${name} worth it?`,
-    acceptedAnswer: { text: `${name} has a rating of ${rating}/5 on AI Zest. discontinued ? 'It is no longer available — the official site is offline. See the recommended alternatives on this page instead.' : (${rating >= 4.5 ? 'It is highly rated for its documented features and published benchmarks relative to other tools in its category.' : rating >= 4.0 ? 'It is a solid choice with good reviews from users.' : 'It has average ratings — consider trying the free tier first.'} + ' Visit the official website to explore pricing and start a free trial if available.')` }
+    acceptedAnswer: { text: discontinued ? `${name} is no longer available. The platform shut down and the official site is offline — see the recommended alternatives on this page.` : `${name} has a rating of ${rating}/5 on AI Zest. ${rating >= 4.5 ? 'It is highly rated for its documented features and published benchmarks relative to other tools in its category.' : rating >= 4.0 ? 'It is a solid choice with good reviews from users.' : 'It has average ratings — consider trying the free tier first.'} Visit the official website to explore pricing and start a free trial if available.` }
   },
 ];
 

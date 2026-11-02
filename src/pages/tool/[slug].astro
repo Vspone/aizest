@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 }
 const { tool } = Astro.props;
 const { Content } = await render(tool);
-const { name, slug, description, website, pricing, affiliate_url, rating, features, pricing_tiers, pros, cons, category, needs_vps, last_verified, affiliate = false } = tool.data;
+const { name, slug, description, website, pricing, affiliate_url, rating, features, pricing_tiers, pros, cons, category, needs_vps, last_verified, affiliate = false, discontinued = false, discontinued_date, discontinued_note, successor } = tool.data;
 
 // Check if last_verified is stale (> 3 months)
 const lastVerified = last_verified ? new Date(last_verified) : null;
@@ -25,6 +25,11 @@ const alternatives = allTools
   .filter(t => t.data.category === category && t.data.slug !== slug)
   .slice(0, 4);
 
+// Recommended successor tool for discontinued products
+const successorTool = discontinued && successor
+  ? allTools.find(t => t.data.slug === successor) || null
+  : null;
+
 // Determine best CTA text based on pricing
 function ctaText(p: string): string {
   const lower = p.toLowerCase();
@@ -32,6 +37,9 @@ function ctaText(p: string): string {
   if (lower.includes('trial')) return 'Start Free Trial';
   return 'Get Started';
 }
+
+// Only add sponsored/nofollow when there is a real affiliate relationship
+const ctaRel = affiliate ? 'sponsored nofollow noopener noreferrer' : 'noopener noreferrer';
 
 const categoryLabels: Record<string, string> = {
   writing: 'Writing & Content', image: 'Image Generation', video: 'Video Creation',
@@ -53,7 +61,7 @@ const faqItems = [
   },
   {
     name: `How much does ${name} cost?`,
-    acceptedAnswer: { text: pricing_tiers && pricing_tiers.length > 0 ? `${name} offers ${pricing_tiers.length} pricing tiers: ${pricingSummary}. ${pricing_tiers[0].features.slice(0, 2).join('. ')}.` : `${name} is priced at ${pricing}.` }
+    acceptedAnswer: { text: discontinued ? `${name} is no longer available for purchase. ${discontinued_note || pricing}` : (pricing_tiers && pricing_tiers.length > 0 ? `${name} offers ${pricing_tiers.length} pricing tiers: ${pricingSummary}. ${pricing_tiers[0].features.slice(0, 2).join('. ')}.` : `${name} is priced at ${pricing}.`) }
   },
   {
     name: `What are the main features of ${name}?`,
@@ -65,7 +73,7 @@ const faqItems = [
   },
   {
     name: `Is ${name} worth it?`,
-    acceptedAnswer: { text: `${name} has a rating of ${rating}/5 on AI Zest. ${rating >= 4.5 ? 'It is highly rated for its documented features and published benchmarks relative to other tools in its category.' : rating >= 4.0 ? 'It is a solid choice with good reviews from users.' : 'It has average ratings — consider trying the free tier first.'} Visit the official website to explore pricing and start a free trial if available.` }
+    acceptedAnswer: { text: `${name} has a rating of ${rating}/5 on AI Zest. discontinued ? 'It is no longer available — the official site is offline. See the recommended alternatives on this page instead.' : (${rating >= 4.5 ? 'It is highly rated for its documented features and published benchmarks relative to other tools in its category.' : rating >= 4.0 ? 'It is a solid choice with good reviews from users.' : 'It has average ratings — consider trying the free tier first.'} + ' Visit the official website to explore pricing and start a free trial if available.')` }
   },
 ];
 
@@ -80,44 +88,63 @@ const reviewBody = `${name} is an AI ${categoryLabels[category]?.toLowerCase() |
 const reviewDate = last_verified ? last_verified.toISOString().split('T')[0] : '2026-01-01';
 
 // JSON-LD SoftwareApplication Schema with Review
-const jsonLd = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": name,
-  "description": description,
-  "url": website,
-  "applicationCategory": categoryLabels[category] || category,
-  "operatingSystem": "Web",
-  "offers": {
-    "@type": "Offer",
-    "price": pricing.replace(/^Free\s*\/\s*/, '').replace(/^From\s*/, '').trim() || 'Free',
-    "priceCurrency": "USD",
-    "priceValidUntil": "2027-12-31"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": rating,
-    "bestRating": 5,
-    "worstRating": 1
-  },
-  "review": {
-    "@type": "Review",
-    "@id": `https://aizest.net/tool/${slug}#review`,
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": rating,
-      "bestRating": 5,
-      "worstRating": 1
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "AI Zest",
-      "url": "https://aizest.net"
-    },
-    "datePublished": reviewDate,
-    "reviewBody": reviewBody
-  }
-});
+const jsonLd = JSON.stringify(
+  discontinued
+    ? {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": name,
+        "description": description,
+        "url": website,
+        "applicationCategory": categoryLabels[category] || category,
+        "operatingSystem": "Web",
+        "review": {
+          "@type": "Review",
+          "@id": `https://aizest.net/tool/${slug}#review`,
+          "author": { "@type": "Organization", "name": "AI Zest", "url": "https://aizest.net" },
+          "datePublished": reviewDate,
+          "reviewBody": reviewBody
+        }
+      }
+    : {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": name,
+        "description": description,
+        "url": website,
+        "applicationCategory": categoryLabels[category] || category,
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": pricing.replace(/^Free\s*\/\s*/, '').replace(/^From\s*/, '').trim() || 'Free',
+          "priceCurrency": "USD",
+          "priceValidUntil": "2027-12-31"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": rating,
+          "bestRating": 5,
+          "worstRating": 1
+        },
+        "review": {
+          "@type": "Review",
+          "@id": `https://aizest.net/tool/${slug}#review`,
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": rating,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "AI Zest",
+            "url": "https://aizest.net"
+          },
+          "datePublished": reviewDate,
+          "reviewBody": reviewBody
+        }
+      }
+);
 
 // FAQPage JSON-LD for rich snippets
 const faqJsonLd = JSON.stringify({
@@ -139,8 +166,8 @@ const breadcrumbJsonLd = JSON.stringify({
 ---
 
 <BaseLayout 
-  title={`${name} Review 2026 — Pricing, Features & Rating — AI Zest`}
-  description={`${name} review: ${description}. Pricing: ${pricing}. Rating: ${rating}/5. Compare features, pros, cons, alternatives, and find the best AI tool for your needs.`}
+  title={discontinued ? `${name} — Discontinued (${discontinued_date}) — AI Zest` : `${name} Review 2026 — Pricing, Features & Rating — AI Zest`}
+  description={discontinued ? `${name} is no longer available: ${description} See recommended alternatives.` : `${name} review: ${description}. Pricing: ${pricing}. Rating: ${rating}/5. Compare features, pros, cons, alternatives, and find the best AI tool for your needs.`}
   canonical={`/tool/${slug}`}
   type="article"
   jsonLd={jsonLd}
@@ -161,6 +188,23 @@ const breadcrumbJsonLd = JSON.stringify({
       <span class="text-gray-900 dark:text-white font-medium truncate">{name}</span>
     </nav>
 
+    <!-- Discontinued Banner -->
+    {discontinued && (
+      <div class="mb-6 p-4 sm:p-5 rounded-xl border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-900/15">
+        <p class="font-bold text-amber-900 dark:text-amber-300 text-sm sm:text-base mb-1">
+          ⚠️ {name} has been discontinued{discontinued_date ? ` (${discontinued_date})` : ''}
+        </p>
+        {discontinued_note && (
+          <p class="text-sm text-amber-900/80 dark:text-amber-200/80 leading-relaxed">{discontinued_note}</p>
+        )}
+        {successorTool && (
+          <a href={`/tool/${successorTool.data.slug}`} class="inline-flex items-center gap-1.5 mt-3 px-4 py-2 rounded-lg bg-amber-600 text-white text-sm font-medium hover:bg-amber-700 transition-colors">
+            See recommended alternative: {successorTool.data.name} →
+          </a>
+        )}
+      </div>
+    )}
+
     <!-- Header -->
     <div class="mt-6 mb-8 sm:mb-10">
       <div class="flex items-start gap-4 flex-wrap">
@@ -179,6 +223,7 @@ const breadcrumbJsonLd = JSON.stringify({
         }`}>
           {categoryLabels[category] || category}
         </span>
+        {!discontinued && (
         <div class="flex items-center" itemscope itemtype="https://schema.org/AggregateRating">
           <meta itemprop="ratingValue" content={String(rating)} />
           <meta itemprop="bestRating" content="5" />
@@ -189,9 +234,15 @@ const breadcrumbJsonLd = JSON.stringify({
           ))}
           <span class="ml-1.5 text-sm text-gray-500">({rating}/5)</span>
         </div>
+        )}
+        {!discontinued && (
         <span class="text-sm text-gray-500" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
           <span itemprop="price">{pricing}</span>
         </span>
+        )}
+        {discontinued && (
+          <span class="text-sm font-medium text-amber-600 dark:text-amber-400">Discontinued{discontinued_date ? ` · ${discontinued_date}` : ''}</span>
+        )}
         {tool.data.best_for && (
           <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-xs font-medium">
             🎯 {tool.data.best_for}
@@ -222,7 +273,7 @@ const breadcrumbJsonLd = JSON.stringify({
         <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
           Ready to try {name}?
         </p>
-        <a href={affiliate_url} target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-auto px-8 py-3">
+        <a href={affiliate_url} target="_blank" rel={ctaRel} class="btn-primary w-full sm:w-auto px-8 py-3">
           {affiliate ? `${ctaText(pricing)} →` : 'Visit Official Website →'}
         </a>
         {affiliate && (
@@ -341,7 +392,7 @@ const breadcrumbJsonLd = JSON.stringify({
                 {category === 'writing' && <><a href="/chatgpt-vs-claude-vs-gemini" class="block text-sm text-[#3B82F6] hover:underline">ChatGPT vs Claude vs Gemini →</a><a href="/jasper-vs-writesonic-vs-copyai" class="block text-sm text-[#3B82F6] hover:underline">Jasper vs Writesonic vs Copy.ai →</a></>}
                 {category === 'image' && <><a href="/midjourney-vs-dalle-vs-stable-diffusion" class="block text-sm text-[#3B82F6] hover:underline">Midjourney vs DALL-E vs SD →</a><a href="/midjourney-vs-flux" class="block text-sm text-[#3B82F6] hover:underline">Midjourney vs Flux →</a></>}
                 {category === 'video' && <><a href="/runway-vs-kling" class="block text-sm text-[#3B82F6] hover:underline">Runway vs Kling →</a><a href="/heygen-vs-synthesia" class="block text-sm text-[#3B82F6] hover:underline">HeyGen vs Synthesia →</a></>}
-                {category === 'audio' && <><a href="/elevenlabs-vs-murf-vs-playht" class="block text-sm text-[#3B82F6] hover:underline">ElevenLabs vs Murf vs PlayHT →</a><a href="/descript-vs-podcastle-vs-veed" class="block text-sm text-[#3B82F6] hover:underline">Descript vs Podcastle vs VEED →</a></>}
+                {category === 'audio' && <><a href="/elevenlabs-vs-murf-vs-speechify" class="block text-sm text-[#3B82F6] hover:underline">ElevenLabs vs Murf vs Speechify →</a><a href="/descript-vs-podcastle-vs-veed" class="block text-sm text-[#3B82F6] hover:underline">Descript vs Podcastle vs VEED →</a></>}
                 {category === 'coding' && <><a href="/copilot-vs-cursor" class="block text-sm text-[#3B82F6] hover:underline">Copilot vs Cursor →</a><a href="/bolt-vs-lovable" class="block text-sm text-[#3B82F6] hover:underline">Bolt vs Lovable →</a></>}
                 {category === 'productivity' && <><a href="/notion-vs-clickup-vs-gamma" class="block text-sm text-[#3B82F6] hover:underline">Notion AI vs ClickUp vs Gamma →</a><a href="/zapier-vs-make" class="block text-sm text-[#3B82F6] hover:underline">Zapier vs Make →</a></>}
                 {category === 'design' && <><a href="/canva-vs-firefly-vs-recraft" class="block text-sm text-[#3B82F6] hover:underline">Canva AI vs Adobe Firefly vs Recraft →</a><a href="/uizard-vs-canva" class="block text-sm text-[#3B82F6] hover:underline">Uizard vs Canva →</a></>}
@@ -376,7 +427,7 @@ const breadcrumbJsonLd = JSON.stringify({
         {affiliate_url && (
           <div class="card p-4 sm:p-5">
             <h3 class="font-semibold text-gray-900 dark:text-white mb-3">{ctaText(pricing)}</h3>
-            <a href={affiliate_url} target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-center mb-2">
+            <a href={affiliate_url} target="_blank" rel={ctaRel} class="btn-primary w-full text-center mb-2">
               {ctaText(pricing)} →
             </a>
             <p class="text-xs text-gray-500 text-center">{pricing}</p>
@@ -422,7 +473,7 @@ const breadcrumbJsonLd = JSON.stringify({
         )}
 
         <!-- AI Zest Score -->
-        {tool.data.scores && (
+        {tool.data.scores && !discontinued && (
           <div class="card p-4 sm:p-5">
             <h3 class="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
               <span>📊</span> AI Zest Score

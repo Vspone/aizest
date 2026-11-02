@@ -11,16 +11,19 @@ const { slug, text = 'Try Free', variant = 'primary' } = Astro.props;
 const tools = await getCollection('tools');
 const tool = tools.find(t => t.data.slug === slug);
 const url = tool?.data.affiliate_url || '';
+// Only mark as sponsored when there is an actual affiliate relationship
+const isAffiliate = tool?.data.affiliate === true;
+const rel = isAffiliate ? 'sponsored nofollow noopener noreferrer' : 'noopener noreferrer';
 ---
 
 {url && (
   variant === 'small' ? (
-    <a href={url} target="_blank" rel="noopener noreferrer" 
+    <a href={url} target="_blank" rel={rel}
        class="inline-block px-3 py-1.5 rounded-lg bg-emerald-600 text-white text-xs font-medium hover:bg-emerald-700 transition-colors whitespace-nowrap">
       {text} ↗
     </a>
   ) : (
-    <a href={url} target="_blank" rel="noopener noreferrer" 
+    <a href={url} target="_blank" rel={rel}
        class="inline-block px-5 py-2.5 rounded-lg bg-emerald-600 text-white text-sm font-medium hover:bg-emerald-700 transition-colors">
       {text} ↗
     </a>

@@ -1,3 +1,6 @@
 # Cloudflare Pages redirects
 # Redirect /sitemap.xml to the actual sitemap index
 /sitemap.xml /sitemap-index.xml 301
+
+# PlayHT shut down Dec 2025 — comparison page replaced
+/elevenlabs-vs-murf-vs-playht /elevenlabs-vs-murf-vs-speechify 301

@@ -1,0 +1,223 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
+
+// Article JSON-LD
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ElevenLabs vs Murf vs Speechify 2026: Which AI Voice Tool Fits Your Workflow?",
+  "description": "A side-by-side comparison of ElevenLabs, Murf AI, and Speechify covering voice quality, languages, voice cloning, API access, and current pricing — plus what to do if you were a PlayHT user.",
+  "datePublished": "2026-06-23",
+  "dateModified": "2026-11-02",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Zest"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Zest",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aizest.net/logo.png"
+    }
+  }
+});
+
+// FAQ JSON-LD for rich snippets
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is PlayHT still available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. PlayHT (PlayAI) was acquired by Meta in July 2025 and the platform was permanently shut down on December 31, 2025. The play.ht domain no longer resolves. Anyone looking for a replacement should compare ElevenLabs, Murf AI, and Speechify, which are all actively maintained as of November 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is better for voiceovers, ElevenLabs or Murf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ElevenLabs is stronger for voice cloning and developer APIs — its Professional Voice Cloning is available from the Creator plan and it supports 74 languages. Murf AI is stronger for studio-style voiceovers with a slide-based editor and 200+ voices, and its entry plan is $19/month versus ElevenLabs Starter at $6/month. For narration where voice similarity to a real person matters, ElevenLabs is the usual choice; for business explainer videos built by non-technical teams, Murf is easier."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Speechify cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Speechify is free with 10 basic voices and playback up to 1.5x speed. Premium is $29/month, or $139 per year (about $11.58/month) on annual billing, and includes a large premium voice library and offline listening. Prices on the App Store and Google Play can differ from the website."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do these tools let me clone my own voice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ElevenLabs offers Instant Voice Cloning from the Starter plan and Professional Voice Cloning from Creator, with voice slots scaling up to 2,200 on the Business plan. Murf focuses on a curated library of 200+ licensed voices rather than self-serve cloning. Speechify is built for listening to existing text, not for producing cloned voiceovers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which tool has the lowest starting price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ElevenLabs has the lowest paid entry point at $6/month for Starter, which includes a commercial license and instant voice cloning. Murf starts at $19/month and Speechify at $29/month billed monthly, or about $11.58/month if paid annually."
+      }
+    }
+  ]
+});
+---
+
+<BaseLayout
+  title="ElevenLabs vs Murf vs Speechify 2026: Honest Comparison — AI Zest"
+  description="ElevenLabs vs Murf AI vs Speechify compared on voice quality, languages, cloning, API access, and current pricing. Includes what to do if you were a PlayHT user."
+  canonical="/elevenlabs-vs-murf-vs-speechify"
+  type="article"
+  jsonLd={jsonLd}
+>
+  <script type="application/ld+json" set:html={faqJsonLd} />
+
+  <ArticleWrap>
+
+<h1>ElevenLabs vs Murf vs Speechify (2026)</h1>
+
+<p>These three tools are often compared because they all produce synthetic speech — but they are built for different jobs. <strong>ElevenLabs</strong> is a voice-generation platform with cloning and an API. <strong>Murf AI</strong> is a studio-style voiceover tool for explainer and training video. <strong>Speechify</strong> is a listening app that reads your documents, PDFs, and web pages aloud.</p>
+
+<p>This page previously compared ElevenLabs, Murf, and <strong>PlayHT</strong>. PlayHT no longer exists: Meta acquired the PlayAI team in July 2025 and the platform was permanently shut down on December 31, 2025, with all voice clones and saved audio deleted. The <code>play.ht</code> domain does not resolve as of November 2026. We replaced it with Speechify, which serves a different but adjacent audience.</p>
+
+<div class="callout-warning" style="padding:1rem 1.25rem;border-left:4px solid #f59e0b;background:rgba(245,158,11,0.08);border-radius:0.5rem;margin:1.5rem 0;">
+  <p style="margin:0 0 0.4rem;font-weight:600;">⚠️ PlayHT (PlayAI) is permanently shut down</p>
+  <p style="margin:0;font-size:0.925rem;">The API went offline in late July 2025, sign-ups closed in August 2025, and the service sunset on <strong>December 31, 2025</strong>. Accounts, API keys, and cloned voices were deleted with no export path. If you were a PlayHT customer, you need to re-clone your voices on a new platform — see the migration section below.</p>
+</div>
+
+<div style="padding:1.25rem;border:1px solid rgba(59,130,246,0.25);background:rgba(59,130,246,0.06);border-radius:0.75rem;margin:1.5rem 0;">
+  <p style="font-weight:600;margin:0 0 0.5rem;">🔑 Quick Verdict</p>
+  <ul style="margin:0;font-size:0.925rem;">
+    <li><strong>Choose ElevenLabs if:</strong> you need voice cloning, an API, or the widest language coverage — and you want the lowest paid entry point at <strong>$6/month</strong></li>
+    <li><strong>Choose Murf AI if:</strong> you are producing business voiceovers (training, explainers, presentations) with a team that does not want to touch an API — <strong>200+ licensed voices</strong>, slide-style editor, creator plan from $19/month</li>
+    <li><strong>Choose Speechify if:</strong> your goal is <em>consuming</em> text — articles, PDFs, emails, study material — read aloud at up to 5x speed across phone, desktop, and browser</li>
+    <li><strong>Bottom line:</strong> they are not really substitutes. ElevenLabs and Murf <em>create</em> audio content; Speechify helps you <em>listen</em> to content that already exists.</li>
+  </ul>
+</div>
+
+<h2>What each tool actually does</h2>
+
+<h3>ElevenLabs — voice generation platform</h3>
+<p>ElevenLabs offers text-to-speech, speech-to-text, voice design, sound effects, dubbing, and music through a single shared credit pool. Its differentiator is voice fidelity: Instant Voice Cloning on the Starter plan, Professional Voice Cloning from Creator upward, and API access with streaming latency low enough for real-time applications.</p>
+<p><strong>Languages:</strong> 74 · <strong>Entry price:</strong> $6/month (Starter, 30,000 credits) · <strong>Free tier:</strong> 10,000 credits/month<br/>
+<strong>Best for:</strong> audiobook and podcast production, content localisation, product voice interfaces, and any workflow that needs an API</p>
+
+<h3>Murf AI — studio voiceover for business content</h3>
+<p>Murf is positioned around a browser-based studio rather than an API. You paste a script, pick voices, and adjust pacing, emphasis, and pronunciation through a visual editor. The voice library is curated and licensed rather than cloneable, which suits teams producing corporate training modules and product explainers where consistency matters more than replicating a specific person.</p>
+<p><strong>Voice library:</strong> 200+ voices and styles · <strong>Entry price:</strong> $19/month (Creator, 24 hours of voice generation per year) · <strong>Free tier:</strong> 10 minutes of generation, no downloads, no commercial rights<br/>
+<strong>Best for:</strong> L&amp;D and marketing teams producing explainer videos without design or audio expertise</p>
+
+<h3>Speechify — text-to-speech for listeners</h3>
+<p>Speechify is an app, not a production platform. It installs as a browser extension or desktop/mobile app and reads whatever text is on screen — web pages, PDFs, Google Docs, emails. It also offers voice typing and an AI assistant. The audience is students, professionals with reading-heavy jobs, and users with accessibility needs rather than studios producing published audio.</p>
+<p><strong>Platforms:</strong> iOS, Android, Chrome, Edge, web, Mac, Windows · <strong>Entry price:</strong> $29/month, or $139/year (~$11.58/month) · <strong>Free tier:</strong> 10 basic voices, playback up to 1.5x<br/>
+<strong>Best for:</strong> individual listening, study, accessibility, and reading-heavy workflows</p>
+
+<h2>Head-to-head comparison</h2>
+
+<table>
+<thead><tr><th>Criterion</th><th>ElevenLabs</th><th>Murf AI</th><th>Speechify</th></tr></thead>
+<tbody>
+<tr><td><strong>Primary job</strong></td><td>Generate and clone voice audio</td><td>Produce scripted voiceovers</td><td>Read existing text aloud</td></tr>
+<tr><td><strong>Voice cloning</strong></td><td>✅ Instant (Starter) + Professional (Creator)</td><td>❌ Curated licensed library only</td><td>❌ Not a production feature</td></tr>
+<tr><td><strong>Voice library</strong></td><td>Custom slots: 10 → 2,200 by plan</td><td>200+ voices and styles</td><td>Large premium library on Premium plan</td></tr>
+<tr><td><strong>Languages</strong></td><td>74</td><td>35+ languages and styles</td><td>Multiple languages for playback</td></tr>
+<tr><td><strong>API access</strong></td><td>✅ Full API, low-latency streaming</td><td>✅ Available on separate API plans</td><td>✅ Developer/API tier exists</td></tr>
+<tr><td><strong>Commercial licence</strong></td><td>✅ From Starter ($6/mo)</td><td>✅ From Creator ($19/mo)</td><td>Consumer focus</td></tr>
+<tr><td><strong>Best-fit user</strong></td><td>Developers, creators, localisation teams</td><td>Corporate video teams, non-technical editors</td><td>Students, readers, accessibility users</td></tr>
+</tbody>
+</table>
+
+<h2>Pricing comparison</h2>
+
+<p>Prices below are taken from each vendor's official pricing page and reflect monthly billing at the time of writing. Annual billing is cheaper on all three — check the official pages for current promotions.</p>
+
+<table>
+<thead><tr><th>Plan tier</th><th>ElevenLabs</th><th>Murf AI</th><th>Speechify</th></tr></thead>
+<tbody>
+<tr><td><strong>Free</strong></td><td>$0 — 10,000 credits/mo, no commercial use</td><td>$0 — 10 minutes of generation, no downloads</td><td>$0 — 10 basic voices, up to 1.5x speed</td></tr>
+<tr><td><strong>Entry paid</strong></td><td><strong>$6/mo</strong> Starter — 30,000 credits, commercial licence, instant cloning</td><td><strong>$19/mo</strong> Creator — 100 projects, 24 hrs/year generation, commercial rights</td><td><strong>$29/mo</strong> Premium, or $139/yr (~$11.58/mo)</td></tr>
+<tr><td><strong>Mid tier</strong></td><td>$22/mo Creator — 121,000 credits, Professional Voice Cloning</td><td>$66/mo Business — 500 projects, 96 hrs/year, business licence</td><td>No further consumer tier</td></tr>
+<tr><td><strong>High tier</strong></td><td>$99/mo Pro — 600,000 credits · $299 Scale · $990 Business</td><td>Custom (Enterprise)</td><td>Enterprise and education pricing on request</td></tr>
+</tbody>
+</table>
+
+<p style="font-size:0.875rem;color:#6b7280;">Pricing verified against elevenlabs.io/pricing, murf.ai/pricing, and speechify.com on <strong>November 2, 2026</strong>. Vendors change pricing without notice — always confirm on the official page before purchasing.</p>
+
+<h2>Which one should you pick?</h2>
+
+<h3>Pick ElevenLabs if…</h3>
+<ul>
+  <li>You need a <strong>digital copy of a specific voice</strong> — narration, audiobooks, brand voiceovers</li>
+  <li>You are building a product that calls a <strong>TTS API</strong> and cares about latency</li>
+  <li>You localise content into many languages and need dubbing in the same tool</li>
+  <li>You want the lowest paid entry point of the three ($6/month)</li>
+</ul>
+
+<h3>Pick Murf AI if…</h3>
+<ul>
+  <li>You produce <strong>training modules, product explainers, or e-learning</strong> on a schedule</li>
+  <li>Your team has <strong>no audio or design specialists</strong> and needs a guided editor</li>
+  <li>You prefer licensed stock voices over cloning a real person's voice (fewer consent and legal questions)</li>
+</ul>
+
+<h3>Pick Speechify if…</h3>
+<ul>
+  <li>Your use case is <strong>listening, not publishing</strong> — reading PDFs, papers, or long articles</li>
+  <li>You need <strong>speed control and highlighting</strong> to keep focus while reading</li>
+  <li>Accessibility matters — screen-reader-style consumption across devices</li>
+</ul>
+
+<h2>If you were a PlayHT user: migration checklist</h2>
+
+<p>PlayHT accounts and cloned voices were deleted at shutdown, so migration means starting over on a new platform rather than exporting data. The practical steps:</p>
+
+<ol>
+  <li><strong>Audit what you lost.</strong> List the scripts or projects that referenced PlayHT voice IDs — those references will no longer resolve.</li>
+  <li><strong>Re-clone your voice where possible.</strong> You will need a fresh audio sample. ElevenLabs accepts short samples for Instant Voice Cloning on the Starter plan; Murf has announced a migration path for former PlayHT users but uses licensed voices rather than cloning.</li>
+  <li><strong>Re-test your pronunciation and pacing.</strong> Every platform handles acronyms, brand names, and numbers differently — rebuild your pronunciation dictionaries from scratch.</li>
+  <li><strong>Update your integrations.</strong> Any code pointing at the PlayHT API needs its endpoint and authentication swapped to the new provider's API.</li>
+  <li><strong>Re-check licences.</strong> Confirm the new plan grants commercial usage before you publish anything you generated.</li>
+</ol>
+
+<h2>Verdict</h2>
+
+<p>There is no single winner, because the three tools do different things. <strong>ElevenLabs</strong> is the right answer when the output needs to sound like a specific person or when you are building software around speech. <strong>Murf</strong> is the right answer when a non-specialist team needs to ship corporate video on a deadline. <strong>Speechify</strong> is the right answer when you are the listener rather than the producer.</p>
+
+<p>If you arrived here searching for PlayHT, the honest answer is that its closest functional replacement depends on what you used it for: voice <em>production</em> points to ElevenLabs or Murf, while its consumer reading features have no direct successor at all.</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Is PlayHT coming back?</h3>
+<p>No indication of that. Meta acquired the PlayAI team in July 2025 to work inside its Superintelligence Labs division, and the PlayHT/PlayAI brand was retired. The domain does not resolve.</p>
+
+<h3>Can I still access my PlayHT voice clones?</h3>
+<p>No. Cloned voices, saved audio, and API keys were deleted when the service shut down on December 31, 2025. There is no recovery or export path, so voices must be re-cloned on a new platform.</p>
+
+<h3>Is the free tier enough to evaluate these tools?</h3>
+<p>Yes. ElevenLabs gives 10,000 credits per month, Murf gives 10 minutes of generation, and Speechify includes 10 basic voices. All three are enough to judge voice quality, but none include commercial rights on the free plan.</p>
+
+<h3>Do I need a credit card to start?</h3>
+<p>All three allow signing up without payment details. Murf and Speechify explicitly advertise no-credit-card trials; ElevenLabs' free tier does not require billing information either.</p>
+
+<div style="margin:2rem 0;padding:1.25rem;text-align:center;border:1px solid rgba(59,130,246,0.25);background:rgba(59,130,246,0.06);border-radius:0.75rem;">
+  <p style="margin:0 0 0.75rem;font-weight:600;">Try them yourself</p>
+  <AffiliateBtn slug="elevenlabs" text="Try ElevenLabs Free" />
+  {" "}
+  <AffiliateBtn slug="murf" text="Try Murf Free" />
+</div>
+
+<p style="font-size:0.8125rem;color:#6b7280;">AI Zest is independent and not endorsed by any vendor named here. Where an affiliate link is used, we may earn a commission at no extra cost to you — this does not affect the comparisons above, which are based on official documentation, published pricing, and publicly available product information. PlayHT/PlayAI is named for historical context only and is not affiliated with this site.</p>
+
+  </ArticleWrap>
+</BaseLayout>

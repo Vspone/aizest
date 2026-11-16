@@ -91,6 +91,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  /* The off-canvas mobile menu sits outside the viewport; clip it so the page
+     never gains a horizontal scrollbar on desktop. */
+  overflow-x: hidden;
 }
 
 /* Smooth image loading */

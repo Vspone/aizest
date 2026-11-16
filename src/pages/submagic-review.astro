@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
+
+const title = "Submagic Review 2026: AI Captions & Shorts Editor — AI Zest";
+const description = "Submagic review: auto captions, Magic Clips and pricing. Starter $19/mo, Pro $39/mo, Business $69/mo (yearly $12/$23/$41). Credit limits, pros, cons and who it fits.";
+const canonical = "/submagic-review";
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Submagic Review 2026: AI Captions & Shorts Editor",
+  "description": description,
+  "datePublished": "2026-11-16",
+  "dateModified": "2026-11-16",
+  "author": { "@type": "Organization", "name": "AI Zest" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Zest",
+    "logo": { "@type": "ImageObject", "url": "https://aizest.net/logo.png" }
+  }
+});
+
+const faq = [
+  { q: "Is Submagic free?", a: "Submagic's pricing page lists paid tiers only — Starter $19/mo, Pro $39/mo and Business $69/mo per member (yearly billing brings those down to $12, $23 and $41). You can start without a credit card, but treat it as a limited trial rather than a permanent free plan." },
+  { q: "How many videos can I make per month?", a: "Credits decide that. Starter includes 45 credits per member, which the pricing page converts to roughly 15 videos or 5 Magic Clips. Pro gives 120 credits (about 40 videos or 15 Magic Clips) and Business 300 credits (about 100 videos or 37 Magic Clips)." },
+  { q: "Does Submagic add a watermark?", a: "No. All three paid plans export without a watermark. Export resolution is the real differentiator: 1080p/30FPS on Starter, 1080p and 2K on Pro, 1080p/4K and 60FPS on Business." },
+  { q: "How long can a video be?", a: "2 minutes per video on Starter, 5 minutes on Pro and 30 minutes on Business. That cap determines whether Magic Clips is practical for you — repurposing a 40-minute podcast requires the Business tier." },
+  { q: "Submagic vs CapCut — which should I use?", a: "They solve different problems. CapCut is a full video editor with a generous free tier, and you do the cutting yourself. Submagic automates the repetitive part of short-form: transcription, animated captions, silence removal and cutting long footage into candidate shorts. Many creators use CapCut for finishing and Submagic for volume." },
+];
+
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faq.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+});
+
+const breadcrumbJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aizest.net/" },
+    { "@type": "ListItem", "position": 2, "name": "Submagic Review 2026" }
+  ]
+});
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} type="article" jsonLd={jsonLd}>
+  <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+  <script type="application/ld+json" set:html={faqJsonLd} />
+
+  <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-[#3B82F6]">Home</a>
+    <span>/</span>
+    <span class="text-gray-900 dark:text-white font-medium">Submagic Review</span>
+  </nav>
+
+  <ArticleWrap>
+    <div class="flex flex-wrap items-center gap-3 mb-4">
+      <span class="text-xs font-semibold uppercase tracking-wide px-2.5 py-1 rounded-full bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400">Short-form video</span>
+      <span class="text-sm text-gray-500 dark:text-gray-400">Last verified: 16 November 2026</span>
+    </div>
+
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Submagic Review 2026: AI Captions &amp; Shorts Editor</h1>
+
+    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+      Submagic does one job and does it fast: take raw footage, caption it automatically in a style that looks native to TikTok and Reels, and cut long recordings into vertical shorts. This review covers what it actually includes, what each plan really allows, and where the limits bite.
+    </p>
+
+    <!-- Quick verdict -->
+    <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-gradient-to-br from-pink-500/5 to-rose-500/5 dark:from-pink-500/10 dark:to-rose-500/10 p-6 mb-10">
+      <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Quick verdict</h2>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mb-4 text-sm">
+        <span class="font-semibold text-gray-900 dark:text-white">Rating: 4.5 / 5</span>
+        <span class="text-gray-600 dark:text-gray-400">Best for: TikTok, Reels and Shorts creators publishing weekly</span>
+        <span class="text-gray-600 dark:text-gray-400">Entry price: $19/mo ($12/mo yearly)</span>
+      </div>
+      <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-1.5 mb-5">
+        <li class="flex gap-2"><span class="text-emerald-500">✓</span> Caption workflow is genuinely fast — upload, auto-caption, style, export</li>
+        <li class="flex gap-2"><span class="text-emerald-500">✓</span> Magic Clips produces usable vertical cuts with no manual timeline work</li>
+        <li class="flex gap-2"><span class="text-amber-500">!</span> Credit allowance, not the subscription price, is the real constraint</li>
+      </ul>
+      <AffiliateBtn slug="submagic" text="Try Submagic Free" loc="review-verdict" />
+      <p class="mt-3 text-xs text-gray-500 dark:text-gray-400">
+        Affiliate link — we may earn a commission if you subscribe, at no extra cost to you.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4">What Submagic actually is</h2>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+      Submagic is a browser-based editor built around short-form video. It is not a replacement for Premiere or DaVinci Resolve, and it does not try to be. The product is organised around three tasks: captioning, cleaning up a talking-head take, and turning one long video into several vertical clips.
+    </p>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+      The caption engine transcribes with word-level timing and applies animated presets that highlight the spoken word as it is delivered. That styling is the part most creators notice first, because it is what makes a clip read as native to Reels and Shorts instead of looking like a subtitled export from a desktop editor.
+    </p>
+
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4">Magic Clips: the reason to pay</h2>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+      Magic Clips takes a long recording and returns several vertical clips with captions already burned in, ordered by likely interest. For podcasters and YouTubers sitting on an existing back catalogue, this is the feature that pays for the subscription — it converts hours of footage you already have into shorts you never had time to cut.
+    </p>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+      Expect output quality to track input quality. Clean, single-speaker audio with clear topic changes produces noticeably better clip selection than noisy multi-person recordings. If your source is messy, budget time for selecting between the returned clips rather than accepting them as-is.
+    </p>
+
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4">Pricing, verified 16 November 2026</h2>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+      Prices below come from Submagic's live pricing page. All plans are priced per member per month.
+    </p>
+
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <th class="text-left py-2 pr-4 font-semibold text-gray-900 dark:text-white">Plan</th>
+            <th class="text-left py-2 pr-4 font-semibold text-gray-900 dark:text-white">Monthly</th>
+            <th class="text-left py-2 pr-4 font-semibold text-gray-900 dark:text-white">Yearly</th>
+            <th class="text-left py-2 pr-4 font-semibold text-gray-900 dark:text-white">Credits / month</th>
+            <th class="text-left py-2 font-semibold text-gray-900 dark:text-white">Max length</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700 dark:text-gray-300">
+          <tr class="border-b border-gray-100 dark:border-gray-800">
+            <td class="py-2 pr-4 font-medium">Starter</td>
+            <td class="py-2 pr-4">$19</td>
+            <td class="py-2 pr-4">$12</td>
+            <td class="py-2 pr-4">45 — about 15 videos or 5 Magic Clips</td>
+            <td class="py-2">2 min</td>
+          </tr>
+          <tr class="border-b border-gray-100 dark:border-gray-800">
+            <td class="py-2 pr-4 font-medium">Pro</td>
+            <td class="py-2 pr-4">$39</td>
+            <td class="py-2 pr-4">$23</td>
+            <td class="py-2 pr-4">120 — about 40 videos or 15 Magic Clips</td>
+            <td class="py-2">5 min</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-4 font-medium">Business</td>
+            <td class="py-2 pr-4">$69</td>
+            <td class="py-2 pr-4">$41</td>
+            <td class="py-2 pr-4">300 — about 100 videos or 37 Magic Clips</td>
+            <td class="py-2">30 min</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+      Export capability is where the tiers separate: 1080p at 30 FPS on Starter, 1080p and 2K on Pro, 1080p and 4K at 60 FPS on Business. None of the paid plans add a watermark. API access is included at 10 minutes per month on Starter and Pro, and 100 minutes on Business. Publishing to social accounts and the analytics view start at Pro; multi-account publishing and the 30 custom templates are Business-only.
+    </p>
+
+    <div class="rounded-xl border border-amber-200 dark:border-amber-900/50 bg-amber-50 dark:bg-amber-900/10 p-4 mb-8">
+      <p class="text-sm text-amber-900 dark:text-amber-200">
+        <strong>Read the credit maths before subscribing.</strong> If you publish daily, 45 credits on Starter runs out quickly because a Magic Clip costs more credits than a single captioned video. Work out your monthly output first, then pick the tier.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4">Pros and cons</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+      <div class="rounded-xl border border-emerald-200 dark:border-emerald-900/50 p-5">
+        <h3 class="font-semibold text-emerald-700 dark:text-emerald-400 mb-3">Pros</h3>
+        <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+          <li>• Captioning is fast enough to fit a weekly upload schedule</li>
+          <li>• Animated presets look native, not bolted on</li>
+          <li>• Magic Clips genuinely saves hours on back catalogue</li>
+          <li>• 15 finished videos for $19 is fair at the entry tier</li>
+          <li>• Team features (templates, brand kit, multi-account) scale sensibly</li>
+        </ul>
+      </div>
+      <div class="rounded-xl border border-red-200 dark:border-red-900/50 p-5">
+        <h3 class="font-semibold text-red-700 dark:text-red-400 mb-3">Cons</h3>
+        <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+          <li>• Per-member pricing adds up for small teams</li>
+          <li>• No permanent free plan — paid tiers only on the pricing page</li>
+          <li>• 2 and 5 minute caps rule out long-form work below Business</li>
+          <li>• Magic Clips quality depends on clean source audio</li>
+          <li>• Not a general-purpose editor: no colour grading or compositing</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4">Who it fits, who it doesn't</h2>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+      <strong>Fits:</strong> solo short-form creators publishing several clips a week (Starter), podcasters and YouTubers repurposing long episodes (Pro), and small teams or agencies running multiple client accounts (Business).
+    </p>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+      <strong>Doesn't fit:</strong> anyone who needs multi-track compositing, colour grading or motion graphics — that is a different class of tool. If your clips need heavy visual work, Submagic should sit alongside a real editor rather than replace one.
+    </p>
+
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4">Alternatives worth comparing</h2>
+    <ul class="text-gray-700 dark:text-gray-300 leading-relaxed space-y-2 mb-8">
+      <li>• <a href="/tool/capcut" class="text-[#3B82F6] hover:underline">CapCut</a> — a full editor with a strong free tier, but you do the cutting</li>
+      <li>• <a href="/tool/opus-clip" class="text-[#3B82F6] hover:underline">Opus Clip</a> — the closest direct competitor for long-to-shorts conversion</li>
+      <li>• <a href="/tool/descript" class="text-[#3B82F6] hover:underline">Descript</a> — transcript-based editing for podcasts, heavier but more flexible</li>
+      <li>• <a href="/tool/veed" class="text-[#3B82F6] hover:underline">VEED</a> — broader browser editor with subtitles, less shorts-focused</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4">FAQ</h2>
+    <div class="space-y-6 mb-10">
+      {faq.map(f => (
+        <div>
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{f.q}</h3>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{f.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 sm:p-8 text-center">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Try Submagic</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-5">Start with the free trial, check how far 45 credits gets you, then decide between Starter and Pro.</p>
+      <AffiliateBtn slug="submagic" text="Try Submagic Free" loc="review-footer" />
+      <p class="mt-4 text-xs text-gray-500 dark:text-gray-400">
+        Affiliate link — AI Zest may earn a commission at no extra cost to you. Pricing verified on Submagic's official pricing page on 16 November 2026.
+      </p>
+    </div>
+  </ArticleWrap>
+</BaseLayout>

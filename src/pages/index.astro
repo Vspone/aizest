@@ -4,9 +4,12 @@ import Hero from '../components/Hero.astro';
 import SearchBar from '../components/SearchBar.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 import ToolCard from '../components/ToolCard.astro';
+import CreatorPick from '../components/CreatorPick.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
 import { getCollection } from 'astro:content';
 
 const tools = await getCollection('tools');
+const bySlug = Object.fromEntries(tools.map(t => [t.data.slug, t.data]));
 const featuredTools = tools.filter(t => t.data.featured).slice(0, 12);
 
 // "Just Added" - newest tools (by pubDate or just last ones added)
@@ -31,8 +34,8 @@ for (const t of tools) {
 }
 ---
 
-<BaseLayout title="AI Tool Reviews & Comparisons 2026 | AI Zest"
-  description="100+ AI tools with honest comparisons, pricing, pros & cons, and practical insights. Find the right AI tool for any task.">
+<BaseLayout title="AI Tools for Content Creators — Reviews & Comparisons | AI Zest"
+  description="AI video, voice and editing tools for YouTube, TikTok, Instagram and podcast creators. Honest reviews, real pricing, side-by-side comparisons across 100+ AI tools.">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <Hero count={tools.length} />
@@ -40,6 +43,164 @@ for (const t of tools) {
     <div class="mt-4 mb-16">
       <SearchBar />
     </div>
+
+    <!-- Creator Toolkit: the three core products -->
+    <section class="mb-16 reveal-on-scroll">
+      <div class="flex items-end justify-between gap-4 mb-6">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">The Creator Toolkit</h2>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Voice, avatar video and short-form editing — the three tools that cover a creator's full workflow.</p>
+        </div>
+        <a href="/category/video" class="hidden sm:block text-sm text-[#3B82F6] hover:underline font-medium whitespace-nowrap">AI video tools →</a>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 stagger-grid">
+        <CreatorPick
+          slug="elevenlabs"
+          badge="Best voice"
+          tagline="Text-to-speech and voice cloning that sound like a studio recording — 74 languages, expressive delivery."
+          highlights={['Voice cloning from short samples', 'Natural-sounding multilingual output', 'Free tier with 10k credits/month']}
+          reviewUrl="/elevenlabs-review"
+          ctaText="Try ElevenLabs"
+          loc="home-toolkit" />
+        <CreatorPick
+          slug="synthesia"
+          badge="Best avatar"
+          tagline="Turn a script into a presenter video with a digital avatar — no camera, no studio, no on-screen talent."
+          highlights={['240+ avatars, 160+ languages', 'SOC 2 Type II compliant', 'Free plan with 10 min/month']}
+          reviewUrl="/synthesia-review"
+          ctaText="Try Synthesia"
+          loc="home-toolkit" />
+        <CreatorPick
+          slug="submagic"
+          badge="Best shorts"
+          tagline="Auto captions, animated presets and Magic Clips that cut one long video into vertical shorts."
+          highlights={['Word-level animated captions', 'Magic Clips finds the highlights', 'Publish straight to TikTok and Reels']}
+          reviewUrl="/submagic-review"
+          ctaText="Try Submagic"
+          loc="home-toolkit" />
+      </div>
+      <p class="mt-4 text-xs text-gray-500 dark:text-gray-400">
+        Some links on this page are affiliate links. If you subscribe through them, AI Zest may earn a commission at no extra cost to you — it never changes which tools we cover or how we describe them.
+      </p>
+    </section>
+
+    <!-- AI Video Tools -->
+    <section class="mb-16 reveal-on-scroll">
+      <div class="flex items-end justify-between gap-4 mb-6">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">AI Video Tools</h2>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Generate a presenter video, or cut one long take into ten shorts.</p>
+        </div>
+        <a href="/category/video" class="hidden sm:block text-sm text-[#3B82F6] hover:underline font-medium whitespace-nowrap">All video tools →</a>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {['synthesia', 'submagic'].map(slug => (
+          <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 flex flex-col hover:border-[#3B82F6]/40 hover:shadow-lg transition-all">
+            <div class="flex items-baseline justify-between gap-3 mb-2">
+              <h3 class="font-bold text-lg text-gray-900 dark:text-white">{bySlug[slug]?.name}</h3>
+              <span class="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">{bySlug[slug]?.pricing}</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">{bySlug[slug]?.description}</p>
+            <div class="mt-auto flex flex-wrap items-center gap-3">
+              <AffiliateBtn slug={slug} text="Try Free" variant="small" loc="home-video" />
+              <a href={`/tool/${slug}`} class="text-sm font-medium text-[#3B82F6] hover:underline">Read review →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- AI Voice Tools -->
+    <section class="mb-16 reveal-on-scroll">
+      <div class="flex items-end justify-between gap-4 mb-6">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">AI Voice Tools</h2>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Voiceover, narration and dubbing without booking a studio.</p>
+        </div>
+        <a href="/category/audio" class="hidden sm:block text-sm text-[#3B82F6] hover:underline font-medium whitespace-nowrap">All voice tools →</a>
+      </div>
+      <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-gradient-to-br from-emerald-500/5 to-teal-500/5 dark:from-emerald-500/10 dark:to-teal-500/10 p-6 sm:p-8">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-6">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-2">
+              <h3 class="font-bold text-xl text-gray-900 dark:text-white">{bySlug['elevenlabs']?.name}</h3>
+              <span class="text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">Editor's pick</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
+              The voice layer for a creator workflow: clone your own voice once, then generate narration for every upload in 74 languages. Free tier gives you 10,000 credits a month to test it properly.
+            </p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">From {bySlug['elevenlabs']?.pricing}</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-3 sm:flex-col sm:items-stretch">
+            <AffiliateBtn slug="elevenlabs" text="Try ElevenLabs Free" loc="home-voice" />
+            <a href="/elevenlabs-review" class="text-sm text-center font-medium text-[#3B82F6] hover:underline px-2">Read the review →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Creator Workflow -->
+    <section class="mb-16 reveal-on-scroll">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-1">The Creator Workflow</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">One video, three steps — from script to published short.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[
+          { n: '1', title: 'Script & voice', tool: 'ElevenLabs', slug: 'elevenlabs', desc: 'Write the voiceover once, generate a clean narration track — or clone your own voice and reuse it every week.', href: '/elevenlabs-review' },
+          { n: '2', title: 'Shoot without a camera', tool: 'Synthesia', slug: 'synthesia', desc: 'Turn the script into a presenter video with a digital avatar, in any of 160+ languages.', href: '/synthesia-review' },
+          { n: '3', title: 'Cut, caption, publish', tool: 'Submagic', slug: 'submagic', desc: 'Drop the long take in, get captioned vertical shorts out, publish to TikTok and Reels without leaving the app.', href: '/submagic-review' },
+        ].map(step => (
+          <div class="relative rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6">
+            <span class="absolute -top-3 left-6 w-7 h-7 rounded-full bg-[#3B82F6] text-white text-sm font-bold flex items-center justify-center">{step.n}</span>
+            <h3 class="font-bold text-gray-900 dark:text-white mt-2">{step.title}</h3>
+            <p class="text-xs text-[#3B82F6] font-medium mb-2">{step.tool}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">{step.desc}</p>
+            <a href={step.href} class="text-sm font-medium text-[#3B82F6] hover:underline">How it works →</a>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Latest Reviews -->
+    <section class="mb-16 reveal-on-scroll">
+      <div class="flex items-end justify-between gap-4 mb-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Latest Reviews</h2>
+        <a href="/category/video" class="text-sm text-[#3B82F6] hover:underline font-medium whitespace-nowrap">All reviews →</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { href: '/elevenlabs-review', label: 'Voice', title: 'ElevenLabs Review 2026', desc: 'Voice quality, cloning accuracy, pricing per 1,000 characters and where it still falls short.' },
+          { href: '/synthesia-review', label: 'Avatar video', title: 'Synthesia Review 2026', desc: 'Avatar realism, language coverage, and whether the $29 Starter plan is enough for regular uploads.' },
+          { href: '/submagic-review', label: 'Short-form', title: 'Submagic Review 2026', desc: 'Caption accuracy, Magic Clips hit rate, credit maths and the real cost per finished video.' },
+        ].map(r => (
+          <a href={r.href} class="group rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 hover:border-[#3B82F6]/40 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <span class="text-[10px] font-semibold uppercase tracking-wide text-gray-400">{r.label}</span>
+            <h3 class="font-bold text-gray-900 dark:text-white mt-1 mb-2 group-hover:text-[#3B82F6] transition-colors">{r.title}</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{r.desc}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Comparisons -->
+    <section class="mb-16 reveal-on-scroll">
+      <div class="flex items-end justify-between gap-4 mb-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Head-to-Head Comparisons</h2>
+        <a href="/compare" class="text-sm text-[#3B82F6] hover:underline font-medium whitespace-nowrap">Compare any two →</a>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {[
+          { href: '/heygen-vs-synthesia', title: 'HeyGen vs Synthesia', desc: 'Two avatar platforms, very different price curves.' },
+          { href: '/elevenlabs-vs-murf-vs-speechify', title: 'ElevenLabs vs Murf vs Speechify', desc: 'Voice quality against price per word.' },
+          { href: '/invideo-vs-capcut', title: 'InVideo vs CapCut', desc: 'AI generation versus a free editor with AI bolted on.' },
+          { href: '/descript-vs-podcastle-vs-veed', title: 'Descript vs Podcastle vs VEED', desc: 'Editing by transcript — which one handles video best.' },
+        ].map(c => (
+          <a href={c.href} class="group rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 hover:border-[#3B82F6]/40 hover:shadow-md transition-all">
+            <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-[#3B82F6] transition-colors">{c.title}</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{c.desc}</p>
+          </a>
+        ))}
+      </div>
+    </section>
 
     <!-- Categories -->
     <section class="mb-16 reveal-on-scroll">

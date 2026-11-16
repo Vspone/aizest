@@ -15,11 +15,23 @@
         <a href="/" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
           Home
         </a>
-        <a href="/category" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-          Categories
+        <a href="/category/video" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+          AI Video
+        </a>
+        <a href="/category/audio" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+          AI Voice
+        </a>
+        <a href="/category/writing" class="hidden lg:inline nav-link text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+          AI Writing
+        </a>
+        <a href="/category/productivity" class="hidden lg:inline nav-link text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+          AI Productivity
         </a>
         <a href="/compare" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
           Compare
+        </a>
+        <a href="/category" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+          All Tools
         </a>
         <div class="relative group">
           <a href="/best-ai-image-generators-2026" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors flex items-center gap-1">
@@ -48,6 +60,7 @@
 <a href="/perplexity-review" class="block px-3 py-1.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors">Perplexity Review</a>
 <a href="/runway-review" class="block px-3 py-1.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors">Runway Review</a>
 <a href="/semrush-review" class="block px-3 py-1.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors">Semrush Review</a>
+                <a href="/submagic-review" class="block px-3 py-1.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors">Submagic Review</a>
 <a href="/synthesia-review" class="block px-3 py-1.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors">Synthesia Review</a>
 <a href="/uizard-review" class="block px-3 py-1.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors">Uizard Review</a>
 <a href="/windsurf-review" class="block px-3 py-1.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors">Windsurf Review</a>
@@ -192,12 +205,20 @@
           </svg>
           Home
         </a>
-        <a href="/category" class="mobile-nav-link mobile-nav-slide">
-          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-          </svg>
-          Categories
-        </a>
+        {[
+          { href: '/category/video', label: 'AI Video' },
+          { href: '/category/audio', label: 'AI Voice' },
+          { href: '/category/writing', label: 'AI Writing' },
+          { href: '/category/productivity', label: 'AI Productivity' },
+          { href: '/category', label: 'All Tools' },
+        ].map(item => (
+          <a href={item.href} class="mobile-nav-link mobile-nav-slide">
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+            {item.label}
+          </a>
+        ))}
         <a href="/compare" class="mobile-nav-link mobile-nav-slide">
           <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -260,6 +281,9 @@
         </a>
         <a href="/semrush-review" class="mobile-nav-link pl-11 mobile-nav-slide">
           Semrush Review
+        </a>
+        <a href="/submagic-review" class="mobile-nav-link pl-11 mobile-nav-slide">
+          Submagic Review
         </a>
         <a href="/synthesia-review" class="mobile-nav-link pl-11 mobile-nav-slide">
           Synthesia Review

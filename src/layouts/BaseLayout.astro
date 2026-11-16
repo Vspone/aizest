@@ -14,6 +14,8 @@ export interface Props {
 }
 
 const { title, description, canonical, ogImage, type = 'website', jsonLd } = Astro.props;
+// GA4 is opt-in: set PUBLIC_GA_ID (e.g. G-XXXXXXXXXX) in Cloudflare Pages env vars.
+const gaId = import.meta.env.PUBLIC_GA_ID;
 ---
 
 <!doctype html>
@@ -35,6 +37,17 @@ const { title, description, canonical, ogImage, type = 'website', jsonLd } = Ast
     (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
     ml('account', '2459281');
   </script>
+    {gaId && (
+      <>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+        <script is:inline define:vars={{ gaId }}>
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () { window.dataLayer.push(arguments); };
+          window.gtag('js', new Date());
+          window.gtag('config', gaId, { anonymize_ip: true });
+        </script>
+      </>
+    )}
 </head>
   <body class="min-h-screen flex flex-col bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
     <Header />
@@ -42,5 +55,33 @@ const { title, description, canonical, ogImage, type = 'website', jsonLd } = Ast
       <slot />
     </main>
     <Footer />
+    <script is:inline>
+      // Outbound CTA click tracking. Works with GA4 when PUBLIC_GA_ID is set,
+      // and always pushes to dataLayer so GTM/other tags can pick it up later.
+      (function () {
+        document.addEventListener('click', function (e) {
+          var a = e.target && e.target.closest ? e.target.closest('a[data-cta]') : null;
+          if (!a) return;
+          var payload = {
+            event: 'cta_click',
+            tool_name: a.getAttribute('data-cta') || '',
+            cta_location: a.getAttribute('data-cta-loc') || 'unknown',
+            page_path: window.location.pathname,
+            link_url: a.href,
+            is_affiliate: a.getAttribute('data-affiliate') === 'true' ? 'yes' : 'no'
+          };
+          (window.dataLayer = window.dataLayer || []).push(payload);
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'cta_click', {
+              tool_name: payload.tool_name,
+              cta_location: payload.cta_location,
+              page_path: payload.page_path,
+              link_url: payload.link_url,
+              is_affiliate: payload.is_affiliate
+            });
+          }
+        }, true);
+      })();
+    </script>
   </body>
 </html>

@@ -1,18 +1,27 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
 
-const categories = [
-  { slug: 'writing', label: 'Writing & Content', emoji: '✍️', desc: 'AI writing assistants, content generators, and copywriting tools', count: 14 },
-  { slug: 'image', label: 'Image Generation', emoji: '🎨', desc: 'AI image generators, art creators, and visual design tools', count: 9 },
-  { slug: 'video', label: 'Video Creation', emoji: '🎬', desc: 'AI video creation, editing, and animation platforms', count: 14 },
-  { slug: 'audio', label: 'Audio & Voice', emoji: '🎵', desc: 'AI voice generation, music creation, and audio editing', count: 9 },
-  { slug: 'coding', label: 'Coding & Development', emoji: '💻', desc: 'AI code assistants, development tools, and debugging aids', count: 11 },
-  { slug: 'productivity', label: 'Productivity', emoji: '⚡', desc: 'AI productivity tools, automation, and workflow enhancement', count: 11 },
-  { slug: 'data', label: 'Data & Analytics', emoji: '📊', desc: 'AI analytics, data processing, and business intelligence tools', count: 7 },
-  { slug: 'design', label: 'Design & Creative', emoji: '🎯', desc: 'AI design tools for UI/UX, graphics, and creative work', count: 9 },
-  { slug: 'marketing', label: 'Marketing & SEO', emoji: '📈', desc: 'AI marketing, SEO, and advertising optimization platforms', count: 11 },
-  { slug: 'business', label: 'Business & Finance', emoji: '💼', desc: 'AI business tools for finance, operations, and management', count: 8 },
+// Counts are derived from the tools collection so they can never drift.
+const allTools = await getCollection('tools');
+
+const baseCategories = [
+  { slug: 'writing', label: 'Writing & Content', emoji: '✍️', desc: 'AI writing assistants, content generators, and copywriting tools' },
+  { slug: 'image', label: 'Image Generation', emoji: '🎨', desc: 'AI image generators, art creators, and visual design tools' },
+  { slug: 'video', label: 'Video Creation', emoji: '🎬', desc: 'AI video creation, editing, and animation platforms' },
+  { slug: 'audio', label: 'Audio & Voice', emoji: '🎵', desc: 'AI voice generation, music creation, and audio editing' },
+  { slug: 'coding', label: 'Coding & Development', emoji: '💻', desc: 'AI code assistants, development tools, and debugging aids' },
+  { slug: 'productivity', label: 'Productivity', emoji: '⚡', desc: 'AI productivity tools, automation, and workflow enhancement' },
+  { slug: 'data', label: 'Data & Analytics', emoji: '📊', desc: 'AI analytics, data processing, and business intelligence tools' },
+  { slug: 'design', label: 'Design & Creative', emoji: '🎯', desc: 'AI design tools for UI/UX, graphics, and creative work' },
+  { slug: 'marketing', label: 'Marketing & SEO', emoji: '📈', desc: 'AI marketing, SEO, and advertising optimization platforms' },
+  { slug: 'business', label: 'Business & Finance', emoji: '💼', desc: 'AI business tools for finance, operations, and management' },
 ];
+
+const categories = baseCategories.map(c => ({
+  ...c,
+  count: allTools.filter(t => t.data.category === c.slug).length,
+}));
 
 const breadcrumbJsonLd = JSON.stringify({
   "@context": "https://schema.org",

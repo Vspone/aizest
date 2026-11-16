@@ -273,7 +273,9 @@ const breadcrumbJsonLd = JSON.stringify({
         <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
           Ready to try {name}?
         </p>
-        <a href={affiliate_url} target="_blank" rel={ctaRel} class="btn-primary w-full sm:w-auto px-8 py-3">
+              <a href={affiliate_url} target="_blank" rel={ctaRel}
+                 data-cta={name} data-cta-loc="tool-hero" data-affiliate={affiliate ? 'true' : 'false'}
+                 class="btn-primary w-full sm:w-auto px-8 py-3">
           {affiliate ? `${ctaText(pricing)} →` : 'Visit Official Website →'}
         </a>
         {affiliate && (
@@ -427,7 +429,9 @@ const breadcrumbJsonLd = JSON.stringify({
         {affiliate_url && (
           <div class="card p-4 sm:p-5">
             <h3 class="font-semibold text-gray-900 dark:text-white mb-3">{ctaText(pricing)}</h3>
-            <a href={affiliate_url} target="_blank" rel={ctaRel} class="btn-primary w-full text-center mb-2">
+                <a href={affiliate_url} target="_blank" rel={ctaRel}
+                   data-cta={name} data-cta-loc="tool-sidebar" data-affiliate={affiliate ? 'true' : 'false'}
+                   class="btn-primary w-full text-center mb-2">
               {ctaText(pricing)} →
             </a>
             <p class="text-xs text-gray-500 text-center">{pricing}</p>

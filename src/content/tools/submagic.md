@@ -4,7 +4,7 @@ slug: "submagic"
 description: "AI video editor for short-form content — auto captions, animated presets, b-roll and Magic Clips that turn long videos into vertical shorts"
 category: "video"
 website: "https://www.submagic.co/"
-pricing: "Free trial / $19–$69 per member/mo"
+pricing: "$19–$69/mo"
 affiliate_url: https://submagic.co/?via=gb7f5o
 affiliate: true
 scores:

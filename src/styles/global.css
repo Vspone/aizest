@@ -49,6 +49,9 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  /* Prevents the off-canvas mobile menu from extending the scrollable area
+     (which used to show up as a phantom right-hand column). */
+  overflow-x: clip;
 }
 
 /* Large tap targets for all interactive elements on mobile */

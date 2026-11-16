@@ -4,7 +4,7 @@ slug: "synthesia"
 description: "AI video platform for creating professional videos with AI avatars, voiceovers, and multilingual dubbing in 160+ languages"
 category: "video"
 website: "https://www.synthesia.io"
-pricing: "$18/mo (Starter) / $59/mo (Creator)"
+pricing: "Free / $29/mo"
 affiliate_url: https://www.synthesia.io/?via=aizest
 affiliate: true
 scores:

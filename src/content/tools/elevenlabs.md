@@ -4,7 +4,7 @@ slug: "elevenlabs"
 description: "AI voice synthesis platform producing natural, human-like speech with emotional range."
 category: "audio"
 website: "https://elevenlabs.io"
-pricing: "Free / $5/mo"
+pricing: "Free / $6/mo"
 affiliate_url: https://try.elevenlabs.io/kpjftrypy9aa
 affiliate: true
 scores:
@@ -28,21 +28,23 @@ pricing_tiers:
   - name: "Free"
     price: "$0"
     features:
-      - "10K chars/month"
-      - "Basic voice library"
-      - "Standard audio quality"
+      - "10,000 credits/month"
+      - "3 custom voice slots"
+      - "No commercial licence"
   - name: "Starter"
-    price: "$5/mo"
+    price: "$6/mo ($5/mo annual)"
     features:
-      - "30K chars/month"
-      - "Professional voice cloning"
-      - "Commercial license"
+      - "30,000 credits/month"
+      - "Commercial licence"
+      - "Instant Voice Cloning"
+      - "Dubbing Studio"
   - name: "Creator"
-    price: "$11/mo"
+    price: "$22/mo ($18.33/mo annual)"
     features:
-      - "100K chars/month"
-      - "Voice library"
-      - "Turbo mode"
+      - "121,000 credits/month"
+      - "Professional Voice Cloning"
+      - "192 kbps audio quality"
+      - "30 custom voice slots"
 pros:
   - "Highly realistic AI voices"
   - "Expressive emotional range"
@@ -50,7 +52,7 @@ pros:
   - "Good free tier for testing"
 cons:
   - "Limited free tier characters"
-  - "Voice cloning costs extra"
+  - "Professional Voice Cloning starts at the $22 Creator tier"
   - "API pricing higher than some alternatives"
 ---
 

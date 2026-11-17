@@ -4,7 +4,7 @@ slug: "heygen"
 description: "AI video avatar platform for creating professional videos with virtual presenters, voice cloning, and multilingual lip-sync dubbing"
 category: "video"
 website: "https://heygen.com"
-pricing: "Free / $24/mo (Creator)"
+pricing: "Free / $29/mo"
 affiliate_url: https://heygen.com
 scores:
   ease_of_use: 8.7
@@ -13,7 +13,7 @@ scores:
   speed: 8.5
   overall: 9.0
 best_for: "Video creators, marketers, and media teams"
-last_verified: 2026-06-25
+last_verified: 2026-11-17
 featured: false
 rating: 4.5
 features:

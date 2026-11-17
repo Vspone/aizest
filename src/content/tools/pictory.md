@@ -4,7 +4,7 @@ slug: "pictory"
 description: "AI-powered video creation tool that transforms scripts, blog posts, and articles into professional-quality videos with text-to-video, AI avatars, and voiceovers."
 category: "video"
 website: "https://pictory.ai"
-pricing: "$35/mo"
+pricing: "$25/mo"
 affiliate_url: https://pictory.ai
 scores:
   ease_of_use: 9.3
@@ -13,7 +13,7 @@ scores:
   speed: 8.3
   overall: 8.8
 best_for: "Video creators, marketers, and media teams"
-last_verified: 2026-06-25
+last_verified: 2026-11-17
 featured: false
 rating: 4.4
 features:

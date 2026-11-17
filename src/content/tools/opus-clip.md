@@ -4,7 +4,7 @@ slug: "opus-clip"
 description: "AI-powered tool that automatically extracts and generates short, viral-ready clips from long-form video content."
 category: "video"
 website: "https://opus.pro"
-pricing: "Free / $19/mo"
+pricing: "Free / $15/mo"
 affiliate_url: https://opus.pro
 scores:
   ease_of_use: 8.7
@@ -13,7 +13,7 @@ scores:
   speed: 8.5
   overall: 9.0
 best_for: "Video creators, marketers, and media teams"
-last_verified: 2026-06-25
+last_verified: 2026-11-17
 featured: false
 rating: 4.5
 features:

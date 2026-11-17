@@ -4,7 +4,7 @@ slug: "kits-ai"
 description: "AI voice toolkit for music and content creators featuring realistic voice cloning and vocal synthesis"
 category: "audio"
 website: "https://kits.ai"
-pricing: "Free / $24/mo"
+pricing: "Free / $10/mo"
 affiliate_url: https://kits.ai
 scores:
   ease_of_use: 8.5
@@ -13,7 +13,7 @@ scores:
   speed: 8.3
   overall: 8.8
 best_for: "Podcasters, musicians, and audio creators"
-last_verified: 2026-06-25
+last_verified: 2026-11-17
 featured: false
 rating: 4.4
 features:

@@ -4,7 +4,7 @@ slug: "descript"
 description: "All-in-one AI-powered video and audio editor that treats media like a document — edit by editing the transcript."
 category: "video"
 website: "https://www.descript.com"
-pricing: "Free / $24/mo (Business)"
+pricing: "Free / $16/mo"
 affiliate_url: https://www.descript.com
 scores:
   ease_of_use: 9.7
@@ -13,7 +13,7 @@ scores:
   speed: 8.7
   overall: 9.2
 best_for: "Video creators, marketers, and media teams"
-last_verified: 2026-06-25
+last_verified: 2026-11-17
 featured: true
 rating: 4.6
 features:

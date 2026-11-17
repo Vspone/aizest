@@ -1,0 +1,276 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
+import RelatedContent from '../components/RelatedContent.astro';
+
+const description = "The best AI video editors for Shorts, Reels and TikTok in 2026 — Submagic, CapCut, Descript, OpusClip, VEED and InVideo — compared on caption quality, clip automation, export limits and real monthly cost.";
+const canonical = "https://aizest.net/best-ai-video-editors-for-shorts-2026";
+const articleLd = {
+  "@type": "Article",
+  "headline": "Best AI Video Editors for Shorts 2026",
+  "description": "AI editors for vertical short-form video — captions, auto-clipping, export limits and credit maths compared.",
+  "datePublished": "2026-11-17",
+  "dateModified": "2026-11-17",
+  "author": { "@type": "Organization", "name": "AI Zest" }
+};
+
+const breadcrumbLd = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aizest.net/" },
+    { "@type": "ListItem", "position": 2, "name": "Best AI Video Editors for Shorts 2026" }
+  ]
+};
+
+const faqLd = {
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is the best AI video editor for Shorts?", "acceptedAnswer": { "@type": "Answer", "text": "Submagic for captions plus automatic clipping in one app: Starter is $19/month ($12/month billed yearly) for 45 credits, which converts to about 15 captioned videos or 5 Magic Clips. If you would rather not pay, CapCut's free tier includes a timeline, templates and auto-captions with no time limit on basic editing." } },
+    { "@type": "Question", "name": "Do I need a separate tool to make Shorts from long videos?", "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. Submagic, OpusClip and Descript can all find highlights in a long recording and cut vertical clips. Descript does it through transcript editing with Create Clips, OpusClip specialises in automated selection with a virality score (free plan posts one clip a day, Starter $15/month removes the watermark), and Submagic charges Magic Clips per credit above plain captions." } },
+    { "@type": "Question", "name": "Is a free editor good enough for Shorts?", "acceptedAnswer": { "@type": "Answer", "text": "For cutting, captioning and exporting vertical video, yes. CapCut's free tier and VEED's free tier both handle captions and vertical export. Paid tiers buy three things: watermark removal, automatic clip selection, and higher export resolution — which is why most creators start free and upgrade only when the watermark or the clip volume becomes a problem." } },
+    { "@type": "Question", "name": "Why do short-form editors bill in credits?", "acceptedAnswer": { "@type": "Answer", "text": "Because AI work is uneven: transcribing a 60-second clip costs far less than rendering a 1080p export with animated captions and b-roll. Vendors meter the expensive operations. The practical consequence is that two $19 plans can deliver very different output, so convert credits to finished clips before you subscribe — a Magic Clip typically costs more credits than a plain captioned video." } },
+    { "@type": "Question", "name": "What resolution and frame rate should Shorts be exported at?", "acceptedAnswer": { "@type": "Answer", "text": "1080x1920 at 30fps is the safe baseline for TikTok, Reels and Shorts; 60fps helps motion-heavy footage. On the tools here, 4K or 60fps export is usually gated to the top tier — Submagic's Business plan, for example, is the only tier with 4K and 60fps, while Starter caps at 1080p30." } }
+  ]
+};
+
+const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [articleLd, breadcrumbLd, faqLd] });
+---
+<BaseLayout title="Best AI Video Editors for Shorts 2026 — AI Zest" {description} {canonical} type="article" {jsonLd}>
+  <ArticleWrap>
+
+<h1>Best AI Video Editors for Shorts 2026</h1>
+<p><em>Last updated: November 17, 2026 · Last verified: November 17, 2026 — pricing and export limits checked against vendor pricing pages</em></p>
+
+<p>Vertical short-form editing is now its own product category, separate from general video editing. The job is narrow and repetitive: trim to 60 seconds, caption every word, reframe to 9:16, export at a size each platform accepts, repeat fifteen times. The tools below are the ones built for that loop rather than adapted to it.</p>
+
+<p>They bill three different ways — a free tier with paid upgrades, per-credit plans, and per-seat subscriptions — which makes headline prices misleading. A $19 credit plan and a $19 seat plan can differ by an order of magnitude in how many finished clips you get, so each entry below converts the vendor's credits into clips or export minutes wherever the vendor publishes the conversion.</p>
+
+<div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-rose-50 to-orange-50 dark:from-rose-900/10 dark:to-orange-900/10 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm font-medium text-gray-900 dark:text-white mb-3">🔑 Quick Verdict</p>
+  <table class="w-full text-sm">
+    <thead>
+      <tr class="border-b border-gray-200 dark:border-gray-600">
+        <th class="text-left py-2 font-medium text-gray-700 dark:text-gray-300">Tool</th>
+        <th class="text-left py-2 font-medium text-gray-700 dark:text-gray-300">Best for</th>
+        <th class="text-left py-2 font-medium text-gray-700 dark:text-gray-300">Entry price</th>
+        <th class="text-left py-2 font-medium text-gray-700 dark:text-gray-300">Why</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Submagic</strong></td><td class="py-2">Captions + clips in one app</td><td class="py-2">$12/mo yearly</td><td class="py-2">Word-level captions, Magic Clips</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>CapCut</strong></td><td class="py-2">Free baseline editor</td><td class="py-2">Free</td><td class="py-2">Full timeline, templates, no cost</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>OpusClip</strong></td><td class="py-2">Automated clip selection</td><td class="py-2">Free / $15/mo</td><td class="py-2">Virality score, one free clip a day</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Descript</strong></td><td class="py-2">Editing by transcript</td><td class="py-2">Free / $16/mo yearly</td><td class="py-2">Best for talking-head source video</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>VEED</strong></td><td class="py-2">Browser editing at team scale</td><td class="py-2">Free / Pro per seat</td><td class="py-2">Unlimited subtitles on paid, fair-use 50h</td></tr>
+      <tr><td class="py-2"><strong>InVideo AI</strong></td><td class="py-2">Generated clips + timeline</td><td class="py-2">Paid plans only</td><td class="py-2">Free guest seats for collaborators</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="not-prose my-8 p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm text-gray-600 dark:text-gray-400"><strong>📋 How these were assessed:</strong> Compared on published pricing, credit conversions, export caps (resolution, frame rate, video length) and caption language coverage. We use vendor-published figures and do not present lab-style test results we did not produce.</p>
+</div>
+
+<h2>1. Submagic — Best All-in-One for Captions and Clips</h2>
+<p>Submagic does the two things a shorts workflow needs in one pass: word-level animated captions, and Magic Clips, which scans a long recording for highlights and cuts them into vertical clips you can publish to TikTok and Reels from the editor. Captions are supported in 123 languages, and exports run from 1080p30 on Starter to 4K60 on Business.</p>
+<p>The plan structure is the thing to read carefully: Starter is $19/month ($12/month billed yearly) for 45 credits, which Submagic converts to about 15 captioned videos or 5 Magic Clips. Pro is $39/month ($23 yearly) for 120 credits (about 40 videos or 15 clips); Business is $69/month ($41 yearly) for 300 credits (about 100 videos or 37 clips). A Magic Clip costs more credits than a plain captioned video, and Starter caps each video at 2 minutes.</p>
+
+<table>
+<thead><tr><th>Overall</th><th>Caption quality</th><th>Clip automation</th><th>Export quality</th><th>Free tier</th><th>Value</th></tr></thead>
+<tbody><tr><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐☆</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐</td><td>⭐⭐⭐⭐</td></tr></tbody>
+</table>
+
+<table>
+<thead><tr><th>Pros</th><th>Cons</th></tr></thead>
+<tbody>
+<tr><td>✔ Captions and clips without a second tool</td><td>✘ No permanent free plan</td></tr>
+<tr><td>✔ Publishing to TikTok and Reels in-app</td><td>✘ 2-minute cap per video on Starter</td></tr>
+<tr><td>✔ 123 caption languages</td><td>✘ 4K60 export only on Business</td></tr>
+<tr><td>✔ No watermark on any paid tier</td><td>✘ Credits reset monthly with no rollover</td></tr>
+</tbody>
+</table>
+
+<p><strong>Who it's for:</strong> Creators publishing several shorts a week, especially podcasters and long-form YouTubers repurposing episodes.</p>
+<p><strong>Pricing:</strong> Starter $19/mo ($12 yearly) · Pro $39/mo ($23 yearly) · Business $69/mo ($41 yearly) · Custom</p>
+<p class="flex items-center gap-2 flex-wrap">
+  <a href="/submagic-review" class="btn-primary">Read the full review →</a>
+  <AffiliateBtn slug="submagic" text="Start Free Trial" loc="shorts-listicle" />
+</p>
+
+<h2>2. CapCut — Best Free Editor</h2>
+<p>CapCut remains the reference point for a free vertical editor: a real timeline, per-platform export presets, auto-captions, and templates that already know TikTok and Reels timings. If your output is a handful of shorts a week, the free tier does the work and costs nothing — which is a genuinely rare thing in this category.</p>
+<p>Paid tiers (Pro, Ultra, Teams) add AI credits, premium templates, 1 TB storage and faster rendering, with a 7-day Pro trial that does not require a card. The catch is regional: CapCut quotes prices in local currency and states that displayed pricing is for reference only until you sign in, so any dollar figure you read in a review may not apply to your account.</p>
+
+<table>
+<thead><tr><th>Overall</th><th>Timeline depth</th><th>Captions</th><th>Templates</th><th>Free tier</th><th>Value</th></tr></thead>
+<tbody><tr><td>⭐⭐⭐⭐☆</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr></tbody>
+</table>
+
+<table>
+<thead><tr><th>Pros</th><th>Cons</th></tr></thead>
+<tbody>
+<tr><td>✔ Free tier is a real editor, not a demo</td><td>✘ Some templates require an upgrade</td></tr>
+<tr><td>✔ Export presets per platform</td><td>✘ Pricing and availability vary by region</td></tr>
+<tr><td>✔ Auto-captions in many languages</td><td>✘ Desktop and mobile feature sets differ</td></tr>
+<tr><td>✔ 7-day Pro trial with no card</td><td>✘ Weak for long-form narrative editing</td></tr>
+</tbody>
+</table>
+
+<p><strong>Who it's for:</strong> New creators, Shorts-first channels, and anyone who wants a zero-cost baseline before paying for anything else.</p>
+<p><strong>Pricing:</strong> Free · Pro / Ultra / Teams, priced by region and platform</p>
+<p class="flex items-center gap-2 flex-wrap">
+  <a href="/tool/capcut" class="btn-primary">See CapCut in the directory →</a>
+</p>
+
+<h2>3. OpusClip — Best for Automated Clip Selection</h2>
+<p>OpusClip's value is triage: point it at a long video or a YouTube link and it returns vertical clips with animated captions and a virality score, so you can rank ten candidates before watching any of them. For a channel sitting on hours of existing long-form content, that is the fastest route from archive to feed.</p>
+<p>Free allows one clip a day, 9:16 only, with a watermark on animated captions and three-day export access. Starter is $15/month and removes the watermark while adding the virality score, YouTube auto-import, custom reframing and 30-day media retention. Pro is $29/month for 1:1 and 16:9, topics search, prompt-to-clip, custom fonts and API access.</p>
+
+<table>
+<thead><tr><th>Overall</th><th>Clip selection</th><th>Captions</th><th>Aspect ratios</th><th>Free tier</th><th>Value</th></tr></thead>
+<tbody><tr><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr></tbody>
+</table>
+
+<table>
+<thead><tr><th>Pros</th><th>Cons</th></tr></thead>
+<tbody>
+<tr><td>✔ Free plan posts one clip a day — genuinely usable</td><td>✘ Free clips carry a caption watermark</td></tr>
+<tr><td>✔ Virality score sorts candidates fast</td><td>✘ Non-vertical ratios require Pro</td></tr>
+<tr><td>✔ YouTube auto-import on Starter</td><td>✘ Automated picks still need a human pass</td></tr>
+<tr><td>✔ Premiere and Resolve export on Pro</td><td>✘ Media retention limits on lower tiers</td></tr>
+</tbody>
+</table>
+
+<p><strong>Who it's for:</strong> Channels and podcasters with a back catalogue and no time to hand-cut shorts.</p>
+<p><strong>Pricing:</strong> Free · Starter $15/mo · Pro $29/mo · Business custom</p>
+<p class="flex items-center gap-2 flex-wrap">
+  <a href="/tool/opus-clip" class="btn-primary">See OpusClip in the directory →</a>
+</p>
+
+<h2>4. Descript — Best for Talking-Head Source Video</h2>
+<p>Most shorts start life as a long, messy recording — a podcast, an interview, a screen-share tutorial. Descript cleans that source better than a clipper does: edit the transcript to cut the video, remove filler words automatically, and let Studio Sound fix room noise before a single clip is cut. Create Clips then handles the vertical conversion.</p>
+<p>Free covers 60 media minutes a month at 720p; Hobbyist is $16/month billed annually ($24 monthly) for 600 minutes and 1080p; Creator is $24/month annual ($35 monthly) for 1,800 minutes and 4K. Media minutes are the budget unit, so a weekly hour-long podcast uses about half of Hobbyist's allowance on the source file alone.</p>
+
+<table>
+<thead><tr><th>Overall</th><th>Source cleanup</th><th>Transcript editing</th><th>Clips</th><th>Free tier</th><th>Value</th></tr></thead>
+<tbody><tr><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr></tbody>
+</table>
+
+<table>
+<thead><tr><th>Pros</th><th>Cons</th></tr></thead>
+<tbody>
+<tr><td>✔ Transcript editing removes the timeline grind</td><td>✘ Media minutes run out on long recordings</td></tr>
+<tr><td>✔ Filler-word removal and Studio Sound built in</td><td>✘ Free export capped at 720p</td></tr>
+<tr><td>✔ Captions, translation and dubbing in one place</td><td>✘ Clip automation less aggressive than OpusClip</td></tr>
+<tr><td>✔ Good for multi-track interviews</td><td>✘ Overkill if you only need captions</td></tr>
+</tbody>
+</table>
+
+<p><strong>Who it's for:</strong> Podcasters and interview channels whose shorts come from long, unscripted footage.</p>
+<p><strong>Pricing:</strong> Free · Hobbyist $16/mo annual ($24 monthly) · Creator $24/mo annual ($35 monthly) · Business $50/mo annual ($65 monthly)</p>
+<p class="flex items-center gap-2 flex-wrap">
+  <a href="/tool/descript" class="btn-primary">See Descript in the directory →</a>
+</p>
+
+<h2>5. VEED — Best Browser Editor for Teams</h2>
+<p>VEED is the browser-first option: captions, translation, resizing and a timeline that runs without installing anything, which matters when you edit on a work laptop or hand a project to a client. Subtitles are unlimited on paid plans subject to a fair-use cap of 50 hours a month, and translation is billed in minutes — a 30-minute video translated into two languages uses 60 minutes of allowance.</p>
+<p>Pricing is per seat, and AI generations are metered in credits that reset each billing cycle rather than rolling over. There is a free tier for evaluation and an enterprise trial requiring at least three users. Confirm the current seat price on veed.io, since it is quoted in local currency where available.</p>
+
+<table>
+<thead><tr><th>Overall</th><th>Captions</th><th>Translation</th><th>Browser speed</th><th>Free tier</th><th>Value</th></tr></thead>
+<tbody><tr><td>⭐⭐⭐⭐☆</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr></tbody>
+</table>
+
+<table>
+<thead><tr><th>Pros</th><th>Cons</th></tr></thead>
+<tbody>
+<tr><td>✔ Nothing to install — works in any browser</td><td>✘ Per-seat pricing gets expensive for teams</td></tr>
+<tr><td>✔ Unlimited subtitles on paid plans (50h fair use)</td><td>✘ Translation minutes are a separate budget</td></tr>
+<tr><td>✔ Strong translation and dubbing workflow</td><td>✘ Credits do not roll over</td></tr>
+<tr><td>✔ Easy client hand-off via link</td><td>✘ Less automated clipping than dedicated tools</td></tr>
+</tbody>
+</table>
+
+<p><strong>Who it's for:</strong> Freelancers and small teams who need captioned vertical video with client-friendly sharing.</p>
+<p><strong>Pricing:</strong> Free · Pro per seat (local pricing) · Enterprise (minimum 3 users)</p>
+<p class="flex items-center gap-2 flex-wrap">
+  <a href="/tool/veed" class="btn-primary">See VEED in the directory →</a>
+</p>
+
+<h2>6. InVideo AI — Best If You Generate Clips and Then Edit Them</h2>
+<p>InVideo AI generates footage from a prompt but keeps a full timeline — colour, audio and 3D tools included on every plan, even the cheapest. For shorts that need generated b-roll rather than a talking head, that combination is more practical than a pure generator or a pure editor.</p>
+<p>The current pricing page lists Basic, Pro and Ultra per seat rather than a free plan, with frequent 50% annual promotions: roughly $9/seat/month at Basic list price, $30 at Pro and $80 at Ultra before discount. Guest seats are free on the upper tiers with their own credit allowance, and credits are spent on generation rather than download — but they expire monthly.</p>
+
+<table>
+<thead><tr><th>Overall</th><th>Generation</th><th>Editor depth</th><th>Team seats</th><th>Free tier</th><th>Value</th></tr></thead>
+<tbody><tr><td>⭐⭐⭐⭐☆</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>✘</td><td>⭐⭐⭐⭐</td></tr>
+</tbody>
+</table>
+
+<table>
+<thead><tr><th>Pros</th><th>Cons</th></tr></thead>
+<tbody>
+<tr><td>✔ Full timeline on every plan</td><td>✘ No free tier on the current pricing page</td></tr>
+<tr><td>✔ Free guest seats with credits</td><td>✘ Credits expire monthly</td></tr>
+<tr><td>✔ Generated b-roll plus manual control</td><td>✘ Promotional pricing shifts month to month</td></tr>
+<tr><td>✔ Large stock library included</td><td>✘ Caption workflow less polished than Submagic's</td></tr>
+</tbody>
+</table>
+
+<p><strong>Who it's for:</strong> Creators making b-roll-heavy shorts who still want to finish the edit by hand.</p>
+<p><strong>Pricing:</strong> Basic / Pro / Ultra, per seat, frequently discounted annually</p>
+<p class="flex items-center gap-2 flex-wrap">
+  <a href="/tool/invideo-ai" class="btn-primary">See InVideo AI in the directory →</a>
+</p>
+
+<h2>Side-by-Side Comparison</h2>
+<table>
+<thead><tr><th>Tool</th><th>Free tier</th><th>Entry paid</th><th>Budget unit</th><th>Max export</th><th>Best for</th></tr></thead>
+<tbody>
+<tr><td><strong>Submagic</strong></td><td>Trial only</td><td>$12/mo yearly</td><td>Credits (45 = ~15 videos)</td><td>4K60 (Business)</td><td>Captions + clips</td></tr>
+<tr><td><strong>CapCut</strong></td><td>Full editor</td><td>Region-priced</td><td>—</td><td>Platform presets</td><td>Free baseline</td></tr>
+<tr><td><strong>OpusClip</strong></td><td>1 clip/day</td><td>$15/mo</td><td>Clips</td><td>Highest available</td><td>Auto clip selection</td></tr>
+<tr><td><strong>Descript</strong></td><td>60 min/mo, 720p</td><td>$16/mo yearly</td><td>Media minutes</td><td>4K (Creator)</td><td>Source cleanup</td></tr>
+<tr><td><strong>VEED</strong></td><td>Yes</td><td>Pro per seat</td><td>Seats + AI credits</td><td>Tier-dependent</td><td>Browser + teams</td></tr>
+<tr><td><strong>InVideo AI</strong></td><td>None</td><td>~$9/seat/mo list</td><td>Generation credits</td><td>Tier-dependent</td><td>Generated b-roll</td></tr>
+</tbody>
+</table>
+
+<h2>How to Choose</h2>
+<p><strong>If you publish several shorts a week from long videos:</strong> Submagic, and watch the credit split — 45 credits is about 5 Magic Clips but about 15 plain captioned videos, so a clipping-heavy workflow needs Pro.</p>
+<p><strong>If you have zero budget:</strong> CapCut. It costs nothing, exports vertically, captions automatically, and there is no watermark on plain editing.</p>
+<p><strong>If your source footage is messy:</strong> Descript first to clean and cut the long file, then a clipper if you want automated highlight selection.</p>
+<p><strong>If you have an archive to mine:</strong> OpusClip's one-clip-a-day free plan is enough to test whether automated selection fits your content before paying $15.</p>
+<p><strong>If you edit with other people:</strong> VEED for browser-based hand-off, or InVideo's free guest seats if the team works inside one project.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What is the best AI video editor for Shorts?</h3>
+<p>Submagic if you want captions and automatic clipping together — Starter is $19/month ($12 yearly) for about 15 captioned videos or 5 Magic Clips. CapCut if you want a genuinely free editor with a full timeline and auto-captions.</p>
+
+<h3>Do I need a separate tool to make Shorts from long videos?</h3>
+<p>No. Submagic, OpusClip and Descript all cut vertical clips from long recordings. Descript does it through transcript editing, OpusClip specialises in automated selection with a virality score, and Submagic charges Magic Clips per credit above plain captions.</p>
+
+<h3>Is a free editor good enough?</h3>
+<p>For cutting, captioning and vertical export, yes — CapCut's and VEED's free tiers both handle it. Paid tiers buy watermark removal, automatic clip selection and higher export resolution. Most creators upgrade when the watermark or the clip volume becomes the bottleneck, not before.</p>
+
+<h3>Why do short-form editors bill in credits?</h3>
+<p>Because the AI work is uneven — transcription is cheap, rendering animated captions plus b-roll is not. Two $19 plans can therefore deliver very different output, so convert credits to finished clips before subscribing.</p>
+
+<h3>What export settings should I use?</h3>
+<p>1080x1920 at 30fps is the safe baseline; 60fps helps motion-heavy footage. On the tools here, 4K or 60fps is usually the top tier only — Submagic's Business plan, for instance, is the sole tier with 4K60.</p>
+
+<h2>How We Evaluate</h2>
+<p>Tools are compared on published pricing, credit conversions and documented export limits. We do not present lab-style test results we did not produce.</p>
+<ul>
+<li><strong>Scope:</strong> Editors built for vertical short-form output — captions, reframing, clipping and publishing.</li>
+<li><strong>Method:</strong> Official pricing pages and documentation checked on the date shown above, plus vendor-published credit conversions.</li>
+<li><strong>Criteria:</strong> Cost per finished clip, caption language coverage, export resolution and frame rate, free-tier usefulness, and how the tool handles long source footage.</li>
+<li><strong>Corrections:</strong> Email admin@aizest.net with a source and we will update the page.</li>
+</ul>
+
+        <RelatedContent category="video" />
+<p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you — it never changes our coverage. Prices verified 17 November 2026.</em></p>
+</ArticleWrap>
+</BaseLayout>

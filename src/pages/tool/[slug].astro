@@ -401,7 +401,7 @@ const breadcrumbJsonLd = JSON.stringify({
                 {category === 'marketing' && <><a href="/semrush-vs-ahrefs" class="block text-sm text-[#3B82F6] hover:underline">Semrush vs Ahrefs →</a><a href="/jasper-vs-writesonic-vs-copyai" class="block text-sm text-[#3B82F6] hover:underline">Jasper vs Writesonic vs Copy.ai →</a></>}
                 {!['writing','image','video','audio','coding','productivity','design','marketing'].includes(category) && <><a href="/compare" class="block text-sm text-[#3B82F6] hover:underline">View all comparisons →</a></>}
               </div>
-              <a href="/alternatives/{slug}" class="block text-sm text-[#3B82F6] hover:underline mt-3 font-medium">{name} Alternatives →</a>
+              <a href={`/alternatives/${slug}`} class="block text-sm text-[#3B82F6] hover:underline mt-3 font-medium">{name} Alternatives →</a>
             </div>
           </div>
         </div>

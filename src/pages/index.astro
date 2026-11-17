@@ -10,7 +10,16 @@ import { getCollection } from 'astro:content';
 
 const tools = await getCollection('tools');
 const bySlug = Object.fromEntries(tools.map(t => [t.data.slug, t.data]));
-const featuredTools = tools.filter(t => t.data.featured).slice(0, 12);
+// Featured Picks: put the three products we actually promote first, then the rest.
+const FEATURED_PRIORITY = ['elevenlabs', 'synthesia', 'submagic'];
+const featuredTools = tools
+  .filter(t => t.data.featured)
+  .sort((a, b) => {
+    const ai = FEATURED_PRIORITY.indexOf(a.data.slug);
+    const bi = FEATURED_PRIORITY.indexOf(b.data.slug);
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+  })
+  .slice(0, 9);
 
 // "Just Added" - newest tools (by pubDate or just last ones added)
 const justAdded = tools.slice(-4).reverse();
@@ -66,7 +75,7 @@ for (const t of tools) {
           slug="synthesia"
           badge="Best avatar"
           tagline="Turn a script into a presenter video with a digital avatar — no camera, no studio, no on-screen talent."
-          highlights={['240+ avatars, 160+ languages', 'SOC 2 Type II compliant', 'Free plan with 10 min/month']}
+          highlights={['125+ avatars on Starter, 240+ on Enterprise', 'SOC 2 Type II, ISO 27001 compliant', 'Free plan: 10 min/month, no card']}
           reviewUrl="/synthesia-review"
           ctaText="Try Synthesia"
           loc="home-toolkit" />
@@ -254,7 +263,7 @@ for (const t of tools) {
           <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
             ★ Featured Picks
           </h2>
-          <a href="/category/writing" class="text-sm text-[#3B82F6] hover:underline font-medium">
+          <a href="/category" class="text-sm text-[#3B82F6] hover:underline font-medium">
             View All Tools →
           </a>
         </div>
@@ -948,11 +957,11 @@ for (const t of tools) {
         <div class="py-10 px-8 bg-gradient-to-br from-[#3B82F6]/5 to-[#8B5CF6]/5 dark:from-[#3B82F6]/10 dark:to-[#8B5CF6]/10">
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center mb-6 sm:mb-10" id="stats-grid">
             <div>
-              <div class="text-2xl sm:text-3xl font-bold text-[#3B82F6]" id="stat-tools" data-count={tools.length}>0</div>
+              <div class="text-2xl sm:text-3xl font-bold text-[#3B82F6]" id="stat-tools" data-count={tools.length}>{tools.length}+</div>
               <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">AI Tools Reviewed</div>
             </div>
             <div>
-              <div class="text-2xl sm:text-3xl font-bold text-[#8B5CF6]" id="stat-categories" data-count={categories.length}>0</div>
+              <div class="text-2xl sm:text-3xl font-bold text-[#8B5CF6]" id="stat-categories" data-count={categories.length}>{categories.length}</div>
               <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">Categories</div>
             </div>
             <div>

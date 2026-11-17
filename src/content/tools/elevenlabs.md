@@ -14,8 +14,8 @@ scores:
   speed: 8.9
   overall: 9.4
 best_for: "Podcasters, musicians, and audio creators"
-last_verified: 2026-06-25
-featured: false
+last_verified: 2026-11-17
+featured: true
 rating: 4.7
 features:
   - "Ultra-realistic text-to-speech with emotional expression"

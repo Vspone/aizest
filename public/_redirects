@@ -4,3 +4,35 @@
 
 # PlayHT shut down Dec 2025 — comparison page replaced
 /elevenlabs-vs-murf-vs-playht /elevenlabs-vs-murf-vs-speechify 301
+
+# 2026-11-18 prune: duplicate entries point at the canonical page
+/tool/apollo-io /tool/apollo 301
+/tool/invideo-ai /tool/invideo 301
+/tool/zapier-central /tool/zapier 301
+/tool/codeium /tool/windsurf 301
+
+# 2026-11-18 prune: retired tools -> category index
+/tool/adcreative-ai /category/marketing 301
+/tool/anyword /category/writing 301
+/tool/continue-dev /category/coding 301
+/tool/copysmith /category/marketing 301
+/tool/durable /category/productivity 301
+/tool/filmora /category/video 301
+/tool/hex /category/data 301
+/tool/krea /category/image 301
+/tool/lemlist /category/business 301
+/tool/logoai /category/design 301
+/tool/magnific-ai /category/image 301
+/tool/mem /category/productivity 301
+/tool/mode-analytics /category/data 301
+/tool/pixlr /category/image 301
+/tool/playht /tool/elevenlabs 301
+/tool/remini /category/design 301
+/tool/respeecher /category/audio 301
+/tool/salesloft /category/business 301
+/tool/simplified /category/marketing 301
+/tool/sudowrite /category/writing 301
+/tool/tabnine /category/coding 301
+/tool/v0-dev /category/coding 301
+/tool/wordtune /category/writing 301
+/tool/writer /category/marketing 301

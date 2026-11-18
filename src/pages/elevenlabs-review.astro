@@ -45,7 +45,7 @@ const faqJsonLd = JSON.stringify({
       "name": "What is ElevenLabs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ElevenLabs is an AI speech synthesis platform that offers text-to-speech, voice cloning, speech-to-speech conversion, AI dubbing, and sound effects generation. Its current flagship model is Eleven v4, marketed as the most emotive text-to-speech model the company has shipped, and its multilingual models cover 74 languages with native-sounding accents (per the official pricing page). The low-latency Flash v2.5 model delivers around 75ms latency for real-time applications."
+        "text": "ElevenLabs is an AI speech synthesis platform that offers text-to-speech, voice cloning, speech-to-speech conversion, AI dubbing, and sound effects generation. Its current flagship model is Eleven v4, marketed as the most emotive text-to-speech model the company has shipped, and its multilingual models cover 74 languages with native-sounding accents (per the official pricing page). The low-latency Flash v2.5 model delivers a median latency of about 100ms (ElevenLabs model docs), which is the figure that matters for real-time use."
       }
     },
     {
@@ -134,7 +134,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 <h2>What Is ElevenLabs?</h2>
 <p><strong>Rating: 4.7/5 · <a href="/tool/elevenlabs">View on Tool Directory →</a></strong></p>
 <p>ElevenLabs is an AI speech synthesis platform founded in 2022. It gained rapid popularity for its ability to generate natural, expressive speech from text, and for its voice cloning feature that can replicate any voice from just a few minutes of audio. By 2026, ElevenLabs offers text-to-speech, voice cloning, speech-to-speech conversion, AI dubbing, and a sound effects generator — all accessible via web app, mobile app (iOS/Android), and API.</p>
-<p>The platform's current flagship model is Eleven v4, which ElevenLabs markets as its most emotive text-to-speech model; multilingual coverage runs to 74 languages (per the official pricing page). The low-latency Flash v2.5 model delivers around 75ms latency for real-time applications — the older Turbo generation has been phased out. ElevenLabs is used by content creators, audiobook publishers, game developers, accessibility tools, and enterprise communication platforms.</p>
+<p>The platform's current flagship model is Eleven v4, which ElevenLabs markets as its most emotive text-to-speech model; multilingual coverage runs to 74 languages (per the official pricing page). The low-latency Flash v2.5 model delivers a median latency of about 100ms (ElevenLabs model docs), which is the figure that matters for real-time use — the older Turbo generation has been phased out. ElevenLabs is used by content creators, audiobook publishers, game developers, accessibility tools, and enterprise communication platforms.</p>
 <p><strong>Best for:</strong> Content creators, developers, publishers, and enterprises needing production-quality AI voices<br/><strong>Pricing:</strong> Free (10,000 chars/mo) · $6/mo (Starter) · $22/mo (Creator) · $99/mo (Pro) · $299/mo (Scale) · $990/mo (Business) · Custom (Enterprise)</p>
 
 <div class="not-prose my-6">
@@ -176,7 +176,7 @@ import RelatedContent from '../components/RelatedContent.astro';
   <li>Sound effects generation</li>
 </ul>
 
-<p>Latency on the Flash v2.5 model is around 75ms for streaming TTS — suitable for conversational AI, voice assistants, and live applications. The higher-quality Eleven v4 model handles more complex synthesis in roughly 1-2 seconds per request, with a per-request character limit that depends on your plan. The API uses standard REST endpoints with WebSocket support for real-time streaming. Rate limits depend on your plan, with Pro and Enterprise tiers getting significantly higher throughput.</p>
+<p>Latency on Flash v2.5 is a median of about 100ms for streaming TTS, per ElevenLabs’ model docs (the 75ms figure from launch excluded application and network overhead) — suitable for conversational AI, voice assistants, and live applications. The higher-quality Eleven v4 model handles more complex synthesis in roughly 1-2 seconds per request, with a per-request character limit that depends on your plan. The API uses standard REST endpoints with WebSocket support for real-time streaming. Rate limits depend on your plan, with Pro and Enterprise tiers getting significantly higher throughput.</p>
 
 <p>SDKs are available for Python, JavaScript, and Node.js, plus community-maintained wrappers for other languages. ElevenLabs also offers low-code integrations via Zapier and Make, making the platform accessible to non-developers.</p>
 
@@ -249,7 +249,7 @@ import RelatedContent from '../components/RelatedContent.astro';
   <li><strong>Best-in-class voice quality:</strong> Unmatched naturalness, expressiveness, and accent accuracy</li>
   <li><strong>Superior voice cloning:</strong> Professional Voice Cloning produces stunningly accurate replicas</li>
   <li><strong>74 languages:</strong> Broad multilingual support with high quality across major languages</li>
-  <li><strong>Low-latency API:</strong> ~75ms streaming TTS on Flash v2.5 ideal for real-time applications</li>
+  <li><strong>Low-latency API:</strong> ~100ms median streaming TTS on Flash v2.5 (vendor docs) ideal for real-time applications</li>
   <li><strong>AI Dubbing:</strong> Game-changing for video localization, growing language support</li>
   <li><strong>Active development:</strong> Regular model updates, new features (sound effects, voice design)</li>
 </ul>

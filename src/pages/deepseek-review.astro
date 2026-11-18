@@ -149,7 +149,7 @@ import CreatorCrossSell from '../components/CreatorCrossSell.astro';
   <li><strong>Better instruction following</strong> — V4 adheres more closely to system prompts and user instructions, with fewer instances of veering off-topic or misunderstanding nuanced requests.</li>
 </ul>
 
-<p>In my testing, V4 handled a 500-page technical document on distributed systems architecture — summarizing it, answering specific questions about particular algorithms, and even identifying inconsistencies between sections — without losing context or hallucinating details. This long-context capability is genuinely transformative for research and development work.</p>
+<p>The practical case for a window this size is document and codebase work: summarizing long technical reports, asking targeted questions about specific sections, and cross-checking one part of a document against another. Whether a given model holds up on a 500-page input is exactly the kind of thing to verify with your own documents before you rely on it — long-context quality varies by model version and by how the request is structured.</p>
 
 <h2>Open-Weight Advantage: Why It Matters</h2>
 <p>DeepSeek's most significant differentiator is its open-weight philosophy. Both DeepSeek V4 and R1 are available under permissive licenses, allowing anyone to download the model weights, run them on their own hardware, fine-tune them for specialized tasks, and even redistribute modified versions. This stands in stark contrast to the walled gardens of GPT-4, Claude, and Gemini, which are only accessible through proprietary APIs with strict usage terms.</p>
@@ -162,30 +162,21 @@ import CreatorCrossSell from '../components/CreatorCrossSell.astro';
   <li><strong>Community innovation</strong> — The open-source community has built quantization scripts (reducing model size for consumer GPUs), deployment tooling (Docker images, Kubernetes configurations, one-click cloud setups), and fine-tuned variants optimized for specific tasks like code generation, creative writing, or scientific research.</li>
 </ul>
 
-<p>During testing, I downloaded and ran DeepSeek V4 on a single RTX 4090 (using 4-bit quantization) with respectable speed — around 20-30 tokens per second for complex queries. While this doesn't match the throughput of DeepSeek's hosted API, it's more than sufficient for individual use, research, and small-team deployments. For production workloads, a modest cluster of consumer GPUs or a single A100 handles full-precision inference comfortably.</p>
+<p>Running DeepSeek locally is a hardware question rather than a mystery. The weights are published openly on Hugging Face in several quantization levels, so the real constraint is VRAM: quantized builds fit on consumer cards, while full precision wants a datacenter GPU or a multi-GPU box. We haven't benchmarked tokens-per-second on specific hardware and won't invent a number — check the model card and community reports for throughput on the card you actually own.</p>
 
-<h2>Coding Performance: Benchmarks and Real-World Testing</h2>
+<h2>Coding Performance: Where It Actually Stands</h2>
 <p>DeepSeek's coding capabilities are among the top in the industry. On competitive programming benchmarks, it consistently scores at or near the top:</p>
 
-<table>
-<thead><tr><th>Benchmark</th><th>DeepSeek V4</th><th>GPT-4</th><th>Claude 3.5 Opus</th></tr></thead>
-<tbody>
-<tr><td><strong>Codeforces</strong></td><td>🥇 Top 15% of human competitors</td><td>🥈 Top 20%</td><td>🥉 Top 25%</td></tr>
-<tr><td><strong>SWE-bench (real-world repos)</strong></td><td>48.6% resolved</td><td>46.8% resolved</td><td>49.2% resolved</td></tr>
-<tr><td><strong>HumanEval (Python)</strong></td><td>92.3% pass@1</td><td>91.8% pass@1</td><td>93.0% pass@1</td></tr>
-<tr><td><strong>HumanEval (multilingual)</strong></td><td>89.1% pass@1</td><td>88.4% pass@1</td><td>90.2% pass@1</td></tr>
-<tr><td><strong>API Cost per 1M tokens</strong></td><td>~$0.14</td><td>~$2.50–$10</td><td>~$1.50–$3.00</td></tr>
-</tbody>
-</table>
+<p>DeepSeek publishes benchmark results on the model card that ships with each release, and independent leaderboards — SWE-bench for real repo issues, HumanEval for isolated functions, LiveCodeBench for contamination-resistant problems — track the models as new versions land. Those positions shift with every release, so instead of freezing numbers that go stale in weeks, check the current model card and leaderboard standing before you commit to an API bill. What's stable is the value proposition: open weights plus API pricing well below the frontier labs.</p>
 
 <p>These numbers tell an astounding story: DeepSeek matches or exceeds GPT-4 and Claude on nearly every coding benchmark while costing 10–20× less per token. For startups, independent developers, and organizations running heavy AI workloads, this cost advantage is transformative.</p>
 
-<p>But benchmarks only tell part of the story. In real-world testing across several projects:</p>
+<p>Benchmarks measure puzzle-shaped problems. What matters more is how a model behaves inside a real codebase — and on that, the consistent reports from developers are:</p>
 <ul>
-  <li><strong>Full-stack TypeScript app</strong> — DeepSeek generated a complete CRUD API with authentication, database schema, and frontend React components. The code was clean, followed TypeScript best practices, and required minimal manual correction. It correctly inferred project conventions from existing code patterns.</li>
-  <li><strong>Python data pipeline</strong> — Built a comprehensive ETL pipeline processing CSV exports, cleaning data, running aggregations, and outputting formatted reports. DeepSeek handled edge cases (missing values, type mismatches, encoding issues) more gracefully than GPT-4 in side-by-side testing.</li>
-  <li><strong>Rust systems programming</strong> — Implemented a concurrent task scheduler using async/await patterns. DeepSeek's understanding of Rust's ownership model and borrowing rules was impressive — it rarely produced code that failed to compile, which is a high bar for any AI model.</li>
-  <li><strong>Debugging and code review</strong> — Fed a production bug in a Go microservice, DeepSeek identified the race condition within seconds, explained the root cause with a clear chain-of-thought trace, and suggested three different fix strategies ranked by trade-offs.</li>
+  <li><strong>Following existing conventions</strong> — it tends to pick up patterns from the surrounding code rather than imposing its own style, which is why it holds up on established TypeScript and Python codebases.</li>
+  <li><strong>Data and scripting work</strong> — CSV cleaning, ETL glue, aggregation and report generation are routine tasks for it. Because the weights are open, this is also the category where local inference makes sense when data can't leave your machine.</li>
+  <li><strong>Systems languages</strong> — Rust and Go output compiles more often than older open models managed, though ownership and borrow-check errors still show up on complex concurrency work.</li>
+  <li><strong>Debugging with visible reasoning</strong> — the reasoning variants expose a chain of thought you can read and check, which is genuinely useful when you need to audit why a particular fix was proposed.</li>
 </ul>
 
 <p>The R1 reasoning model's chain-of-thought transparency is particularly valuable for debugging. When DeepSeek surfaces its internal reasoning step by step, you can audit its logic, catch errors early, and learn from its approach. This turns the model into a powerful pair programmer that teaches as it works.</p>
@@ -209,9 +200,9 @@ import CreatorCrossSell from '../components/CreatorCrossSell.astro';
 <h2>1 Million Token Context Window</h2>
 <p>DeepSeek's 1 million token context window rivals Google Gemini's long-context capability and far exceeds GPT-4's 128K and Claude's 200K context limits. In practical terms, this means you can feed entire codebases, lengthy research papers spanning hundreds of pages, multi-hour meeting transcripts, or complete book manuscripts into a single session for analysis, summarization, or refactoring.</p>
 
-<p>During testing, I uploaded the full source code of a medium-sized React application (~50 files, ~15,000 lines of code) and asked DeepSeek to identify architectural patterns, suggest refactoring opportunities, and generate a comprehensive documentation outline. The model processed the entire codebase in one pass, correctly identifying the state management pattern, routing structure, component hierarchy, and data flow — while pointing out a circular dependency issue that had been causing subtle bugs.</p>
+<p>The useful question with a window this large is whether it's actually usable for codebases rather than just impressive on a spec sheet. Dropping an entire repo into a session and asking for an architecture overview, a refactor plan, or a documentation skeleton is the obvious use case — and it's the one to test yourself with your own repo, because how well a long-context model performs depends heavily on the shape of the code and what you ask for. We haven't published a measured retrieval score here, and won't fake one.</p>
 
-<p>The key question with long-context models is retrieval accuracy — do they actually use the full context, or do they lose track of information in the middle? In my testing, DeepSeek V4 demonstrates notably better "needle-in-a-haystack" accuracy than V3 did. When I placed a specific instruction in the middle of a 200,000-token document, DeepSeek reliably found and followed it. At 500,000+ tokens, accuracy degraded slightly but remained workable for most tasks. At the full 1 million token limit, retrieval becomes less reliable for pinpoint accuracy, but general summarization and analysis tasks still produce meaningful results.</p>
+<p>The key question with long-context models is retrieval accuracy — do they actually use the whole context, or do they lose track of information in the middle? That failure mode is documented across the industry as “lost in the middle”, and it's the reason a long window alone shouldn't be read as a capability guarantee. Long-context behaviour changes with every model release and every serving configuration, so verify it on your own documents before building a workflow that depends on it.</p>
 
 <h2>Reasoning and Chain-of-Thought Transparency</h2>
 <p>One of DeepSeek's most impressive features is the depth and transparency of its reasoning. The R1 reasoning model, in particular, employs an explicit chain-of-thought process that surfaces its internal reasoning step by step. You can watch the model work through a problem — identifying approaches, testing hypotheses, discarding dead ends, and arriving at conclusions — in real time.</p>

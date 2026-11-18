@@ -137,14 +137,14 @@ import CreatorCrossSell from '../components/CreatorCrossSell.astro';
 <h2>Agent Mode: Cursor's Killer Feature</h2>
 <p>Cursor's Agent mode is the standout feature that separates it from simpler AI coding tools. Unlike inline completions or chat-based assistants, Agent mode can autonomously plan and implement changes across multiple files. Ask it to "add a dark mode toggle to the settings page" and it will create the context provider, build the toggle component, update imports across your codebase, add CSS variables, and persist the preference to localStorage — all in one pass.</p>
 
-<p>During testing, Agent mode successfully handled complex multi-file refactors including:</p>
+<p>The task shapes Agent mode is built for are the ones that would otherwise eat a morning of manual edits:</p>
 <ul>
-  <li>Creating a new authentication flow across 8 files (routes, middleware, components, hooks)</li>
-  <li>Migrating from REST to tRPC across a 15-file API layer</li>
-  <li>Implementing a full search feature with debounced input, results component, and API integration</li>
+  <li>Wiring a new authentication flow across routes, middleware, components and hooks</li>
+  <li>Migrating a data layer from REST to tRPC, touching every call site</li>
+  <li>Adding a search feature end to end — debounced input, results component, API integration</li>
 </ul>
 
-<p>The agent is reliable enough for production use. It rarely makes destructive mistakes, and when it does, Cursor's diff view makes reviewing changes straightforward. The ability to run terminal commands (install packages, run migrations) within the agent workflow adds another layer of utility that competing tools are still catching up to.</p>
+<p>Reported reliability is good enough for production use, with the caveat that any agent editing many files at once should be reviewed before merge — Cursor's diff view is what makes that review practical. The ability to run terminal commands (install packages, run migrations) within the agent workflow adds another layer of utility that competing tools are still catching up to.</p>
 
 <h2>Tab Completion: Speed and Accuracy</h2>
 <p>Cursor's tab completion is, quite simply, exceptionally fast and highly accurate. It predicts not just the next word but entire multi-line edits — adding function parameters, completing boilerplate, updating related code as you type. The latency is imperceptible; suggestions appear as soon as you pause typing.</p>

@@ -59,7 +59,7 @@ const faqJsonLd = JSON.stringify({
       "name": "Which one is faster?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cursor has faster tab completion (~50ms vs ~120ms) and more accurate multi-line predictions (85% vs 68%). For agent-mode multi-file changes, Cursor also completes tasks in fewer attempts."
+        "text": "Cursor has the more mature agent mode and a tab model that is widely regarded as the benchmark for multi-line prediction. Windsurf counters with persistent session context and Arena mode for side-by-side model comparison."
       }
     },
     {
@@ -161,7 +161,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <p>Cursor and Windsurf are the two dominant AI-powered code editors in 2026 — and they're more alike than ever. As of March 2026, Windsurf matched Cursor's Pro pricing at $20/month, removing what was previously its biggest advantage. Both are VS Code forks. Both offer agentic AI modes. Both claim to understand your entire codebase.</p>
 
-<p>But under the hood, they work very differently. Both tools were compared across 7 real-world coding tests on a 28-file React + TypeScript project (~5,800 LOC) using Claude Opus 4 on an M2 MacBook Air to find out which one actually makes you faster. All tests were conducted between June 20–22, 2026.</p>
+<p>But under the hood, they work very differently, and the difference shows up in day-to-day editing rather than in a spec sheet. Below we compare them on what each vendor documents (agent model, context handling, pricing and plan limits) plus what developers consistently report about the trade-off — no invented benchmark runs, just checkable facts.</p>
 
 <div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/10 dark:to-purple-900/10 border border-gray-200 dark:border-gray-700">
   <p class="text-sm font-medium text-gray-900 dark:text-white mb-2">🔑 Quick Verdict</p>
@@ -177,148 +177,72 @@ import RelatedContent from '../components/RelatedContent.astro';
 </div>
 
 <div class="not-prose my-8 p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-  <p class="text-sm text-gray-600 dark:text-gray-400"><strong>🧪 Test Environment:</strong> React + TypeScript · 28 files · ~5,800 LOC · Model: Claude Opus 4 · Machine: M2 MacBook Air · All tests run 3 times, averaged</p>
+  <p class="text-sm text-gray-600 dark:text-gray-400"><strong>How this comparison works:</strong> every point below rests on what each vendor documents — features, plan limits and pricing — plus the consistent reports developers give about day-to-day use. We have not run a private benchmark on these two editors, and we don't publish invented timings or accuracy percentages. Where a difference comes down to feel, we say so plainly.</p>
 </div>
 
 <h2>Overview: Two Approaches to AI Coding</h2>
 
 <h3>Cursor: The Established Powerhouse</h3>
-<p>Cursor has been the gold standard for AI code editors since 2024. Built on VS Code, it offers deep integration with Claude and GPT models, a powerful Agent mode that can autonomously implement multi-file features, and an extensive extension ecosystem inherited from VS Code. Its tab completion is fast, contextually relevant, and often predicts multi-line edits with surprising accuracy.</p>
-<p>Cursor's Agent mode is its standout feature. Beyond suggesting code, it can plan and implement changes across multiple files — create new components, refactor imports, install dependencies via terminal, and even run tests. It's like having a pair programmer who never gets tired.</p>
+<p>Cursor has been the reference point for AI code editors since 2024. Built on VS Code, it offers deep integration with Claude and GPT models, an agent mode that can implement multi-file features, and the entire VS Code extension marketplace inherited from its base. Its tab completion is the feature competitors get measured against, and it regularly predicts multi-line edits rather than single tokens.</p>
+<p>Cursor's agent mode is the standout. Beyond suggesting code, it can plan and implement changes across multiple files — create components, refactor imports, install dependencies, and run tests. The workflow it's built for is handing over a whole task rather than accepting suggestions line by line.</p>
 <p><strong>Best for:</strong> Professional developers who need production-ready AI assistance with full control<br/><strong>Pricing:</strong> Free (Hobby) · Starts at $20/month (Pro) · $40/user/month (Business)</p>
 
 <h3>Windsurf: The Context-Driven Challenger</h3>
 <p><strong>Rating: 4.4/5 · <a href="/tool/windsurf">Read full review →</a></strong></p>
-<p>Windsurf, built by Codeium and now owned by Cognition (the company behind Devin), took a different approach from the start. Windsurf's pricing has been folded into Devin's broader pricing structure. Instead of being a VS Code fork with AI bolted on, Windsurf was designed AI-first. Its Cascade system uses a "Flows" model where the AI maintains persistent context about what you've been working on — in theory, it gets better the more you use it in a session.</p>
-<p>Arena mode lets you run multiple AI models side-by-side on the same task, comparing outputs before accepting. Windsurf also introduced its own SWE-1.5 model optimized for agentic coding, reducing dependency on external AI providers. The March 2026 pricing redesign harmonized Pro at $20/month and introduced a $200/month Max tier for heavy users.</p>
+<p>Windsurf, built by Codeium and now owned by Cognition (the company behind Devin), took a different approach from the start. Rather than bolting AI onto a VS Code fork, Windsurf was designed AI-first. Its Cascade system uses a "Flows" model where the AI maintains persistent context about what you've been working on — in theory, it gets better the longer you stay in a session.</p>
+<p>Arena mode lets you run multiple AI models side-by-side on the same task and compare outputs before accepting. Windsurf also introduced its own SWE-1.5 model optimized for agentic coding, reducing dependency on external AI providers. The March 2026 pricing redesign harmonized Pro at $20/month and introduced a $200/month Max tier for heavy users.</p>
 <p>Notable: On July 14, 2025, Cognition (the company behind Devin) officially confirmed its acquisition of Windsurf — no longer a rumor. OpenAI had earlier explored acquiring Windsurf for $3 billion in May 2025, but the deal fell through. The acquisition signals deeper enterprise integrations ahead.</p>
 <p><strong>Best for:</strong> Developers who want an AI that learns their patterns and prefer experimentation<br/><strong>Pricing:</strong> Free · $20/mo (Pro) · $200/mo (Max) · $40/user/mo (Teams)</p>
 
-<h3>Scoring Methodology</h3>
-<p>Each test below is scored on a 100-point scale weighted across: <strong>Agent Mode Quality (25%)</strong> · <strong>Context Persistence (20%)</strong> · <strong>Speed (15%)</strong> · <strong>Pricing Value (15%)</strong> · <strong>UX (15%)</strong> · <strong>Ecosystem (10%)</strong>. Total scores determine the winner per category.</p>
+<h3>How We Score This Comparison</h3>
+<p>Each category below is rated on two things you can check: <strong>documented capability</strong> (what the vendor ships, and at which plan) and <strong>reported day-to-day experience</strong> (the consistent pattern across developer discussion, not a single review). Weighting reflects what decides the purchase for most developers: <strong>Agent Mode Quality (25%)</strong> · <strong>Context Persistence (20%)</strong> · <strong>Speed (15%)</strong> · <strong>Pricing Value (15%)</strong> · <strong>UX (15%)</strong> · <strong>Ecosystem (10%)</strong>. Star ratings are editorial judgement on that evidence — not the output of a private benchmark.</p>
 
 <h2>Head-to-Head Comparison</h2>
 
 <table>
 <thead><tr><th>Criterion</th><th>Cursor</th><th>Windsurf</th><th>Winner</th><th>Why</th></tr></thead>
 <tbody>
-<tr><td><strong>Agent Mode Quality</strong></td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td><strong>Cursor</strong></td><td>Mature multi-file agent, one-pass completions</td></tr>
-<tr><td><strong>Context Persistence</strong></td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td><strong>Windsurf</strong></td><td>Flows model remembers session patterns</td></tr>
-<tr><td><strong>Tab Completion Speed</strong></td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td><strong>Cursor</strong></td><td>~50ms latency, 85% vs 68% accuracy</td></tr>
-<tr><td><strong>Extension Ecosystem</strong></td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td><strong>Cursor</strong></td><td>Full VS Code marketplace vs 40+ curated</td></tr>
-<tr><td><strong>Multi-Model Arena</strong></td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td><strong>Windsurf</strong></td><td>Side-by-side model comparison on same task</td></tr>
-<tr><td><strong>Codebase Understanding</strong></td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td><strong>Cursor</strong></td><td>Full codebase indexing, faster search</td></tr>
-<tr><td><strong>Startup Time</strong></td><td>⭐⭐⭐⭐⭐ ~3s</td><td>⭐⭐⭐⭐ ~4s</td><td><strong>Cursor</strong></td><td>~1s faster cold start</td></tr>
-<tr><td><strong>Memory Usage</strong></td><td>⭐⭐⭐⭐ ~1.3GB</td><td>⭐⭐⭐ ~1.5GB</td><td><strong>Cursor</strong></td><td>Lower memory footprint</td></tr>
-<tr><td><strong>Pricing Value</strong></td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td><strong>Tie</strong></td><td>Both $20/mo Pro; Cursor free tier more generous</td></tr>
+<tr><td><strong>Agent Mode Quality</strong></td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td><strong>Cursor</strong></td><td>More mature multi-file agent; more likely to finish a task in one pass</td></tr>
+<tr><td><strong>Context Persistence</strong></td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td><strong>Windsurf</strong></td><td>Cascade Flows keeps session context; Cursor's is session-bound</td></tr>
+<tr><td><strong>Tab Completion</strong></td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td><strong>Cursor</strong></td><td>Widely treated as the benchmark for multi-line prediction</td></tr>
+<tr><td><strong>Extension Ecosystem</strong></td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td><strong>Cursor</strong></td><td>Full VS Code marketplace vs a curated set</td></tr>
+<tr><td><strong>Model Flexibility</strong></td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td><strong>Windsurf</strong></td><td>Arena mode compares models side-by-side</td></tr>
+<tr><td><strong>Codebase Indexing</strong></td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td><strong>Cursor</strong></td><td>Long-standing, deeply tuned indexing</td></tr>
+<tr><td><strong>Pricing Value</strong></td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td><strong>Tie</strong></td><td>Both $20/mo Pro; Cursor's free tier is more generous</td></tr>
 </tbody>
 </table>
 
 <h2>Difference 1: Agent Mode — Multi-File Feature Implementation</h2>
 <p><strong>Edge: Cursor</strong></p>
-
-<p><strong>Test Environment:</strong> React + TypeScript · 28 files · 5,800 LOC · Prompt: "Add a dark mode toggle — create context provider, toggle button, persist to localStorage, update all existing components"</p>
-
-<table>
-<thead><tr><th>Metric</th><th>Cursor</th><th>Windsurf</th></tr></thead>
-<tbody>
-<tr><td>Time to complete</td><td><strong>8 min</strong></td><td>13 min</td></tr>
-<tr><td>Prompt attempts needed</td><td><strong>1</strong></td><td>3</td></tr>
-<tr><td>Files modified correctly</td><td><strong>10/10</strong></td><td>7/10 (missed 3 shared hooks)</td></tr>
-<tr><td>Errors introduced</td><td><strong>1</strong></td><td>4</td></tr>
-</tbody>
-</table>
-<p>Cursor's Agent mode handled this in one pass: it identified which files needed changes, created the new components, updated imports, and even added CSS variables. Windsurf's Cascade created the provider correctly but missed updating three existing components, requiring two follow-up prompts to complete.</p>
+<p>The scenario that separates these two is a feature that touches ten files: add a dark mode toggle, create the context provider, persist the choice, and update every component that reads colour tokens. Cursor's agent is built to plan that whole change and then execute it — it maps which files need edits, creates new components, fixes imports, and can run your build to check itself. Windsurf's Cascade will happily attempt the same task, and does the central piece well, but the reported pattern is that it more often misses the dependent files that need updating alongside it, which turns one prompt into a short follow-up conversation.</p>
+<p>That gap is smaller than it was in 2024, and it depends heavily on how well your codebase is structured — a feature that's cleanly separated by module is easier for either tool than one smeared across shared hooks.</p>
 
 <h2>Difference 2: Context Persistence Across a Long Session</h2>
 <p><strong>Edge: Windsurf</strong></p>
+<p>This is where Windsurf's design choice pays off. Cascade's Flows model carries forward what it has learned about your project — naming conventions, the shape of your data layer, architectural decisions made an hour ago — so later requests inherit that instead of needing it restated. Cursor keeps context per session and per conversation; it's good at it, but a long refactoring day involves re-establishing more of the picture as you go.</p>
+<p>The trade-off is real in both directions: persistent context is what you want on a multi-hour refactor and can be noise on a quick one-off script. If your work is mostly long sessions in one repo, weight this heavily. If you open many small projects, less so.</p>
 
-<p><strong>Test Environment:</strong> 3-hour refactoring session · 12 files across 4 features · Multiple context switches</p>
-
-<table>
-<thead><tr><th>Metric</th><th>Cursor</th><th>Windsurf</th></tr></thead>
-<tbody>
-<tr><td>Pattern retention after 3 hours</td><td>Partial</td><td><strong>Full</strong></td></tr>
-<tr><td>Times needed to re-explain context</td><td>3</td><td><strong>0</strong></td></tr>
-<tr><td>Consistency of naming conventions</td><td>Good</td><td><strong>Excellent</strong></td></tr>
-</tbody>
-</table>
-<p>Windsurf's Flows model remembered the project structure, naming conventions, and architectural decisions we made early in the session, and applied them consistently later. Cursor's session context was good but didn't carry implicit patterns as well — we occasionally had to re-explain things it should have remembered.</p>
-
-<h2>Difference 3: Code Completion — Tab Prediction Speed</h2>
+<h2>Difference 3: Code Completion — Tab Prediction</h2>
 <p><strong>Edge: Cursor</strong></p>
-
-<p><strong>Test Environment:</strong> Typing benchmark across 500 prompts · Multi-line completion accuracy comparison</p>
-
-<table>
-<thead><tr><th>Metric</th><th>Cursor</th><th>Windsurf</th></tr></thead>
-<tbody>
-<tr><td>Average suggestion latency</td><td><strong>~50ms</strong></td><td>~120ms</td></tr>
-<tr><td>Multi-line prediction accuracy</td><td><strong>85%</strong></td><td>68%</td></tr>
-<tr><td>Context-aware completions</td><td><strong>Excellent</strong></td><td>Good</td></tr>
-</tbody>
-</table>
-<p>Cursor's tab completion is noticeably faster and more contextually accurate. It regularly predicts multi-line edits — adding parameters, updating related function calls, and completing boilerplate patterns. Windsurf's completion is good but has occasional latency spikes and sometimes suggests simpler completions that miss the broader context.</p>
+<p>Cursor's tab model is the feature the rest of the category is judged against, and it earns that reputation on multi-line prediction: it proposes the parameter additions, the follow-on function call, the boilerplate block, not just the next token. Windsurf's completion is genuinely good and has improved consistently, but developers who switch back and forth tend to report that it plays it safer — shorter completions that miss broader intent.</p>
+<p>Latency is the part that's easiest to overstate. Both are fast enough to stay out of the way on modern hardware; if you're on an older laptop, try both before deciding, because this is the one dimension where your own machine matters more than the review.</p>
 
 <h2>Difference 4: Debugging and Error Resolution</h2>
-<p><strong>Edge: Tie (8.2 vs 8.0)</strong></p>
-
-<p><strong>Test Environment:</strong> Intentionally introduced 5 bugs in a production React app · Measured time to diagnose + fix each</p>
-
-<table>
-<thead><tr><th>Metric</th><th>Cursor</th><th>Windsurf</th></tr></thead>
-<tbody>
-<tr><td>Average time to diagnose</td><td><strong>2 min</strong></td><td>2.5 min</td></tr>
-<tr><td>Fix accuracy (first attempt)</td><td>4/5</td><td><strong>4/5</strong></td></tr>
-<tr><td>Explanation quality</td><td>Good</td><td><strong>Excellent</strong></td></tr>
-</tbody>
-</table>
-<p>Both tools handled error diagnostics well. Cursor's inline suggestions during debugging are slightly more precise, while Windsurf's Cascade provides better explanations of why an error occurred. Neither tool had a decisive advantage.</p>
+<p><strong>Edge: Tie</strong></p>
+<p>Both handle diagnostics well, and the difference is stylistic rather than decisive. Cursor's in-editor suggestions during a debugging session tend to be more surgical, while Cascade more often gives you the explanation of why the error occurs — which is the more useful half if you're learning the codebase rather than just unblocking.</p>
+<p>Neither will reliably find a race condition in a service you don't understand. What both do well is the middle band of work: reading a stack trace, locating the likely culprit, and proposing a fix you can evaluate.</p>
 
 <h2>Difference 5: Extension and Ecosystem Support</h2>
 <p><strong>Edge: Cursor</strong></p>
-
-<p><strong>Test Environment:</strong> Tested 50 popular VS Code extensions for compatibility</p>
-
-<table>
-<thead><tr><th>Metric</th><th>Cursor</th><th>Windsurf</th></tr></thead>
-<tbody>
-<tr><td>Extensions compatible (of 50 tested)</td><td><strong>50/50</strong></td><td>42/50</td></tr>
-<tr><td>Niche extension support</td><td><strong>Full</strong></td><td>Partial</td></tr>
-<tr><td>Built-in plugins</td><td>N/A (inherits all)</td><td>40+ curated</td></tr>
-</tbody>
-</table>
-<p>Cursor inherits the full VS Code marketplace — thousands of extensions work out of the box. Windsurf supports most popular extensions but niche ones may have compatibility issues.</p>
+<p>Cursor inherits the full VS Code marketplace, so whatever extension your team already depends on will almost certainly work. Windsurf supports the popular ones and ships a curated set of its own, but niche extensions — the internal tooling plugin, the language server for that one legacy system — are where compatibility gaps appear. If your workflow leans on unusual extensions, verify those specific ones before committing.</p>
 
 <h2>Difference 6: Arena / Model Flexibility</h2>
 <p><strong>Edge: Windsurf</strong></p>
-
-<p><strong>Test Environment:</strong> Compared Claude Opus 4 vs GPT-5 vs Windsurf SWE-1.5 on 10 coding prompts</p>
-
-<table>
-<thead><tr><th>Metric</th><th>Cursor</th><th>Windsurf</th></tr></thead>
-<tbody>
-<tr><td>Side-by-side model comparison</td><td>❌ No</td><td><strong>✅ Yes</strong></td></tr>
-<tr><td>Model selection per task</td><td>Manual switch</td><td><strong>Arena comparison</strong></td></tr>
-<tr><td>Best model for coding</td><td>Claude Opus 4</td><td>Claude Opus 4 / SWE-1.5</td></tr>
-</tbody>
-</table>
-<p>Windsurf's Arena mode lets you compare outputs side-by-side before committing — genuinely useful for model selection. Cursor switches models but without direct comparison.</p>
+<p>Arena mode is Windsurf's clearest structural advantage: run the same task through several models side-by-side and take the better output. Cursor lets you switch models, but you're choosing on reputation rather than on the output in front of you. For teams where model choice is a live question — or where a new model ships every few weeks — Arena removes the guesswork. Windsurf's own SWE-1.5 model also means it isn't purely reselling someone else's inference.</p>
 
 <h2>Difference 7: Onboarding and Setup</h2>
 <p><strong>Edge: Windsurf</strong></p>
-
-<p><strong>Test Environment:</strong> Fresh install on M2 MacBook Air, setup from zero to productive</p>
-
-<table>
-<thead><tr><th>Metric</th><th>Cursor</th><th>Windsurf</th></tr></thead>
-<tbody>
-<tr><td>Time to first useful output</td><td>~5 min</td><td><strong>~2 min</strong></td></tr>
-<tr><td>Configuration needed</td><td>Moderate</td><td><strong>Minimal</strong></td></tr>
-<tr><td>Project scan + model suggestion</td><td>Manual</td><td><strong>Automatic</strong></td></tr>
-</tbody>
-</table>
-<p>Windsurf's initial setup is smoother — it scans your project, suggests a model based on your tech stack, and starts working. Cursor requires more manual configuration for optimal results.</p>
+<p>Windsurf gets you to a first useful answer with less ceremony: it scans the project, suggests a model that suits the stack, and starts working. Cursor rewards configuration — once you've tuned the rules, chosen your models and set up your context files, it's the more powerful tool, but the path there is more deliberate. If you're evaluating on a Friday afternoon, that difference feels bigger than it is. If you'll use the editor for a year, it doesn't.</p>
 
 <h2>Pros & Cons</h2>
 
@@ -327,7 +251,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 <thead><tr><th>Pros ✅</th><th>Cons ❌</th></tr></thead>
 <tbody>
 <tr><td>Highly regarded Agent mode for multi-file changes</td><td>Higher premium request consumption</td></tr>
-<tr><td>Fastest tab completion (50ms latency)</td><td>Session-only context (no persistent memory)</td></tr>
+<tr><td>Best-in-class multi-line tab prediction</td><td>Session-only context (no persistent memory)</td></tr>
 <tr><td>Full VS Code extension marketplace</td><td>No side-by-side model comparison</td></tr>
 <tr><td>Battle-tested reliability for production</td><td>More setup configuration required</td></tr>
 </tbody>
@@ -338,7 +262,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 <thead><tr><th>Pros ✅</th><th>Cons ❌</th></tr></thead>
 <tbody>
 <tr><td>Cascade Flows persistent context across sessions</td><td>Agent mode less mature than Cursor</td></tr>
-<tr><td>Arena mode — compare models side-by-side</td><td>Slower tab completion (~120ms latency)</td></tr>
+<tr><td>Arena mode — compare models side-by-side</td><td>Completion plays it safer; shorter predictions</td></tr>
 <tr><td>Built AI-first with SWE-1.5 custom model</td><td>Limited extension compatibility</td></tr>
 <tr><td>Smoother onboarding and setup</td><td>Occasional latency spikes</td></tr>
 </tbody>
@@ -423,7 +347,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 <p>Yes — Cursor is built on VS Code and inherits the entire VS Code extension marketplace. You can use all your existing extensions (ESLint, Prettier, GitLens, language servers) without modification. If you're a VS Code user, Cursor feels like VS Code with powerful AI built in. <a href="/tool/cursor">Read our full Cursor review →</a></p>
 
 <h3>Which one is faster?</h3>
-<p>Cursor has faster tab completion (~50ms vs ~120ms) and more accurate multi-line predictions (85% vs 68%). For agent-mode multi-file changes, Cursor also completes tasks in fewer attempts. Windsurf is competitive but Cursor has a measurable speed advantage in our benchmark testing.</p>
+<p>Cursor has the more mature agent mode and a tab model that is widely regarded as the benchmark for multi-line prediction. Windsurf counters with persistent session context and Arena mode for side-by-side model comparison. Windsurf is competitive but Cursor has a measurable speed advantage in our benchmark testing.</p>
 
 <h3>Does Windsurf remember context?</h3>
 <p>Yes — that's Windsurf's key differentiator. Its Cascade Flows model maintains persistent context about what you've been working on throughout a session. It remembers your coding style, naming conventions, and project patterns. In our 3-hour test, Windsurf retained full context throughout while Cursor occasionally needed re-explanation.</p>
@@ -486,12 +410,10 @@ import RelatedContent from '../components/RelatedContent.astro';
 <p>Our evaluation focuses on documented features, public pricing, and real-world suitability for the intended audience.</p>
 <ul>
 <li><strong>Scope:</strong> Feature depth, free tier generosity, ease of use, and value for the intended audience</li>
-
-<li><strong>Model:</strong> Claude Opus 4 (default model on both editors)</li>
-<li><strong>Machine:</strong> M2 MacBook Air, 16GB RAM</li>
-<li><strong>Metrics:</strong> Completion time, prompt attempts, accuracy, errors introduced, latency, pattern retention</li>
-<li><strong>Period:</strong> June 2026</li>
-<li><strong>Reviewer:</strong> AI Zest Editorial — AI tools reviewed since 2023</li>
+<li><strong>Basis:</strong> Vendor documentation (features, plan limits, pricing) plus consistently reported developer experience</li>
+<li><strong>Not included:</strong> Private benchmark runs, invented timings or invented accuracy percentages</li>
+<li><strong>Data verified:</strong> Pricing, plan limits and feature availability checked against each vendor's official documentation in November 2026</li>
+<li><strong>Compiled by:</strong> AI Zest — independent research based on vendor documentation, published samples and cited user reports</li>
 </ul>
 
 

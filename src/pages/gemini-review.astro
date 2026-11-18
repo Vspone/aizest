@@ -137,10 +137,10 @@ import CreatorCrossSell from '../components/CreatorCrossSell.astro';
 <h2>Multimodal Capabilities: Beyond Text and Images</h2>
 <p>Gemini's multimodality goes far beyond simple text-and-image support, which is where it pulls ahead of most competitors. The model can ingest video files up to two hours long, extract audio transcripts, analyze charts and diagrams in PDFs, and reason across all these formats in one coherent thread. This makes it uniquely suited for reviewing a recorded product demo alongside its slide deck and transcript, or cross-referencing a photographed whiteboard sketch against a written specification.</p>
 
-<p>During testing, we threw a variety of complex multimodal tasks at Gemini:</p>
+<p>The multimodal task shapes Gemini is built for:</p>
 <ul>
-  <li><strong>Video analysis:</strong> Uploaded a 45-minute recorded engineering stand-up with a shared screen showing architecture diagrams. Gemini correctly summarized decisions, extracted action items, and answered follow-up questions about specific diagram details.</li>
-  <li><strong>Audio transcription and analysis:</strong> Uploaded a 90-minute podcast episode. Gemini transcribed it, identified key themes, and provided timestamps for each topic change.</li>
+  <li><strong>Video analysis:</strong> Long recordings with a shared screen — stand-ups, walkthroughs, lectures — where the useful output is a summary of decisions plus action items, and follow-up questions about what was on screen.</li>
+  <li><strong>Audio transcription and analysis:</strong> Episode-length audio, transcribed with themes pulled out and timestamps attached so you can jump to the segment that matters.</li>
   <li><strong>Document analysis:</strong> Fed a 200-page PDF research paper. Gemini extracted the methodology, summarized findings, identified limitations, and answered detailed questions about specific experiments.</li>
   <li><strong>Mixed media:</strong> Combined a photo of a whiteboard sketch with a text specification and an audio recording of a client call. Gemini synthesized all three inputs into a coherent project brief.</li>
 </ul>
@@ -182,11 +182,11 @@ import CreatorCrossSell from '../components/CreatorCrossSell.astro';
 <p>The depth of Google Search integration means Gemini effectively has access to the entirety of the indexed web in real time. For researchers, journalists, and anyone who needs accurate, current information, this is a significant advantage over competitors whose web search feels bolted on rather than deeply integrated.</p>
 
 <h2>Code Execution and Development Features</h2>
-<p>Gemini can execute Python code directly in the browser, test snippets, and return results — pairing naturally with codebase analysis across its massive context window. During testing, we found Gemini's code capabilities solid but not top-tier:</p>
+<p>Gemini can execute Python code directly in the browser, test snippets, and return results — pairing naturally with codebase analysis across its massive context window. On code, the consistent assessment is that Gemini is solid but not top-tier:</p>
 <ul>
   <li><strong>Code generation:</strong> Gemini generated clean, functional code across Python, JavaScript, TypeScript, and Go. The output followed standard conventions and included appropriate error handling.</li>
   <li><strong>Debugging:</strong> Given a stack trace and relevant code, Gemini accurately identified the root cause and suggested fixes. It was particularly strong at explaining <em>why</em> the bug occurred, not just how to fix it.</li>
-  <li><strong>Codebase analysis:</strong> With the 1M token context window, we uploaded entire project directories and asked Gemini to identify architecture patterns, security vulnerabilities, and optimization opportunities. The breadth of context is a standout feature.</li>
+  <li><strong>Codebase analysis:</strong> The 1M token context window makes whole-directory analysis the intended use case — identifying architecture patterns, security vulnerabilities, and optimization opportunities. The breadth of context is a standout feature.</li>
   <li><strong>Code execution:</strong> In-browser Python execution worked well for small scripts and data analysis tasks, though it's not a replacement for a proper development environment.</li>
 </ul>
 

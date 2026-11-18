@@ -3,6 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const tools = await getCollection('tools');
+
+// Editorial pages counted live so the About stats never go stale
+const editorialPages = Object.keys(import.meta.glob('/src/pages/*.astro')).filter(
+  (p) => !/\/(index|about|how-we-review|contact|privacy|terms|404|disclosure|editorial-policy)\.astro$/.test(p)
+);
+
 const categories = [
   { name: 'Writing & Content', icon: '✍️', slug: 'writing' },
   { name: 'Image Generation', icon: '🎨', slug: 'image' },
@@ -39,7 +45,7 @@ const categories = [
         About <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6]">AI Zest</span>
       </h1>
       <p class="text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-        We help you cut through the noise and find the perfect AI tool for every task.
+        An independent guide to AI tools for content creators — honest reviews, practical comparisons, and the workflows that actually ship finished video, voice, and short-form content.
       </p>
     </div>
 
@@ -47,15 +53,15 @@ const categories = [
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
       <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 text-center">
         <div class="text-2xl sm:text-3xl font-bold text-[#3B82F6]">{tools.length}+</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">AI Tools Reviewed</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">AI Tools Covered</div>
       </div>
       <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 text-center">
         <div class="text-2xl sm:text-3xl font-bold text-[#8B5CF6]">{categories.length}</div>
         <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Categories</div>
       </div>
       <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 text-center">
-        <div class="text-2xl sm:text-3xl font-bold text-[#3B82F6]">10</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">In-Depth Articles</div>
+        <div class="text-2xl sm:text-3xl font-bold text-[#3B82F6]">{editorialPages.length}+</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Reviews & Comparisons</div>
       </div>
     </div>
 
@@ -63,17 +69,48 @@ const categories = [
     <div class="mb-12">
       <div class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 sm:p-10">
         <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-          <span>🎯</span> Our Mission
+          <span>🎯</span> Why AI Zest Exists
         </h2>
         <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-          AI Zest was created because finding the right AI tool is harder than ever. With thousands of new 
-          AI products launching every month, it's overwhelming to separate the genuinely useful from the hype.
+          Content creators are drowning in AI tool lists. Most of them are written to rank, not to help — a hundred
+          tools in a grid, no pricing you can trust, no answer to the only question that matters: <em>does this fit
+          how I actually work?</em>
+        </p>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+          AI Zest is built around a narrower question. We focus on the tools that carry the weight of a creator's
+          workflow — AI voice generation, AI avatar video, and short-form video editing — and we go deeper on those
+          instead of cataloguing everything that launches each week.
         </p>
         <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-          We cover tools across every category — from writing assistants and image generators to coding copilots 
-          and video creators — so you can find what actually works for your specific needs. Every review is 
-          honest, informed, and updated regularly.
+          That means real pricing tables with the annual-vs-monthly difference spelled out, plan-limit comparisons that
+          decide whether a tool is usable at your volume, and side-by-sides that tell you when the cheaper option is
+          genuinely enough. Every price we publish is checked against the vendor's own pricing page, with the date it
+          was last verified on the page.
         </p>
+      </div>
+    </div>
+
+    <!-- Focus areas -->
+    <div class="mb-12">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+        <span>🎬</span> What We Focus On
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <a href="/best-ai-voice-generators-2026" class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 hover:border-[#3B82F6]/40 transition-all duration-200 tap-feedback block">
+          <div class="text-2xl mb-2">🎙️</div>
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-1">AI Voice Generation</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Voiceover for faceless video, audiobooks, podcasts, and localization — with the character and commercial-rights limits of each plan.</p>
+        </a>
+        <a href="/best-ai-avatar-video-generators-2026" class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 hover:border-[#3B82F6]/40 transition-all duration-200 tap-feedback block">
+          <div class="text-2xl mb-2">🧑‍💻</div>
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-1">AI Avatar Video</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Talking-head explainers and course content without a camera — plus which plans actually unlock custom avatars.</p>
+        </a>
+        <a href="/best-ai-video-editors-for-shorts-2026" class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 hover:border-[#3B82F6]/40 transition-all duration-200 tap-feedback block">
+          <div class="text-2xl mb-2">✂️</div>
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Short-Form Video Editing</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Captions, auto-cuts, and clip repurposing for TikTok, Reels, and Shorts — measured by export watermark and per-project limits.</p>
+        </a>
       </div>
     </div>
 
@@ -86,8 +123,8 @@ const categories = [
         <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 flex items-start gap-4">
           <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0 text-lg">✓</div>
           <div>
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Feature Completeness</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">We look at every feature, not just the marketing claims.</p>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Feature Accuracy</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Every capability claim is checked against the vendor's documentation, not their marketing copy.</p>
           </div>
         </div>
         <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 flex items-start gap-4">
@@ -101,14 +138,14 @@ const categories = [
           <div class="w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0 text-lg">👤</div>
           <div>
             <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Ease of Use</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">We evaluate learning curve and day-to-day usability.</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">How many steps and how much setup stand between you and a finished asset.</p>
           </div>
         </div>
         <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 flex items-start gap-4">
           <div class="w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600 dark:text-amber-400 shrink-0 text-lg">⚡</div>
           <div>
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Performance & Quality</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Output quality, speed, and reliability under real-world use.</p>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Output Quality</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Judged from the vendor's published samples, documented specs, and what users report — never invented.</p>
           </div>
         </div>
       </div>
@@ -131,22 +168,32 @@ const categories = [
           </div>
           <div>
             <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
-              AI Zest is run by a solo developer and AI enthusiast. Every review on this site begins with <strong>real, informed usage by a real person</strong> — signing up, using the tool, evaluating features and output quality. The content is then researched and drafted with AI assistance, and <strong>reviewed, edited, and approved by a human</strong> before publication.
+              AI Zest is run by a solo operator with a simple constraint: <strong>we would rather publish a page that is useful and truthful than one that pretends to be a lab test.</strong> So here is exactly what a review on this site is, and is not.
             </p>
             <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
-              This transparency matters: we want you to know exactly how the sausage is made. Every rating reflects real testing, every comparison is based on actual usage, and a human makes the final call on what goes live.
+              <strong>What it is:</strong> every plan tier, price, and usage limit is pulled from the vendor's own pricing and documentation pages, then re-checked and dated. Comparisons are built on those documented facts — how many minutes of video a plan gives you, whether a watermark appears on export, which tier unlocks custom avatars or professional voice cloning. Where public samples and user reports bear on quality, we say so and attribute it.
+            </p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
+              <strong>What it is not:</strong> we do not claim to have personally run every tool through a private benchmark, and we don't publish invented timings, invented side-by-side experiments, or a "hands-on score" we can't substantiate. If a claim isn't checkable against a vendor page or a cited source, it doesn't go on the site.
+            </p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
+              Affiliate links help pay for this work, and they never buy a ranking, a rating, or a softened verdict. If a tool we earn from has a real limitation, the limitation is written on the page.
             </p>
             <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              Have feedback or a tool suggestion? <a href="mailto:admin@aizest.net" class="text-[#3B82F6] hover:underline">Get in touch</a>.
+              Spotted something out of date or wrong? <a href="mailto:admin@aizest.net" class="text-[#3B82F6] hover:underline">Tell us</a> and we'll correct it — corrections are the point, not an embarrassment.
             </p>
           </div>
         </div>
       </div>
     </div>
     <div class="mb-12">
-      <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-        <span>📂</span> Categories We Cover
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+        <span>📂</span> The Full Directory
       </h2>
+      <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-6">
+        Creator tools are where we go deep. The rest of the directory stays online as a reference — same detail on
+        pricing and plan limits, just less editorial depth.
+      </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {categories.map(cat => (
           <a href={`/category/${cat.slug}`} 

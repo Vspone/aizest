@@ -61,7 +61,7 @@ const faqJsonLd = JSON.stringify({
       "name": "How accurate are Perplexity's citations?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Perplexity's citations are generally accurate and link directly to the source material. The system pulls from authoritative sources like academic papers, reputable news outlets, official documentation, and established websites. However, we recommend verifying critical citations, as no AI system is 100% perfect. In our assessment, approximately 95% of citations correctly supported the claims they were attached to."
+        "text": "Perplexity's citations are generally accurate and link directly to the source material. The system pulls from authoritative sources like academic papers, reputable news outlets, official documentation, and established websites. Citation quality varies by query, so no single accuracy percentage holds across topics. Because every claim carries a clickable source, you can verify anything critical in seconds — treat the citations as a starting point for checking, not a replacement for it."
       }
     },
     {
@@ -138,23 +138,23 @@ import CreatorCrossSell from '../components/CreatorCrossSell.astro';
 <p><strong>Rating: 4.6/5 · <a href="/tool/perplexity">Visit Perplexity website →</a></strong></p>
 
 <h2>AI Search: The Core Experience</h2>
-<p>Perplexity's foundational feature is its AI-powered search. Type any question into the search bar, and within seconds you get a synthesized answer pulling from multiple authoritative sources. During my testing, I queried everything from "What is the capital of Mongolia?" to "Explain the difference between TCP and UDP with examples" to "Summarize the latest Fed interest rate decision."</p>
+<p>Perplexity's foundational feature is its AI-powered search. Type any question into the search bar, and within seconds you get a synthesized answer pulling from multiple authoritative sources. Typical queries span the range the product is built for — simple factual lookups, technical explanations that need a correct answer with a source attached, and time-sensitive questions where the freshness of the citation matters more than the prose.</p>
 
-<p>The results are consistently impressive. For factual queries, Perplexity nearly always returns correct, well-sourced answers. The AI demonstrates strong reasoning — for complex questions, it breaks down the answer into logical sub-points, each with its own citation. For the TCP vs UDP query, it not only explained the technical differences but also included practical use cases for each protocol, cited from networking textbooks and documentation.</p>
+<p>For factual queries the pattern is consistent: an answer with each claim tied to a source. On technical questions it tends to break the explanation into sub-points, each carrying its own citation, which is what makes the output checkable rather than something you have to trust on faith — and checkable is the actual product here.</p>
 
 <p>What truly sets Perplexity apart from a standard LLM is the <strong>real-time web search</strong>. Ask about current events (e.g., "What happened in the stock market today?") and Perplexity searches the web for the latest information before generating its answer. This eliminates the knowledge cutoff problem that plagues standalone AI assistants like ChatGPT or Claude in their base configurations.</p>
 
 <h3>Follow-Up Questions and Context</h3>
 <p>One of Perplexity's best features is threaded conversation. After receiving an answer, you can ask follow-up questions, and Perplexity maintains the context of your entire conversation. This enables deep-dive research sessions where you start with a broad question and progressively narrow down to specific details — all without re-stating your original query.</p>
 
-<p>In practice, I used this for a research project on renewable energy policy. I started with "What are the most effective renewable energy policies in Europe?" and then followed up with "How does Germany's Energiewende compare to Denmark's wind energy strategy?" and "What are the cost-per-kWh differences?" Each follow-up built naturally on the previous context, and Perplexity adjusted its search strategy accordingly — a workflow that would have required dozens of separate Google searches.</p>
+<p>In practice that means a research thread stays coherent: start with a broad question, then narrow into comparisons and cost figures, and each follow-up inherits the context of the one before it. That is the difference between one conversation and a dozen separate searches you then have to stitch together yourself.</p>
 
 <h2>Pro Search: Deeper, Smarter Answers</h2>
 <p>Perplexity's Pro Search mode is the premium tier of its AI search engine. When you enable Pro Search, Perplexity uses more advanced AI models (GPT-4o, Claude 3.5 Sonnet, and Perplexity's own large models) to deliver answers that are not just comprehensive but genuinely insightful.</p>
 
 <p>The key difference is <strong>multi-step reasoning</strong>. In standard mode, Perplexity searches once and generates an answer. In Pro mode, it can perform multiple rounds of searching — finding initial information, identifying gaps, searching again for missing details, and then synthesizing everything into a more complete answer. This iterative approach produces noticeably better results for complex, multi-faceted questions.</p>
 
-<p>During testing, I asked both modes: "What are the economic and environmental trade-offs of nuclear power compared to solar energy?" Standard mode returned a solid overview with 6 sources. Pro mode returned a comprehensive analysis with 12 sources, including a comparative cost table, lifecycle emissions data, and regional case studies — clearly the product of multiple search iterations.</p>
+<p>The difference between the two modes shows up on a question with real trade-offs — something like the economic and environmental comparison between nuclear and solar power. Standard mode gives you a solid overview from a handful of sources. Pro mode runs several search iterations instead of one, so you get more sources, a comparative table, and material you would otherwise have had to assemble across three or four separate searches. Whether that extra depth is worth the query cost depends entirely on what you are doing with the answer.</p>
 
 <p>Free users get 5 Pro Searches every 4 hours, which is generous enough for light use. Heavy researchers will want the Pro subscription for unlimited access.</p>
 
@@ -163,7 +163,7 @@ import CreatorCrossSell from '../components/CreatorCrossSell.astro';
 
 <p>This is a game-changer for research credibility. Unlike ChatGPT or Claude, which may confidently state incorrect information with no way to verify, Perplexity makes every claim auditable. If you're writing an academic paper, a news article, or a business report, you can verify each source yourself before citing it.</p>
 
-<p>In my testing, approximately 95% of citations were accurate and correctly supported the claims they were attached to. The remaining 5% included occasional mismatches — a citation that technically contained the mentioned fact but in a different context, or a source that was tangentially related but not directly supportive. While not perfect, this is dramatically better than any un-cited AI assistant, and the ability to click through and verify makes the system trustworthy enough for serious research.</p>
+<p>The honest assessment of citation quality is that it varies by query, and no single accuracy percentage holds across topics. What matters structurally is that every claim carries a clickable source — so a citation you can open and check in two seconds beats a confident paragraph you have to take on faith. The known failure modes are worth naming: a source that technically contains the fact but in a different context, or a link that's tangentially related rather than directly supportive. That's why the citations are a starting point for verification, not a substitute for it.</p>
 
 <h2>Focus Modes: Surgical Source Filtering</h2>
 <p>Perplexity's focus modes let you restrict the search to specific types of sources. You can choose from:</p>
@@ -183,7 +183,7 @@ import CreatorCrossSell from '../components/CreatorCrossSell.astro';
 <h2>Collections: Organizing Your Research</h2>
 <p>Perplexity's Collections feature allows you to save and organize your research threads into folders. This turns Perplexity from a simple Q&A tool into a full-fledged research management system. Each thread in a collection preserves the full conversation history, so you can revisit your research trail weeks later.</p>
 
-<p>During my evaluation, I used Collections for a competitive analysis project. I created a collection, added threads for each competitor, and within each thread explored their products, pricing, market positioning, and recent news. The ability to revisit and build upon previous research without starting from scratch made the Collections feature one of Perplexity's most underrated capabilities.</p>
+<p>Collections is the underrated feature here. The workflow it is built for: one collection per project, a thread per competitor, each thread covering products, pricing, market positioning and recent news. The point is that the whole trail is still there weeks later — you build on it instead of starting over.</p>
 
 <h2>File Uploads and Document Analysis</h2>
 <p>Pro subscribers can upload files (PDFs, images, text files) directly into Perplexity, and the AI will analyze them in combination with web search. This is powerful for document research — upload a company's annual report PDF and ask Perplexity to "Compare the revenue growth with industry averages from this year's market reports."</p>

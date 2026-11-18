@@ -1,12 +1,22 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const tools = await getCollection('tools');
+
+// Counted live so these numbers can't drift again
+const editorialPages = Object.keys(import.meta.glob('/src/pages/*.astro')).filter(
+  (p) => !/\/(index|about|how-we-review|contact|privacy|terms|404|disclosure|editorial-policy)\.astro$/.test(p)
+);
+
+const categories = ['Writing', 'Image', 'Video', 'Audio', 'Coding', 'Marketing', 'Productivity', 'Data', 'Design', 'Business'];
 
 const author = {
-  name: 'AI Zest Editorial Team',
-  role: 'AI Tools Researcher & Reviewer',
-  bio: 'AI Zest is a solo-operated platform dedicated to helping professionals and enthusiasts discover the best AI tools. Every review and comparison is researched, tested, and written by a human editor with extensive experience in AI technology, software evaluation, and content creation.',
-  approach: 'Each tool on AI Zest is evaluated through feature analysis, pricing comparison, user research, and informed usage. We prioritize transparency — disclosing affiliate relationships, noting AI assistance in content creation, and clearly separating editorial content from tool listings.',
-  contact: 'Have questions or suggestions? Reach out through our contact page or connect with us on social media.',
+  name: 'AI Zest',
+  role: 'Independent AI Tools Research',
+  bio: 'AI Zest is a solo-operated site covering AI tools for content creators — AI voice generation, AI avatar video, and short-form video editing. Every price, plan limit and feature claim is taken from the vendor\'s own documentation and dated, so you can see when it was last checked and go verify it yourself.',
+  approach: 'Each tool is compared on what the vendor actually documents: plan tiers, usage caps, export restrictions, watermark rules and which features unlock at which price. Where a claim depends on published samples or user reports, we attribute the source instead of presenting it as our own measurement. We do not run private benchmarks, and we do not publish invented test results or hands-on scores we cannot show you evidence for.',
+  contact: 'Have questions, corrections, or a tool suggestion? ',
 };
 
 const jsonLd = JSON.stringify({
@@ -15,18 +25,19 @@ const jsonLd = JSON.stringify({
   name: author.name,
   description: author.bio,
   url: 'https://aizest.net/author/aizest',
-  knowsAbout: 'AI Tools, Software Reviews, Technology',
+  knowsAbout: ['AI Voice Generation', 'AI Avatar Video', 'AI Video Editing', 'AI Tools'],
+  worksFor: { '@type': 'Organization', name: 'AI Zest', url: 'https://aizest.net' },
 });
 ---
 
 <BaseLayout
-  title="About AI Zest — Meet the Team Behind the Reviews"
-  description="Learn about AI Zest, the editorial team behind our AI tool reviews, comparisons, and guides. Discover our review methodology and commitment to transparency."
+  title="About the Editor — How AI Zest Reviews Are Made"
+  description="AI Zest is a solo-operated, independent guide to AI tools for content creators. Here is exactly how our reviews are researched, sourced and dated."
   canonical="/author/aizest"
   jsonLd={jsonLd}
 >
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    
+
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-8" aria-label="Breadcrumb">
       <a href="/" class="hover:text-[#3B82F6]">Home</a>
@@ -54,20 +65,24 @@ const jsonLd = JSON.stringify({
     <div class="mb-10 p-6 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
       <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">How We Review Tools</h2>
       <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{author.approach}</p>
+      <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-3">
+        Read the full breakdown on <a href="/how-we-review" class="text-[#3B82F6] hover:underline">our review process</a> and
+        <a href="/editorial-policy" class="text-[#3B82F6] hover:underline">editorial policy</a>.
+      </p>
     </div>
 
     <!-- Stats -->
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
       <div class="p-5 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/10 dark:to-blue-900/10 border border-gray-200 dark:border-gray-700 text-center">
-        <div class="text-2xl font-bold text-[#3B82F6]">100+</div>
-        <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">AI Tools Reviewed</div>
+        <div class="text-2xl font-bold text-[#3B82F6]">{tools.length}+</div>
+        <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">AI Tools Covered</div>
       </div>
       <div class="p-5 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/10 dark:to-pink-900/10 border border-gray-200 dark:border-gray-700 text-center">
-        <div class="text-2xl font-bold text-[#8B5CF6]">30+</div>
-        <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">In-Depth Articles</div>
+        <div class="text-2xl font-bold text-[#8B5CF6]">{editorialPages.length}+</div>
+        <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">Reviews & Comparisons</div>
       </div>
       <div class="p-5 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/10 dark:to-teal-900/10 border border-gray-200 dark:border-gray-700 text-center">
-        <div class="text-2xl font-bold text-emerald-600">10</div>
+        <div class="text-2xl font-bold text-emerald-600">{categories.length}</div>
         <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">Categories Covered</div>
       </div>
     </div>
@@ -76,15 +91,16 @@ const jsonLd = JSON.stringify({
     <div class="mb-10">
       <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Trust & Transparency</h2>
       <div class="space-y-3 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-        <p><strong>Affiliate Disclosure:</strong> Some links on AI Zest are affiliate links. If you purchase a tool through these links, we may earn a commission at no extra cost to you. This helps support the site and keep our reviews free.</p>
-        <p><strong>AI Assistance:</strong> We use AI tools to assist with research and drafting, but every article is reviewed, edited, and approved by a human editor before publication.</p>
-        <p><strong>Editorial Independence:</strong> Our rankings and reviews are based on independent testing and analysis. No tool can pay for a better rating or placement.</p>
+        <p><strong>Affiliate Disclosure:</strong> Some links on AI Zest are affiliate links. If you purchase a tool through these links, we may earn a commission at no extra cost to you. Commission never buys a ranking, a rating, or a softened verdict.</p>
+        <p><strong>AI Assistance:</strong> We use AI tools to assist with research and drafting, but every article is reviewed, edited, and approved by a human before publication.</p>
+        <p><strong>Editorial Independence:</strong> Rankings are based on documented facts — pricing, plan limits, feature gates and cited user reports. No tool can pay for a better rating or placement, and we say so on the page when a limit we'd rather not mention exists.</p>
+        <p><strong>Corrections:</strong> Prices and features change. Every page carries the date its data was last verified. If you spot something stale, tell us and we'll fix it.</p>
       </div>
     </div>
 
     <!-- Contact -->
     <div class="p-6 rounded-xl bg-gradient-to-br from-[#3B82F6]/5 to-[#8B5CF6]/5 dark:from-[#3B82F6]/10 dark:to-[#8B5CF6]/10 border border-gray-200 dark:border-gray-700">
-      <p class="text-sm text-gray-600 dark:text-gray-400">{author.contact} <a href="/contact" class="text-[#3B82F6] hover:underline">Get in touch →</a></p>
+      <p class="text-sm text-gray-600 dark:text-gray-400">{author.contact}<a href="/contact" class="text-[#3B82F6] hover:underline">Get in touch →</a></p>
     </div>
 
   </div>

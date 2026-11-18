@@ -115,6 +115,44 @@ const pricingSummary = pricing_tiers && pricing_tiers.length > 0
 
 const topFeatures = features.slice(0, 3).join(', ');
 
+// SERP meta description. Price and rating lead — they are the strongest click
+// hooks and must survive Google's ~155-char snippet truncation. The unique
+// summary follows, trimmed to whatever budget is left.
+// The previous version appended the identical 90-char boilerplate to all ~100
+// tool pages and produced a double period wherever the markdown summary
+// already ended in one (`marketers.. Pricing:`).
+const META_DESC_BUDGET = 155;
+function buildMetaDescription(toolName: string, summary: string, price: string, score: number): string {
+  const lead = `${toolName} review: ${price}, rated ${score}/5.`;
+  const room = META_DESC_BUDGET - lead.length - 1;
+  // Price + rating alone can fill the snippet on tools with long price strings.
+  if (room < 40) return lead;
+
+  let text = summary.trim().replace(/\.+$/, '');
+  if (text.length > room) {
+    text = text.slice(0, room);
+    // Prefer a clause boundary over a bare word boundary: cutting at a word
+    // can still leave half a compound behind ("…rank tracking, and site.").
+    const boundary = Math.max(
+      text.lastIndexOf(', '),
+      text.lastIndexOf('; '),
+      text.lastIndexOf(' — '),
+      text.lastIndexOf(' and '),
+    );
+    if (boundary > room * 0.55) {
+      text = text.slice(0, boundary);
+    } else {
+      const lastSpace = text.lastIndexOf(' ');
+      if (lastSpace > room * 0.55) text = text.slice(0, lastSpace);
+      // Even a word-boundary cut can land on a connective ("…Magic Clips that.").
+      const dangling = /[\s,;:.—–-]+\b(that|which|and|or|with|for|to|the|a|an|of|in|on|by|from|as|into|using|including|plus|so|but|while|when|is|are)$/i;
+      while (dangling.test(text)) text = text.replace(dangling, '');
+    }
+    text = text.replace(/[\s,;:.—–-]+$/, '');
+  }
+  return text ? `${lead} ${text}.` : lead;
+}
+
 const faqItems = [
   {
     name: `What is ${name}?`,
@@ -228,7 +266,7 @@ const breadcrumbJsonLd = JSON.stringify({
 
 <BaseLayout 
   title={discontinued ? `${name} — Discontinued (${discontinued_date}) — AI Zest` : `${name} Review 2026 — Pricing, Features & Rating — AI Zest`}
-  description={discontinued ? `${name} is no longer available: ${description} See recommended alternatives.` : `${name} review: ${description}. Pricing: ${pricing}. Rating: ${rating}/5. Compare features, pros, cons, alternatives, and find the best AI tool for your needs.`}
+  description={discontinued ? `${name} is no longer available: ${description.trim().replace(/\.*$/, '.')} See recommended alternatives.` : buildMetaDescription(name, description, pricing, rating)}
   canonical={`/tool/${slug}`}
   type="article"
   jsonLd={jsonLd}

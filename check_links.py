@@ -2,6 +2,15 @@ import os
 import re
 from collections import defaultdict
 
+def strip_code(html: str) -> str:
+    """Remove inline <script>/<style> bodies before scanning for links.
+
+    Client-side code builds hrefs at runtime — the search dropdown renders
+    `<a href="/tool/${e.slug}">` — and those template literals are not static
+    links, so scanning them reports phantom broken links.
+    """
+    return re.sub(r'<(script|style)\b[^>]*>.*?</\1>', '', html, flags=re.S | re.I)
+
 dist = 'dist'
 html_files = []
 for root, dirs, files in os.walk(dist):
@@ -19,7 +28,7 @@ internal_link_count = 0
 for html_file in html_files:
     rel_path = os.path.relpath(html_file, dist)
     with open(html_file, 'r', errors='ignore') as f:
-        content = f.read()
+        content = strip_code(f.read())
     
     for match in re.finditer(r'href="([^"]+)"', content):
         href = match.group(1)
@@ -59,7 +68,7 @@ else:
 for html_file in html_files:
     rel_path = os.path.relpath(html_file, dist)
     with open(html_file, 'r', errors='ignore') as f:
-        content = f.read()
+        content = strip_code(f.read())
     for match in re.finditer(r'<a\s+href="([^"]*)"[^>]*>([^<]+)</a>', content):
         text = match.group(2).strip().lower()
         href = match.group(1)

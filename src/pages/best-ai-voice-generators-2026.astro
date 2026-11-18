@@ -26,7 +26,7 @@ const breadcrumbLd = {
 const faqLd = {
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What is the best AI voice generator overall?", "acceptedAnswer": { "@type": "Answer", "text": "ElevenLabs is the strongest all-round AI voice generator for producing audio: 74 languages, cloning from a short sample, and a free tier with 10,000 credits a month. Starter is $6/month for 30,000 credits and Creator is $22/month for 121,000 credits. If your job is listening to text rather than producing it, Speechify is the better fit." } },
+    { "@type": "Question", "name": "What is the best AI voice generator overall?", "acceptedAnswer": { "@type": "Answer", "text": "ElevenLabs is the strongest all-round AI voice generator for producing audio: 90+ languages on its flagship Eleven v4 model (32 on Flash v2.5), cloning from a short sample, and a free tier with 10,000 credits a month. Starter is $6/month for 30,000 credits and Creator is $22/month for 121,000 credits. If your job is listening to text rather than producing it, Speechify is the better fit." } },
     { "@type": "Question", "name": "How much does AI voice generation cost per minute?", "acceptedAnswer": { "@type": "Answer", "text": "On ElevenLabs, one credit is roughly one character, so 1,000 characters — about a minute of speech — costs about 1,000 credits: roughly $0.18-0.20 per minute on Starter and about $0.17 on Pro. Murf's API publishes pay-as-you-go rates of $0.01 per 1,000 characters on Falcon 2.1 and $0.03 per 1,000 on Gen2, which is roughly $0.15-0.45 per minute depending on the model." } },
     { "@type": "Question", "name": "Can I clone my own voice?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, on several tools. ElevenLabs offers instant cloning from a one-to-two-minute clean sample and Professional Voice Cloning from about 30 minutes of reference audio on paid plans. Kits AI includes instant and professional cloning from its $10/month Starter tier. All of these require your consent and, for a third party's voice, their explicit consent." } },
     { "@type": "Question", "name": "Is Speechify a voice generator?", "acceptedAnswer": { "@type": "Answer", "text": "Not in the same sense as ElevenLabs. Speechify is primarily a text-to-speech reader — it turns articles, PDFs and documents into audio you listen to — with 1,000+ voices and 60+ languages on Premium. Speechify Studio is the separate product for producing voiceover and dubbing." } },
@@ -58,7 +58,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
       </tr>
     </thead>
     <tbody>
-      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>ElevenLabs</strong></td><td class="py-2">Producing narration</td><td class="py-2">Free / $6/mo</td><td class="py-2">74 languages, cloning, dubbing</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>ElevenLabs</strong></td><td class="py-2">Producing narration</td><td class="py-2">Free / $6/mo</td><td class="py-2">90+ languages (v4), cloning, dubbing</td></tr>
       <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Descript</strong></td><td class="py-2">Voice inside a video edit</td><td class="py-2">Free / $16/mo yearly</td><td class="py-2">Overdub plus transcript editing</td></tr>
       <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Speechify</strong></td><td class="py-2">Listening to text</td><td class="py-2">Free / $139/yr</td><td class="py-2">Reader app, 5x speed, 1,000+ voices</td></tr>
       <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Murf</strong></td><td class="py-2">Pay-as-you-go TTS</td><td class="py-2">$10 free credit</td><td class="py-2">$0.01 per 1,000 characters via API</td></tr>
@@ -72,7 +72,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
 </div>
 
 <h2>1. ElevenLabs — Best for Producing Narration</h2>
-<p>ElevenLabs is the benchmark for generated speech. The current flagship model is Eleven v4, marketed as the most emotive text-to-speech model the company has shipped; Flash v2.5 targets a median of about 100ms latency for conversational use. The pricing page lists 74 languages across all paid tiers, and the free tier still includes 10,000 credits a month — enough to finish a short pilot and judge the voice quality yourself.</p>
+<p>ElevenLabs is the benchmark for generated speech. The current flagship model is Eleven v4, marketed as the most emotive text-to-speech model the company has shipped; Flash v2.5 targets a median of about 100ms latency for conversational use. Language coverage depends on which TTS model you pick: 90+ languages on Eleven v4, 70+ on v3, 32 on Flash v2.5, 29 on Multilingual v2, and the free tier still includes 10,000 credits a month — enough to finish a short pilot and judge the voice quality yourself.</p>
 <p>The billing unit is characters: one character of text costs about one credit. That makes the per-minute maths simple and slightly uncomfortable — a minute of speech is roughly 1,000 characters, so Starter's 30,000 credits is about 30 minutes a month and Creator's 121,000 credits about two hours. Professional Voice Cloning (from around 30 minutes of reference audio) requires a paid plan; instant cloning works from a short clean sample.</p>
 
 <table>
@@ -84,7 +84,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
 <thead><tr><th>Pros</th><th>Cons</th></tr></thead>
 <tbody>
 <tr><td>✔ Best-documented quality in the category</td><td>✘ Character credits punish long scripts</td></tr>
-<tr><td>✔ 74 languages plus AI dubbing for localisation</td><td>✘ Professional cloning is paid-tier only</td></tr>
+<tr><td>✔ 90+ languages on Eleven v4, plus AI dubbing for localisation</td><td>✘ Professional cloning is paid-tier only</td></tr>
 <tr><td>✔ Instant cloning from 1-2 minutes of audio</td><td>✘ Costs escalate sharply above Creator</td></tr>
 <tr><td>✔ API, SDKs and voice library for production use</td><td>✘ Consent checks add friction to every clone</td></tr>
 </tbody>
@@ -219,7 +219,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
 <h2>Frequently Asked Questions</h2>
 
 <h3>What is the best AI voice generator overall?</h3>
-<p>For producing audio, ElevenLabs: 74 languages, cloning from a short sample, 10,000 free credits a month, Starter at $6/month and Creator at $22/month. For listening to text instead of producing it, Speechify is the better buy.</p>
+<p>For producing audio, ElevenLabs: 90+ languages on Eleven v4 (32 on Flash v2.5), cloning from a short sample, 10,000 free credits a month, Starter at $6/month and Creator at $22/month. For listening to text instead of producing it, Speechify is the better buy.</p>
 
 <h3>How much does AI voice generation cost per minute?</h3>
 <p>On ElevenLabs one credit ≈ one character, so a minute of speech (≈1,000 characters) costs about 1,000 credits — roughly $0.20/minute on Starter and $0.17 on Pro. Murf publishes $0.01 per 1,000 characters on Falcon 2.1 and $0.03 on Gen2, roughly $0.15-0.45 per minute depending on model.</p>

@@ -3,80 +3,98 @@
 Canonical prices live in `src/data/product-facts.ts` (`ELEVENLABS_PRICING`,
 `SYNTHESIA_PRICING`, `SUBMAGIC_PRICING`). `check_product_facts.py` audits the built
 HTML and fails if a price attributed to one of the three products is not on the
-official list — so a stale literal can no longer go unnoticed, but it still has to
-be *fixed by hand* until every page interpolates the constant.
-
-This file tracks which pages interpolate and which still carry literals.
+official list — so a stale literal cannot go unnoticed.
 
 ## Done — batch 1 (2026-11-18)
 
 | File | What was converted |
 |---|---|
-| `src/pages/elevenlabs-review.astro` | FAQ JSON-LD, 6-row plan table, prose, Murf comparison row |
-| `src/pages/synthesia-review.astro` | FAQ JSON-LD, plan table, two prose blocks (also gained the import) |
-| `src/pages/submagic-review.astro` | FAQ array (2 answers), plan table, pros list, meta description |
-| `src/pages/index.astro` | Creator Toolkit card description |
-| `src/pages/best-ai-voice-generators-2026.astro` | FAQ JSON-LD, summary table, comparison table, prose |
-| `src/pages/best-ai-avatar-video-generators-2026.astro` | FAQ JSON-LD (×2), summary table, comparison table, prose (also gained the import) |
-| `src/pages/best-ai-video-editors-for-shorts-2026.astro` | FAQ JSON-LD, summary table, comparison table, prose (also gained the import) |
+| `elevenlabs-review.astro` | FAQ JSON-LD, 6-row plan table, prose, Murf comparison row |
+| `synthesia-review.astro` | FAQ JSON-LD, plan table, prose, comparison row |
+| `submagic-review.astro` | FAQ array, plan table, pros list, meta description |
+| `index.astro` | Creator Toolkit card description |
+| `best-ai-voice-generators-2026.astro` | FAQ JSON-LD, summary table, comparison table, prose |
+| `best-ai-avatar-video-generators-2026.astro` | FAQ JSON-LD ×2, summary table, comparison table, prose |
+| `best-ai-video-editors-for-shorts-2026.astro` | FAQ JSON-LD, summary table, comparison table, prose |
 
-Also in batch 1:
+## Done — batch 2 (2026-11-18)
 
-- `summary` / `entry` strings are now **derived** from the plan fields instead of
-  repeating the prices — otherwise updating `starter.price` would silently leave
-  the summary line stale.
-- A bare `74` in a "Languages" table cell was found on
-  `best-ai-voice-generators-2026` — the old guard only matched the phrase
-  "74 languages", so a cell with just the number slipped through. The guard now
-  flags a bare `74` on the language pages too.
+| File | What was converted |
+|---|---|
+| `best-ai-tools-for-marketers-2026.astro` | FAQ JSON-LD, summary table, comparison table, prose, "Pricing:" lines |
+| `best-ai-tools-for-youtube-creators-2026.astro` | FAQ JSON-LD ×3, summary table, comparison table, three "Pricing:" lines, pros/cons cell |
+| `best-ai-tools-for-startups-2026.astro` | FAQ JSON-LD, summary table, comparison table, two "Pricing:" lines, prose |
+| `heygen-vs-synthesia.astro` | pricing table cells, review pricing line, head-to-head row, FAQ, prose |
+| `elevenlabs-vs-murf-vs-speechify.astro` | FAQ, entry-price line |
+| `best-ai-tools-for-small-business-2026.astro` | two "Pricing:" lines, upsell list range |
+| `best-ai-video-generators-2026.astro` | comparison row, "Pricing:" line |
+| `best-ai-tools-for-bloggers-2026.astro` | two "Pricing:" lines, comparison row |
+| `best-free-ai-tools-2026.astro` | "Pricing:" line |
+| `best-ai-audio-tools-2026.astro` | "Pricing:" line |
+| `best-ai-music-generators-2026.astro` | "Pricing:" line |
 
-## Remaining — batch 2
+Every `.astro` page that quotes one of the three vendors now imports the constant.
+`summary` / `entry` are derived from the plan fields rather than repeating prices,
+so a vendor price change has exactly one place to land.
 
-Counted by attribution heuristic (product named in the 90 chars before the amount,
-no competitor named); per-minute/derived figures excluded. Verify with a fresh
-scan before starting — line numbers move.
+## Known limitation — `src/content/tools/*.md`
 
-| Literals | File |
-|---:|---|
-| 14 | `src/pages/best-ai-tools-for-marketers-2026.astro` |
-| 13 | `src/pages/best-ai-tools-for-youtube-creators-2026.astro` |
-| 10 | `src/pages/best-ai-tools-for-startups-2026.astro` |
-| 7 | `src/pages/heygen-vs-synthesia.astro` |
-| 3 | `src/pages/elevenlabs-vs-murf-vs-speechify.astro` |
-| 3 | `src/pages/best-ai-tools-for-small-business-2026.astro` |
-| 2 | `src/pages/best-ai-video-generators-2026.astro` |
-| 2 | `src/content/tools/submagic.md` |
-| 1 | `src/pages/best-ai-tools-for-bloggers-2026.astro` |
-| 1 | `src/content/tools/synthesia.md` |
+`elevenlabs.md`, `synthesia.md`, `submagic.md` carry prices in YAML frontmatter
+(`pricing`, `pricing_tiers[].price`) and inside prose/tables in the markdown body.
+Markdown frontmatter cannot import TypeScript, so these stay literal.
 
-Total ≈ 56. The two `src/content/tools/*.md` files **cannot** import the constant —
-markdown content collections have no TS imports available in this setup, so those
-two stay literal and rely on the guard to flag drift when a vendor changes price.
+Overriding only the frontmatter at render time was rejected on purpose: the body
+table would keep the old numbers, leaving one page that contradicts itself — worse
+than a page that is uniformly stale and gets flagged by the guard. Fixing this
+properly means converting those three tool pages to `.astro` or generating the
+pricing block from the content collection. Until then: when a vendor changes price,
+the guard fails on the built tool page and the number is edited by hand in the
+markdown.
 
-## Procedure per file
+## Guard behaviour (as of batch 2)
 
-1. Add/expand the import: `import { X_PRICING } from '../data/product-facts';`
-2. Frontmatter strings and `JSON.stringify` blocks → template literal
-   (`` `Starter ${X_PRICING.starter.price}` ``), **not** `"..." + $` — the `$` form
-   only interpolates inside backticks.
-3. Template body → `{X_PRICING.starter.price}`.
-4. Watch the closing braces on JSON-LD lines: each entry ends `} },` — one `}`
-   closes `acceptedAnswer`, one closes the question object. A third `}` breaks
-   esbuild with "Expected ']' but found '}'".
-5. `npm run build && python3 check_product_facts.py` — both must pass.
-6. To prove the wiring actually reaches the page, temporarily change a value in
-   `product-facts.ts`, rebuild, grep the built HTML for the new number, then revert
-   and rebuild. The allow-list check will fail while the test value is in place;
-   that is expected.
+`python3 check_product_facts.py` — run against `dist/`, exit 1 on failure.
 
-## Verification done for batch 1
+1. **Language coverage** — 10 pages; `74` is forbidden as a phrase *and* as a bare
+   number (a table cell reading just `<td>74</td>` used to slip through).
+2. **Price attribution** — 151 claims. The lead-in is now the current *sentence or
+   table row*, not a fixed 90-character window: a long sentence can name the
+   product first and the price 150 characters later, which the old window missed.
+   `</td>`/`</th>` are collapsed to whitespace so a row keeps its product name;
+   `</tr>`, `</p>`, `</li>`, `</h*>` start a new unit.
+   Excluded as non-plan figures: per-minute economics, deltas ("the extra $10
+   buys"), approximations, related-tool carousels.
+3. **Unevaluated template literals** — any `${X_PRICING…}` or bare `X_PRICING.` in
+   the built HTML fails. This catches the case where an interpolation is typed into
+   a double-quoted string and renders as visible junk; no price rule can catch that,
+   because there is no amount to compare.
 
-- Constant-drift test: `SYNTHESIA_PRICING.starter.price` → `$20/mo`, rebuilt, and
+All three have been self-tested by injecting the failure into a built page and
+confirming the check fails, then restoring it.
+
+## Errors found and fixed during the migration
+
+- `best-ai-tools-for-small-business-2026`: Synthesia Starter listed as `$18/mo`.
+- `best-ai-tools-for-small-business-2026`: Synthesia given a **Creator** tier at
+  `$59/month` — that is ElevenLabs' tier name; `$59` is Synthesia's Pro *annual*
+  price.
+- `heygen-vs-synthesia`: Synthesia given a **Creator** tier at `$89/mo`, annual
+  quoted as `$64/mo`, credits as "30 min". Synthesia's tiers are Basic / Starter /
+  **Pro** / Enterprise; Pro is `$89/mo` or `$59/mo` billed yearly (`$708/yr`),
+  6,000 credits ≈ 60 minutes.
+- Four pages sold ElevenLabs' entry plan as `$5/mo` — that is the *annual* price.
+  Monthly list is `$6/mo`. All four now say `$6/mo` with the yearly figure labelled.
+- `best-ai-voice-generators-2026`: a bare `74` in the Languages table cell.
+- Murf column on `elevenlabs-review` verified against four sources ($19 Creator /
+  $66 Business annual vs $29 / $99 monthly) and now labelled as annual.
+
+## Verification log
+
+- Constant-drift test: `SYNTHESIA_PRICING.starter.price` → `$20/mo`, rebuild, and
   `$20/mo` appeared on `synthesia-review`, `index` and
   `best-ai-avatar-video-generators-2026`; reverted, rebuilt, guard green.
-- Guard self-test: injecting `<td>74</td>` into the built page fails the check with
-  the surrounding text; restoring it turns the check green.
-- Competitor spot-check: the Murf column on `elevenlabs-review`
-  ($19 Creator / $66 Business, both annual) reconciles with Murf's published
-  monthly prices ($29 / $99) across four independent sources. Both cells now say
-  "annual billing" so the reader is not misled.
+- Guard self-tests: bare `74` → fails; long-sentence `$18/mo` → fails;
+  `${SYNTHESIA_PRICING.starter.price}` leak → fails. All restore to green.
+- Competitor spot-check: Murf $19/$66 (annual) and Synthesia 140+ languages on all
+  tiers (1-Click translation is the Enterprise-only part) both confirmed against
+  vendor pages before leaving them alone.

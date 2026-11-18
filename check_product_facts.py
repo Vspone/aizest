@@ -76,6 +76,12 @@ def parse_allowlist(path: str) -> dict:
 def strip_tags(html: str) -> str:
     html = re.sub(r'<script[^>]*>.*?</script>', ' ', html, flags=re.S | re.I)
     html = re.sub(r'<style[^>]*>.*?</style>', ' ', html, flags=re.S | re.I)
+    # Keep table cells inside one unit (the product name lives in a previous cell)
+    # but start a new unit at row / paragraph / list-item boundaries. Otherwise a
+    # row like "Synthesia · AI avatars · $19/mo" loses the product name entirely.
+    html = re.sub(r'</(?:td|th)>', ' ', html, flags=re.I)
+    html = re.sub(r'</(?:tr|p|li|h[1-6]|div|section|article|dd|dt|figcaption)>', ' . ', html, flags=re.I)
+    html = re.sub(r'<br\s*/?>', ' . ', html, flags=re.I)
     html = re.sub(r'<[^>]+>', ' ', html)
     return ' '.join(html.split())
 
@@ -131,6 +137,14 @@ def check_languages(problems):
                 problems.append(f'{page}: missing "varies by model" qualifier')
 
 
+def _value(amount: str) -> float:
+    """'$18.33' → 18.33, for comparisons. Unparseable → 0."""
+    try:
+        return float(re.sub(r'[^\d.]', '', amount) or 0)
+    except ValueError:
+        return 0.0
+
+
 def check_prices(problems, allow):
     checked = 0
     for page, path in all_pages():
@@ -138,7 +152,14 @@ def check_prices(problems, allow):
         if not any(p in text for p in OURS):
             continue
         for m in AMOUNT.finditer(text):
-            lead_raw = text[max(0, m.start() - LEAD):m.start()]
+            # Attribute within the sentence, not a fixed character window: a long
+            # sentence can name the product at the start and the price at the end,
+            # and a 90-character lead-in silently missed those (real cases found on
+            # best-ai-tools-for-youtube-creators-2026 and best-ai-tools-for-startups).
+            sent_start = max(text.rfind('. ', 0, m.start()), text.rfind('! ', 0, m.start()), text.rfind('? ', 0, m.start()))
+            lead_raw = text[(0 if sent_start < 0 else sent_start + 2):m.start()]
+            if len(lead_raw) > 300:                      # runaway run-on, keep it bounded
+                lead_raw = lead_raw[-300:]
             lead = lead_raw.lower()
             ours = [p for p in OURS if p.lower() in lead]
             if len(ours) != 1:
@@ -147,6 +168,10 @@ def check_prices(problems, allow):
                 continue                     # price probably belongs to the competitor
             prod = ours[0]
 
+            amount = re.sub(r'\s+', '', m.group(0))
+            # normalise "$19.00" → "$19"
+            amount = re.sub(r'\.00$', '', amount)
+
             # Derived or aggregate figures are not plan prices: cost-per-minute,
             # deltas ("the extra $10 buys"), approximations and bundle totals.
             before = lead_raw.rstrip()
@@ -154,6 +179,10 @@ def check_prices(problems, allow):
                 continue
             after = text[m.end():m.end() + 8].strip().lower()
             if after.startswith(('/min', 'per min', '/ minute')):
+                continue
+            # Per-minute economics: "roughly $0.20/minute on Starter and $0.17 on
+            # Pro" — the second figure has no unit attached, but the sentence does.
+            if re.search(r'per (?:finished )?minute|/\s?minute|/\s?min\b', lead) and _value(amount) < 1:
                 continue
             if 'similar to' in lead:
                 continue                     # related-tools carousel, not this product
@@ -185,12 +214,32 @@ def check_src(problems):
                 problems.append(f'{os.path.relpath(path, ROOT)}:{line}: hardcoded "74 languages" literal')
 
 
+def check_leaks(problems):
+    """A `${..._PRICING...}` in the built HTML means the template was never evaluated.
+
+    Typical cause: the interpolation was typed into a double-quoted string instead
+    of a backtick template, so Astro emits the source text verbatim. It renders as
+    visible junk like "${SUBMAGIC_PRICING.starter.price}" on a live page, which no
+    price check would flag because there is no amount to compare.
+    """
+    leak = re.compile(r'\$\{[A-Z_]*(?:PRICING|LANGS)[^}]*\}|\b[A-Z]+_PRICING\.[a-z]')
+    checked = 0
+    for page, path in all_pages():
+        raw = open(path, encoding='utf-8', errors='replace').read()
+        checked += 1
+        for m in leak.finditer(raw):
+            start = max(0, m.start() - 60)
+            problems.append(f'{page}: unevaluated template literal → …{raw[start:m.end() + 40]}…')
+    return checked
+
+
 def main():
     problems = []
     allow = parse_allowlist(FACTS_TS)
 
     check_languages(problems)
     price_checks = check_prices(problems, allow)
+    leaks = check_leaks(problems)
     if '--src' in sys.argv:
         check_src(problems)
 
@@ -205,6 +254,7 @@ def main():
     print(f'OK — language coverage consistent across {len(LANG_PAGES)} pages')
     print(f'   canonical: {CANON_LABEL}')
     print(f'OK — {price_checks} attributed price claim(s) checked, all official')
+    print(f'OK — no unevaluated template literals across {leaks} page(s)')
     print(f'   allow-lists: {", ".join(f"{k} ({len(v)})" for k, v in allow.items())}')
     return 0
 

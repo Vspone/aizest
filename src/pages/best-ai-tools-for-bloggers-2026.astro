@@ -1,4 +1,5 @@
 ---
+import { ELEVENLABS_PRICING } from '../data/product-facts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
 import AffiliateBtn from '../components/AffiliateBtn.astro';
@@ -640,7 +641,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 </p>
 
 <h3><a href="/tool/elevenlabs">ElevenLabs</a> — Best AI Voice & Narration</h3>
-<p><strong>Pricing: Free / $5/mo (Starter)</strong></p>
+<p><strong>Pricing: Free / {ELEVENLABS_PRICING.starter.price} (Starter; {ELEVENLABS_PRICING.starter.annual} billed yearly)</strong></p>
 <p>ElevenLabs produces the most natural-sounding AI voices available. Bloggers use it to add narration to YouTube videos, create podcast episodes from posts, and produce audio versions of articles. Its multilingual voices and voice cloning let you keep one consistent brand voice across formats. The free tier gives you enough credits to test the quality yourself.</p>
 
 <h3>Multi-Dimension Rating</h3>
@@ -661,7 +662,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 </table>
 
 <p><strong>Who should use it:</strong> Bloggers adding audio versions, YouTube narration, or podcast voices with natural-sounding AI.</p>
-<p><strong>Pricing:</strong> Free / $5/month (Starter) and up</p>
+<p><strong>Pricing:</strong> Free / {ELEVENLABS_PRICING.starter.price} (Starter; {ELEVENLABS_PRICING.starter.annual} billed yearly) and up</p>
 <p class="flex items-center gap-2 flex-wrap">
   <a href="/tool/elevenlabs" class="btn-primary">Read Full Review →</a>
   <a href="https://try.elevenlabs.io/aizest" target="_blank" rel="sponsored nofollow noopener noreferrer" data-cta="ElevenLabs" data-cta-loc="roundup-cta" data-affiliate="true" class="btn-outline">Try ElevenLabs →</a>
@@ -784,7 +785,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 <tr><td><strong>Ideogram</strong></td><td>Images</td><td>Free / $8/mo</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>Text-in-image generation</td></tr>
 <tr><td><strong>Midjourney</strong></td><td>Images</td><td>$10/mo</td><td>⭐⭐</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>Premium feature images</td></tr>
 <tr><td><strong>Descript</strong></td><td>Video / Audio</td><td>Free / $16/mo</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>Repurposing to video/podcast</td></tr>
-<tr><td><strong>ElevenLabs</strong></td><td>Audio</td><td>Free / $5/mo</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>AI narration & voice</td></tr>
+<tr><td><strong>ElevenLabs</strong></td><td>Audio</td><td>{ELEVENLABS_PRICING.entry}</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>AI narration & voice</td></tr>
 <tr><td><strong>Notion AI</strong></td><td>Productivity</td><td>Free / $10/mo</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>Editorial planning</td></tr>
 <tr><td><strong>Grammarly</strong></td><td>Writing / Editing</td><td>Free / $12/mo</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>Proofreading everywhere</td></tr>
 <tr><td><strong>Zapier</strong></td><td>Automation</td><td>Free / $19.99/mo</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>Workflow automation</td></tr>

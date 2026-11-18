@@ -1,5 +1,5 @@
 ---
-import { ELEVENLABS_LANGS } from '../data/product-facts';
+import { ELEVENLABS_LANGS, ELEVENLABS_PRICING, SYNTHESIA_PRICING, SUBMAGIC_PRICING } from '../data/product-facts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
 import AffiliateBtn from '../components/AffiliateBtn.astro';
@@ -27,9 +27,9 @@ const breadcrumbLd = {
 const faqLd = {
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What is the best AI voiceover tool for YouTube videos?", "acceptedAnswer": { "@type": "Answer", "text": "ElevenLabs is the most widely used option for AI voiceover on YouTube. Its free tier includes 10,000 credits a month, Starter is $6/month for 30,000 credits, and Creator is $22/month for 121,000 credits with professional voice cloning. At roughly one credit per character, 30,000 credits is about 30 minutes of finished speech per month, so most weekly channels end up on Creator or above." } },
-    { "@type": "Question", "name": "Can I run a YouTube channel without showing my face?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The common stack is an AI avatar tool such as Synthesia or HeyGen for the on-screen presenter, an AI voice tool for narration, and a clipper like Submagic or OpusClip for shorts. Synthesia's free Basic plan allows about 10 minutes of video a month with a watermark; Starter is $19/month for 1,250 credits, which Synthesia's pricing page converts to about 12 minutes of avatar footage." } },
-    { "@type": "Question", "name": "How do I turn long videos into Shorts automatically?", "acceptedAnswer": { "@type": "Answer", "text": "Submagic and OpusClip both do this. OpusClip's free plan posts one clip a day and adds a watermark to animated captions; Starter is $15/month for watermark-free export and a virality score. Submagic's Starter plan is $19/month ($12/month billed yearly) for 45 credits, which equals roughly 15 captioned videos or 5 Magic Clips — the credit conversion matters more than the headline price." } },
+    { "@type": "Question", "name": "What is the best AI voiceover tool for YouTube videos?", "acceptedAnswer": { "@type": "Answer", "text": `ElevenLabs is the most widely used option for AI voiceover on YouTube. Its free tier includes ${ELEVENLABS_PRICING.free.credits} credits a month, Starter is ${ELEVENLABS_PRICING.starter.price} for ${ELEVENLABS_PRICING.starter.credits} credits, and Creator is ${ELEVENLABS_PRICING.creator.price} for ${ELEVENLABS_PRICING.creator.credits} credits with professional voice cloning. At roughly one credit per character, ${ELEVENLABS_PRICING.starter.credits} credits is about 30 minutes of finished speech per month, so most weekly channels end up on Creator or above.` } },
+    { "@type": "Question", "name": "Can I run a YouTube channel without showing my face?", "acceptedAnswer": { "@type": "Answer", "text": `Yes. The common stack is an AI avatar tool such as Synthesia or HeyGen for the on-screen presenter, an AI voice tool for narration, and a clipper like Submagic or OpusClip for shorts. Synthesia's free Basic plan allows about 10 minutes of video a month with a watermark; Starter is ${SYNTHESIA_PRICING.starter.price} for ${SYNTHESIA_PRICING.starter.credits} credits, which Synthesia's pricing page converts to about 12 minutes of avatar footage.` } },
+    { "@type": "Question", "name": "How do I turn long videos into Shorts automatically?", "acceptedAnswer": { "@type": "Answer", "text": `Submagic and OpusClip both do this. OpusClip's free plan posts one clip a day and adds a watermark to animated captions; Starter is $15/month for watermark-free export and a virality score. Submagic's Starter plan is ${SUBMAGIC_PRICING.starter.price} (${SUBMAGIC_PRICING.starter.annual} billed yearly) for ${SUBMAGIC_PRICING.starter.creditsNum} credits, which equals roughly ${SUBMAGIC_PRICING.starter.videos} captioned videos or 5 Magic Clips — the credit conversion matters more than the headline price.` } },
     { "@type": "Question", "name": "Is CapCut still free for YouTube creators?", "acceptedAnswer": { "@type": "Answer", "text": "CapCut keeps a free tier that covers basic editing, templates and auto-captions, and sells Pro, Ultra and Teams plans on top of it. Prices are quoted in local currency and vary by region and platform, and CapCut notes that displayed pricing is for reference only until you sign in." } },
     { "@type": "Question", "name": "What do creators pay in total per month for an AI stack?", "acceptedAnswer": { "@type": "Answer", "text": "A realistic lean stack in 2026 is around $30-50 a month: roughly $6-22 for voice, $15-19 for a clipper, and $0-10 for editing and thumbnail work. The trap is credit-based pricing — a plan that looks cheap per month can run out in two videos, so convert credits to finished minutes before you subscribe." } }
   ]
@@ -59,9 +59,9 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
       </tr>
     </thead>
     <tbody>
-      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>ElevenLabs</strong></td><td class="py-2">Voiceover</td><td class="py-2">Free / $6/mo</td><td class="py-2">{ELEVENLABS_LANGS.v4} languages (v4), cloning from short samples</td></tr>
-      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Synthesia</strong></td><td class="py-2">Faceless presenter</td><td class="py-2">Free / $19/mo</td><td class="py-2">Avatar-led video without a camera</td></tr>
-      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Submagic</strong></td><td class="py-2">Shorts</td><td class="py-2">$12/mo yearly</td><td class="py-2">Captions plus Magic Clips</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>ElevenLabs</strong></td><td class="py-2">Voiceover</td><td class="py-2">{ELEVENLABS_PRICING.entry}</td><td class="py-2">{ELEVENLABS_LANGS.v4} languages (v4), cloning from short samples</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Synthesia</strong></td><td class="py-2">Faceless presenter</td><td class="py-2">{SYNTHESIA_PRICING.entry}</td><td class="py-2">Avatar-led video without a camera</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Submagic</strong></td><td class="py-2">Shorts</td><td class="py-2">{SUBMAGIC_PRICING.starter.annualAmount}/mo yearly</td><td class="py-2">Captions plus Magic Clips</td></tr>
       <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Descript</strong></td><td class="py-2">Long-form edit</td><td class="py-2">Free / $24/mo</td><td class="py-2">Edit video by editing the transcript</td></tr>
       <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>OpusClip</strong></td><td class="py-2">Long → shorts</td><td class="py-2">Free / $15/mo</td><td class="py-2">Auto-clips with a virality score</td></tr>
       <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>CapCut</strong></td><td class="py-2">Editing</td><td class="py-2">Free</td><td class="py-2">Free timeline, templates, captions</td></tr>
@@ -78,7 +78,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
 
 <h2>1. ElevenLabs — Best for Voiceover</h2>
 <p>For narration, ElevenLabs is the default choice for a reason that shows up on the pricing page: {ELEVENLABS_LANGS.v4} languages on the flagship Eleven v4 model, {ELEVENLABS_LANGS.flash} on the cheaper Flash v2.5, a free tier with 10,000 credits a month, and voice cloning that starts from a one-to-two-minute sample (Professional Voice Cloning needs about 30 minutes of reference audio). The current flagship model is Eleven v4, marketed as the most emotive text-to-speech model the company has shipped, alongside Flash v2.5 for ~100ms median latency in real-time use.</p>
-<p>The number that matters for budgeting is the credit rate: one character of text equals roughly one credit. So Starter's 30,000 credits is about 30 minutes of finished speech per month, and Creator's 121,000 credits is roughly two hours. A weekly 12-minute video with a light script usually fits Creator; a channel publishing twice a week should price Scale ($299/month, 1.8M credits) before committing.</p>
+<p>The number that matters for budgeting is the credit rate: one character of text equals roughly one credit. So Starter's 30,000 credits is about 30 minutes of finished speech per month, and Creator's 121,000 credits is roughly two hours. A weekly 12-minute video with a light script usually fits Creator; a channel publishing twice a week should price Scale ({ELEVENLABS_PRICING.scale.price}, {ELEVENLABS_PRICING.scale.credits} credits) before committing.</p>
 
 <table>
 <thead><tr><th>Overall</th><th>Voice quality</th><th>Languages</th><th>Free tier</th><th>Ease of use</th><th>Value</th></tr></thead>
@@ -89,14 +89,14 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
 <thead><tr><th>Pros</th><th>Cons</th></tr></thead>
 <tbody>
 <tr><td>✔ Free tier is generous enough to finish a pilot episode</td><td>✘ Character-based credits eat through long scripts</td></tr>
-<tr><td>✔ {ELEVENLABS_LANGS.v4} languages on Eleven v4 with accent variety for dubbed channels</td><td>✘ Professional Voice Cloning starts at the $22 Creator tier</td></tr>
+<tr><td>✔ {ELEVENLABS_LANGS.v4} languages on Eleven v4 with accent variety for dubbed channels</td><td>✘ Professional Voice Cloning starts at the {ELEVENLABS_PRICING.creator.price} Creator tier</td></tr>
 <tr><td>✔ Cloning from a short clean sample</td><td>✘ Pro and above get expensive fast at volume</td></tr>
 <tr><td>✔ API and SDKs if you automate episode production</td><td>✘ Voice-consent requirements add a step per clone</td></tr>
 </tbody>
 </table>
 
 <p><strong>Who it's for:</strong> Channels that publish narrated content weekly, and faceless channels that need a consistent narrator voice across hundreds of videos.</p>
-<p><strong>Pricing:</strong> Free (10,000 credits/mo) · Starter $6/mo · Creator $22/mo · Pro $99/mo · Scale $299/mo · Business $990/mo</p>
+<p><strong>Pricing:</strong> Free ({ELEVENLABS_PRICING.free.credits} credits/mo) · Starter {ELEVENLABS_PRICING.starter.price} · Creator {ELEVENLABS_PRICING.creator.price} · Pro {ELEVENLABS_PRICING.pro.price} · Scale {ELEVENLABS_PRICING.scale.price} · Business {ELEVENLABS_PRICING.business.price}</p>
 <p class="flex items-center gap-2 flex-wrap">
   <a href="/tool/elevenlabs" class="btn-primary">Read the full review →</a>
   <AffiliateBtn slug="elevenlabs" text="Try ElevenLabs Free" loc="youtube-listicle" />
@@ -122,7 +122,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
 </table>
 
 <p><strong>Who it's for:</strong> Faceless channels, course creators repackaging lessons, and creators who want a presenter-style series without filming.</p>
-<p><strong>Pricing:</strong> Basic free · Starter $19/mo ($14/mo yearly) · Pro $89/mo ($59/mo yearly) · Enterprise custom</p>
+<p><strong>Pricing:</strong> Basic free · Starter {SYNTHESIA_PRICING.starter.price} ({SYNTHESIA_PRICING.starter.annual} yearly) · Pro {SYNTHESIA_PRICING.pro.price} ({SYNTHESIA_PRICING.pro.annual} yearly) · Enterprise custom</p>
 <p class="flex items-center gap-2 flex-wrap">
   <a href="/synthesia-review" class="btn-primary">Read the full review →</a>
   <AffiliateBtn slug="synthesia" text="Start Free with Synthesia" loc="youtube-listicle" />
@@ -130,7 +130,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
 
 <h2>3. Submagic — Best for Shorts from Long Videos</h2>
 <p>Submagic handles the two jobs a shorts workflow needs: word-level animated captions, and Magic Clips, which finds highlights in a long recording and cuts them into vertical clips. Publishing to TikTok and Reels happens inside the app, so a 40-minute podcast can become five shorts without leaving the browser.</p>
-<p>The pricing is credits, and the conversion is published: Starter is $19/month ($12/month billed yearly) for 45 credits, which Submagic converts to about 15 captioned videos or 5 Magic Clips; Pro is $39/month ($23 yearly) for 120 credits; Business is $69/month ($41 yearly) for 300 credits. A Magic Clip costs more credits than a single captioned video, which is the detail that surprises people after month one.</p>
+<p>The pricing is credits, and the conversion is published: Starter is {SUBMAGIC_PRICING.starter.price} ({SUBMAGIC_PRICING.starter.annual} billed yearly) for {SUBMAGIC_PRICING.starter.creditsNum} credits, which Submagic converts to about {SUBMAGIC_PRICING.starter.videos} captioned videos or 5 Magic Clips; Pro is {SUBMAGIC_PRICING.pro.price} ({SUBMAGIC_PRICING.pro.annual} yearly) for {SUBMAGIC_PRICING.pro.creditsNum} credits; Business is {SUBMAGIC_PRICING.business.price} ({SUBMAGIC_PRICING.business.annual} yearly) for {SUBMAGIC_PRICING.business.creditsNum} credits. A Magic Clip costs more credits than a single captioned video, which is the detail that surprises people after month one.</p>
 
 <table>
 <thead><tr><th>Overall</th><th>Caption accuracy</th><th>Clip quality</th><th>Free tier</th><th>Ease of use</th><th>Value</th></tr></thead>
@@ -148,7 +148,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
 </table>
 
 <p><strong>Who it's for:</strong> Creators publishing several shorts a week, and podcasters or long-form YouTubers repurposing episodes.</p>
-<p><strong>Pricing:</strong> Starter $19/mo ($12 yearly) · Pro $39/mo ($23 yearly) · Business $69/mo ($41 yearly) · Custom</p>
+<p><strong>Pricing:</strong> Starter {SUBMAGIC_PRICING.starter.price} ({SUBMAGIC_PRICING.starter.annual} yearly) · Pro {SUBMAGIC_PRICING.pro.price} ({SUBMAGIC_PRICING.pro.annual} yearly) · Business {SUBMAGIC_PRICING.business.price} ({SUBMAGIC_PRICING.business.annual} yearly) · Custom</p>
 <p class="flex items-center gap-2 flex-wrap">
   <a href="/submagic-review" class="btn-primary">Read the full review →</a>
   <AffiliateBtn slug="submagic" text="Start Free Trial" loc="youtube-listicle" />
@@ -308,9 +308,9 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
 <table>
 <thead><tr><th>Tool</th><th>Job</th><th>Free tier</th><th>Entry paid</th><th>Budget unit</th><th>Best for</th></tr></thead>
 <tbody>
-<tr><td><strong>ElevenLabs</strong></td><td>Voiceover</td><td>10,000 credits/mo</td><td>$6/mo</td><td>Characters</td><td>Narration, dubbing</td></tr>
-<tr><td><strong>Synthesia</strong></td><td>Avatar video</td><td>~10 min/mo</td><td>$19/mo</td><td>Credits (~100/min)</td><td>Faceless channels</td></tr>
-<tr><td><strong>Submagic</strong></td><td>Shorts</td><td>Trial only</td><td>$12/mo yearly</td><td>Credits per clip</td><td>Captions + Magic Clips</td></tr>
+<tr><td><strong>ElevenLabs</strong></td><td>Voiceover</td><td>{ELEVENLABS_PRICING.free.credits} credits/mo</td><td>{ELEVENLABS_PRICING.starter.price}</td><td>Characters</td><td>Narration, dubbing</td></tr>
+<tr><td><strong>Synthesia</strong></td><td>Avatar video</td><td>~10 min/mo</td><td>{SYNTHESIA_PRICING.starter.price}</td><td>Credits (~100/min)</td><td>Faceless channels</td></tr>
+<tr><td><strong>Submagic</strong></td><td>Shorts</td><td>Trial only</td><td>{SUBMAGIC_PRICING.starter.annualAmount}/mo yearly</td><td>Credits per clip</td><td>Captions + Magic Clips</td></tr>
 <tr><td><strong>Descript</strong></td><td>Long-form edit</td><td>60 min/mo</td><td>$16/mo yearly</td><td>Media minutes</td><td>Talk-driven videos</td></tr>
 <tr><td><strong>OpusClip</strong></td><td>Clipping</td><td>1 clip/day</td><td>$15/mo</td><td>Clips</td><td>Back-catalogue shorts</td></tr>
 <tr><td><strong>CapCut</strong></td><td>Editing</td><td>Full editor</td><td>Region-priced</td><td>—</td><td>Free baseline</td></tr>
@@ -336,7 +336,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
 <p>Yes. The standard stack is an avatar tool (Synthesia or HeyGen) for the presenter, a voice tool for narration and a clipper for shorts. Synthesia's free Basic plan allows about 10 minutes of video a month with a watermark; Starter is $19/month for 1,250 credits, which the vendor converts to roughly 12 minutes of avatar footage.</p>
 
 <h3>How do I turn long videos into Shorts automatically?</h3>
-<p>Submagic and OpusClip both do it. OpusClip's free plan posts one clip a day with a caption watermark and Starter at $15/month removes it. Submagic's Starter is $19/month ($12 yearly) for 45 credits, which converts to about 15 captioned videos or 5 Magic Clips — clips cost more credits than plain captions.</p>
+<p>Submagic and OpusClip both do it. OpusClip's free plan posts one clip a day with a caption watermark and Starter at $15/month removes it. Submagic's Starter is {SUBMAGIC_PRICING.starter.price} ({SUBMAGIC_PRICING.starter.annual} yearly) for {SUBMAGIC_PRICING.starter.creditsNum} credits, which converts to about {SUBMAGIC_PRICING.starter.videos} captioned videos or 5 Magic Clips — clips cost more credits than plain captions.</p>
 
 <h3>Is CapCut still free?</h3>
 <p>Yes, CapCut keeps a free tier with the timeline editor, templates and auto-captions. Pro, Ultra and Teams sit on top of it, priced in local currency and varying by region and platform; the vendor states displayed prices are for reference until you sign in.</p>

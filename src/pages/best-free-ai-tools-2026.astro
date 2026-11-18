@@ -1,5 +1,5 @@
 ---
-import { ELEVENLABS_LANGS } from '../data/product-facts';
+import { ELEVENLABS_LANGS, ELEVENLABS_PRICING } from '../data/product-facts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
 import AffiliateBtn from '../components/AffiliateBtn.astro';
@@ -423,7 +423,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <h3>15. ElevenLabs — Top Free AI Voice Generator</h3>
 <p>ElevenLabs offers 10,000 free characters per month of ultra-realistic AI text-to-speech. With hundreds of voices and model-dependent language coverage ({ELEVENLABS_LANGS.v4} on Eleven v4, {ELEVENLABS_LANGS.flash} on Flash v2.5), it's a top free option for voiceovers, audiobooks, and content localization. The voice quality is indistinguishable from human speech.</p>
-<p><strong>Free tier highlights:</strong> 10K characters/month, 100+ voices, {ELEVENLABS_LANGS.v4} languages on v4 (model-dependent)<br/><strong>Pricing:</strong> Free / $5/mo (Starter)</p>
+<p><strong>Free tier highlights:</strong> 10K characters/month, 100+ voices, {ELEVENLABS_LANGS.v4} languages on v4 (model-dependent)<br/><strong>Pricing:</strong> Free / {ELEVENLABS_PRICING.starter.price} (Starter; {ELEVENLABS_PRICING.starter.annual} billed yearly)</p>
 <p class="flex items-center gap-2 flex-wrap">
     <a href="/tool/elevenlabs" class="btn-primary">Read Full Review →</a>
     <AffiliateBtn slug="elevenlabs" />

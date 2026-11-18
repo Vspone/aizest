@@ -1,5 +1,5 @@
 ---
-import { ELEVENLABS_LANGS } from '../data/product-facts';
+import { ELEVENLABS_LANGS, ELEVENLABS_PRICING } from '../data/product-facts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
 import AffiliateBtn from '../components/AffiliateBtn.astro';
@@ -155,7 +155,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 </table>
 
 <p><strong>Who should use it:</strong> Content creators, developers, and professionals who need the most realistic AI voice generation for voiceovers, audiobooks, localization, and real-time voice transformation.</p>
-<p><strong>Pricing:</strong> Free (10K chars/mo) / Starts at $5/month</p>
+<p><strong>Pricing:</strong> Free (10K chars/mo) / Starts at {ELEVENLABS_PRICING.starter.price} ({ELEVENLABS_PRICING.starter.annual} billed yearly)</p>
 <p class="flex items-center gap-2 flex-wrap">
     <a href="/tool/elevenlabs" class="btn-primary">Read Full Review →</a>
     <a href="https://try.elevenlabs.io/aizest" target="_blank" rel="sponsored nofollow noopener noreferrer" data-cta="ElevenLabs" data-cta-loc="roundup-cta" data-affiliate="true" class="btn-outline">Try ElevenLabs Free →</a>

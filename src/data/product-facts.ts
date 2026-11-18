@@ -98,8 +98,8 @@ export const ELEVENLABS_PRICING = {
  * ──────────────────────────────────────────────────────────────────────────── */
 const SYNTH_PLANS = {
   basic: { price: '$0', credits: '500', note: 'watermarked, 9 avatars, 10 min Studio video' },
-  starter: { price: '$19/mo', annual: '$14/mo', annualTotal: '$168/yr', credits: '1,250', creditsPer: 'month', note: 'no watermark, 125+ avatars, 3 guests' },
-  pro: { price: '$89/mo', annual: '$59/mo', annualTotal: '$708/yr', credits: '6,000', creditsPer: 'month', note: '5 personal avatars, branded pages, interactive video' },
+  starter: { price: '$19/mo', amount: '$19', annual: '$14/mo', annualAmount: '$14', annualTotal: '$168/yr', credits: '1,250', creditsPer: 'month', note: 'no watermark, 125+ avatars, 3 guests' },
+  pro: { price: '$89/mo', amount: '$89', annual: '$59/mo', annualAmount: '$59', annualTotal: '$708/yr', credits: '6,000', creditsPer: 'month', note: '5 personal avatars, branded pages, interactive video' },
   enterprise: { price: 'Custom', credits: 'Custom', note: 'unlimited minutes, 140+ language translation, SSO' },
 } as const;
 

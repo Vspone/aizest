@@ -1,4 +1,5 @@
 ---
+import { SYNTHESIA_PRICING } from '../data/product-facts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
 import AffiliateBtn from '../components/AffiliateBtn.astro';
@@ -145,7 +146,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 <h2>2. Synthesia — Best for AI Avatars</h2>
 <p><strong>Rating: 4.5/5</strong></p>
 <p>Synthesia leads the AI avatar space with 125+ stock AI presenters on Starter (240+ on Enterprise), 1,000+ voices, and support for 140+ languages. Type a script, choose an avatar, and get a professional video in minutes — no cameras, studios, or actors needed. Major corporations use Synthesia for training videos, product demos, and internal communications.</p>
-<p><strong>Best for:</strong> Corporate training, marketing videos, presentations<br/><strong>Pricing:</strong> Free (10 min/mo) · $19/mo (Starter) · $89/mo (Pro)</p>
+<p><strong>Best for:</strong> Corporate training, marketing videos, presentations<br/><strong>Pricing:</strong> Free (10 min/mo) · {SYNTHESIA_PRICING.starter.price} (Starter) · {SYNTHESIA_PRICING.pro.price} (Pro)</p>
 <p class="flex items-center gap-2 flex-wrap">
     <a href="/tool/synthesia" class="btn-primary">Read Full Review →</a>
     <AffiliateBtn slug="synthesia" />
@@ -297,7 +298,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 <thead><tr><th>Tool</th><th>Video Quality</th><th>Pricing</th><th>Free Tier</th><th>Best For</th></tr></thead>
 <tbody>
 <tr><td>Runway</td><td>Professional production (Gen-4.5)</td><td>$15/mo (Standard) · $35/mo (Pro) · $95/mo (Max)</td><td>125 one-time credits</td><td>Best overall</td></tr>
-<tr><td>Synthesia</td><td>AI avatars</td><td>$19/mo (Starter) · $89/mo (Pro)</td><td>10 min/mo (Basic)</td><td>Best for avatars</td></tr>
+<tr><td>Synthesia</td><td>AI avatars</td><td>{SYNTHESIA_PRICING.starter.price} (Starter) · {SYNTHESIA_PRICING.pro.price} (Pro)</td><td>10 min/mo (Basic)</td><td>Best for avatars</td></tr>
 <tr><td>HeyGen</td><td>Talking heads</td><td>$29/mo (Creator) · $99/mo (Pro) · $149/mo (Business)</td><td>Free (watermark)</td><td>Talking heads</td></tr>
 <tr><td>CapCut</td><td>Free editing</td><td>Free · $9.99/mo · $19.99/mo</td><td>Free plan</td><td>Best free editor</td></tr>
 <tr><td>VEED</td><td>Online editing</td><td>Free · $18/mo</td><td>Free (watermark)</td><td>Quick online edits</td></tr>

@@ -1,4 +1,5 @@
 ---
+import { ELEVENLABS_PRICING } from '../data/product-facts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
 import AffiliateBtn from '../components/AffiliateBtn.astro';
@@ -254,7 +255,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <h2>4. ElevenLabs — 🔊 Top for Text-to-Speech & Music Generation</h2>
 <p><strong>Best for:</strong> High-quality text-to-speech, voice cloning, and AI music generation</p>
-<p><strong>Pricing:</strong> Free (limited) · $5/mo (Starter) · $22/mo (Creator) · $99/mo (Pro)</p>
+<p><strong>Pricing:</strong> Free (limited) · {ELEVENLABS_PRICING.starter.price} (Starter; {ELEVENLABS_PRICING.starter.annual} billed yearly) · {ELEVENLABS_PRICING.creator.price} (Creator) · {ELEVENLABS_PRICING.pro.price} (Pro)</p>
 
 <p>ElevenLabs has expanded from text-to-speech into AI music generation with its ElevenLabs Music tool. Known for having the most realistic AI voices in the industry, ElevenLabs now offers text-to-music generation with the same attention to quality and realism. The platform excels at generating instrumental music, background scores, and soundscapes from text descriptions. Combined with its industry-leading voice synthesis, ElevenLabs is a powerful all-in-one audio creation platform for content creators.</p>
 

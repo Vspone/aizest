@@ -1,4 +1,5 @@
 ---
+import { SYNTHESIA_PRICING } from '../data/product-facts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
 import AffiliateBtn from '../components/AffiliateBtn.astro';
@@ -43,7 +44,7 @@ const faqJsonLd = JSON.stringify({
       "name": "How much does HeyGen vs Synthesia cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "HeyGen plans start at $29/month for Creator ($24/month billed annually), $99/month for Pro, and $149/month for Business, with custom Enterprise pricing. Synthesia starts at $19/month (Starter, or $14/month billed annually), $89/month (Pro), and custom Enterprise plans. HeyGen offers better value for solo creators, while Synthesia's enterprise features justify its higher tiers."
+        "text": `HeyGen plans start at $29/month for Creator ($24/month billed annually), $99/month for Pro, and $149/month for Business, with custom Enterprise pricing. Synthesia starts at ${SYNTHESIA_PRICING.starter.price} (Starter, or ${SYNTHESIA_PRICING.starter.annual} billed annually), ${SYNTHESIA_PRICING.pro.price} (Pro), and custom Enterprise plans. HeyGen offers better value for solo creators, while Synthesia's enterprise features justify its higher tiers.`
       }
     },
     {
@@ -137,7 +138,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 <p><strong>Rating: 4.5/5 · <a href="/tool/synthesia">Read full review →</a></strong></p>
 <p>Synthesia is the AI avatar platform that defined the category. With 240+ avatars, SOC 2 Type II certification, and a polished template-driven editor, it's the go-to choice for enterprise training, onboarding, and internal communications. Its structured editor uses a slide-based interface that makes it easy for non-designers to create professional videos quickly.</p>
 <p>Synthesia's avatars are consistently natural-looking across its entire library, and the platform's enterprise features — including custom fonts, brand kits, collaboration spaces, and detailed analytics — are best-in-class. However, its voice cloning covers only 32 languages (vs HeyGen's 175+), its Interactive Avatars offer interactive video rather than HeyGen-style live conversation, and its language support (140+ languages) is slightly narrower than HeyGen's. Synthesia now offers a Basic free plan (10 minutes/month, 9 AI avatars, watermarked); watermark-free exports require Starter or above.</p>
-<p><strong>Best for:</strong> Enterprise teams, L&D departments, and companies needing compliance-ready AI video<br/><strong>Pricing:</strong> Basic free plan (10 min/mo, watermarked) · $19/mo (Starter) · $89/mo (Pro) · Custom (Enterprise)</p>
+<p><strong>Best for:</strong> Enterprise teams, L&D departments, and companies needing compliance-ready AI video<br/><strong>Pricing:</strong> Basic free plan (10 min/mo, watermarked) · {SYNTHESIA_PRICING.starter.price} (Starter) · {SYNTHESIA_PRICING.pro.price} (Pro) · Custom (Enterprise)</p>
 
 <h2>Head-to-Head Comparison</h2>
 
@@ -150,7 +151,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 <tr><td><strong>Ease of Use</strong></td><td>⭐⭐⭐⭐ Freeform, flexible, creative</td><td>⭐⭐⭐⭐⭐ Structured templates, very polished</td></tr>
 <tr><td><strong>Enterprise Features</strong></td><td>⭐⭐⭐⭐ SSO, API, custom branding</td><td>⭐⭐⭐⭐⭐ SOC 2 Type II, brand kits, analytics</td></tr>
 <tr><td><strong>Real-Time Streaming</strong></td><td>⭐⭐⭐⭐⭐ Yes, native support</td><td>⭐⭐ Interactive Avatars (2025) — interactive video, not live conversation</td></tr>
-<tr><td><strong>Pricing Value</strong></td><td>⭐⭐⭐⭐⭐ Free tier, $29/mo Creator</td><td>⭐⭐⭐⭐ Basic free plan, $19/mo Starter</td></tr>
+<tr><td><strong>Pricing Value</strong></td><td>⭐⭐⭐⭐⭐ Free tier, $29/mo Creator</td><td>⭐⭐⭐⭐ Basic free plan, {SYNTHESIA_PRICING.starter.price} Starter</td></tr>
 </tbody>
 </table>
 
@@ -177,7 +178,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <h2>Difference 6: Pricing and Value</h2>
 <p><strong>Edge: HeyGen</strong></p>
-<p>HeyGen's free tier (watermarked, but functional) lets creators experiment without spending a dime — a significant advantage over Synthesia's more limited Basic free plan. At the paid tiers, HeyGen's Creator plan ($29/mo, $24/mo billed annually) sits above Synthesia's Starter plan ($19/mo, $14/mo billed annually), so Synthesia is the cheaper entry point; what the extra $10 buys on HeyGen is voice cloning and broader language coverage (175+ vs 140+). At the next tier, HeyGen's Business plan costs $149/mo + $20/seat (a new Pro tier at $99/mo launched in January 2026), while Synthesia's Pro plan is $89/mo — so the gap widens in Synthesia's favour as you scale. For enterprises, pricing is custom on both platforms and depends on volume and feature requirements.</p>
+<p>HeyGen's free tier (watermarked, but functional) lets creators experiment without spending a dime — a significant advantage over Synthesia's more limited Basic free plan. At the paid tiers, HeyGen's Creator plan ($29/mo, $24/mo billed annually) sits above Synthesia's Starter plan ({SYNTHESIA_PRICING.starter.price}, {SYNTHESIA_PRICING.starter.annual} billed annually), so Synthesia is the cheaper entry point; what the extra $10 buys on HeyGen is voice cloning and broader language coverage (175+ vs 140+). At the next tier, HeyGen's Business plan costs $149/mo + $20/seat (a new Pro tier at $99/mo launched in January 2026), while Synthesia's Pro plan is {SYNTHESIA_PRICING.pro.price} — so the gap widens in Synthesia's favour as you scale. For enterprises, pricing is custom on both platforms and depends on volume and feature requirements.</p>
 
 <h2>Pricing Comparison</h2>
 
@@ -185,8 +186,8 @@ import RelatedContent from '../components/RelatedContent.astro';
 <thead><tr><th>Plan</th><th>HeyGen</th><th>Synthesia</th></tr></thead>
 <tbody>
 <tr><td><strong>Free</strong></td><td>Free trial with watermark, limited exports</td><td>Basic free plan — 10 min/mo, 9 AI avatars, watermarked</td></tr>
-<tr><td><strong>Starter / Creator</strong></td><td>$29/mo — 15 min video credits, voice cloning, 60+ avatars, 175+ languages</td><td>$19/mo ($14/mo billed annually) — 1,250 credits (~12 min video), 125+ avatars, 140+ languages</td></tr>
-<tr><td><strong>Business / Creator Pro</strong></td><td>Pro $99/mo — 2,000 credits; Business $149/mo + $20/seat — 1,500 credits, 4K, real-time streaming, 700+ avatars, custom branding</td><td>Creator $89/mo ($64/mo billed annually) — 30 min credits, 180+ avatars, brand kits, collaboration (240+ avatars on Enterprise only)</td></tr>
+<tr><td><strong>Starter / Creator</strong></td><td>$29/mo — 15 min video credits, voice cloning, 60+ avatars, 175+ languages</td><td>{SYNTHESIA_PRICING.starter.price} ({SYNTHESIA_PRICING.starter.annual} billed annually) — {SYNTHESIA_PRICING.starter.credits} credits (~12 min video), 125+ avatars, 140+ languages</td></tr>
+<tr><td><strong>Business / Creator Pro</strong></td><td>Pro $99/mo — 2,000 credits; Business $149/mo + $20/seat — 1,500 credits, 4K, real-time streaming, 700+ avatars, custom branding</td><td>Pro {SYNTHESIA_PRICING.pro.price} ({SYNTHESIA_PRICING.pro.annual} billed annually) — {SYNTHESIA_PRICING.pro.credits} credits (~60 min video), 180+ avatars, brand kits, collaboration</td></tr>
 <tr><td><strong>Enterprise</strong></td><td>Custom — SSO, API, dedicated support, custom SLA</td><td>Custom — SOC 2 Type II, SSO, API, analytics, dedicated support</td></tr>
 </tbody>
 </table>

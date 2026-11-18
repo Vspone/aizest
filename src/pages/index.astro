@@ -1,5 +1,5 @@
 ---
-import { ELEVENLABS_LANGS } from '../data/product-facts';
+import { ELEVENLABS_LANGS, SYNTHESIA_PRICING } from '../data/product-facts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import SearchBar from '../components/SearchBar.astro';
@@ -177,7 +177,7 @@ for (const t of tools) {
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
           { href: '/elevenlabs-review', label: 'Voice', title: 'ElevenLabs Review 2026', desc: 'Voice quality, cloning accuracy, pricing per 1,000 characters and where it still falls short.' },
-          { href: '/synthesia-review', label: 'Avatar video', title: 'Synthesia Review 2026', desc: 'Avatar realism, language coverage, and whether the $19/mo Starter plan is enough for regular uploads.' },
+          { href: '/synthesia-review', label: 'Avatar video', title: 'Synthesia Review 2026', desc: `Avatar realism, language coverage, and whether the ${SYNTHESIA_PRICING.starter.price} Starter plan is enough for regular uploads.` },
           { href: '/submagic-review', label: 'Short-form', title: 'Submagic Review 2026', desc: 'Caption accuracy, Magic Clips hit rate, credit maths and the real cost per finished video.' },
         ].map(r => (
           <a href={r.href} class="group rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 hover:border-[#3B82F6]/40 hover:shadow-lg hover:-translate-y-0.5 transition-all">

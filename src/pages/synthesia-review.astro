@@ -1,4 +1,5 @@
 ---
+import { SYNTHESIA_PRICING } from '../data/product-facts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
 import AffiliateBtn from '../components/AffiliateBtn.astro';
@@ -45,7 +46,7 @@ const faqJsonLd = JSON.stringify({
       "name": "Is Synthesia worth the money?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, Synthesia is worth it for businesses and content creators who regularly produce video content. The Starter plan is $19/month ($14/month billed yearly) and includes 1,250 credits, which Synthesia's own pricing page converts to roughly 12 minutes of video plus 125+ AI avatars — a fraction of the cost of traditional video production. For teams that need about 60 minutes of video per month, the Pro plan is $89/month ($59/month billed yearly) and adds 6,000 credits, 180+ AI avatars and 5 personal avatars."
+        "text": `Yes, Synthesia is worth it for businesses and content creators who regularly produce video content. The Starter plan is ${SYNTHESIA_PRICING.starter.price} (${SYNTHESIA_PRICING.starter.annual} billed yearly) and includes ${SYNTHESIA_PRICING.starter.credits} credits, which Synthesia's own pricing page converts to roughly 12 minutes of video plus 125+ AI avatars — a fraction of the cost of traditional video production. For teams that need about 60 minutes of video per month, the Pro plan is ${SYNTHESIA_PRICING.pro.price} (${SYNTHESIA_PRICING.pro.annual} billed yearly) and adds ${SYNTHESIA_PRICING.pro.credits} credits, 180+ AI avatars and 5 personal avatars.`
       }
     },
     {
@@ -217,15 +218,15 @@ import RelatedContent from '../components/RelatedContent.astro';
 <thead><tr><th>Plan</th><th>Price</th><th>What You Get</th></tr></thead>
 <tbody>
 <tr><td><strong>Basic</strong></td><td>Free</td><td>10 min/month video, 9 AI avatars, watermark</td></tr>
-<tr><td><strong>Starter</strong></td><td>$19/mo ($14/mo yearly)</td><td>1,250 credits/month (~12 min video), 125+ AI avatars, 140+ languages, 1 editor + 3 guests</td></tr>
-<tr><td><strong>Pro</strong></td><td>$89/mo ($59/mo yearly)</td><td>6,000 credits/month (~60 min video), 180+ AI avatars, 5 personal avatars, 1 editor + 5 guests</td></tr>
+<tr><td><strong>Starter</strong></td><td>{SYNTHESIA_PRICING.starter.price} ({SYNTHESIA_PRICING.starter.annual} yearly)</td><td>{SYNTHESIA_PRICING.starter.credits} credits/month (~12 min video), 125+ AI avatars, 140+ languages, 1 editor + 3 guests</td></tr>
+<tr><td><strong>Pro</strong></td><td>{SYNTHESIA_PRICING.pro.price} ({SYNTHESIA_PRICING.pro.annual} yearly)</td><td>{SYNTHESIA_PRICING.pro.credits} credits/month (~60 min video), 180+ AI avatars, 5 personal avatars, 1 editor + 5 guests</td></tr>
 <tr><td><strong>Enterprise</strong></td><td>Custom</td><td>Custom credits and unlimited minutes, 240+ stock avatars, unlimited personal avatars, SAML/SSO, SCORM export</td></tr>
 </tbody>
 </table>
 
-<p>The Starter plan at $19/month is an excellent entry point for individuals and small teams exploring AI video production. The 1,250 monthly credits convert to roughly 12 minutes of avatar footage — enough for a few training videos or product demos — and the 125+ AI avatars provide plenty of variety. With 140+ languages included on Starter, upgrading to Pro or Enterprise unlocks more avatars, personal avatars, and interactive features.</p>
+<p>The Starter plan at {SYNTHESIA_PRICING.starter.price} is an excellent entry point for individuals and small teams exploring AI video production. The {SYNTHESIA_PRICING.starter.credits} monthly credits convert to roughly 12 minutes of avatar footage — enough for a few training videos or product demos — and the 125+ AI avatars provide plenty of variety. With 140+ languages included on Starter, upgrading to Pro or Enterprise unlocks more avatars, personal avatars, and interactive features.</p>
 
-<p>The Pro plan at $89/month is the sweet spot for most professional use. Its 6,000 monthly credits work out to roughly 60 minutes of video, which covers most content calendars (weekly training videos, monthly product updates, occasional marketing content), and access to 180+ AI avatars, 5 personal avatars and branded video pages significantly expands creative possibilities. For organizations producing video content as a core function, the Enterprise plan with custom credit volumes and unlimited personal avatars quickly pays for itself.</p>
+<p>The Pro plan at {SYNTHESIA_PRICING.pro.price} is the sweet spot for most professional use. Its {SYNTHESIA_PRICING.pro.credits} monthly credits work out to roughly 60 minutes of video, which covers most content calendars (weekly training videos, monthly product updates, occasional marketing content), and access to 180+ AI avatars, 5 personal avatars and branded video pages significantly expands creative possibilities. For organizations producing video content as a core function, the Enterprise plan with custom credit volumes and unlimited personal avatars quickly pays for itself.</p>
 
 <div class="not-prose my-6">
   <AffiliateBtn slug="synthesia" text="Start Free with Synthesia" loc="review-pricing" />

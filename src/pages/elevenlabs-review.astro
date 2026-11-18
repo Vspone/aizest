@@ -70,7 +70,7 @@ const faqJsonLd = JSON.stringify({
       "name": "How much does ElevenLabs cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ElevenLabs offers a Free tier (10,000 characters/month), Starter at $6/month (30,000 credits; $5/month effective with annual billing), Creator at $22/month (121,000 credits), Pro at $99/month (600,000 credits), Scale at $299/month (1.8M credits), Business at $990/month (6M credits), and Enterprise with custom pricing. Each plan includes different numbers of professional voice cloning slots."
+        "text": `ElevenLabs offers a Free tier (${ELEVENLABS_PRICING.free.credits} credits/month), Starter at ${ELEVENLABS_PRICING.starter.price} (${ELEVENLABS_PRICING.starter.credits} credits; ${ELEVENLABS_PRICING.starter.annual} effective with annual billing), Creator at ${ELEVENLABS_PRICING.creator.price} (${ELEVENLABS_PRICING.creator.credits} credits), Pro at ${ELEVENLABS_PRICING.pro.price} (${ELEVENLABS_PRICING.pro.credits} credits), Scale at ${ELEVENLABS_PRICING.scale.price} (${ELEVENLABS_PRICING.scale.credits} credits), Business at ${ELEVENLABS_PRICING.business.price} (${ELEVENLABS_PRICING.business.credits} credits), and Enterprise with custom pricing. Each plan includes different numbers of professional voice cloning slots.`
       }
     },
     {
@@ -193,19 +193,19 @@ import RelatedContent from '../components/RelatedContent.astro';
 <table>
 <thead><tr><th>Plan</th><th>Price</th><th>Characters/mo</th><th>Voice Cloning</th><th>API Access</th></tr></thead>
 <tbody>
-<tr><td><strong>Free</strong></td><td>$0</td><td>10,000</td><td>Instant (limited)</td><td>No</td></tr>
-<tr><td><strong>Starter</strong></td><td>$6/mo ($5/mo with annual billing)</td><td>30,000</td><td>Instant only — PVC from Creator</td><td>Yes (limited)</td></tr>
-<tr><td><strong>Creator</strong></td><td>$22/mo</td><td>121,000</td><td>PVC included</td><td>Yes</td></tr>
-<tr><td><strong>Pro</strong></td><td>$99/mo</td><td>600,000</td><td>PVC included (higher limits)</td><td>Yes (high throughput)</td></tr>
-<tr><td><strong>Scale</strong></td><td>$299/mo</td><td>1,800,000</td><td>3 Professional</td><td>Yes (high throughput)</td></tr>
-<tr><td><strong>Business</strong></td><td>$990/mo</td><td>6,000,000</td><td>10 Professional</td><td>Yes (high throughput)</td></tr>
+<tr><td><strong>Free</strong></td><td>{ELEVENLABS_PRICING.free.price}</td><td>{ELEVENLABS_PRICING.free.credits}</td><td>Instant (limited)</td><td>No</td></tr>
+<tr><td><strong>Starter</strong></td><td>{ELEVENLABS_PRICING.starter.price} ({ELEVENLABS_PRICING.starter.annual} with annual billing)</td><td>{ELEVENLABS_PRICING.starter.credits}</td><td>Instant only — PVC from Creator</td><td>Yes (limited)</td></tr>
+<tr><td><strong>Creator</strong></td><td>{ELEVENLABS_PRICING.creator.price}</td><td>{ELEVENLABS_PRICING.creator.credits}</td><td>PVC included</td><td>Yes</td></tr>
+<tr><td><strong>Pro</strong></td><td>{ELEVENLABS_PRICING.pro.price}</td><td>{ELEVENLABS_PRICING.pro.credits}</td><td>PVC included (higher limits)</td><td>Yes (high throughput)</td></tr>
+<tr><td><strong>Scale</strong></td><td>{ELEVENLABS_PRICING.scale.price}</td><td>{ELEVENLABS_PRICING.scale.credits}</td><td>3 Professional</td><td>Yes (high throughput)</td></tr>
+<tr><td><strong>Business</strong></td><td>{ELEVENLABS_PRICING.business.price}</td><td>{ELEVENLABS_PRICING.business.credits}</td><td>10 Professional</td><td>Yes (high throughput)</td></tr>
 <tr><td><strong>Enterprise</strong></td><td>Custom</td><td>Custom</td><td>Unlimited</td><td>Dedicated infra, SLA</td></tr>
 </tbody>
 </table>
 
 <p><em>Note: Characters count all generated audio, including retries and test runs. Voice cloning slots are limited per plan — Professional Voice Cloning is the premium pipeline.</em></p>
 
-<p>The Free tier is generous enough for casual experimentation. Content creators typically land on the Creator plan ($22/mo) for 121K credits and Professional Voice Cloning. The Pro plan ($99/mo) is where serious usage begins. At scale, pricing starts at $299/mo (Scale) and $990/mo (Business), with Enterprise quoted on demand depending on volume and infrastructure needs.</p>
+<p>The Free tier is generous enough for casual experimentation. Content creators typically land on the Creator plan ({ELEVENLABS_PRICING.creator.price}) for {ELEVENLABS_PRICING.creator.credits} credits and Professional Voice Cloning. The Pro plan ({ELEVENLABS_PRICING.pro.price}) is where serious usage begins. At scale, pricing starts at {ELEVENLABS_PRICING.scale.price} (Scale) and {ELEVENLABS_PRICING.business.price} (Business), with Enterprise quoted on demand depending on volume and infrastructure needs.</p>
 
 <p>The pricing has drawn criticism in 2026 — the Pro tier is expensive for indie developers, and character limits can be consumed faster than expected with longer-form content. Audiobook creators, in particular, find the limits restrictive on mid-tier plans.</p>
 
@@ -223,8 +223,8 @@ import RelatedContent from '../components/RelatedContent.astro';
 <tr><td><strong>AI Dubbing</strong></td><td>Yes (excellent)</td><td>No</td></tr>
 <tr><td><strong>Sound Effects</strong></td><td>Yes (new in 2026)</td><td>No</td></tr>
 <tr><td><strong>Free Tier</strong></td><td>10,000 credits/mo</td><td>10 min audio (no download)</td></tr>
-<tr><td><strong>Starting Price</strong></td><td>{ELEVENLABS_PRICING.starter.price} (Starter)</td><td>$19/mo (Creator)</td></tr>
-<tr><td><strong>Mid-Tier Price</strong></td><td>$22/mo (Creator, 121K credits)</td><td>$66/mo (Business, 96 hrs/yr)</td></tr>
+<tr><td><strong>Starting Price</strong></td><td>{ELEVENLABS_PRICING.starter.price} (Starter)</td><td>$19/mo (Creator, annual billing)</td></tr>
+<tr><td><strong>Mid-Tier Price</strong></td><td>{ELEVENLABS_PRICING.creator.price} (Creator, {ELEVENLABS_PRICING.creator.credits} credits)</td><td>$66/mo (Business, annual, 96 hrs/yr)</td></tr>
 </tbody>
 </table>
 

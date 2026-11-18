@@ -5,7 +5,7 @@ import ArticleWrap from '../components/ArticleWrap.astro';
 import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 const title = "Submagic Review 2026: AI Captions & Shorts Editor — AI Zest";
-const description = `Submagic review: auto captions, Magic Clips and pricing. Starter ${SUBMAGIC_PRICING.starter.price}, Pro ${SUBMAGIC_PRICING.pro.price}, Business ${SUBMAGIC_PRICING.business.price} (yearly $12/$23/$41). Credit limits, pros, cons and who it fits.`;
+const description = `Submagic review: auto captions, Magic Clips and pricing. Starter ${SUBMAGIC_PRICING.starter.price}, Pro ${SUBMAGIC_PRICING.pro.price}, Business ${SUBMAGIC_PRICING.business.price} (yearly ${SUBMAGIC_PRICING.starter.annualAmount}/${SUBMAGIC_PRICING.pro.annualAmount}/${SUBMAGIC_PRICING.business.annualAmount}). Credit limits, pros, cons and who it fits.`;
 const canonical = "/submagic-review";
 
 const jsonLd = JSON.stringify({
@@ -24,8 +24,8 @@ const jsonLd = JSON.stringify({
 });
 
 const faq = [
-  { q: "Is Submagic free?", a: "Submagic's pricing page lists paid tiers only — Starter $19/mo, Pro $39/mo and Business $69/mo per member (yearly billing brings those down to $12, $23 and $41). You can start without a credit card, but treat it as a limited trial rather than a permanent free plan." },
-  { q: "How many videos can I make per month?", a: "Credits decide that. Starter includes 45 credits per member, which the pricing page converts to roughly 15 videos or 5 Magic Clips. Pro gives 120 credits (about 40 videos or 15 Magic Clips) and Business 300 credits (about 100 videos or 37 Magic Clips)." },
+  { q: "Is Submagic free?", a: `Submagic's pricing page lists paid tiers only — Starter ${SUBMAGIC_PRICING.starter.price}, Pro ${SUBMAGIC_PRICING.pro.price} and Business ${SUBMAGIC_PRICING.business.price} per member (yearly billing brings those down to ${SUBMAGIC_PRICING.starter.annualAmount}, ${SUBMAGIC_PRICING.pro.annualAmount} and ${SUBMAGIC_PRICING.business.annualAmount}). You can start without a credit card, but treat it as a limited trial rather than a permanent free plan.` },
+  { q: "How many videos can I make per month?", a: `Credits decide that. Starter includes ${SUBMAGIC_PRICING.starter.creditsNum} credits per member, which the pricing page converts to roughly ${SUBMAGIC_PRICING.starter.videos} videos or 5 Magic Clips. Pro gives ${SUBMAGIC_PRICING.pro.creditsNum} credits (about ${SUBMAGIC_PRICING.pro.videos} videos or 15 Magic Clips) and Business ${SUBMAGIC_PRICING.business.creditsNum} credits (about ${SUBMAGIC_PRICING.business.videos} videos or 37 Magic Clips).` },
   { q: "Does Submagic add a watermark?", a: "No. All three paid plans export without a watermark. Export resolution is the real differentiator: 1080p/30FPS on Starter, 1080p and 2K on Pro, 1080p/4K and 60FPS on Business." },
   { q: "How long can a video be?", a: "2 minutes per video on Starter, 5 minutes on Pro and 30 minutes on Business. That cap determines whether Magic Clips is practical for you — repurposing a 40-minute podcast requires the Business tier." },
   { q: "Submagic vs CapCut — which should I use?", a: "They solve different problems. CapCut is a full video editor with a generous free tier, and you do the cutting yourself. Submagic automates the repetitive part of short-form: transcription, animated captions, silence removal and cutting long footage into candidate shorts. Many creators use CapCut for finishing and Submagic for volume." },
@@ -127,24 +127,24 @@ const breadcrumbJsonLd = JSON.stringify({
         <tbody class="text-gray-700 dark:text-gray-300">
           <tr class="border-b border-gray-100 dark:border-gray-800">
             <td class="py-2 pr-4 font-medium">Starter</td>
-            <td class="py-2 pr-4">$19</td>
-            <td class="py-2 pr-4">$12</td>
-            <td class="py-2 pr-4">45 — about 15 videos or 5 Magic Clips</td>
-            <td class="py-2">2 min</td>
+            <td class="py-2 pr-4">{SUBMAGIC_PRICING.starter.amount}</td>
+            <td class="py-2 pr-4">{SUBMAGIC_PRICING.starter.annualAmount}</td>
+            <td class="py-2 pr-4">{SUBMAGIC_PRICING.starter.creditsNum} — about {SUBMAGIC_PRICING.starter.videos} videos or 5 Magic Clips</td>
+            <td class="py-2">{SUBMAGIC_PRICING.starter.maxLength}</td>
           </tr>
           <tr class="border-b border-gray-100 dark:border-gray-800">
             <td class="py-2 pr-4 font-medium">Pro</td>
-            <td class="py-2 pr-4">$39</td>
-            <td class="py-2 pr-4">$23</td>
-            <td class="py-2 pr-4">120 — about 40 videos or 15 Magic Clips</td>
-            <td class="py-2">5 min</td>
+            <td class="py-2 pr-4">{SUBMAGIC_PRICING.pro.amount}</td>
+            <td class="py-2 pr-4">{SUBMAGIC_PRICING.pro.annualAmount}</td>
+            <td class="py-2 pr-4">{SUBMAGIC_PRICING.pro.creditsNum} — about {SUBMAGIC_PRICING.pro.videos} videos or 15 Magic Clips</td>
+            <td class="py-2">{SUBMAGIC_PRICING.pro.maxLength}</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium">Business</td>
-            <td class="py-2 pr-4">$69</td>
-            <td class="py-2 pr-4">$41</td>
-            <td class="py-2 pr-4">300 — about 100 videos or 37 Magic Clips</td>
-            <td class="py-2">30 min</td>
+            <td class="py-2 pr-4">{SUBMAGIC_PRICING.business.amount}</td>
+            <td class="py-2 pr-4">{SUBMAGIC_PRICING.business.annualAmount}</td>
+            <td class="py-2 pr-4">{SUBMAGIC_PRICING.business.creditsNum} — about {SUBMAGIC_PRICING.business.videos} videos or 37 Magic Clips</td>
+            <td class="py-2">{SUBMAGIC_PRICING.business.maxLength}</td>
           </tr>
         </tbody>
       </table>
@@ -168,7 +168,7 @@ const breadcrumbJsonLd = JSON.stringify({
           <li>• Captioning is fast enough to fit a weekly upload schedule</li>
           <li>• Animated presets look native, not bolted on</li>
           <li>• Magic Clips genuinely saves hours on back catalogue</li>
-          <li>• 15 finished videos for $19 is fair at the entry tier</li>
+          <li>• {SUBMAGIC_PRICING.starter.videos} finished videos for {SUBMAGIC_PRICING.starter.amount} is fair at the entry tier</li>
           <li>• Team features (templates, brand kit, multi-account) scale sensibly</li>
         </ul>
       </div>

@@ -1,4 +1,5 @@
 ---
+import { SUBMAGIC_PRICING } from '../data/product-facts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
 import AffiliateBtn from '../components/AffiliateBtn.astro';
@@ -26,7 +27,7 @@ const breadcrumbLd = {
 const faqLd = {
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What is the best AI video editor for Shorts?", "acceptedAnswer": { "@type": "Answer", "text": "Submagic for captions plus automatic clipping in one app: Starter is $19/month ($12/month billed yearly) for 45 credits, which converts to about 15 captioned videos or 5 Magic Clips. If you would rather not pay, CapCut's free tier includes a timeline, templates and auto-captions with no time limit on basic editing." } },
+    { "@type": "Question", "name": "What is the best AI video editor for Shorts?", "acceptedAnswer": { "@type": "Answer", "text": `Submagic for captions plus automatic clipping in one app: Starter is ${SUBMAGIC_PRICING.starter.price} (${SUBMAGIC_PRICING.starter.annual} billed yearly) for ${SUBMAGIC_PRICING.starter.creditsNum} credits, which converts to about ${SUBMAGIC_PRICING.starter.videos} captioned videos or 5 Magic Clips. If you would rather not pay, CapCut's free tier includes a timeline, templates and auto-captions with no time limit on basic editing.` } },
     { "@type": "Question", "name": "Do I need a separate tool to make Shorts from long videos?", "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. Submagic, OpusClip and Descript can all find highlights in a long recording and cut vertical clips. Descript does it through transcript editing with Create Clips, OpusClip specialises in automated selection with a virality score (free plan posts one clip a day, Starter $15/month removes the watermark), and Submagic charges Magic Clips per credit above plain captions." } },
     { "@type": "Question", "name": "Is a free editor good enough for Shorts?", "acceptedAnswer": { "@type": "Answer", "text": "For cutting, captioning and exporting vertical video, yes. CapCut's free tier and VEED's free tier both handle captions and vertical export. Paid tiers buy three things: watermark removal, automatic clip selection, and higher export resolution — which is why most creators start free and upgrade only when the watermark or the clip volume becomes a problem." } },
     { "@type": "Question", "name": "Why do short-form editors bill in credits?", "acceptedAnswer": { "@type": "Answer", "text": "Because AI work is uneven: transcribing a 60-second clip costs far less than rendering a 1080p export with animated captions and b-roll. Vendors meter the expensive operations. The practical consequence is that two $19 plans can deliver very different output, so convert credits to finished clips before you subscribe — a Magic Clip typically costs more credits than a plain captioned video." } },
@@ -58,7 +59,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
       </tr>
     </thead>
     <tbody>
-      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Submagic</strong></td><td class="py-2">Captions + clips in one app</td><td class="py-2">$12/mo yearly</td><td class="py-2">Word-level captions, Magic Clips</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Submagic</strong></td><td class="py-2">Captions + clips in one app</td><td class="py-2">{SUBMAGIC_PRICING.starter.annualAmount}/mo yearly</td><td class="py-2">Word-level captions, Magic Clips</td></tr>
       <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>CapCut</strong></td><td class="py-2">Free baseline editor</td><td class="py-2">Free</td><td class="py-2">Full timeline, templates, no cost</td></tr>
       <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>OpusClip</strong></td><td class="py-2">Automated clip selection</td><td class="py-2">Free / $15/mo</td><td class="py-2">Virality score, one free clip a day</td></tr>
       <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Descript</strong></td><td class="py-2">Editing by transcript</td><td class="py-2">Free / $16/mo yearly</td><td class="py-2">Best for talking-head source video</td></tr>
@@ -74,7 +75,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
 
 <h2>1. Submagic — Best All-in-One for Captions and Clips</h2>
 <p>Submagic does the two things a shorts workflow needs in one pass: word-level animated captions, and Magic Clips, which scans a long recording for highlights and cuts them into vertical clips you can publish to TikTok and Reels from the editor. Captions are supported in 123 languages, and exports run from 1080p30 on Starter to 4K60 on Business.</p>
-<p>The plan structure is the thing to read carefully: Starter is $19/month ($12/month billed yearly) for 45 credits, which Submagic converts to about 15 captioned videos or 5 Magic Clips. Pro is $39/month ($23 yearly) for 120 credits (about 40 videos or 15 clips); Business is $69/month ($41 yearly) for 300 credits (about 100 videos or 37 clips). A Magic Clip costs more credits than a plain captioned video, and Starter caps each video at 2 minutes.</p>
+<p>The plan structure is the thing to read carefully: Starter is {SUBMAGIC_PRICING.starter.price} ({SUBMAGIC_PRICING.starter.annual} billed yearly) for {SUBMAGIC_PRICING.starter.creditsNum} credits, which Submagic converts to about {SUBMAGIC_PRICING.starter.videos} captioned videos or 5 Magic Clips. Pro is {SUBMAGIC_PRICING.pro.price} ({SUBMAGIC_PRICING.pro.annual} yearly) for {SUBMAGIC_PRICING.pro.creditsNum} credits (about {SUBMAGIC_PRICING.pro.videos} videos or 15 clips); Business is {SUBMAGIC_PRICING.business.price} ({SUBMAGIC_PRICING.business.annual} yearly) for {SUBMAGIC_PRICING.business.creditsNum} credits (about {SUBMAGIC_PRICING.business.videos} videos or 37 clips). A Magic Clip costs more credits than a plain captioned video, and Starter caps each video at {SUBMAGIC_PRICING.starter.maxLength}.</p>
 
 <table>
 <thead><tr><th>Overall</th><th>Caption quality</th><th>Clip automation</th><th>Export quality</th><th>Free tier</th><th>Value</th></tr></thead>
@@ -228,7 +229,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
 <table>
 <thead><tr><th>Tool</th><th>Free tier</th><th>Entry paid</th><th>Budget unit</th><th>Max export</th><th>Best for</th></tr></thead>
 <tbody>
-<tr><td><strong>Submagic</strong></td><td>Trial only</td><td>$12/mo yearly</td><td>Credits (45 = ~15 videos)</td><td>4K60 (Business)</td><td>Captions + clips</td></tr>
+<tr><td><strong>Submagic</strong></td><td>Trial only</td><td>{SUBMAGIC_PRICING.starter.annualAmount}/mo yearly</td><td>Credits ({SUBMAGIC_PRICING.starter.creditsNum} = ~{SUBMAGIC_PRICING.starter.videos} videos)</td><td>4K60 (Business)</td><td>Captions + clips</td></tr>
 <tr><td><strong>CapCut</strong></td><td>Full editor</td><td>Region-priced</td><td>—</td><td>Platform presets</td><td>Free baseline</td></tr>
 <tr><td><strong>OpusClip</strong></td><td>1 clip/day</td><td>$15/mo</td><td>Clips</td><td>Highest available</td><td>Auto clip selection</td></tr>
 <tr><td><strong>Descript</strong></td><td>60 min/mo, 720p</td><td>$16/mo yearly</td><td>Media minutes</td><td>4K (Creator)</td><td>Source cleanup</td></tr>
@@ -247,7 +248,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
 <h2>Frequently Asked Questions</h2>
 
 <h3>What is the best AI video editor for Shorts?</h3>
-<p>Submagic if you want captions and automatic clipping together — Starter is $19/month ($12 yearly) for about 15 captioned videos or 5 Magic Clips. CapCut if you want a genuinely free editor with a full timeline and auto-captions.</p>
+<p>Submagic if you want captions and automatic clipping together — Starter is {SUBMAGIC_PRICING.starter.price} ({SUBMAGIC_PRICING.starter.annual} yearly) for about {SUBMAGIC_PRICING.starter.videos} captioned videos or 5 Magic Clips. CapCut if you want a genuinely free editor with a full timeline and auto-captions.</p>
 
 <h3>Do I need a separate tool to make Shorts from long videos?</h3>
 <p>No. Submagic, OpusClip and Descript all cut vertical clips from long recordings. Descript does it through transcript editing, OpusClip specialises in automated selection with a virality score, and Submagic charges Magic Clips per credit above plain captions.</p>

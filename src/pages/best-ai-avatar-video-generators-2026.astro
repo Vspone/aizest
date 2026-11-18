@@ -1,4 +1,5 @@
 ---
+import { SYNTHESIA_PRICING } from '../data/product-facts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
 import AffiliateBtn from '../components/AffiliateBtn.astro';
@@ -26,8 +27,8 @@ const breadcrumbLd = {
 const faqLd = {
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What is the best AI avatar video generator?", "acceptedAnswer": { "@type": "Answer", "text": "Synthesia for corporate, training and course video: 125+ avatars on Starter, 140+ languages, SOC 2 and ISO 27001 compliance, with Starter at $19/month (1,250 credits, roughly 12 minutes of avatar footage). HeyGen is the stronger choice for creator-facing and marketing video at $29/month for 600 credits and 175+ languages, with a free tier of three watermarked one-minute videos a month." } },
-    { "@type": "Question", "name": "How much does an AI avatar video cost per minute?", "acceptedAnswer": { "@type": "Answer", "text": "Synthesia converts credits at roughly 100 credits per finished minute, so Starter's 1,250 credits is about 12 minutes for $19 and Pro's 6,000 credits about 60 minutes for $89 — roughly $1.50 per minute on both. HeyGen burns roughly 20 credits per minute on its newest high-realism avatars, which puts Creator's 600 credits at about 30 minutes for $29, under $1 per minute." } },
+    { "@type": "Question", "name": "What is the best AI avatar video generator?", "acceptedAnswer": { "@type": "Answer", "text": `Synthesia for corporate, training and course video: 125+ avatars on Starter, 140+ languages, SOC 2 and ISO 27001 compliance, with Starter at ${SYNTHESIA_PRICING.starter.price} (${SYNTHESIA_PRICING.starter.credits} credits, roughly 12 minutes of avatar footage). HeyGen is the stronger choice for creator-facing and marketing video at $29/month for 600 credits and 175+ languages, with a free tier of three watermarked one-minute videos a month.` } },
+    { "@type": "Question", "name": "How much does an AI avatar video cost per minute?", "acceptedAnswer": { "@type": "Answer", "text": `Synthesia converts credits at roughly 100 credits per finished minute, so Starter's ${SYNTHESIA_PRICING.starter.credits} credits is about 12 minutes for ${SYNTHESIA_PRICING.starter.price} and Pro's ${SYNTHESIA_PRICING.pro.credits} credits about 60 minutes for ${SYNTHESIA_PRICING.pro.price} — roughly $1.50 per minute on both. HeyGen burns roughly 20 credits per minute on its newest high-realism avatars, which puts Creator's 600 credits at about 30 minutes for $29, under $1 per minute.` } },
     { "@type": "Question", "name": "Can I make avatar videos for free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, with limits. Synthesia's Basic plan includes about 10 minutes of video a month with a watermark and 9 avatars. HeyGen's free tier gives three watermarked videos of up to one minute each. Fliki's free plan gives 3 credits a month, 720p export and a watermark. All three are enough to judge avatar quality, none is enough to publish weekly." } },
     { "@type": "Question", "name": "Do AI avatars look real enough for YouTube?", "acceptedAnswer": { "@type": "Answer", "text": "For presenter-style content — explainers, tutorials, course lessons, product walkthroughs — yes for most audiences. The visible limits are that avatars stay inside a presenter frame rather than moving through a scene, and gestures can read as slightly canned on close-ups. If your format needs walking, handheld or cinematic shots, avatar video is the wrong tool." } },
     { "@type": "Question", "name": "What is the difference between a stock avatar and a custom avatar?", "acceptedAnswer": { "@type": "Answer", "text": "A stock avatar is a ready-made presenter from the vendor library. A custom or personal avatar is a clone of a real person built from recorded footage, which keeps a channel visually consistent and is usually gated to higher tiers: Synthesia includes five personal avatars from Pro upwards, Pictory gates custom avatars to Professional, and HeyGen includes one custom video avatar even on its free tier." } }
@@ -58,7 +59,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
       </tr>
     </thead>
     <tbody>
-      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Synthesia</strong></td><td class="py-2">Training, courses, faceless channels</td><td class="py-2">Free / $19/mo</td><td class="py-2">≈$1.50 (vendor conversion)</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Synthesia</strong></td><td class="py-2">Training, courses, faceless channels</td><td class="py-2">{SYNTHESIA_PRICING.entry}</td><td class="py-2">≈$1.50 (vendor conversion)</td></tr>
       <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>HeyGen</strong></td><td class="py-2">Creator and marketing video</td><td class="py-2">Free / $29/mo</td><td class="py-2">≈$1.00 or less</td></tr>
       <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Pictory</strong></td><td class="py-2">Script-to-video with stock media</td><td class="py-2">14-day trial / $25/mo annual</td><td class="py-2">Credit-based, 30 min/mo at Starter</td></tr>
       <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Fliki</strong></td><td class="py-2">Cheap volume with voice cloning</td><td class="py-2">Free / Standard tier</td><td class="py-2">0.5 credits per video minute</td></tr>
@@ -201,7 +202,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
 <table>
 <thead><tr><th>Tool</th><th>Free tier</th><th>Entry paid</th><th>Credit cost</th><th>Custom avatar from</th><th>Languages</th></tr></thead>
 <tbody>
-<tr><td><strong>Synthesia</strong></td><td>~10 min/mo, watermark</td><td>$19/mo</td><td>~100 credits/min</td><td>Pro ($89/mo)</td><td>140+</td></tr>
+<tr><td><strong>Synthesia</strong></td><td>~10 min/mo, watermark</td><td>{SYNTHESIA_PRICING.starter.price}</td><td>~100 credits/min</td><td>Pro ({SYNTHESIA_PRICING.pro.price})</td><td>140+</td></tr>
 <tr><td><strong>HeyGen</strong></td><td>3 videos/mo, 1 min</td><td>$29/mo ($24 annual)</td><td>~20 credits/min (Avatar IV)</td><td>Free (1 avatar)</td><td>175+</td></tr>
 <tr><td><strong>Pictory</strong></td><td>14-day trial</td><td>$25/mo annual</td><td>24,000 credits ≈ 360 min/yr</td><td>Professional ($35/mo annual)</td><td>29 (Pro/Teams)</td></tr>
 <tr><td><strong>Fliki</strong></td><td>3 credits/mo, 720p</td><td>Standard tier</td><td>0.5 credits/min</td><td>Premium tier</td><td>80+</td></tr>
@@ -219,10 +220,10 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [art
 <h2>Frequently Asked Questions</h2>
 
 <h3>What is the best AI avatar video generator?</h3>
-<p>Synthesia for training, courses and faceless channels — 125+ avatars on Starter, 140+ languages, SOC 2 and ISO 27001, Starter at $19/month for roughly 12 minutes. HeyGen for creator and marketing video at $29/month for 600 credits and 175+ languages, with a usable free tier.</p>
+<p>Synthesia for training, courses and faceless channels — 125+ avatars on Starter, 140+ languages, SOC 2 and ISO 27001, Starter at {SYNTHESIA_PRICING.starter.price} for roughly 12 minutes. HeyGen for creator and marketing video at $29/month for 600 credits and 175+ languages, with a usable free tier.</p>
 
 <h3>How much does an AI avatar video cost per minute?</h3>
-<p>Synthesia converts at about 100 credits per finished minute: $19 buys about 12 minutes and $89 about 60, roughly $1.50/minute. HeyGen burns about 20 credits per minute on its newest avatars, so $29 buys roughly 30 minutes — under $1/minute.</p>
+<p>Synthesia converts at about 100 credits per finished minute: {SYNTHESIA_PRICING.starter.price} buys about 12 minutes and {SYNTHESIA_PRICING.pro.price} about 60, roughly $1.50/minute. HeyGen burns about 20 credits per minute on its newest avatars, so $29 buys roughly 30 minutes — under $1/minute.</p>
 
 <h3>Can I make avatar videos for free?</h3>
 <p>Yes, within limits. Synthesia Basic gives about 10 watermarked minutes a month; HeyGen gives three watermarked one-minute videos; Fliki gives 3 credits a month at 720p with a watermark. Enough to judge quality, not enough to publish weekly.</p>

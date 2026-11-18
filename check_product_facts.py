@@ -102,6 +102,13 @@ def check_languages(problems):
         for bad in FORBIDDEN_LANG:
             if re.search(rf'\b{bad}\+?\s*languages?\b', text, re.I):
                 problems.append(f'{page}: stale "{bad} languages" claim')
+            # A table cell under a "Languages" header just says "74" — no noun for
+            # the prose pattern above to latch onto, so it slipped through once.
+            for m in re.finditer(rf'(?<![\$\d.,])\b{bad}\b(?![\d.,%])', text):
+                if re.match(r'\s*languages?\b', text[m.end():m.end() + 12], re.I):
+                    continue                      # already reported above
+                snippet = text[max(0, m.start() - 60):m.end() + 30].strip()
+                problems.append(f'{page}: bare "{bad}" (stale language count?) → …{snippet}…')
 
         sentences = SENTENCE.findall(text)
         for idx, sentence in enumerate(sentences):

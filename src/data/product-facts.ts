@@ -53,6 +53,9 @@ export const ELEVENLABS_LANGS = {
   /** Table cells and comparison rows — shortest unambiguous form. */
   table: '90+ (v4) / 70+ (v3) / 32 (Flash v2.5) / 29 (Multilingual v2)',
 
+  /** Single cell inside an already-labelled "Languages" column. */
+  cell: '90+ (v4)',
+
   /** Badges, cards and titles where only the flagship figure fits. */
   compact: '90+ languages (Eleven v4)',
 } as const;
@@ -65,21 +68,24 @@ export const ELEVENLABS_LANGS = {
  * Annual billing = 2 months free (annual price = monthly × 10).
  * Credits reset monthly; unused roll over up to 2 months on paid plans.
  * ──────────────────────────────────────────────────────────────────────────── */
-export const ELEVENLABS_PRICING = {
-  verified: '2026-11-18',
-  source: 'https://elevenlabs.io/pricing',
-
+const EL_PLANS = {
   free: { price: '$0', credits: '10,000', note: 'no commercial licence, no rollover' },
   starter: { price: '$6/mo', annual: '$5/mo', credits: '30,000', note: 'commercial licence + Instant Voice Cloning' },
   creator: { price: '$22/mo', annual: '$18.33/mo', credits: '121,000', note: 'first Professional Voice Cloning tier' },
   pro: { price: '$99/mo', annual: '$82.50/mo', credits: '600,000', note: '44.1kHz PCM output via API' },
   scale: { price: '$299/mo', annual: '$249.17/mo', credits: '1.8M', note: '3 workspace seats' },
   business: { price: '$990/mo', annual: '$825/mo', credits: '6M', note: '10 PVC slots, 10 seats' },
+} as const;
 
-  /** Short line used in summary cards and CTA blocks. */
-  summary: 'Free (10,000 credits/mo) · Starter $6/mo · Creator $22/mo',
+export const ELEVENLABS_PRICING = {
+  ...EL_PLANS,
+  verified: '2026-11-18',
+  source: 'https://elevenlabs.io/pricing',
+
+  /** Short line used in summary cards and CTA blocks. Derived — never retype. */
+  summary: `Free (${EL_PLANS.free.credits} credits/mo) · Starter ${EL_PLANS.starter.price} · Creator ${EL_PLANS.creator.price}`,
   /** One-line value proposition for tables. */
-  entry: 'Free / $6/mo',
+  entry: `Free / ${EL_PLANS.starter.price}`,
 } as const;
 
 /* ────────────────────────────────────────────────────────────────────────────
@@ -90,20 +96,23 @@ export const ELEVENLABS_PRICING = {
  * to 4 months. The "$9"/"$49" figures are first-month promos, not list price.
  * 1-Click Translations into 140+ languages is listed as an Enterprise feature.
  * ──────────────────────────────────────────────────────────────────────────── */
+const SYNTH_PLANS = {
+  basic: { price: '$0', credits: '500', note: 'watermarked, 9 avatars, 10 min Studio video' },
+  starter: { price: '$19/mo', annual: '$14/mo', annualTotal: '$168/yr', credits: '1,250', creditsPer: 'month', note: 'no watermark, 125+ avatars, 3 guests' },
+  pro: { price: '$89/mo', annual: '$59/mo', annualTotal: '$708/yr', credits: '6,000', creditsPer: 'month', note: '5 personal avatars, branded pages, interactive video' },
+  enterprise: { price: 'Custom', credits: 'Custom', note: 'unlimited minutes, 140+ language translation, SSO' },
+} as const;
+
 export const SYNTHESIA_PRICING = {
+  ...SYNTH_PLANS,
   verified: '2026-11-18',
   source: 'https://www.synthesia.io/pricing',
-
-  basic: { price: '$0', credits: '500', note: 'watermarked, 9 avatars, 10 min Studio video' },
-  starter: { price: '$19/mo', annual: '$14/mo', annualTotal: '$168/yr', credits: '1,250/mo', note: 'no watermark, 125+ avatars, 3 guests' },
-  pro: { price: '$89/mo', annual: '$59/mo', annualTotal: '$708/yr', credits: '6,000/mo', note: '5 personal avatars, branded pages, interactive video' },
-  enterprise: { price: 'Custom', credits: 'Custom', note: 'unlimited minutes, 140+ language translation, SSO' },
 
   /** First-month promo prices — legal to mention, but must be labelled as promo. */
   promo: { starterFirstMonth: '$9', proFirstMonth: '$49' },
 
-  summary: 'Free (500 credits/mo) · Starter $19/mo · Pro $89/mo',
-  entry: 'Free / $19/mo',
+  summary: `Free (${SYNTH_PLANS.basic.credits} credits/mo) · Starter ${SYNTH_PLANS.starter.price} · Pro ${SYNTH_PLANS.pro.price}`,
+  entry: `Free / ${SYNTH_PLANS.starter.price}`,
 } as const;
 
 /* ────────────────────────────────────────────────────────────────────────────
@@ -118,16 +127,19 @@ export const SYNTHESIA_PRICING = {
  * No watermark on any paid tier. No permanent free plan — the trial is the only
  * no-card entry point. Video length is 2/5/30 minutes by tier.
  * ──────────────────────────────────────────────────────────────────────────── */
+const SUB_PLANS = {
+  starter: { price: '$19/mo', amount: '$19', annual: '$12/mo', annualAmount: '$12', credits: '45 credits = 15 videos or 5 Magic Clips', creditsNum: '45', videos: '15', maxLength: '2 min' },
+  pro: { price: '$39/mo', amount: '$39', annual: '$23/mo', annualAmount: '$23', credits: '120 credits = 40 videos or 15 Magic Clips', creditsNum: '120', videos: '40', maxLength: '5 min' },
+  business: { price: '$69/mo', amount: '$69', annual: '$41/mo', annualAmount: '$41', credits: '300 credits = 100 videos or 37 Magic Clips', creditsNum: '300', videos: '100', maxLength: '30 min' },
+} as const;
+
 export const SUBMAGIC_PRICING = {
+  ...SUB_PLANS,
   verified: '2026-11-18',
   source: 'https://www.submagic.co/pricing',
 
-  starter: { price: '$19/mo', annual: '$12/mo', credits: '45 credits = 15 videos or 5 Magic Clips', maxLength: '2 min' },
-  pro: { price: '$39/mo', annual: '$23/mo', credits: '120 credits = 40 videos or 15 Magic Clips', maxLength: '5 min' },
-  business: { price: '$69/mo', annual: '$41/mo', credits: '300 credits = 100 videos or 37 Magic Clips', maxLength: '30 min' },
-
-  summary: 'Starter $19/mo · Pro $39/mo · Business $69/mo (yearly $12/$23/$41)',
-  entry: 'Free trial / $19/mo',
+  summary: `Starter ${SUB_PLANS.starter.price} · Pro ${SUB_PLANS.pro.price} · Business ${SUB_PLANS.business.price} (yearly ${SUB_PLANS.starter.annual}, ${SUB_PLANS.pro.annual}, ${SUB_PLANS.business.annual})`,
+  entry: `Free trial / ${SUB_PLANS.starter.price}`,
 } as const;
 
 /* ────────────────────────────────────────────────────────────────────────────

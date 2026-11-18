@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
+import RelatedContent from '../components/RelatedContent.astro';
 import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 const articleJsonLd = JSON.stringify({
@@ -165,5 +166,6 @@ const faqJsonLd = JSON.stringify({
 
 <p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you. Our rankings reflect documented features, public pricing, and published benchmarks, and are not influenced by affiliate relationships.</em></p>
 
+  <RelatedContent category="marketing" />
 </ArticleWrap>
 </BaseLayout>

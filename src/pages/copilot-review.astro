@@ -87,6 +87,7 @@ const title = "GitHub Copilot Review 2026: Is It Worth $10/mo? — AI Zest";
 const description = "GitHub Copilot review 2026. A look at code completions, chat quality, multi-editor support, and pricing. Find out if Copilot is the best AI coding assistant for your workflow.";
 const canonical = "/copilot-review";
 import RelatedContent from '../components/RelatedContent.astro';
+import CreatorCrossSell from '../components/CreatorCrossSell.astro';
 ---
 
 <BaseLayout 
@@ -265,6 +266,8 @@ import RelatedContent from '../components/RelatedContent.astro';
 <div class="not-prose my-8 text-center">
   <p class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Ready to try GitHub Copilot?</p>
   <AffiliateBtn slug="copilot" />
+
+<CreatorCrossSell current="copilot" heading="Demoing what you built?" />
 
         <RelatedContent category="coding" />
 </div>

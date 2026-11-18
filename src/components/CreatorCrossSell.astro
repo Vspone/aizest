@@ -1,0 +1,71 @@
+---
+/**
+ * CreatorCrossSell — 把无佣金页面（如 ChatGPT/Claude/Canva 评测）的读者
+ * 导向真正有联盟关系的三个产品。
+ *
+ * 用途：高流量但零佣金的评测页结尾。这些页面本身不产生收益，
+ * 但读者意图强（正在选工具），是站内最好的导流位。
+ *
+ * 只放内链，不放联盟链接 —— 联盟 CTA 留给目标页面自己承接，
+ * 这样点击路径是「评测页 → 目标评测页 → CTA」，比在正文里硬塞按钮自然。
+ */
+interface Props {
+  /** 当前页面所属工具，用于排除自己 */
+  current?: string;
+  /** 微调标题，默认是通用文案 */
+  heading?: string;
+}
+
+const { current = '', heading = 'Building a creator workflow?' } = Astro.props;
+
+const PICKS = [
+  {
+    slug: 'elevenlabs',
+    review: '/elevenlabs-review',
+    emoji: '🎙️',
+    name: 'ElevenLabs',
+    role: 'AI voice',
+    line: 'Voiceover and cloning in 74 languages — free tier is 10,000 characters a month.',
+  },
+  {
+    slug: 'synthesia',
+    review: '/synthesia-review',
+    emoji: '🎬',
+    name: 'Synthesia',
+    role: 'AI avatar video',
+    line: 'Script to presenter video without a camera. Free plan covers ~10 minutes a month.',
+  },
+  {
+    slug: 'submagic',
+    review: '/submagic-review',
+    emoji: '✂️',
+    name: 'Submagic',
+    role: 'AI short-form editing',
+    line: 'Auto captions and Magic Clips that cut a long recording into vertical shorts.',
+  },
+];
+
+const picks = PICKS.filter(p => p.slug !== current);
+---
+
+{picks.length > 0 && (
+  <div class="not-prose my-10 p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/40">
+    <p class="text-sm font-semibold text-gray-900 dark:text-white mb-1">{heading}</p>
+    <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+      Three tools that cover voice, avatar video and short-form — the parts of the pipeline most guides skip.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      {picks.map(p => (
+        <a href={p.review}
+           class="group block p-3.5 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-[#3B82F6]/40 hover:-translate-y-0.5 hover:shadow-md transition-all">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="text-base">{p.emoji}</span>
+            <span class="text-sm font-semibold text-gray-900 dark:text-white group-hover:text-[#3B82F6] transition-colors">{p.name}</span>
+          </div>
+          <div class="text-[10px] font-semibold uppercase tracking-wide text-gray-400 mb-1">{p.role}</div>
+          <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">{p.line}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+)}

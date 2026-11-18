@@ -3,12 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
 import AffiliateBtn from '../components/AffiliateBtn.astro';
 
+const metaDescription = "ChatGPT, Claude and Gemini compared on documented capabilities, context limits, pricing tiers and the tasks each handles best.";
+
 // Article JSON-LD
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "ChatGPT vs Claude vs Gemini: Which AI Assistant is Best in 2026?",
-  "description": "ChatGPT, Claude and Gemini compared on documented capabilities, context limits, pricing tiers and the tasks each handles best. Find out which AI assistant is right for you in 2026.",
+  "description": metaDescription,
   "datePublished": "2026-06-01",
   "dateModified": "2026-06-27",
   "author": {
@@ -111,7 +113,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <BaseLayout 
   title="ChatGPT vs Claude vs Gemini: Which AI Assistant is Best in 2026? — AI Zest"
-  description="A comparison of ChatGPT, Claude, and Gemini across writing, coding, and analysis. Find out which AI assistant is right for you in 2026."
+  description={metaDescription}
   canonical="/chatgpt-vs-claude-vs-gemini/"
   type="article"
   jsonLd={jsonLd}

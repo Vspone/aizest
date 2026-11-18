@@ -13,11 +13,11 @@ scores:
   speed: 7.9
   overall: 8.4
 best_for: "Podcasters, musicians, and audio creators"
-last_verified: 2026-06-25
+last_verified: 2026-11-18
 featured: false
 rating: 4.2
 features:
-  - "120+ AI voices across 20+ languages"
+  - "120+ AI voices across 35+ languages"
   - "Voice customization with pitch, emphasis, and pacing controls"
   - "Built-in video editor for syncing voiceover to visuals"
   - "AI script assistant with tone and style suggestions"

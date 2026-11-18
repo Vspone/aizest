@@ -13,11 +13,11 @@ scores:
   speed: 8.5
   overall: 9.0
 best_for: "Podcasters, musicians, and audio creators"
-last_verified: 2026-06-25
+last_verified: 2026-11-18
 featured: true
 rating: 4.5
 features:
-  - "Natural-sounding AI voices in 30+ languages"
+  - "Natural-sounding AI voices in 60+ languages"
   - "OCR scanning — take a photo of any text to hear it read aloud"
   - "Chrome extension for web page reading"
   - "PDF, DOCX, and EPUB file support"
@@ -36,7 +36,7 @@ pricing_tiers:
       - "Premium HD voices"
       - "Unlimited listening"
       - "OCR scanning"
-      - "30+ languages"
+      - "60+ languages"
       - "Skip ads"
   - name: "Student"
     price: "$6.99/mo"

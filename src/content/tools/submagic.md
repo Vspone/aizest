@@ -14,7 +14,7 @@ scores:
   speed: 8.8
   overall: 8.5
 best_for: "TikTok, Reels and Shorts creators who publish short-form video every week"
-last_verified: 2026-11-16
+last_verified: 2026-11-18
 featured: true
 rating: 4.5
 features:

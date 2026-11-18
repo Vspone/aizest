@@ -14,7 +14,7 @@ scores:
   speed: 8.8
   overall: 9.0
 best_for: "Content creators, marketers, and businesses creating professional videos at scale"
-last_verified: 2026-11-17
+last_verified: 2026-11-18
 featured: true
 rating: 4.5
 features:

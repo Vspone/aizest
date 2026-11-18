@@ -111,7 +111,7 @@ for (const t of tools) {
             </div>
             <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">{bySlug[slug]?.description}</p>
             <div class="mt-auto flex flex-wrap items-center gap-3">
-              <AffiliateBtn slug={slug} text="Try Free" variant="small" loc="home-video" />
+              <AffiliateBtn slug={slug} text={slug === 'submagic' ? 'Start Free Trial' : 'Try Free'} variant="small" loc="home-video" />
               <a href={`/tool/${slug}`} class="text-sm font-medium text-[#3B82F6] hover:underline">Read review →</a>
             </div>
           </div>
@@ -155,7 +155,7 @@ for (const t of tools) {
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         {[
           { n: '1', title: 'Script & voice', tool: 'ElevenLabs', slug: 'elevenlabs', desc: 'Write the voiceover once, generate a clean narration track — or clone your own voice and reuse it every week.', href: '/elevenlabs-review' },
-          { n: '2', title: 'Shoot without a camera', tool: 'Synthesia', slug: 'synthesia', desc: 'Turn the script into a presenter video with a digital avatar, in any of 160+ languages.', href: '/synthesia-review' },
+          { n: '2', title: 'Shoot without a camera', tool: 'Synthesia', slug: 'synthesia', desc: 'Turn the script into a presenter video with a digital avatar, in any of 140+ languages.', href: '/synthesia-review' },
           { n: '3', title: 'Cut, caption, publish', tool: 'Submagic', slug: 'submagic', desc: 'Drop the long take in, get captioned vertical shorts out, publish to TikTok and Reels without leaving the app.', href: '/submagic-review' },
         ].map(step => (
           <div class="relative rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6">
@@ -178,7 +178,7 @@ for (const t of tools) {
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
           { href: '/elevenlabs-review', label: 'Voice', title: 'ElevenLabs Review 2026', desc: 'Voice quality, cloning accuracy, pricing per 1,000 characters and where it still falls short.' },
-          { href: '/synthesia-review', label: 'Avatar video', title: 'Synthesia Review 2026', desc: 'Avatar realism, language coverage, and whether the $29 Starter plan is enough for regular uploads.' },
+          { href: '/synthesia-review', label: 'Avatar video', title: 'Synthesia Review 2026', desc: 'Avatar realism, language coverage, and whether the $19/mo Starter plan is enough for regular uploads.' },
           { href: '/submagic-review', label: 'Short-form', title: 'Submagic Review 2026', desc: 'Caption accuracy, Magic Clips hit rate, credit maths and the real cost per finished video.' },
         ].map(r => (
           <a href={r.href} class="group rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 hover:border-[#3B82F6]/40 hover:shadow-lg hover:-translate-y-0.5 transition-all">

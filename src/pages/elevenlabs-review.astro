@@ -1,5 +1,5 @@
 ---
-import { ELEVENLABS_LANGS } from '../data/product-facts';
+import { ELEVENLABS_LANGS, ELEVENLABS_PRICING } from '../data/product-facts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
 import AffiliateBtn from '../components/AffiliateBtn.astro';
@@ -223,7 +223,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 <tr><td><strong>AI Dubbing</strong></td><td>Yes (excellent)</td><td>No</td></tr>
 <tr><td><strong>Sound Effects</strong></td><td>Yes (new in 2026)</td><td>No</td></tr>
 <tr><td><strong>Free Tier</strong></td><td>10,000 credits/mo</td><td>10 min audio (no download)</td></tr>
-<tr><td><strong>Starting Price</strong></td><td>$6/mo (Starter)</td><td>$19/mo (Creator)</td></tr>
+<tr><td><strong>Starting Price</strong></td><td>{ELEVENLABS_PRICING.starter.price} (Starter)</td><td>$19/mo (Creator)</td></tr>
 <tr><td><strong>Mid-Tier Price</strong></td><td>$22/mo (Creator, 121K credits)</td><td>$66/mo (Business, 96 hrs/yr)</td></tr>
 </tbody>
 </table>

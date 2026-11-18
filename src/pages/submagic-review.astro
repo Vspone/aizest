@@ -1,10 +1,11 @@
 ---
+import { SUBMAGIC_PRICING, SYNTHESIA_PRICING, ELEVENLABS_PRICING } from '../data/product-facts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleWrap from '../components/ArticleWrap.astro';
 import AffiliateBtn from '../components/AffiliateBtn.astro';
 
 const title = "Submagic Review 2026: AI Captions & Shorts Editor — AI Zest";
-const description = "Submagic review: auto captions, Magic Clips and pricing. Starter $19/mo, Pro $39/mo, Business $69/mo (yearly $12/$23/$41). Credit limits, pros, cons and who it fits.";
+const description = `Submagic review: auto captions, Magic Clips and pricing. Starter ${SUBMAGIC_PRICING.starter.price}, Pro ${SUBMAGIC_PRICING.pro.price}, Business ${SUBMAGIC_PRICING.business.price} (yearly $12/$23/$41). Credit limits, pros, cons and who it fits.`;
 const canonical = "/submagic-review";
 
 const jsonLd = JSON.stringify({
@@ -78,7 +79,7 @@ const breadcrumbJsonLd = JSON.stringify({
       <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mb-4 text-sm">
         <span class="font-semibold text-gray-900 dark:text-white">Rating: 4.5 / 5</span>
         <span class="text-gray-600 dark:text-gray-400">Best for: TikTok, Reels and Shorts creators publishing weekly</span>
-        <span class="text-gray-600 dark:text-gray-400">Entry price: $19/mo ($12/mo yearly)</span>
+        <span class="text-gray-600 dark:text-gray-400">Entry price: {SUBMAGIC_PRICING.starter.price} ({SUBMAGIC_PRICING.starter.annual} yearly)</span>
       </div>
       <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-1.5 mb-5">
         <li class="flex gap-2"><span class="text-emerald-500">✓</span> Caption workflow is genuinely fast — upload, auto-caption, style, export</li>

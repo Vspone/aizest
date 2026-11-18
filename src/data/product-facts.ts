@@ -2,26 +2,33 @@
  * Single source of truth for product facts that appear on more than one page.
  *
  * Why this file exists: an outdated "74 languages" figure was hardcoded in 27
- * places across 11 files because there was no shared constant. Update the value
- * here and every page that imports it follows.
+ * places across 11 files, and an outdated Synthesia price in 6 more. One fact,
+ * many copies, no owner. Update a value here and every page that imports it
+ * follows; check_product_facts.py fails the build check if a page drifts.
  *
  * RULES
- *  - Only put a fact here if it is verifiable against the vendor's own docs.
+ *  - Only put a fact here if it is verifiable against the vendor's own page.
  *  - Always record `verified` (date) and `source` (URL) next to the fact.
- *  - Never merge different models' figures into one headline number.
+ *  - Never merge different plans or models into one headline number.
+ *  - If you could not verify something, say so in a comment instead of guessing.
  */
 
-/**
- * ElevenLabs text-to-speech language coverage, per model.
+/* ────────────────────────────────────────────────────────────────────────────
+ * ElevenLabs — text-to-speech language coverage, per model
  * Verified 2026-11-18 against https://elevenlabs.io/docs/overview/models
  *
  * IMPORTANT: these are per-model text-to-speech figures. They are NOT a
  * platform-wide guarantee that every ElevenLabs feature (dubbing,
  * speech-to-speech, voice design) covers the same set of languages.
  *
- * Note on Flash v2.5 = 32: the docs list it as all 29 Multilingual v2
- * languages plus hu, no, vi. Do not "round" it or derive it at runtime.
- */
+ * Flash v2.5 = 32 because the docs list it as all 29 Multilingual v2 languages
+ * plus hu, no, vi. Do not "round" it or derive it at runtime.
+ *
+ * Vendor inconsistency worth knowing: ElevenLabs' *pricing* page comparison
+ * table still shows a flat "74" for languages across all TTS plans, while its
+ * model docs give the per-model figures above. We follow the model docs because
+ * they are the specific claim; the "74" is stale.
+ * ──────────────────────────────────────────────────────────────────────────── */
 export const ELEVENLABS_LANGS = {
   verified: '2026-11-18',
   source: 'https://elevenlabs.io/docs/overview/models',
@@ -48,4 +55,90 @@ export const ELEVENLABS_LANGS = {
 
   /** Badges, cards and titles where only the flagship figure fits. */
   compact: '90+ languages (Eleven v4)',
+} as const;
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * ElevenLabs — plans and allowances
+ * Verified 2026-11-18 against https://elevenlabs.io/pricing (ElevenCreative)
+ *
+ * All products draw from one shared monthly credit pool.
+ * Annual billing = 2 months free (annual price = monthly × 10).
+ * Credits reset monthly; unused roll over up to 2 months on paid plans.
+ * ──────────────────────────────────────────────────────────────────────────── */
+export const ELEVENLABS_PRICING = {
+  verified: '2026-11-18',
+  source: 'https://elevenlabs.io/pricing',
+
+  free: { price: '$0', credits: '10,000', note: 'no commercial licence, no rollover' },
+  starter: { price: '$6/mo', annual: '$5/mo', credits: '30,000', note: 'commercial licence + Instant Voice Cloning' },
+  creator: { price: '$22/mo', annual: '$18.33/mo', credits: '121,000', note: 'first Professional Voice Cloning tier' },
+  pro: { price: '$99/mo', annual: '$82.50/mo', credits: '600,000', note: '44.1kHz PCM output via API' },
+  scale: { price: '$299/mo', annual: '$249.17/mo', credits: '1.8M', note: '3 workspace seats' },
+  business: { price: '$990/mo', annual: '$825/mo', credits: '6M', note: '10 PVC slots, 10 seats' },
+
+  /** Short line used in summary cards and CTA blocks. */
+  summary: 'Free (10,000 credits/mo) · Starter $6/mo · Creator $22/mo',
+  /** One-line value proposition for tables. */
+  entry: 'Free / $6/mo',
+} as const;
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Synthesia — plans and allowances
+ * Verified 2026-11-18 against https://www.synthesia.io/pricing
+ *
+ * Basic is free with a watermark. Starter removes it. Yearly billing saves up
+ * to 4 months. The "$9"/"$49" figures are first-month promos, not list price.
+ * 1-Click Translations into 140+ languages is listed as an Enterprise feature.
+ * ──────────────────────────────────────────────────────────────────────────── */
+export const SYNTHESIA_PRICING = {
+  verified: '2026-11-18',
+  source: 'https://www.synthesia.io/pricing',
+
+  basic: { price: '$0', credits: '500', note: 'watermarked, 9 avatars, 10 min Studio video' },
+  starter: { price: '$19/mo', annual: '$14/mo', annualTotal: '$168/yr', credits: '1,250/mo', note: 'no watermark, 125+ avatars, 3 guests' },
+  pro: { price: '$89/mo', annual: '$59/mo', annualTotal: '$708/yr', credits: '6,000/mo', note: '5 personal avatars, branded pages, interactive video' },
+  enterprise: { price: 'Custom', credits: 'Custom', note: 'unlimited minutes, 140+ language translation, SSO' },
+
+  /** First-month promo prices — legal to mention, but must be labelled as promo. */
+  promo: { starterFirstMonth: '$9', proFirstMonth: '$49' },
+
+  summary: 'Free (500 credits/mo) · Starter $19/mo · Pro $89/mo',
+  entry: 'Free / $19/mo',
+} as const;
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Submagic — plans and allowances
+ * Verified 2026-11-18 against https://www.submagic.co/pricing
+ *
+ * Monthly list prices are not printed directly on the page; they are confirmed
+ * by the advertised annual savings: (39-23)x12 = $192, (69-41)x12 = $336,
+ * (19-12)x12 = $84. All three reconcile, so the monthly figures below are the
+ * vendor's own numbers rather than an estimate.
+ *
+ * No watermark on any paid tier. No permanent free plan — the trial is the only
+ * no-card entry point. Video length is 2/5/30 minutes by tier.
+ * ──────────────────────────────────────────────────────────────────────────── */
+export const SUBMAGIC_PRICING = {
+  verified: '2026-11-18',
+  source: 'https://www.submagic.co/pricing',
+
+  starter: { price: '$19/mo', annual: '$12/mo', credits: '45 credits = 15 videos or 5 Magic Clips', maxLength: '2 min' },
+  pro: { price: '$39/mo', annual: '$23/mo', credits: '120 credits = 40 videos or 15 Magic Clips', maxLength: '5 min' },
+  business: { price: '$69/mo', annual: '$41/mo', credits: '300 credits = 100 videos or 37 Magic Clips', maxLength: '30 min' },
+
+  summary: 'Starter $19/mo · Pro $39/mo · Business $69/mo (yearly $12/$23/$41)',
+  entry: 'Free trial / $19/mo',
+} as const;
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Guard allow-lists — consumed by check_product_facts.py
+ *
+ * Any price attributed to one of these products in built HTML must appear in
+ * its list below. Add a value here only after checking the vendor page and
+ * bumping `verified` above.
+ * ──────────────────────────────────────────────────────────────────────────── */
+export const PRICE_ALLOWLIST = {
+  ElevenLabs: ['$0', '$6', '$5', '$22', '$18.33', '$99', '$82.50', '$299', '$249.17', '$990', '$825'],
+  Synthesia: ['$0', '$9', '$19', '$14', '$168', '$49', '$89', '$59', '$708'],
+  Submagic: ['$0', '$19', '$12', '$39', '$23', '$69', '$41'],
 } as const;

@@ -1,4 +1,7 @@
 ---
+# NOTE: language-coverage figures in the body must stay in sync with
+# src/data/product-facts.ts (ELEVENLABS_LANGS). Markdown cannot import the
+# constant, so this file is checked by check_product_facts.py.
 name: "ElevenLabs"
 slug: "elevenlabs"
 description: "AI voice synthesis platform producing natural, human-like speech with emotional range."

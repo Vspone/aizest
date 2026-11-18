@@ -9,7 +9,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check:facts": "python3 check_product_facts.py --src",
+    "check:links": "python3 check_links.py",
+    "check:descs": "python3 check_descs.py",
+    "check:all": "npm run check:facts && npm run check:links && npm run check:descs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

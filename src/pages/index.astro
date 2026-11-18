@@ -1,4 +1,5 @@
 ---
+import { ELEVENLABS_LANGS } from '../data/product-facts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import SearchBar from '../components/SearchBar.astro';
@@ -64,7 +65,7 @@ for (const t of tools) {
         <CreatorPick
           slug="elevenlabs"
           badge="Best voice"
-          tagline="Text-to-speech and voice cloning that sound like a studio recording — 90+ languages on the flagship model, expressive delivery."
+          tagline={`Text-to-speech and voice cloning that sound like a studio recording — ${ELEVENLABS_LANGS.v4} languages on the flagship model, expressive delivery.`}
           highlights={['Voice cloning from short samples', 'Natural-sounding multilingual output', 'Free tier with 10k credits/month']}
           reviewUrl="/elevenlabs-review"
           ctaText="Try ElevenLabs"
@@ -134,7 +135,7 @@ for (const t of tools) {
               <span class="text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">Editor's pick</span>
             </div>
             <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
-              The voice layer for a creator workflow: clone your own voice once, then generate narration for every upload, with language coverage from 29 to 90+ depending on which TTS model you pick. Free tier gives you 10,000 credits a month to test it properly.
+              The voice layer for a creator workflow: clone your own voice once, then generate narration for every upload, with language coverage from {ELEVENLABS_LANGS.multilingualV2} to {ELEVENLABS_LANGS.v4} depending on which TTS model you pick. Free tier gives you 10,000 credits a month to test it properly.
             </p>
             <p class="text-xs text-gray-500 dark:text-gray-400">From {bySlug['elevenlabs']?.pricing}</p>
           </div>

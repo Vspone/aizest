@@ -156,28 +156,32 @@ import RelatedContent from '../components/RelatedContent.astro';
 </tbody>
 </table>
 
-<h2>Test 1: Reasoning &amp; Logical Deduction</h2>
-<p><strong>Winner: Claude</strong></p>
-<p>Both models were assessed on challenging reasoning tasks</p>
+<h2>Difference 1: Reasoning — Consistency vs Cost Per Task</h2>
+<p><strong>Edge: Claude</strong></p>
+<p>Both vendors ship a reasoning mode that shows intermediate steps before answering. The practical difference is not raw capability but behaviour on long, multi-step work: Claude is tuned to hold instructions across a long task and to flag uncertainty rather than guess, which is what most production teams want from a reasoning model. DeepSeek's reasoning variants are competitive and dramatically cheaper per token, which matters more as volume grows than as task complexity grows.</p>
+<p>Public benchmark leaderboards for reasoning move monthly and frequently disagree with each other, so we treat them as directional rather than decisive. What this page does not do is publish its own benchmark scores — we have not run a controlled evaluation that would justify them.</p>
 
-<h2>Test 2: Coding — Algorithmic Challenges &amp; Real-World Projects</h2>
-<p><strong>Winner: DeepSeek</strong></p>
-<p>Both were compared on LeetCode-hard algorithm problems, building a full-stack web app from scratch, and debugging a production-grade Python script. DeepSeek V4 performed exceptionally well — competitive with Claude Opus on algorithm problems and actually faster on code generation tasks. Its code output was clean, idiomatic, and required minimal editing. On the full-stack test, DeepSeek produced working code with proper error handling, while Claude was more verbose in its comments and explanations. For pure coding productivity, DeepSeek offers the best price-to-performance ratio in the market.</p>
+<h2>Difference 2: Coding — Agentic Workflows vs Price-Performance</h2>
+<p><strong>Edge: depends on the job</strong></p>
+<p>This is the comparison where the two are genuinely not interchangeable. Claude's coding advantage is agentic and long-horizon: Claude Code, Projects and the ability to hold a large repository in context suit multi-file refactors and debugging that spans an afternoon. DeepSeek's advantage is cost per generated token — for high-volume, well-specified generation (boilerplate, tests, migrations, translation of code between frameworks) it is materially cheaper to run and its output is competent.</p>
+<p>If your work is "make this existing codebase do a new thing", the agentic side matters more than the price. If your work is "produce a lot of code that a human will review anyway", price dominates.</p>
 
-<h2>Test 3: Writing Quality — Essays, Emails, and Creative Content</h2>
-<p><strong>Winner: Claude</strong></p>
-<p>We asked both models to write a persuasive business proposal, a creative short story, a formal email, and a technical blog post. Claude's writing was noticeably richer — better vocabulary, more natural flow, and a stronger sense of audience and tone. DeepSeek's writing was technically competent but read more mechanically; it lacked the nuance and stylistic flair that makes Claude's output feel human. For content creators, marketers, and anyone whose output is judged on writing quality, Claude is the clear choice.</p>
+<h2>Difference 3: Writing Quality</h2>
+<p><strong>Edge: Claude</strong></p>
+<p>Claude is the stronger writer in the judgement of most people who use both, and the gap shows up in the places that are hard to prompt around: sentence rhythm, restraint, and matching register to audience. DeepSeek's output is competent and clean but reads more mechanically, which is fine for documentation and worse for anything where voice matters.</p>
+<p>This is a preference, not a measurement, and it is worth checking against your own material — give both the same brief and have someone who does not know which output is which pick the better one.</p>
 
-<h2>Test 4: Context Window — Handling Long Documents</h2>
-<p><strong>Winner: Claude</strong></p>
-<p>We loaded both models with a 50-page research paper (roughly 150K tokens) and asked detailed questions about content from the first, middle, and final pages. Claude's <strong>200K token context window</strong> handled this effortlessly — it recalled specific figures, citations, and arguments from all sections with high accuracy. DeepSeek V4's <strong>1M token context window</strong> covered the document with plenty of headroom and recalled details accurately across all sections, though Claude's answers were slightly richer on nuanced questions. For legal document review, academic research, or analyzing entire codebases, both models now offer ample context capacity.</p>
+<h2>Difference 4: Context Window — Published Limits vs Real Recall</h2>
+<p><strong>Edge: roughly even</strong></p>
+<p>Both vendors now advertise very large context windows, and both numbers are misleading in the same way: a model does not recall everything inside its window equally well. Long-document work depends on where the answer sits, how it is phrased and how many competing details surround it, which is why "we support N tokens" is the least useful spec on a model card.</p>
+<p>Check the current figures on each vendor's own model page rather than trusting a comparison table, then test the actual behaviour on one of your own long documents: ask for a specific figure from the middle and a specific figure from the end, and see whether the citation is right.</p>
 
-<h2>Test 5: Privacy &amp; Data Security</h2>
-<p><strong>Winner: Claude (for cloud usage) / Tie (with self-hosting)</strong></p>
+<h2>Difference 5: Privacy &amp; Data Security</h2>
+<p><strong>Edge: Claude (for cloud usage) / Tie (with self-hosting)</strong></p>
 <p>Claude (Anthropic) has clear privacy policies, enterprise-grade data handling, SOC 2 compliance, and does not train on API inputs by default. DeepSeek's cloud API is hosted in China under Chinese data regulations, which presents privacy concerns for organizations handling sensitive data. However, DeepSeek's <strong>open-weight model</strong> can be self-hosted on your own infrastructure — giving you complete data control. In cloud mode, Claude wins. In self-hosted mode, DeepSeek offers equivalent or better privacy.</p>
 
-<h2>Test 6: Pricing &amp; Value</h2>
-<p><strong>Winner: DeepSeek</strong></p>
+<h2>Difference 6: Pricing &amp; Value</h2>
+<p><strong>Edge: DeepSeek</strong></p>
 <p>This is not even close. DeepSeek's API pricing of $0.14 per million input tokens (V4 Flash) is roughly <strong>35-90x cheaper</strong> than Claude Opus 5 at $5 per million input tokens, depending on the tier and direction. For a startup running millions of inference requests per month, this difference could mean tens or hundreds of thousands of dollars in savings. DeepSeek's free web chat is also generous. Claude Pro at $20/month provides great value for individual users, but at scale, DeepSeek's economics are transformative.</p>
 
 <h2>Pricing Comparison</h2>

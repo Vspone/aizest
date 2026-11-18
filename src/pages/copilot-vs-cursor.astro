@@ -156,32 +156,35 @@ import RelatedContent from '../components/RelatedContent.astro';
 </tbody>
 </table>
 
-<h2>Test 1: Code Completion — Speed and Accuracy</h2>
-<p><strong>Winner: Cursor</strong></p>
-<p>Both platforms were compared</p>
+<h2>Difference 1: Code Completion — Inline Suggestions vs Agentic Edits</h2>
+<p><strong>Edge: Cursor</strong></p>
+<p>The two products are built around different completion models. Copilot's inline suggestion is designed to stay out of the way: a short completion appears at the cursor and you accept or ignore it, with next-edit suggestions layered on top in recent versions. Cursor ships its own completion model tuned for multi-line edits and predicting the next place you will edit, which is why the two feel different in practice rather than differing by a measurable margin.</p>
+<p>What can be checked without a lab: Copilot's completion is available in more editors, and Cursor's is only available inside Cursor. What we do not claim here is a millisecond latency comparison — completion speed depends on repository size, model selection and network, and no single measured figure transfers between setups.</p>
 
-<h2>Test 2: Multi-Editor Workflow Flexibility</h2>
-<p><strong>Winner: GitHub Copilot</strong></p>
-<p>Copilot's biggest advantage is portability. It works across VS Code, JetBrains IntelliJ IDEA, and Neovim — the experience was consistent and polished on all three platforms. Cursor, as a VS Code fork, only runs as a standalone editor. If you switch between IDEs depending on the project (e.g., IntelliJ for Java, VS Code for web), Copilot is the clear winner. If you're a VS Code loyalist, this doesn't matter — but for multi-IDE developers, Copilot's cross-platform support is invaluable.</p>
+<h2>Difference 2: Multi-Editor Workflow Flexibility</h2>
+<p><strong>Edge: GitHub Copilot</strong></p>
+<p>Copilot's biggest advantage is portability. It ships as an extension for VS Code, JetBrains IDEs, Neovim and Visual Studio, so the assistant follows you between languages and editors. Cursor, as a VS Code fork, only runs as a standalone editor. If you switch between IDEs depending on the project (e.g., IntelliJ for Java, VS Code for web), Copilot is the clear winner. If you're a VS Code loyalist, this doesn't matter — but for multi-IDE developers, Copilot's cross-platform support is invaluable.</p>
 
-<h2>Test 3: Agent Mode — Multi-File Autonomous Changes</h2>
-<p><strong>Winner: Cursor</strong></p>
-<p>We asked both tools to implement a new API endpoint with database schema changes, model updates, and route registration. Cursor's Agent mode handled this in one autonomous pass — it created the migration file, updated the model class, added the route handler, registered the route, and even wrote basic tests. Copilot's chat-based approach could generate the code for each file, but required manual orchestration — we had to specify which files to create and stitch the pieces together ourselves. For autonomous multi-file tasks, Cursor's Agent mode is significantly more capable.</p>
+<h2>Difference 3: Agent Mode — How Much Runs Unattended</h2>
+<p><strong>Edge: Cursor</strong></p>
+<p>Both tools now ship an agent that can edit several files and run commands. The documented difference is in scope and autonomy: Cursor's Agent mode plans across the repository, creates and edits files, runs terminal commands and can iterate on failures inside one session. Copilot's agent mode covers a similar loop in VS Code and on GitHub, but it is designed to hand control back more often and is more tightly bound to the editor it runs in.</p>
+<p>Whichever you choose, the practical test is the same: give it a change that spans a migration, a model and a route, then review the diff rather than the summary. The failure mode to watch for is confident edits to files the agent never read.</p>
 
-<h2>Test 4: Codebase Navigation and Understanding</h2>
-<p><strong>Winner: Cursor</strong></p>
-<p>We gave both tools an unfamiliar Python Django codebase and asked questions like "how does authentication work?" and "trace the data flow for user signup." Cursor's full codebase indexing shone here — it could search across files, follow import chains, and provide grounded answers with file and line references. Copilot's context is limited by what's open in your editor plus some surrounding file analysis. For deep codebase exploration, Cursor's indexed approach is substantially more powerful.</p>
+<h2>Difference 4: Codebase Navigation and Context Assembly</h2>
+<p><strong>Edge: Cursor</strong></p>
+<p>Cursor indexes the whole repository and retrieves across it, so a question about how a flow works can be answered with references to files you did not have open. Copilot's context is assembled from the open editor, nearby files and any explicitly attached context, and its repository-wide indexing has improved but is narrower in day-to-day use.</p>
+<p>The verifiable way to compare this on your own code: ask each tool to trace a cross-file flow — authentication is a good one, because it touches routing, middleware and storage — and check whether the file and line references it returns are real. That is a test you can reproduce in ten minutes, which is worth more than any published scoring.</p>
 
-<h2>Test 5: PR Summaries and Team Workflow</h2>
-<p><strong>Winner: GitHub Copilot</strong></p>
+<h2>Difference 5: PR Summaries and Team Workflow</h2>
+<p><strong>Edge: GitHub Copilot</strong></p>
 <p>Copilot's deep GitHub integration means it can automatically generate PR summaries, highlight potential issues in code changes, and suggest improvements during the review process — all without leaving the GitHub interface. Cursor offers no native PR integration; you'd rely on VS Code's GitHub extensions, which lack the AI-powered PR analysis. For teams that live in GitHub's pull request workflow, Copilot's native integration is a clear productivity win.</p>
 
-<h2>Test 6: Editor Independence and Side-by-Side Use</h2>
-<p><strong>Winner: Tie</strong></p>
+<h2>Difference 6: Editor Independence and Side-by-Side Use</h2>
+<p><strong>Edge: Tie</strong></p>
 <p>Many developers actually use both tools together — Copilot in their primary editor and Cursor as a dedicated AI coding environment for complex tasks. Copilot works fine inside Cursor (Cursor inherits VS Code extension support), though there can be occasional conflicts where both tools suggest completions simultaneously. Neither tool blocks the other, and the combination can be genuinely powerful. The real winner here is that both tools play well with others.</p>
 
-<h2>Test 7: Pricing and Value for Money</h2>
-<p><strong>Winner: GitHub Copilot</strong></p>
+<h2>Difference 7: Pricing and Value for Money</h2>
+<p><strong>Edge: GitHub Copilot</strong></p>
 <p>Copilot at $10/month for individuals is half the price of Cursor's $20/month Pro plan. For individual developers on a budget, that's a significant difference — $120/year vs $240/year. Copilot's Teams plan at $19/user/month is also cheaper than Cursor's $40/user/month Business plan. However, Cursor does offer a free Hobby tier (2,000 completions/month, 50 premium requests), while Copilot has no free tier. For light users, Cursor's free tier is valuable. But for full-time professional use, Copilot's $10/mo pricing is the better deal.</p>
 
 <h2>Pricing Comparison</h2>

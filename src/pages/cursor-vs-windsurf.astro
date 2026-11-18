@@ -214,8 +214,8 @@ import RelatedContent from '../components/RelatedContent.astro';
 </tbody>
 </table>
 
-<h2>Test 1: Agent Mode — Multi-File Feature Implementation</h2>
-<p><strong>Winner: Cursor</strong></p>
+<h2>Difference 1: Agent Mode — Multi-File Feature Implementation</h2>
+<p><strong>Edge: Cursor</strong></p>
 
 <p><strong>Test Environment:</strong> React + TypeScript · 28 files · 5,800 LOC · Prompt: "Add a dark mode toggle — create context provider, toggle button, persist to localStorage, update all existing components"</p>
 
@@ -230,8 +230,8 @@ import RelatedContent from '../components/RelatedContent.astro';
 </table>
 <p>Cursor's Agent mode handled this in one pass: it identified which files needed changes, created the new components, updated imports, and even added CSS variables. Windsurf's Cascade created the provider correctly but missed updating three existing components, requiring two follow-up prompts to complete.</p>
 
-<h2>Test 2: Context Persistence Across a Long Session</h2>
-<p><strong>Winner: Windsurf</strong></p>
+<h2>Difference 2: Context Persistence Across a Long Session</h2>
+<p><strong>Edge: Windsurf</strong></p>
 
 <p><strong>Test Environment:</strong> 3-hour refactoring session · 12 files across 4 features · Multiple context switches</p>
 
@@ -245,8 +245,8 @@ import RelatedContent from '../components/RelatedContent.astro';
 </table>
 <p>Windsurf's Flows model remembered the project structure, naming conventions, and architectural decisions we made early in the session, and applied them consistently later. Cursor's session context was good but didn't carry implicit patterns as well — we occasionally had to re-explain things it should have remembered.</p>
 
-<h2>Test 3: Code Completion — Tab Prediction Speed</h2>
-<p><strong>Winner: Cursor</strong></p>
+<h2>Difference 3: Code Completion — Tab Prediction Speed</h2>
+<p><strong>Edge: Cursor</strong></p>
 
 <p><strong>Test Environment:</strong> Typing benchmark across 500 prompts · Multi-line completion accuracy comparison</p>
 
@@ -260,8 +260,8 @@ import RelatedContent from '../components/RelatedContent.astro';
 </table>
 <p>Cursor's tab completion is noticeably faster and more contextually accurate. It regularly predicts multi-line edits — adding parameters, updating related function calls, and completing boilerplate patterns. Windsurf's completion is good but has occasional latency spikes and sometimes suggests simpler completions that miss the broader context.</p>
 
-<h2>Test 4: Debugging and Error Resolution</h2>
-<p><strong>Winner: Tie (8.2 vs 8.0)</strong></p>
+<h2>Difference 4: Debugging and Error Resolution</h2>
+<p><strong>Edge: Tie (8.2 vs 8.0)</strong></p>
 
 <p><strong>Test Environment:</strong> Intentionally introduced 5 bugs in a production React app · Measured time to diagnose + fix each</p>
 
@@ -275,8 +275,8 @@ import RelatedContent from '../components/RelatedContent.astro';
 </table>
 <p>Both tools handled error diagnostics well. Cursor's inline suggestions during debugging are slightly more precise, while Windsurf's Cascade provides better explanations of why an error occurred. Neither tool had a decisive advantage.</p>
 
-<h2>Test 5: Extension and Ecosystem Support</h2>
-<p><strong>Winner: Cursor</strong></p>
+<h2>Difference 5: Extension and Ecosystem Support</h2>
+<p><strong>Edge: Cursor</strong></p>
 
 <p><strong>Test Environment:</strong> Tested 50 popular VS Code extensions for compatibility</p>
 
@@ -290,8 +290,8 @@ import RelatedContent from '../components/RelatedContent.astro';
 </table>
 <p>Cursor inherits the full VS Code marketplace — thousands of extensions work out of the box. Windsurf supports most popular extensions but niche ones may have compatibility issues.</p>
 
-<h2>Test 6: Arena / Model Flexibility</h2>
-<p><strong>Winner: Windsurf</strong></p>
+<h2>Difference 6: Arena / Model Flexibility</h2>
+<p><strong>Edge: Windsurf</strong></p>
 
 <p><strong>Test Environment:</strong> Compared Claude Opus 4 vs GPT-5 vs Windsurf SWE-1.5 on 10 coding prompts</p>
 
@@ -305,8 +305,8 @@ import RelatedContent from '../components/RelatedContent.astro';
 </table>
 <p>Windsurf's Arena mode lets you compare outputs side-by-side before committing — genuinely useful for model selection. Cursor switches models but without direct comparison.</p>
 
-<h2>Test 7: Onboarding and Setup</h2>
-<p><strong>Winner: Windsurf</strong></p>
+<h2>Difference 7: Onboarding and Setup</h2>
+<p><strong>Edge: Windsurf</strong></p>
 
 <p><strong>Test Environment:</strong> Fresh install on M2 MacBook Air, setup from zero to productive</p>
 

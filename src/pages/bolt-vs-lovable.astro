@@ -155,28 +155,33 @@ import RelatedContent from '../components/RelatedContent.astro';
 </tbody>
 </table>
 
-<h2>Test 1: Speed — How Fast Can You Build an MVP?</h2>
-<p><strong>Winner: Bolt.new</strong></p>
-<p>We asked both tools to build a SaaS landing page with a pricing table, testimonials section, and signup form. Bolt.new rendered the full page in under 12 seconds from a single prompt — thanks to WebContainers running everything in-browser with no cold starts. Lovable took a bit longer because it first generated a structured plan, then built the page in stages. The result was about 25 seconds total. For raw speed, Bolt is noticeably faster, especially for single-page projects.</p>
+<h2>Difference 1: Build Loop — Single Pass vs Plan First</h2>
+<p><strong>Edge: Bolt.new on iteration speed</strong></p>
+<p>The two tools take structurally different routes from prompt to page. Bolt runs the project in the browser (WebContainers), so a generation becomes a running preview without a container spin-up step. Lovable generates a plan first, then builds against it in stages, which costs a round trip but produces a more coherent set of files for anything multi-page.</p>
+<p>For a one-page marketing site the difference is a few seconds, not a few minutes. For a multi-view app the planning step usually pays for itself — that is the trade, and it is a design choice rather than a performance result. We do not publish stopwatch timings here, because generation time varies with prompt, model and load.</p>
 
-<h2>Test 2: Ease of Use — Who Can Get Productive Faster?</h2>
-<p><strong>Winner: Lovable</strong></p>
-<p>We gave both tools to a non-technical user with no coding experience. Lovable's visual editor and guided planning made it accessible immediately — the user could drag components, tweak layouts visually, and prompt the AI in natural language. Bolt.new's code-oriented interface was intimidating by comparison — the user had to read and understand generated code to make meaningful changes. For absolute beginners, Lovable is clearly the easier tool to pick up.</p>
+<h2>Difference 2: Who Grows Into It Faster</h2>
+<p><strong>Edge: Lovable for non-technical founders</strong></p>
+<p>Lovable's interface is built around chat plus a visual surface, so someone with no coding background can change a layout or a section without reading code — the documentation and onboarding are written for that audience. Bolt's interface exposes the generated code and the terminal, which is an advantage the moment you need to debug something and a wall if you never intend to read it.</p>
+<p>The honest version of this comparison: Lovable lowers the floor, Bolt raises the ceiling. Pick by which one you will hit first.</p>
 
-<h2>Test 3: Supabase Integration — Adding a Backend</h2>
-<p><strong>Winner: Lovable</strong></p>
-<p>We asked both tools to add user authentication and a simple database table for storing user profiles. Lovable handled this natively — one prompt to "add Supabase auth with Google login and a profiles table" and it scaffolded the entire backend, including RLS policies, signup flow, and database schema. Bolt.new required manual Supabase project setup, environment variable configuration, and code scaffolding. While Bolt gives you more control, Lovable's one-click Supabase integration is a massive time saver for projects that need a backend.</p>
+<h2>Difference 3: Backend and Supabase</h2>
+<p><strong>Edge: Lovable</strong></p>
+<p>Lovable documents a native Supabase integration: prompting for auth and a table scaffolds the schema, row-level security policies and signup flow in one step. Bolt can do the same job, but the documented path involves creating the Supabase project and wiring the environment variables yourself — more control, more setup.</p>
+<p>If your product needs accounts and a database on day one, this is the difference that will cost you the most time, and it favours Lovable.</p>
 
-<h2>Test 4: Customization — How Much Control Do You Have?</h2>
-<p><strong>Winner: Bolt.new</strong></p>
-<p>Both tools were compared on implementing a custom, non-standard UI animation in a React app. Bolt.new gave us direct access to the generated code — we could modify CSS, tweak the animation logic, and even drop in a custom library (Framer Motion) with a simple npm install. Lovable's visual editor is excellent for standard layouts, but implementing custom animations required switching to code mode, and the generated output was harder to modify without going through the AI prompt loop. For developers who need fine-grained control, Bolt's code-first approach wins.</p>
+<h2>Difference 4: Customisation and Code Ownership</h2>
+<p><strong>Edge: Bolt.new</strong></p>
+<p>Bolt puts the generated code in front of you, so custom CSS, a third-party library or an unusual animation is a file edit rather than a negotiation with a model. Lovable also lets you drop into code, but its documented flow routes most changes back through prompts, which is faster for standard work and slower for anything the model has not seen.</p>
+<p>Both vendors state that you own the code you generate. The practical question is how much of it you will need to touch.</p>
 
-<h2>Test 5: Output Quality — Which Produces Better Code?</h2>
-<p><strong>Winner: Lovable</strong></p>
-<p>We inspected the generated code from both tools for a multi-page e-commerce app. Lovable's code was notably cleaner — well-organized component structure, consistent naming conventions, and proper separation of concerns. The structured planning phase pays off in coherence. Bolt.new's output was functional but sometimes messy — it works, but the code can feel like it was written by an AI in a hurry (which, to be fair, it was). For production-quality output, Lovable has the edge in structure and polish.</p>
+<h2>Difference 5: Structure of the Generated Code</h2>
+<p><strong>Edge: Lovable</strong></p>
+<p>The planning-first approach is the reason Lovable's output tends to be more consistently organised across a multi-page project: components get named and separated against a plan rather than accreted prompt by prompt. Bolt's output is functional and readable, but on larger projects it more often needs reorganising later.</p>
+<p>Neither vendor publishes a code-quality benchmark, and we have not run one, so treat this as a documented-approach inference: structure follows process, and the processes differ.</p>
 
-<h2>Test 6: Pricing — Which Offers Better Value?</h2>
-<p><strong>Winner: Tie</strong></p>
+<h2>Difference 6: Pricing — Which Offers Better Value?</h2>
+<p><strong>Edge: Tie</strong></p>
 <p>Both tools offer competitive pricing with different value propositions. Bolt.new's free tier is generous with basic usage, and its Pro plan at $25/month (~10M tokens/month) gives developers generous token-based access to generate and edit projects. Lovable's free tier allows basic app building with Supabase integration, and its Pro plan at $25/month adds 100 monthly credits plus 5 daily credits and visual editing features. At the low end, they're evenly matched — the choice depends on whether you need Bolt's speed or Lovable's backend integration.</p>
 
 <h2>Pricing Comparison</h2>

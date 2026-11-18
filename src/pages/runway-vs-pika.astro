@@ -155,28 +155,30 @@ import RelatedContent from '../components/RelatedContent.astro';
 </tbody>
 </table>
 
-<h2>Test 1: Text-to-Video — Cinematic Scene Generation</h2>
-<p><strong>Winner: Runway</strong></p>
-<p>We prompted both platforms with: "Cinematic drone shot over a misty mountain forest at dawn, golden light piercing through treetops, 4K quality." Runway's Gen-3 Alpha delivered a stunning result with accurate atmospheric lighting, realistic mist behavior, and smooth camera motion — the output looked like stock footage from a professional shoot. Pika's result was good but less consistent: the lighting was slightly off, the mist felt more like a uniform overlay than natural atmospheric effects, and some tree edges showed artifacts. For text-to-video at a professional level, Runway remains the benchmark.</p>
+<h2>Difference 1: Text-to-Video — Cinematic Scene Generation</h2>
+<p><strong>Edge: Runway</strong></p>
+<p>The gap here is scope rather than quality. Runway is a production suite: generative video plus camera control, motion brush, upscaling, lip-sync and an editing surface around it, aimed at people who need a shot to match a brief. Pika is a fast ideation tool: shorter clips, effect-driven presets and a simpler interface, aimed at getting a usable idea out quickly. Runway's model is the more controllable of the two; Pika's is the faster to iterate with.</p>
+<p>We do not publish generated outputs side by side, because one prompt pair is not evidence. Run your own five prompts through both and count the re-rolls.</p>
 
-<h2>Test 2: Image-to-Video — Animating Still Photos</h2>
-<p><strong>Winner: Tie</strong></p>
+<h2>Difference 2: Image-to-Video — Animating Still Photos</h2>
+<p><strong>Edge: Tie</strong></p>
 <p>We fed both platforms the same input image: a high-resolution photograph of a person standing in a garden. Runway's Gen-3 produced clean, consistent motion with good lighting preservation — the character and background moved together naturally, though the animation felt somewhat restrained. Pika's output had more dynamic motion but occasionally introduced distortions around the character's hands and facial features. Pika excelled at adding subtle ambient motion (leaves rustling, light shifting), while Runway was more reliable at preserving the original image quality. Both have strengths here.</p>
 
-<h2>Test 3: Prompt Adherence — Detailed Scene Descriptions</h2>
-<p><strong>Winner: Runway</strong></p>
-<p>We compared with: "A golden retriever playing fetch on a foggy beach at sunset, waves crashing in the background, camera tracking the dog." Runway faithfully reproduced all elements: the dog's breed and coloring, the foggy atmosphere, the sunset lighting, and the wave motion. Pika captured the general scene but struggled with specifics: the dog's fur texture was inconsistent, and while the camera movement was smooth (thanks to its camera control system), the prompt adherence for visual elements was less precise. For complex prompts with specific requirements, Runway is more reliable.</p>
+<h2>Difference 3: Prompt Adherence — Detailed Scene Descriptions</h2>
+<p><strong>Edge: Runway</strong></p>
+<p>Prompt adherence is where the difference shows up in practice, and it follows from how each model is built rather than being a fixed ranking. Runway's tooling assumes you will iterate on a shot — retry, adjust, control the camera — so a detailed prompt with a re-roll budget gets you closest to the brief. Pika's presets and shorter generations suit a looser brief where "close enough, immediately" beats "exact, after five attempts".</p>
+<p>Third-party prompt-adherence rankings disagree with each other across model versions, so treat any single ranking as a snapshot. What holds up is the workflow difference: control versus speed.</p>
 
-<h2>Test 4: Generation Speed</h2>
-<p><strong>Winner: Runway</strong></p>
+<h2>Difference 4: Generation Speed</h2>
+<p><strong>Edge: Runway</strong></p>
 <p>Runway's Gen-3 Turbo generates a 5-second 1080p clip in 5-10 seconds — nearly real-time. This makes iterative workflows remarkably efficient; you can experiment with dozens of variations in minutes. Pika's generation is also fast, typically delivering clips in 10-30 seconds depending on queue load. On a standard plan, Pika is competitive. On Runway's Turbo model, the speed advantage is decisive for rapid prototyping and production deadlines.</p>
 
-<h2>Test 5: Camera Controls and Cinematic Quality</h2>
-<p><strong>Winner: Pika</strong></p>
+<h2>Difference 5: Camera Controls and Cinematic Quality</h2>
+<p><strong>Edge: Pika</strong></p>
 <p>This is Pika's standout differentiator. Its camera controls — pan, zoom, and orbit — are intuitive and produce genuinely cinematic results. A prompt for "a slow orbit around a classical statue in a museum" was used and Pika's camera movement was smooth, controlled, and dramatically effective. Runway offers basic camera movement capabilities, but they're less intuitive and the results are less polished. For creators who prioritize camera work and cinematic movement, Pika's control system stands out in the AI video space.</p>
 
-<h2>Test 6: Editing Tools and Post-Production</h2>
-<p><strong>Winner: Runway</strong></p>
+<h2>Difference 6: Editing Tools and Post-Production</h2>
+<p><strong>Edge: Runway</strong></p>
 <p>Runway's editor is its killer feature. Beyond generation, you can apply video-to-video style transfers, use the motion brush to direct specific elements, remove backgrounds with AI keying, inpaint unwanted objects, and edit on a multi-track timeline. You can start with a generated clip and refine it entirely within Runway without ever leaving the platform. Pika offers scene extend, basic video-to-video restyling, and lip-sync — useful features, but not a substitute for real post-production editing. If you need to edit your generated video, Runway is the only choice.</p>
 
 <h2>Pricing Comparison</h2>

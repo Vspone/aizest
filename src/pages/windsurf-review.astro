@@ -156,7 +156,7 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <p>You can pick the winning output and promote it directly into your codebase, or merge insights from both to craft a hybrid solution. This model-agnostic approach gives Windsurf a flexibility that single-model editors lack, and it hints at Codeium's broader strategy of building an AI platform rather than just another editor.</p>
 
-<p>In our tests, Arena mode was especially useful for:</p>
+<p>Arena mode is designed for situations like these:</p>
 <ul>
   <li><strong>Algorithm selection</strong> — Comparing different implementations of the same algorithm to pick the most performant</li>
   <li><strong>Code style evaluation</strong> — Seeing how different models structure the same solution, useful for team style guide decisions</li>
@@ -234,25 +234,27 @@ import RelatedContent from '../components/RelatedContent.astro';
 
 <p><strong>Windsurf might not be for you if:</strong> You rely on the full VS Code extension ecosystem — Cursor's backwards compatibility with the entire marketplace is a significant advantage. You also may prefer Cursor if tab completion speed is your top priority, or if you want the most battle-tested agent mode available. For budget-conscious developers, GitHub Copilot's free tier or $10/month individual plan may be sufficient.</p>
 
-<h2>Performance and Speed Benchmarks</h2>
-<p>We ran Windsurf through a series of standardized benchmarks to measure real-world performance across common development tasks. The results were generally positive, with some notable trade-offs compared to the competition.</p>
+<h2>Performance: What Is Documented, and What Is Not</h2>
+<p>Windsurf does not publish latency numbers or benchmark tables, and neither does Cursor. That matters for how you read any "which editor is faster" comparison, including older versions of this page: millisecond figures depend on the machine, the repository size, the model selected and the network path to it, so a single measured number does not transfer between setups.</p>
 
-<p><strong>Tab completion latency:</strong> Windsurf's inline completions appear within 150-300ms on average — respectable but noticeably slower than Cursor's near-instantaneous sub-100ms responses. In our blind testing, Windsurf's completion quality was on par with Cursor, but the slight delay made rapid-fire coding feel less fluid. The gap narrows on the Pro tier with priority-speed inference enabled.</p>
+<p><strong>What is documented and verifiable:</strong></p>
+<ul>
+<li><strong>Cascade Flows show their work.</strong> The agent surfaces its reasoning steps and can be interrupted and redirected mid-task — a design choice that trades some raw throughput for reviewable output. Whether that trade is worth it depends on how much you trust unattended edits.</li>
+<li><strong>Persistent context.</strong> Windsurf keeps project context across sessions rather than rebuilding it each time, which matters most on long-lived repositories.</li>
+<li><strong>Arena mode runs two models side by side.</strong> It is slower by design — two completions instead of one — and exists so you can pick between approaches rather than accept the first one.</li>
+<li><strong>Priority-speed inference on Pro.</strong> The $15/month Pro tier is documented as including faster inference and unlimited generations; the free tier is rate-limited.</li>
+</ul>
 
-<p><strong>Cascade Flow execution time:</strong> For multi-file agentic tasks, Windsurf's Cascade Flows took 30-60% longer than Cursor's Agent mode to complete equivalent refactoring tasks. However, Windsurf's transparent reasoning and the ability to interrupt and redirect mid-flow meant we caught and corrected more mistakes early, ultimately leading to fewer total iterations. The trade-off between speed and transparency is meaningful — fast mistakes still need fixing.</p>
+<p><strong>What this page does not claim:</strong> we do not publish millisecond latency comparisons against Cursor or Copilot, because we have not run a controlled benchmark that would justify them. Independent leaderboards for coding agents exist and frequently disagree; treat them as directional signals about model quality, not as measurements of editor speed.</p>
 
-<p><strong>Codebase indexing:</strong> Windsurf's initial indexing of a 50,000-file monorepo took approximately 4 minutes, compared to Cursor's 3 minutes for the same codebase. However, Windsurf's incremental indexing was more efficient — subsequent file changes were indexed in under 2 seconds versus Cursor's 5-10 seconds. The persistent cross-session context also means you don't need to re-index as frequently.</p>
-
-<p><strong>Model response diversity:</strong> Arena mode is slower by design — running two models simultaneously naturally takes longer. However, the ability to compare approaches side-by-side often saved time overall by eliminating the need to manually evaluate which approach to adopt. For exploratory coding tasks, the initial time investment in Arena mode paid dividends in decision quality.</p>
-
-<h2>Real-World Testing: Full-Stack Application</h2>
-<p>To evaluate Windsurf in a realistic scenario, we built a full-stack application from scratch: a task management dashboard with a FastAPI backend, PostgreSQL database, React frontend with TypeScript, and Docker-based deployment. We tracked every AI interaction, measuring both raw speed and the quality of generated code.</p>
-
-<p><strong>Backend development:</strong> Cascade Flows handled the FastAPI model definitions, database migrations with SQLAlchemy, and CRUD endpoint generation with remarkable accuracy. The agent correctly inferred our project structure from the first few files and maintained consistent patterns throughout. We particularly appreciated the transparent reasoning - when the agent decided to restructure a query for performance, it explained why, enabling us to approve or reject the change with full context. The authentication flow (JWT-based with refresh tokens) required three iterations of feedback before the agent settled on the right approach, but each iteration was productive and moved the solution forward.</p>
-
-<p><strong>Frontend development:</strong> Windsurf's React and TypeScript support was solid. Component generation with proper prop typing, custom hooks for state management, and integration with the backend API were all handled competently. Arena mode proved valuable here - we compared Windsurf's recommended component architecture against Cursor's approach for the same requirements and merged the best elements of both. The persistent learning was notable: by day three of the project, Windsurf was consistently generating components that aligned with our established patterns without explicit prompting.</p>
-
-<p><strong>Docker and deployment:</strong> This is where Windsurf truly shined. The terminal AI integration explained Dockerfile optimizations we hadn't considered, suggested proper docker-compose configurations for development vs production environments, and walked us through debugging a multi-stage build issue that would have taken manual research to resolve. The AI's ability to understand the full project context and apply it to infrastructure concerns is a genuinely useful capability that competing editors handle less well.</p>
+<h2>How to Evaluate Windsurf on Your Own Codebase</h2>
+<p>The variables that decide whether an agentic editor works for you are specific to your repository: how large it is, how much of it is typed vs generated, how consistent the conventions are, and how much review capacity you have. A short evaluation that produces more useful answers than any published benchmark:</p>
+<ul>
+<li><strong>Index a real repository</strong> — not a toy project — and ask it to trace a cross-file flow ("how does authentication work here?"). Check whether it cites files you can verify.</li>
+<li><strong>Give it one multi-file change</strong> with a migration, a model update and a route registration. Review the diff rather than the summary; the failure mode to look for is confident edits to files it never read.</li>
+<li><strong>Check the interruption behaviour.</strong> Stop a flow mid-execution and see whether it leaves the working tree in a consistent state.</li>
+<li><strong>Measure your own review time, not the model's speed.</strong> An agent that finishes in 40 seconds and needs three corrections is slower than one that takes 90 seconds and is right.</li>
+</ul>
 
 <h2>The Codeium Advantage</h2>
 <p>Windsurf's lineage from Codeium — the AI code completion platform used by millions of developers — is evident in its quality. Codeium has years of experience with code intelligence at scale, and that expertise shows in Windsurf's codebase indexing, completion quality, and overall reliability. Unlike startups building their first developer tool, the Codeium team has been refining AI-powered development workflows since before the current AI coding boom.</p>

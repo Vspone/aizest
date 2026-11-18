@@ -198,6 +198,41 @@ def check_prices(problems, allow):
     return checked
 
 
+def check_md_mirror(problems):
+    """The three affiliate tools also keep a human-readable copy of their prices in
+    markdown frontmatter, because the JSON API, the homepage list and the
+    /alternatives/ tables read `tool.data.pricing` straight from the collection.
+
+    The rendered /tool/<slug>/ page uses the constants, not those strings. So if a
+    mirror value has drifted from the constants, it will no longer appear on that
+    page — which is exactly what this check looks for. It ties the copy to the
+    canonical render without needing a second source of expected values.
+    """
+    checked = 0
+    for slug in ('elevenlabs', 'synthesia', 'submagic'):
+        md = os.path.join(SRC, 'content', 'tools', f'{slug}.md')
+        page = html_path(f'tool/{slug}')
+        if not (os.path.exists(md) and os.path.exists(page)):
+            problems.append(f'{slug}: markdown or built tool page missing')
+            continue
+        body = open(md, encoding='utf-8').read()
+        text = strip_tags(open(page, encoding='utf-8', errors='replace').read())
+
+        mirrors = []
+        m = re.search(r'^pricing:\s*"(.*)"\s*$', body, re.M)
+        if m:
+            mirrors.append(('pricing', m.group(1)))
+        mirrors += [('plan price', v) for v in re.findall(r'^    price:\s*"(.*)"\s*$', body, re.M)]
+
+        for label, value in mirrors:
+            checked += 1
+            if value not in text:
+                problems.append(
+                    f'{slug}: markdown {label} "{value}" does not appear on the built tool page '
+                    f'— the markdown copy has drifted from src/data/product-facts.ts')
+    return checked
+
+
 def check_src(problems):
     stale = re.compile(r'\b74\s+languages?\b', re.I)
     skip = {FACTS_TS}
@@ -240,6 +275,7 @@ def main():
     check_languages(problems)
     price_checks = check_prices(problems, allow)
     leaks = check_leaks(problems)
+    mirrors = check_md_mirror(problems)
     if '--src' in sys.argv:
         check_src(problems)
 
@@ -255,6 +291,7 @@ def main():
     print(f'   canonical: {CANON_LABEL}')
     print(f'OK — {price_checks} attributed price claim(s) checked, all official')
     print(f'OK — no unevaluated template literals across {leaks} page(s)')
+    print(f'OK — {mirrors} markdown price mirror(s) match the rendered tool pages')
     print(f'   allow-lists: {", ".join(f"{k} ({len(v)})" for k, v in allow.items())}')
     return 0
 

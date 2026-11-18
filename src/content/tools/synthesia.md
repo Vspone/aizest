@@ -26,20 +26,20 @@ features:
   - "Team collaboration with shared workspaces and brand kits"
 pricing_tiers:
   - name: "Basic"
-    price: "Free"
+    price: "$0"
     features:
       - "500 credits/month (about 10 min of video)"
       - "9 AI avatars, videos carry a watermark"
       - "1 editor seat"
   - name: "Starter"
-    price: "$14/mo (annual) / $19/mo (monthly)"
+    price: "$19/mo ($14/mo billed yearly)"
     features:
       - "1 editor + 3 guests"
       - "1,250 credits/month (about 12 min of video)"
       - "125+ AI avatars, watermark removed"
       - "AI Video Assistant, survey analytics"
   - name: "Pro"
-    price: "$59/mo (annual) / $89/mo (monthly)"
+    price: "$89/mo ($59/mo billed yearly)"
     features:
       - "1 editor + 5 guests"
       - "6,000 credits/month (about 60 min of video)"

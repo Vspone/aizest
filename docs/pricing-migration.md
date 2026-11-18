@@ -37,40 +37,60 @@ Every `.astro` page that quotes one of the three vendors now imports the constan
 `summary` / `entry` are derived from the plan fields rather than repeating prices,
 so a vendor price change has exactly one place to land.
 
-## Known limitation — `src/content/tools/*.md`
+## `src/content/tools/*.md` — solved at the render layer
 
-`elevenlabs.md`, `synthesia.md`, `submagic.md` carry prices in YAML frontmatter
-(`pricing`, `pricing_tiers[].price`) and inside prose/tables in the markdown body.
-Markdown frontmatter cannot import TypeScript, so these stay literal.
+Markdown frontmatter cannot import TypeScript, so the three tool pages cannot read
+the constants directly. But the page that renders them can:
 
-Overriding only the frontmatter at render time was rejected on purpose: the body
-table would keep the old numbers, leaving one page that contradicts itself — worse
-than a page that is uniformly stale and gets flagged by the guard. Fixing this
-properly means converting those three tool pages to `.astro` or generating the
-pricing block from the content collection. Until then: when a vendor changes price,
-the guard fails on the built tool page and the number is edited by hand in the
-markdown.
+`src/pages/tool/[slug].astro` now destructures the markdown values as
+`pricingRaw` / `tiersRaw`, then builds `pricing` and `pricing_tiers` from a
+`FACT_PRICING` map keyed by slug and plan name. Everything downstream — the hero
+price, every plan card, the FAQ answer, the Offer JSON-LD, the CTA wording — reads
+the overlaid values, i.e. the constants.
 
-## Guard behaviour (as of batch 2)
+Three properties fall out of this:
+
+1. **Unknown plan names fail the build.** If a vendor renames a tier and the
+   markdown is updated without the map, the build throws
+   `<slug>: plan "X" has no entry in FACT_PRICING…` instead of silently rendering
+   the stale markdown price. Verified by renaming Submagic's "Pro" to "Pro Max".
+2. **The markdown copies are inert but not unguarded.** `pricing` and
+   `pricing_tiers[].price` still exist in the markdown because the JSON API
+   (`/api/tools.json`), the homepage list and the `/alternatives/` tables read them
+   straight from the collection. `check_md_mirror()` asserts each of those 14
+   strings still appears on the built tool page — which is only true while they
+   match the constants. Renaming a price in `product-facts.ts` makes that check
+   fail on all four affected mirrors.
+3. **The markdown bodies carry no prices.** Submagic's body had its own pricing
+   table and a credits sentence; both are gone, replaced by prose that points at the
+   plan cards. ElevenLabs' body had "The $5/month Starter plan" (the annual rate
+   presented as monthly) and a `$22 Creator tier` in the cons list — both rewritten
+   without numbers. That removes the only place where a markdown file could
+   contradict the rendered page.
+
+Drift test after the change: `SYNTHESIA_PRICING.starter.price` → `$21/mo`, rebuild,
+`$21/mo ($14/mo billed yearly)` appears on `/tool/synthesia/`; the guard then
+reports 21 stale-price claims plus 4 drifted markdown mirrors. Reverted, rebuilt,
+green.
+
+## Guard behaviour (as of the markdown layer)
 
 `python3 check_product_facts.py` — run against `dist/`, exit 1 on failure.
 
 1. **Language coverage** — 10 pages; `74` is forbidden as a phrase *and* as a bare
    number (a table cell reading just `<td>74</td>` used to slip through).
-2. **Price attribution** — 151 claims. The lead-in is now the current *sentence or
+2. **Price attribution** — 127 claims. The lead-in is the current *sentence or
    table row*, not a fixed 90-character window: a long sentence can name the
    product first and the price 150 characters later, which the old window missed.
-   `</td>`/`</th>` are collapsed to whitespace so a row keeps its product name;
-   `</tr>`, `</p>`, `</li>`, `</h*>` start a new unit.
-   Excluded as non-plan figures: per-minute economics, deltas ("the extra $10
-   buys"), approximations, related-tool carousels.
+   `</td>`/`</th>` collapse to whitespace so a row keeps its product name; `</tr>`,
+   `</p>`, `</li>`, `</h*>` start a new unit. Excluded as non-plan figures:
+   per-minute economics, deltas, approximations, related-tool carousels.
 3. **Unevaluated template literals** — any `${X_PRICING…}` or bare `X_PRICING.` in
-   the built HTML fails. This catches the case where an interpolation is typed into
-   a double-quoted string and renders as visible junk; no price rule can catch that,
-   because there is no amount to compare.
+   the built HTML fails.
+4. **Markdown price mirrors** — 14 strings; each must appear on its built tool page.
 
-All three have been self-tested by injecting the failure into a built page and
-confirming the check fails, then restoring it.
+All four have been self-tested by injecting the failure and confirming the check
+fails, then restoring it.
 
 ## Errors found and fixed during the migration
 

@@ -35,14 +35,14 @@ pricing_tiers:
       - "3 custom voice slots"
       - "No commercial licence"
   - name: "Starter"
-    price: "$6/mo ($5/mo annual)"
+    price: "$6/mo ($5/mo billed yearly)"
     features:
       - "30,000 credits/month"
       - "Commercial licence"
       - "Instant Voice Cloning"
       - "Dubbing Studio"
   - name: "Creator"
-    price: "$22/mo ($18.33/mo annual)"
+    price: "$22/mo ($18.33/mo billed yearly)"
     features:
       - "121,000 credits/month"
       - "Professional Voice Cloning"
@@ -55,7 +55,7 @@ pros:
   - "Good free tier for testing"
 cons:
   - "Limited free tier characters"
-  - "Professional Voice Cloning starts at the $22 Creator tier"
+  - "Professional Voice Cloning starts at the Creator tier"
   - "API pricing higher than some alternatives"
 ---
 
@@ -65,4 +65,4 @@ The platform's core technology revolves around several key features that make it
 
 For long-form audio content, the Projects feature is a standout. It allows users to manage multi-chapter narratives — such as audiobooks or podcast series — with consistent voice settings across all sections, chapter-level editing, and the ability to regenerate specific passages without losing overall context. The Eleven Reader mobile app extends the platform's utility by letting users convert any text — from web articles and PDFs to ebooks and news feeds — into natural speech for on-the-go listening. More recently, ElevenLabs introduced ElevenLabs Sound, a sound effects generation tool that creates custom audio clips from text descriptions, expanding the platform from pure speech into broader audio production. On the language side, ElevenLabs offers multiple text-to-speech models with different coverage: Eleven v4 supports 90+ languages, Eleven v3 supports 70+ languages, Flash v2.5 supports 32 languages, and Multilingual v2 supports 29 languages. Language availability varies by model — these are per-model text-to-speech figures, not a platform-wide guarantee that every ElevenLabs feature (dubbing, speech-to-speech, voice design) covers the same set, so check the model you plan to call before committing to a multi-language workflow.
 
-ElevenLabs is best suited for content creators, podcaster, audiobook producers, video editors, game developers, and accessibility professionals who need studio-quality voice output without the time and expense of traditional recording sessions. It is also an excellent tool for language learners who benefit from hearing natural pronunciation, and for businesses creating voice interfaces or training materials. The free tier provides 10,000 characters per month, which is enough to evaluate the quality and test basic use cases. The $5/month Starter plan adds professional voice cloning and a commercial license, making it the entry point for most professional use. ElevenLabs is the right choice when audio quality is paramount — no other AI voice platform matches its natural expressiveness and emotional range, making it the clear leader in the text-to-speech space.
+ElevenLabs is best suited for content creators, podcaster, audiobook producers, video editors, game developers, and accessibility professionals who need studio-quality voice output without the time and expense of traditional recording sessions. It is also an excellent tool for language learners who benefit from hearing natural pronunciation, and for businesses creating voice interfaces or training materials. The free tier is enough to evaluate the quality and test basic use cases. The Starter plan adds voice cloning and a commercial licence, making it the entry point for most professional use; prices for every tier are listed in the plan cards on this page. ElevenLabs is the right choice when audio quality is paramount — no other AI voice platform matches its natural expressiveness and emotional range, making it the clear leader in the text-to-speech space.

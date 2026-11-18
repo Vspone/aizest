@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
+import { ELEVENLABS_PRICING, SYNTHESIA_PRICING, SUBMAGIC_PRICING } from '../../data/product-facts';
 
 export async function getStaticPaths() {
   const tools = await getCollection('tools');
@@ -11,7 +12,67 @@ export async function getStaticPaths() {
 }
 const { tool } = Astro.props;
 const { Content } = await render(tool);
-const { name, slug, description, website, pricing, affiliate_url, rating, features, pricing_tiers, pros, cons, category, needs_vps, last_verified, affiliate = false, discontinued = false, discontinued_date, discontinued_note, successor } = tool.data;
+const { name, slug, description, website, pricing: pricingRaw, affiliate_url, rating, features, pricing_tiers: tiersRaw, pros, cons, category, needs_vps, last_verified, affiliate = false, discontinued = false, discontinued_date, discontinued_note, successor } = tool.data;
+
+/**
+ * Prices for the three tools we have an affiliate relationship with come from
+ * src/data/product-facts.ts, not from the markdown frontmatter. The summary line,
+ * every plan card, the Offer JSON-LD and the CTA wording all read the values below,
+ * so a vendor price change is one edit in the constants file.
+ *
+ * Tier prices are matched by tier NAME. An unknown name throws at build time rather
+ * than silently rendering the stale frontmatter value — a build failure is the
+ * cheapest possible way to find out a plan was renamed.
+ *
+ * The markdown copies of these strings remain in the frontmatter as a fallback for
+ * anything that reads the collection directly; check_product_facts.py asserts they
+ * still equal the constants so they cannot drift unnoticed.
+ */
+const FACT_PRICING: Record<string, { entry: string; tiers: Record<string, string> } | undefined> = {
+  elevenlabs: {
+    entry: ELEVENLABS_PRICING.entry,
+    tiers: {
+      Free: ELEVENLABS_PRICING.free.price,
+      Starter: `${ELEVENLABS_PRICING.starter.price} (${ELEVENLABS_PRICING.starter.annual} billed yearly)`,
+      Creator: `${ELEVENLABS_PRICING.creator.price} (${ELEVENLABS_PRICING.creator.annual} billed yearly)`,
+      Pro: `${ELEVENLABS_PRICING.pro.price} (${ELEVENLABS_PRICING.pro.annual} billed yearly)`,
+      Scale: `${ELEVENLABS_PRICING.scale.price} (${ELEVENLABS_PRICING.scale.annual} billed yearly)`,
+      Business: `${ELEVENLABS_PRICING.business.price} (${ELEVENLABS_PRICING.business.annual} billed yearly)`,
+    },
+  },
+  synthesia: {
+    entry: SYNTHESIA_PRICING.entry,
+    tiers: {
+      Basic: SYNTHESIA_PRICING.basic.price,
+      Starter: `${SYNTHESIA_PRICING.starter.price} (${SYNTHESIA_PRICING.starter.annual} billed yearly)`,
+      Pro: `${SYNTHESIA_PRICING.pro.price} (${SYNTHESIA_PRICING.pro.annual} billed yearly)`,
+      Enterprise: SYNTHESIA_PRICING.enterprise.price,
+    },
+  },
+  submagic: {
+    entry: SUBMAGIC_PRICING.entry,
+    tiers: {
+      Starter: `${SUBMAGIC_PRICING.starter.price} (${SUBMAGIC_PRICING.starter.annual} billed yearly)`,
+      Pro: `${SUBMAGIC_PRICING.pro.price} (${SUBMAGIC_PRICING.pro.annual} billed yearly)`,
+      Business: `${SUBMAGIC_PRICING.business.price} (${SUBMAGIC_PRICING.business.annual} billed yearly)`,
+      Custom: 'Contact sales',
+    },
+  },
+};
+
+const facts = FACT_PRICING[slug];
+const pricing: string = facts ? facts.entry : pricingRaw;
+const pricing_tiers = (tiersRaw ?? []).map(tier => {
+  if (!facts) return tier;
+  const canonical = facts.tiers[tier.name];
+  if (canonical === undefined) {
+    throw new Error(
+      `${slug}: plan "${tier.name}" has no entry in FACT_PRICING. Add it to ` +
+      `src/pages/tool/[slug].astro and src/data/product-facts.ts, or fix the plan name in the markdown.`
+    );
+  }
+  return { ...tier, price: canonical };
+});
 
 // Check if last_verified is stale (> 3 months)
 const lastVerified = last_verified ? new Date(last_verified) : null;

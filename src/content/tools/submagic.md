@@ -4,7 +4,7 @@ slug: "submagic"
 description: "AI video editor for short-form content — auto captions, animated presets, b-roll and Magic Clips that turn long videos into vertical shorts"
 category: "video"
 website: "https://www.submagic.co/"
-pricing: "$19–$69/mo"
+pricing: "Free trial / $19/mo"
 affiliate_url: https://submagic.co/?via=gb7f5o
 affiliate: true
 scores:
@@ -63,7 +63,7 @@ pros:
   - "Caption workflow is genuinely fast — upload, auto-caption, pick a preset, export"
   - "Magic Clips produces usable vertical cuts without manual timeline work"
   - "Animated caption presets look native to TikTok and Reels"
-  - "Generous credit maths at the entry tier — 15 finished videos per month for $19"
+  - "Generous credit maths at the entry tier — 15 finished videos per month on the cheapest plan"
   - "Team features (templates, brand kit, multi-account publishing) scale sensibly"
 cons:
   - "Per-member pricing adds up quickly for small teams"
@@ -85,19 +85,13 @@ On top of captions, the editor includes auto zooms, silence removal, bad-take re
 
 Magic Clips is the feature that distinguishes Submagic from caption-only tools. You feed it a long recording and it returns several vertical clips with captions already applied, ranked by likely interest. It is a real time saver for podcasters and YouTubers who want shorts out of an existing episode, though the quality of the selection tracks the quality of the source — clean, single-speaker audio with clear topic changes produces noticeably better clips than noisy multi-person recordings.
 
-## Pricing, verified November 2026
+## Pricing
 
-From Submagic's live pricing page:
+Exact prices for each plan are printed in the plan cards on this page, which are generated from a single verified source rather than restated here — so the numbers cannot drift apart from the tiers listed below.
 
-| Plan | Monthly | Yearly (per month) | Video length | Export |
-|---|---|---|---|---|
-| Starter | $19 / member | $12 | 2 min | 1080p, 30 FPS |
-| Pro | $39 / member | $23 | 5 min | 1080p, 2K |
-| Business | $69 / member | $41 | 30 min | 4K, 60 FPS |
+What matters for budgeting is the unit rather than the sticker price: every plan bills per member and meters credits, and a Magic Clip costs more credits than a plain captioned video. The entry tier is sized for a handful of captioned clips a week; long-form durations, 4K and 60 FPS start at the Business tier. Yearly billing is materially cheaper than paying monthly.
 
-Credits are the real constraint: Starter includes 45 credits per member (15 videos or 5 Magic Clips), Pro 120 credits (40 videos or 15 Magic Clips), Business 300 credits (100 videos or 37 Magic Clips). Yearly billing saves up to 41%.
-
-The pricing page lists paid tiers only and advertises "no credit card required" to start, so budget for a paid seat if you publish consistently — this is not a permanent free tool.
+There is no permanent free plan — the trial is the only no-cost entry point — so budget for a paid seat if you publish consistently.
 
 ## Who it fits
 

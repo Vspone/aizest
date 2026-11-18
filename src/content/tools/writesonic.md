@@ -4,7 +4,7 @@ slug: "writesonic"
 description: "AI content generation platform for blogs, ads, and marketing copy"
 category: "writing"
 website: "https://writesonic.com"
-pricing: "$20/mo"
+pricing: "From $79/mo (annual)"
 affiliate_url: https://writesonic.com
 affiliate: false
 scores:
@@ -14,7 +14,7 @@ scores:
   speed: 7.9
   overall: 8.4
 best_for: "Content creators, writers, bloggers, and marketing teams"
-last_verified: 2026-06-25
+last_verified: 2026-11-18
 featured: false
 rating: 4.2
 features:
@@ -25,27 +25,35 @@ features:
   - "AI Chat with real-time content creation"
   - "Built-in SEO tools and keyword optimization"
 pricing_tiers:
-  - name: "Free"
+  - name: "Free trial"
     price: "$0"
     features:
-      - "Up to 10,000 words per month"
-      - "Basic templates"
-      - "Limited generations per day"
-  - name: "Pro"
-    price: "$20/mo"
+      - "No credit card required"
+      - "Tracks brand visibility across ChatGPT, Gemini and AI Overviews"
+  - name: "Starter"
+    price: "$79/mo billed annually"
     features:
-      - "Unlimited words (fair use policy)"
-      - "All templates and tools"
-      - "AI Article Writer 5.0"
-      - "Brand voice customization"
-      - "API access"
+      - "3 AI platforms, 50 prompts tracked daily, 1 market"
+      - "15 AI articles/mo, 10 site audits (100 pages each)"
+      - "1 user, 1 project"
+  - name: "Basic"
+    price: "$199/mo billed annually"
+    features:
+      - "100 prompts, 300 answers tracked daily"
+      - "25 AI articles/mo, 20 site audits (1,200 pages each)"
+      - "2 users, 1 project"
+  - name: "Growth"
+    price: "$399/mo billed annually"
+    features:
+      - "200 prompts, 600 answers tracked daily, sentiment analysis"
+      - "Action Center (5 off-page + 5 on-page actions/mo)"
+      - "50 AI articles/mo, 50 site audits (2,500 pages each), 3 users"
   - name: "Enterprise"
     price: "Custom"
     features:
-      - "Dedicated account manager"
-      - "Custom AI model fine-tuning"
-      - "SSO and advanced security"
-      - "Custom integrations"
+      - "All 9 AI platforms incl. Perplexity, Claude, Grok, Copilot"
+      - "Full Action Center, agentic workflows, custom prompts and markets"
+      - "SSO/SAML, SOC 2 Type II, HIPAA, dedicated AI Search Strategist
 pros:
   - "Affordable pricing compared to many competitors"
   - "Strong article writer creates well-structured long-form content"

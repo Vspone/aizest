@@ -4,7 +4,7 @@ slug: "runway"
 description: "Creative AI toolkit for video editing, generation, and visual effects used by professionals."
 category: "video"
 website: "https://runwayml.com"
-pricing: "Free / $15/mo"
+pricing: "Free / $12/mo (annual)"
 affiliate_url: https://runwayml.com
 scores:
   ease_of_use: 8.5
@@ -13,7 +13,7 @@ scores:
   speed: 8.3
   overall: 8.8
 best_for: "Video creators, marketers, and media teams"
-last_verified: 2026-06-25
+last_verified: 2026-11-18
 featured: false
 rating: 4.4
 features:
@@ -27,23 +27,27 @@ pricing_tiers:
   - name: "Free"
     price: "$0"
     features:
-      - "Basic tools"
-      - "Watermark export"
-      - "Limted credits"
+      - "125 one-time credits (they do not expire)"
+      - "5GB asset storage"
+      - "Access to a selection of generative models"
+  - name: "Standard"
+    price: "$12/mo billed annually ($15/mo monthly)"
+    features:
+      - "625 credits/mo — about 52s of Gen-4.5 video"
+      - "All AI video and image models, no watermarks"
+      - "5 parallel generations, 3 projects, 20GB storage"
   - name: "Pro"
-    price: "$15/mo"
+    price: "$28/mo billed annually ($35/mo monthly)"
     features:
-      - "No watermark"
-      - "Gen-3 access"
-      - "500 credits/mo"
-      - "HD export"
-  - name: "Enterprise"
-    price: "Custom"
+      - "2,250 credits/mo — about 187s of Gen-4.5 video"
+      - "15 parallel generations, 5 projects, 1 brand kit"
+      - "1 custom voice clone, unlimited 4K upscaling, 100GB storage"
+  - name: "Max"
+    price: "$76/mo billed annually ($95/mo monthly)"
     features:
-      - "Unlimited credits"
-      - "Custom models"
-      - "API access"
-      - "Advanced support"
+      - "9,500 credits/mo — about 791s of Gen-4.5 video"
+      - "20 parallel generations, 10 projects, 3 brand kits"
+      - "Unused credits roll over one month, HDR/ProRes export, 500GB storage
 pros:
   - "Cutting-edge AI video tools"
   - "Professional-grade features"

@@ -4,7 +4,7 @@ slug: "canva"
 description: "AI-powered design platform with text-to-image, magic editing, and automated design features."
 category: "design"
 website: "https://www.canva.com"
-pricing: "Free / $13/mo"
+pricing: "Free / $144/yr (Pro)"
 affiliate_url: https://www.canva.com
 scores:
   ease_of_use: 9.7
@@ -13,7 +13,7 @@ scores:
   speed: 8.7
   overall: 9.2
 best_for: "Designers, creative professionals, and brand teams"
-last_verified: 2026-06-25
+last_verified: 2026-11-18
 featured: true
 rating: 4.6
 features:
@@ -27,22 +27,27 @@ pricing_tiers:
   - name: "Free"
     price: "$0"
     features:
-      - "250K+ templates"
-      - "5GB storage"
-      - "Basic AI magic tools"
+      - "1.6M+ templates, 4.7M+ photos and graphics"
+      - "1 Brand Kit (3 colours), 5GB storage"
+      - "Limited Standard and Premium AI, no Ultra AI"
   - name: "Pro"
-    price: "$13/mo"
+    price: "$144/year (one person)"
     features:
-      - "AI image generation"
-      - "100GB storage"
-      - "Brand Kit"
-      - "Background removal"
+      - "3.6M+ templates, 141M+ premium assets"
+      - "5 Brand Kits, social scheduling, 100GB storage"
+      - "10x the Free AI allowance, Affinity with AI"
+  - name: "Business"
+    price: "$250/year per person"
+    features:
+      - "100 Brand Kits with approvals, team admin tools"
+      - "500GB storage, Flourish access, 10% off print"
+      - "20x the Free AI allowance, AI top-ups available"
   - name: "Enterprise"
     price: "Custom"
     features:
-      - "Unlimited storage"
-      - "Advanced controls"
-      - "Single sign-on"
+      - "SSO and SCIM, audit logs, custom apps"
+      - "1000 Brand Kits, multi-team management, 1TB storage"
+      - "IP indemnity and Canva Shield AI output indemnity
 pros:
   - "Incredibly easy to use"
   - "Massive template library"

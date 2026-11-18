@@ -14,7 +14,7 @@ scores:
   speed: 8.5
   overall: 9.0
 best_for: "Content creators, writers, bloggers, and marketing teams"
-last_verified: 2026-06-25
+last_verified: 2026-11-18
 featured: true
 rating: 4.5
 features:
@@ -25,20 +25,24 @@ features:
   - "Multilingual support including strong English performance"
   - "File uploads for document analysis"
 pricing_tiers:
-  - name: "Free (Web)"
-    price: "$0"
+  - name: "deepseek-flash"
+    price: "$0.15 / 1M input tokens (cache miss, off-peak)"
     features:
-      - "Unlimited web chat access"
-      - "1 million token context"
-      - "File upload support"
-      - "Web search integration"
-  - name: "API"
-    price: "Pay per token (~$0.14/M input)"
+      - "$0.30 / 1M input at peak; $0.003-0.006 cached input"
+      - "$0.60 / 1M output tokens off-peak, $1.20 at peak"
+      - "1M context, 384K max output, vision supported"
+  - name: "deepseek-v4-pro"
+    price: "$0.66 / 1M input tokens (cache miss, off-peak)"
     features:
-      - "Access to DeepSeek-V3 and R1"
-      - "Token-based billing"
-      - "High rate limits"
-      - "Open-weight self-hosting option"
+      - "$1.32 / 1M input at peak; $0.022-0.044 cached input"
+      - "$1.98 / 1M output tokens off-peak, $3.96 at peak"
+      - "1M context, 384K max output, no vision"
+  - name: "Add-ons"
+    price: "Per use"
+    features:
+      - "Web search and fetch: $0.75 per 1,000 calls"
+      - "File parsing / OCR: $0.225 per 1,000 pages"
+      - "TTS $0.45 per 10k chars, ASR $0.116 per audio hour"
 pros:
   - "Free web tier is genuinely unlimited (no daily caps)"
   - "Exceptional reasoning — chain-of-thought shows its work"

@@ -4,7 +4,7 @@ slug: "gemini"
 description: "Google's most advanced multimodal AI model for chat, reasoning, coding, and creative tasks across text, images, audio, and video."
 category: "writing"
 website: "https://gemini.google.com"
-pricing: "Free / $19.99/mo (Advanced)"
+pricing: "Free / $4.99/mo (AI Plus)"
 affiliate_url: https://gemini.google.com
 scores:
   ease_of_use: 9.9
@@ -13,7 +13,7 @@ scores:
   speed: 8.9
   overall: 9.4
 best_for: "Content creators, writers, bloggers, and marketing teams"
-last_verified: 2026-06-25
+last_verified: 2026-11-18
 featured: true
 rating: 4.7
 features:
@@ -27,24 +27,26 @@ pricing_tiers:
   - name: "Free"
     price: "$0"
     features:
-      - "Gemini 2.5 Flash access"
-      - "1 million token context"
-      - "File uploads and web search"
-      - "Google Workspace integration"
-  - name: "Advanced"
+      - "Gemini app with Flash-Lite, image generation, Deep Research"
+      - "15GB storage, limited Flow access"
+  - name: "Google AI Plus"
+    price: "$4.99/mo"
+    features:
+      - "2x usage limits vs Free, 400GB storage"
+      - "Gemini 4 Hydrogen, video generation, Daily Brief"
+      - "200 Flow credits, Gemini in Gmail and Vids"
+  - name: "Google AI Pro"
     price: "$19.99/mo"
     features:
-      - "Gemini 2.5 Pro access"
-      - "Priority speed and availability"
-      - "Google Workspace with AI features"
-      - "Early access to experimental features"
-  - name: "Business"
-    price: "$20/user/mo"
+      - "4x usage limits vs Free, 5TB storage"
+      - "Gemini 4 Argon and Pro model access"
+      - "1,000 Flow credits, YouTube Premium Lite, Google Antigravity entry limits"
+  - name: "Google AI Ultra"
+    price: "$99.99/mo (5x Pro) or $199.99/mo (20x Pro)"
     features:
-      - "All Advanced features"
-      - "Team collaboration tools"
-      - "Admin controls and security"
-      - "Custom AI agents for workflows"
+      - "Highest access to Gemini 4 Carbon, Argon and Hydrogen"
+      - "10,000 or 25,000 Flow credits, 20TB+ storage"
+      - "Project Genie (Genie 3 world model), YouTube Premium individual
 pros:
   - "Massive 1M token context window — best in class"
   - "True multimodal: text, images, audio, video input"

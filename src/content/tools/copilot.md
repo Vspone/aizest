@@ -4,7 +4,7 @@ slug: "copilot"
 description: "AI pair programmer that suggests code in real-time, integrated into VS Code and other IDEs."
 category: "coding"
 website: "https://github.com/features/copilot"
-pricing: "$10/mo"
+pricing: "Free / $10/mo"
 affiliate_url: https://github.com/features/copilot
 scores:
   ease_of_use: 9.5
@@ -13,7 +13,7 @@ scores:
   speed: 8.5
   overall: 9.0
 best_for: "Developers, software engineers, and technical teams"
-last_verified: 2026-06-25
+last_verified: 2026-11-18
 featured: false
 rating: 4.5
 features:
@@ -24,24 +24,34 @@ features:
   - "Chat interface for code explanations"
   - "Pull request summaries and review"
 pricing_tiers:
-  - name: "Individuals"
+  - name: "Free"
+    price: "$0"
+    features:
+      - "2,000 code completions and 50 chat requests per month"
+      - "Agent mode, CLI, MCP and Copilot Spaces included"
+  - name: "Pro"
     price: "$10/mo"
     features:
-      - "Code completions"
-      - "Chat"
-      - "PR summaries"
-  - name: "Teams"
-    price: "$19/user/mo"
+      - "Unlimited completions, $15/mo of AI credits in total"
+      - "Agent mode across VS Code, JetBrains, Eclipse, Xcode"
+      - "Model choice across Anthropic, OpenAI, Google, xAI and Kimi"
+  - name: "Pro+"
+    price: "$39/mo"
     features:
-      - "Org-wide policies"
-      - "Audit logs"
-      - "Admin controls"
-  - name: "Enterprise"
-    price: "$39/user/mo"
+      - "$70/mo of AI credits in total"
+      - "Code review, cloud agent, file diff reviews"
+      - "Delegate tasks to third-party coding agents (preview)"
+  - name: "Max"
+    price: "$100/mo"
     features:
-      - "Custom models"
-      - "IP indemnity"
-      - "Security features"
+      - "$200/mo of AI credits in total"
+      - "Built for sustained agent-driven workflows"
+  - name: "Business / Enterprise"
+    price: "Per seat, contact sales"
+    features:
+      - "SAML SSO, org-wide policy management, usage metrics"
+      - "IP indemnity and enterprise-grade security"
+      - "Admins set usage limits and overage policy
 pros:
   - "Massive productivity boost"
   - "Works across editors"

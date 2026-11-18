@@ -4,7 +4,7 @@ slug: "perplexity"
 description: "AI-powered search engine providing comprehensive answers with cited sources from the web."
 category: "data"
 website: "https://www.perplexity.ai"
-pricing: "Free / $20/mo"
+pricing: "Free / $17/mo (annual)"
 affiliate_url: https://www.perplexity.ai
 scores:
   ease_of_use: 8.9
@@ -13,7 +13,7 @@ scores:
   speed: 8.7
   overall: 9.2
 best_for: "Data analysts, scientists, and researchers"
-last_verified: 2026-06-25
+last_verified: 2026-11-18
 featured: false
 rating: 4.6
 features:
@@ -27,16 +27,20 @@ pricing_tiers:
   - name: "Free"
     price: "$0"
     features:
-      - "Standard search"
-      - "5 Pro searches/day"
-      - "Basic citations"
+      - "Unlimited quick searches with citations"
+      - "Limited Pro searches and Deep Research per day"
   - name: "Pro"
-    price: "$20/mo"
+    price: "$17/mo billed annually"
     features:
-      - "Unlimited Pro searches"
-      - "File uploads"
-      - "Advanced models"
-      - "API access"
+      - "4,000 bonus Computer credits"
+      - "Pro searches, Deep Research, model selection"
+      - "Create documents and apps with Computer"
+  - name: "Max"
+    price: "$167/mo billed annually"
+    features:
+      - "35,000 bonus credits plus 10,000 monthly credits"
+      - "Maximum Computer usage, expert-level research"
+      - "Frontier models and priority access to new features
 pros:
   - "Answers are always current"
   - "Citations let you verify sources"

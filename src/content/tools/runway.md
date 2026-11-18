@@ -47,7 +47,7 @@ pricing_tiers:
     features:
       - "9,500 credits/mo — about 791s of Gen-4.5 video"
       - "20 parallel generations, 10 projects, 3 brand kits"
-      - "Unused credits roll over one month, HDR/ProRes export, 500GB storage
+      - "Unused credits roll over one month, HDR/ProRes export, 500GB storage"
 pros:
   - "Cutting-edge AI video tools"
   - "Professional-grade features"

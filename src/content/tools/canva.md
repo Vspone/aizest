@@ -47,7 +47,7 @@ pricing_tiers:
     features:
       - "SSO and SCIM, audit logs, custom apps"
       - "1000 Brand Kits, multi-team management, 1TB storage"
-      - "IP indemnity and Canva Shield AI output indemnity
+      - "IP indemnity and Canva Shield AI output indemnity"
 pros:
   - "Incredibly easy to use"
   - "Massive template library"

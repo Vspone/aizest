@@ -40,7 +40,7 @@ pricing_tiers:
     features:
       - "35,000 bonus credits plus 10,000 monthly credits"
       - "Maximum Computer usage, expert-level research"
-      - "Frontier models and priority access to new features
+      - "Frontier models and priority access to new features"
 pros:
   - "Answers are always current"
   - "Citations let you verify sources"

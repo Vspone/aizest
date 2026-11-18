@@ -51,7 +51,7 @@ pricing_tiers:
     features:
       - "SAML SSO, org-wide policy management, usage metrics"
       - "IP indemnity and enterprise-grade security"
-      - "Admins set usage limits and overage policy
+      - "Admins set usage limits and overage policy"
 pros:
   - "Massive productivity boost"
   - "Works across editors"

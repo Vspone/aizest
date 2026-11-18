@@ -46,7 +46,7 @@ pricing_tiers:
     features:
       - "Highest access to Gemini 4 Carbon, Argon and Hydrogen"
       - "10,000 or 25,000 Flow credits, 20TB+ storage"
-      - "Project Genie (Genie 3 world model), YouTube Premium individual
+      - "Project Genie (Genie 3 world model), YouTube Premium individual"
 pros:
   - "Massive 1M token context window — best in class"
   - "True multimodal: text, images, audio, video input"

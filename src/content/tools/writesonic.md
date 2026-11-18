@@ -53,7 +53,7 @@ pricing_tiers:
     features:
       - "All 9 AI platforms incl. Perplexity, Claude, Grok, Copilot"
       - "Full Action Center, agentic workflows, custom prompts and markets"
-      - "SSO/SAML, SOC 2 Type II, HIPAA, dedicated AI Search Strategist
+      - "SSO/SAML, SOC 2 Type II, HIPAA, dedicated AI Search Strategist"
 pros:
   - "Affordable pricing compared to many competitors"
   - "Strong article writer creates well-structured long-form content"

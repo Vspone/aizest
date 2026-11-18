@@ -12,13 +12,11 @@ const tools = await getCollection('tools');
 const bySlug = Object.fromEntries(tools.map(t => [t.data.slug, t.data]));
 // Featured Picks: put the three products we actually promote first, then the rest.
 const FEATURED_PRIORITY = ['elevenlabs', 'synthesia', 'submagic'];
+// The three creator tools are promoted separately in "The Creator Toolkit" at the
+// top of the page, so keep them out of this secondary grid — otherwise the two
+// modules compete and the creator positioning is diluted (2026-11-18).
 const featuredTools = tools
-  .filter(t => t.data.featured)
-  .sort((a, b) => {
-    const ai = FEATURED_PRIORITY.indexOf(a.data.slug);
-    const bi = FEATURED_PRIORITY.indexOf(b.data.slug);
-    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
-  })
+  .filter(t => t.data.featured && !FEATURED_PRIORITY.includes(t.data.slug))
   .slice(0, 9);
 
 // "Just Added" - newest tools (by pubDate or just last ones added)
@@ -260,11 +258,14 @@ for (const t of tools) {
     {featuredTools.length > 0 && (
       <section class="mb-16 reveal-on-scroll">
         <div class="flex items-center justify-between mb-6">
-          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
-            ★ Featured Picks
-          </h2>
-          <a href="/category" class="text-sm text-[#3B82F6] hover:underline font-medium">
-            View All Tools →
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+              Explore More AI Tools
+            </h2>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Broader AI tools for research, design, writing and automation — outside the creator workflow.</p>
+          </div>
+          <a href="/category" class="text-sm text-[#3B82F6] hover:underline font-medium whitespace-nowrap">
+            All Tools →
           </a>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-grid">
@@ -1019,8 +1020,8 @@ for (const t of tools) {
           </div>
 
           <div class="max-w-lg mx-auto text-center">
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">AI Founder Toolkit</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">New AI tools + reviews + affiliate opportunities + workflows — delivered weekly.</p>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Creator AI Brief</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">AI video, voice generation, content creation and creator workflows — new tools, updates, practical tips and comparisons. Weekly, no filler.</p>
             <div class="ml-embedded" data-form="J0miZX"></div>
           </div>
 

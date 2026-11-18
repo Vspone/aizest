@@ -4,7 +4,7 @@ slug: "jasper"
 description: "AI writing assistant specialized in marketing copy, blog content, and brand voice consistency."
 category: "writing"
 website: "https://www.jasper.ai"
-pricing: "$39/mo"
+pricing: "Free trial / $69/mo"
 affiliate_url: https://www.jasper.ai
 affiliate: false
 scores:
@@ -14,7 +14,7 @@ scores:
   speed: 8.7
   overall: 9.2
 best_for: "Content creators, writers, bloggers, and marketing teams"
-last_verified: 2026-06-25
+last_verified: 2026-11-18
 featured: true
 rating: 4.6
 features:
@@ -25,27 +25,20 @@ features:
   - "Multi-language content creation"
   - "Collaboration features for teams"
 pricing_tiers:
-  - name: "Creator"
-    price: "$39/mo"
-    features:
-      - "1 user"
-      - "50+ templates"
-      - "Brand voice"
-      - "SEO mode"
   - name: "Pro"
-    price: "$59/mo"
+    price: "$69/mo ($59/mo billed yearly)"
     features:
-      - "3 users"
-      - "Unlimited projects"
-      - "Jasper Art"
-      - "Campaigns"
+      - "1 seat — 7-day free trial"
+      - "100+ purpose-built marketing agents"
+      - "2 brand voices, 5 knowledge assets, 3 audiences"
+      - "30+ languages, browser extension, integrations"
   - name: "Business"
     price: "Custom"
     features:
-      - "Unlimited users"
-      - "Custom workflows"
-      - "API access"
-      - "Dedicated support"
+      - "Custom agents and no-code agent builder"
+      - "Jasper Grid for scaled content execution"
+      - "Unlimited brand voices, knowledge and audiences"
+      - "API access, SSO/SCIM, dedicated account management"
 pros:
   - "Excellent marketing copy quality"
   - "Brand voice consistency"

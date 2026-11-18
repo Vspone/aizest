@@ -4,7 +4,7 @@ slug: "notion-ai"
 description: "AI-enhanced workspace for notes, documentation, project management, and team collaboration."
 category: "productivity"
 website: "https://www.notion.so/product/ai"
-pricing: "$10/mo (add-on)"
+pricing: "Free / $20/member/mo (Business)"
 affiliate_url: https://www.notion.so
 scores:
   ease_of_use: 8.5
@@ -13,7 +13,7 @@ scores:
   speed: 8.3
   overall: 8.8
 best_for: "Professionals, teams, and students"
-last_verified: 2026-06-25
+last_verified: 2026-11-18
 featured: false
 rating: 4.4
 features:
@@ -24,25 +24,30 @@ features:
   - "Automatic database filling and categorization"
   - "Translation and tone adjustment"
 pricing_tiers:
-  - name: "Plus + AI"
-    price: "$18/mo"
+  - name: "Free"
+    price: "$0"
     features:
-      - "Unlimited pages"
-      - "AI writing"
-      - "Q&A"
-      - "Summarize"
-  - name: "Business + AI"
-    price: "$25/user/mo"
+      - "Notion AI trial only"
+      - "Unlimited pages for solo use"
+      - "Basic forms and sites"
+  - name: "Plus"
+    price: "$10/member/mo"
     features:
-      - "Advanced pages"
-      - "SAML SSO"
-      - "Bulk AI actions"
+      - "Notion AI trial"
+      - "Unlimited pages and file uploads"
+      - "Charts, custom forms and sites"
+  - name: "Business"
+    price: "$20/member/mo"
+    features:
+      - "Notion Agent and AI Meeting Notes included"
+      - "Enterprise Search beta, SAML SSO"
+      - "Granular database permissions, private teamspaces"
   - name: "Enterprise"
     price: "Custom"
     features:
-      - "Advanced security"
-      - "Audit logs"
-      - "Custom contract"
+      - "Zero data retention with LLM providers"
+      - "SCIM provisioning, audit log"
+      - "Advanced security controls and DLP/SIEM"
 pros:
   - "AI deeply integrated into existing workflow"
   - "Works across all your Notion content"

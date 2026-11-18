@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleWrap from '../components/ArticleWrap.astro';
+import AffiliateBtn from '../components/AffiliateBtn.astro';
+import RelatedContent from '../components/RelatedContent.astro';
+
+const description = "The AI tools startups actually pay for in 2026 — building an MVP, running GTM, generating product assets and automating the boring parts. Pricing checked against each vendor's official page on 18 November 2026, with the free tier each one really gives you.";
+const canonical = "https://aizest.net/best-ai-tools-for-startups-2026";
+const articleLd = {
+  "@type": "Article",
+  "headline": "Best AI Tools for Startups 2026",
+  "description": "AI tools for early-stage startups — MVP building, research, docs, product video, voice, GTM and automation, with verified pricing and real free-tier limits.",
+  "datePublished": "2026-11-18",
+  "dateModified": "2026-11-18",
+  "author": { "@type": "Organization", "name": "AI Zest" }
+};
+
+const breadcrumbLd = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aizest.net/" },
+    { "@type": "ListItem", "position": 2, "name": "Best AI Tools for Startups 2026" }
+  ]
+};
+
+const faqLd = {
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What AI tools does a startup actually need on day one?", "acceptedAnswer": { "@type": "Answer", "text": "Four, and three of them can be free: a reasoning assistant for research and writing (Claude's free tier or Pro at $20/month), a place to write things down with AI attached (Notion free, or Business at $20/member/month for the Notion Agent), a way to ship a working product page or prototype (Bolt's free plan gives 1M tokens a month, Pro is $25/month), and an automation layer (Zapier's free tier covers 100 tasks a month). Everything else can wait until a specific bottleneck appears." } },
+    { "@type": "Question", "name": "Is it cheaper to build an MVP with AI tools or hire a developer?", "acceptedAnswer": { "@type": "Answer", "text": "For a validation build, AI app builders are dramatically cheaper: Bolt's Pro plan is $25/month and Lovable and Cursor sell comparable monthly tiers. The trade-off is not price but ceiling — AI builders get you to a clickable, testable product quickly, and then stop being the right tool once you need a real data model, permissions and payments done properly. Most teams use AI to validate and a developer to productionise." } },
+    { "@type": "Question", "name": "Do startups need AI video and voice tools?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, earlier than most founders expect. A product demo that does not require a call is now part of the sales motion: Synthesia's Starter plan is $19/month ($14/month billed yearly) for about 12 minutes of avatar footage, and its free plan allows about 10 watermarked minutes a month. ElevenLabs covers narration and in-product voice from $6/month with a 10,000-credit free tier. Both are cheap enough to test before you have a sales team." } },
+    { "@type": "Question", "name": "How much should a seed-stage startup budget for AI subscriptions?", "acceptedAnswer": { "@type": "Answer", "text": "Around $100-200 a month at pre-seed, and it should stay under $500 until you have revenue. A working set is $20-25 for an assistant, $0-20 for docs, $25-49 for building, $0-19 for automation and $0-6 for voice — call it $100. The line item that quietly inflates is per-seat tools bought for people who never log in; audit seats monthly rather than annually." } },
+    { "@type": "Question", "name": "Which AI tools have free tiers good enough that you do not need to pay?", "acceptedAnswer": { "@type": "Answer", "text": "Bolt's free plan is 1M tokens a month with a 300K daily cap — enough for a prototype. Notion's free plan is unlimited pages for solo use and includes a Notion AI trial. HubSpot's free CRM covers two users with no credit card. Canva's free plan covers 1.6M+ templates and one brand kit. Zapier's free tier is 100 tasks a month. Claude and ElevenLabs both run usable free tiers. Combined, those cover a two-person team for a surprisingly long time." } }
+  ]
+};
+
+const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": [articleLd, breadcrumbLd, faqLd] });
+---
+<BaseLayout title="Best AI Tools for Startups 2026 — AI Zest" {description} {canonical} type="article" {jsonLd}>
+  <ArticleWrap>
+
+<h1>Best AI Tools for Startups 2026</h1>
+<p><em>Last updated: November 18, 2026 · Last verified: November 18, 2026 — pricing checked against each vendor's official pricing page</em></p>
+
+<p>A startup does not need an AI strategy. It needs to ship a demo, get a landing page in front of people, answer support email, and keep the burn low while doing it. Those four jobs are now mostly automated, and the tools that do them cost less than a single day of contractor time.</p>
+
+<p>This guide covers the nine tools we see actually retained at seed stage — not the ones that get signed up for and abandoned in week two. Every price was checked against the vendor's own pricing page on 18 November 2026, and where a free tier has a real limit we have stated the limit rather than calling it "generous".</p>
+
+<div class="not-prose my-8 p-6 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/10 dark:to-purple-900/10 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm font-medium text-gray-900 dark:text-white mb-3">🔑 Quick Verdict</p>
+  <table class="w-full text-sm">
+    <thead>
+      <tr class="border-b border-gray-200 dark:border-gray-600">
+        <th class="text-left py-2 font-medium text-gray-700 dark:text-gray-300">Tool</th>
+        <th class="text-left py-2 font-medium text-gray-700 dark:text-gray-300">Job</th>
+        <th class="text-left py-2 font-medium text-gray-700 dark:text-gray-300">Entry price</th>
+        <th class="text-left py-2 font-medium text-gray-700 dark:text-gray-300">Why</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Claude</strong></td><td class="py-2">Research &amp; writing</td><td class="py-2">Free / $20/mo</td><td class="py-2">Long-context reasoning, coding included</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Bolt</strong></td><td class="py-2">Build the MVP</td><td class="py-2">Free / $25/mo</td><td class="py-2">1M free tokens/mo, deploy in one click</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Notion</strong></td><td class="py-2">Docs &amp; knowledge</td><td class="py-2">Free / $20/member</td><td class="py-2">Notion Agent on Business</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Synthesia</strong></td><td class="py-2">Product demo video</td><td class="py-2">Free / $19/mo</td><td class="py-2">Demo without booking a call</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>ElevenLabs</strong></td><td class="py-2">Voice &amp; narration</td><td class="py-2">Free / $6/mo</td><td class="py-2">Cheapest paid entry on the list</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Canva</strong></td><td class="py-2">Brand assets</td><td class="py-2">Free tier</td><td class="py-2">Pitch decks and social without a designer</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>Surfer</strong></td><td class="py-2">Getting found</td><td class="py-2">$49/mo</td><td class="py-2">Content that ranks and gets cited by AI</td></tr>
+      <tr class="border-b border-gray-100 dark:border-gray-700"><td class="py-2"><strong>HubSpot</strong></td><td class="py-2">CRM &amp; pipeline</td><td class="py-2">Free / $20/seat</td><td class="py-2">Free CRM, no credit card</td></tr>
+      <tr><td class="py-2"><strong>Zapier</strong></td><td class="py-2">Automation</td><td class="py-2">Free / $19.99/mo</td><td class="py-2">100 free tasks/mo to validate a workflow</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="not-prose my-8 p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
+  <p class="text-sm text-gray-600 dark:text-gray-400"><strong>📋 How these were assessed:</strong> Compared on published feature sets, official pricing and documented limits — tokens, credits, seats, minutes — rather than on a private trial run. Where a vendor publishes a limit that makes or breaks the free tier, we quote their number.</p>
+</div>
+
+<h2>1. Claude — Best for Research, Writing and Code in One Place</h2>
+<p><strong>Rating: 4.7/5</strong></p>
+<p>For an early team, the practical advantage of Claude is that one subscription covers the three things a small company does constantly: reading long documents, drafting and rewriting, and writing actual code. The free tier includes chat, file creation, code execution, web search, memory and connectors; Pro adds more usage, Claude Code, Projects and the Opus models.</p>
+<p><strong>Pricing:</strong> Free $0 · Pro $20/mo ($17/mo billed yearly, $200 up front) · Max $100/mo · Ultra $200/mo. Team plans start at $25/seat/mo monthly ($20/seat/mo annual) with SSO and central billing.</p>
+<p><strong>Free tier:</strong> Yes — limited every five hours and weekly, but functional for a solo founder.</p>
+<p><strong>Who it's for:</strong> Founders who want one assistant for docs and code. <strong>Not for:</strong> teams that need audited, org-wide controls — that is the Team or Enterprise tier.</p>
+<p class="flex items-center gap-2 flex-wrap">
+  <a href="/tool/claude" class="btn-primary">See Claude in the directory →</a>
+</p>
+
+<h2>2. Bolt — Best for Shipping an MVP This Week</h2>
+<p><strong>Rating: 4.5/5</strong></p>
+<p>Bolt turns a prompt into a running web app with hosting attached, which is the fastest path from "we should validate this" to a link you can send to a customer. The free plan is unusually usable: 1M tokens a month with a 300K daily cap, unlimited databases and hosting, with Bolt branding on published sites. Pro removes the branding, adds a custom domain and SEO controls, and starts at 10M tokens a month with rollover.</p>
+<p><strong>Pricing:</strong> Free $0 · Pro $25/mo · Teams $30/member/mo · Enterprise custom. Tokens are per-member on Teams, not pooled.</p>
+<p><strong>Free tier:</strong> Yes — 1M tokens/month, 300K/day, no card required.</p>
+<p><strong>Who it's for:</strong> Non-technical founders and small teams validating a product. <strong>Not for:</strong> production systems that need a real data model and permissions — plan the handover to a developer before launch.</p>
+<p class="flex items-center gap-2 flex-wrap">
+  <a href="/tool/bolt" class="btn-primary">See Bolt in the directory →</a>
+</p>
+
+<h2>3. Notion — Best for Docs, Specs and a Knowledge Base That Answers Back</h2>
+<p><strong>Rating: 4.4/5</strong></p>
+<p>Notion's role at seed stage is to stop knowledge living in three people's heads. The AI story matters mostly from Business upward, where the Notion Agent handles multi-step tasks using Notion content plus connected apps, AI Meeting Notes automates follow-ups, and Enterprise Search reaches into Slack and GitHub.</p>
+<p><strong>Pricing:</strong> Free $0 · Plus $10/member/mo · Business $20/member/mo · Enterprise custom. Notion AI is a trial on Free and Plus, and included on Business and above.</p>
+<p><strong>Free tier:</strong> Yes — unlimited pages for solo use, with a block limit once the workspace has multiple members.</p>
+<p><strong>Who it's for:</strong> Teams writing specs, onboarding docs and a public-facing help centre. <strong>Not for:</strong> anyone who mainly needs a database with an API — the AI is the reason to choose Notion, not the storage.</p>
+<p class="flex items-center gap-2 flex-wrap">
+  <a href="/tool/notion-ai" class="btn-primary">See Notion AI in the directory →</a>
+</p>
+
+<h2>4. Synthesia — Best for a Product Demo That Sells While You Sleep</h2>
+<p><strong>Rating: 4.5/5</strong></p>
+<p>The demo video is the most underrated asset at seed stage: it answers the same six questions in every sales call, and it works on a landing page at 2am. Synthesia produces presenter-led explainers from a script, with 125+ avatars on Starter, 140+ languages and a re-record flow that means changing the script rather than reshooting. Compliance certifications (SOC 2 Type II, ISO 27001) matter to any startup selling into enterprises.</p>
+<p><strong>Pricing:</strong> Free Basic (10 min/mo, watermarked, 9 avatars) · Starter $19/mo ($14/mo billed yearly, $168/yr — 1,250 credits, about 12 minutes of footage) · Pro $89/mo ($59/mo billed yearly, 6,000 credits, 5 personal avatars) · Enterprise custom.</p>
+<p><strong>Free tier:</strong> Yes — about 10 minutes a month, watermarked.</p>
+<p><strong>Who it's for:</strong> Founders who need a demo, an onboarding video and a localised version for each market. <strong>Not for:</strong> brand films with cinematic ambitions.</p>
+<p class="flex items-center gap-2 flex-wrap">
+  <AffiliateBtn slug="synthesia" text="Start Free with Synthesia" loc="startups-listicle" />
+  <a href="/synthesia-review" class="text-sm font-medium text-[#3B82F6] hover:underline">Read the full Synthesia review →</a>
+</p>
+
+<h2>5. ElevenLabs — Best for In-Product Voice and Narration</h2>
+<p><strong>Rating: 4.7/5</strong></p>
+<p>There are two distinct uses at a startup. The obvious one is narration for demo and marketing video. The less obvious one is product voice — if whatever you are building speaks, ElevenLabs is usually cheaper and faster than hiring voice talent for every iteration, and its API makes voice a feature rather than an asset. Coverage runs to 74 languages with cloning from short samples.</p>
+<p><strong>Pricing:</strong> Free (10,000 credits/mo) · Starter $6/mo (30,000 credits) · Creator $22/mo (121,000 credits, professional voice cloning) · Pro $99/mo · Scale $299/mo · Business $990/mo.</p>
+<p><strong>Free tier:</strong> Yes — 10,000 characters a month, roughly ten minutes of finished speech.</p>
+<p><strong>Who it's for:</strong> Products that speak, and teams producing narrated video at volume. <strong>Not for:</strong> anything requiring talent-rights guarantees on a cloned voice — sort licensing before shipping.</p>
+<p class="flex items-center gap-2 flex-wrap">
+  <AffiliateBtn slug="elevenlabs" text="Start Free on ElevenLabs" loc="startups-listicle" />
+  <a href="/elevenlabs-review" class="text-sm font-medium text-[#3B82F6] hover:underline">Read the full ElevenLabs review →</a>
+</p>
+
+<h2>6. Canva — Best for the Deck, the Site Mock and the Social Assets</h2>
+<p><strong>Rating: 4.6/5</strong></p>
+<p>Startups produce a disproportionate amount of visual work with no designer: a deck, a one-pager, ad variants, social posts, event banners. Canva's free tier covers 1.6M+ templates, a single brand kit and a limited AI allowance; paid tiers add brand kits at scale, approvals, social scheduling and a much larger AI allowance. The reason to pay is volume and consistency, not capability.</p>
+<p><strong>Pricing:</strong> Free $0 · Pro and Business available monthly or billed annually. Pro is single-user; Business adds team admin, approvals and more AI per seat.</p>
+<p><strong>Free tier:</strong> Yes — genuinely usable for a first deck and social presence.</p>
+<p><strong>Who it's for:</strong> Founders doing their own design until a designer exists. <strong>Not for:</strong> brand systems that need print-grade control.</p>
+<p class="flex items-center gap-2 flex-wrap">
+  <a href="/tool/canva" class="btn-primary">See Canva in the directory →</a>
+</p>
+
+<h2>7. Surfer — Best for Getting Found in Google and in AI Answers</h2>
+<p><strong>Rating: 4.3/5</strong></p>
+<p>The channel that changed in 2026 is discovery: buyers increasingly ask an assistant instead of scrolling a results page, so being mentioned in ChatGPT or Perplexity is now a distribution problem, not an SEO vanity metric. Surfer scores drafts against live SERP structure and, from the AI Search Analytics tier, tracks whether your brand is mentioned at all.</p>
+<p><strong>Pricing:</strong> Discovery $49/mo (120 documents, 10 tracked pages) · Standard $99/mo (360 documents, 25 prompts weekly) · Pro $182/mo (50 prompts daily, 200 pages) · Peace of Mind $299/mo · Enterprise custom.</p>
+<p><strong>Free tier:</strong> None — start at Discovery and upgrade when tracked pages run out.</p>
+<p><strong>Who it's for:</strong> Startups with a content-led acquisition plan. <strong>Not for:</strong> pre-product teams — nothing to optimise yet.</p>
+<p class="flex items-center gap-2 flex-wrap">
+  <a href="/tool/surfer-seo" class="btn-primary">See Surfer in the directory →</a>
+</p>
+
+<h2>8. HubSpot — Best Free CRM, With a Real Cost Cliff Above It</h2>
+<p><strong>Rating: 4.4/5</strong></p>
+<p>The free tier is the reason most startups end up here: CRM, forms, email and live chat for two users, no credit card. Starter adds credits, Agent Hub and ad management for a low per-seat price. The jump to Professional is the one to plan for — automation, social and video tooling arrive there, along with a monthly commitment and a one-time onboarding fee.</p>
+<p><strong>Pricing:</strong> Free $0 · Starter $20/mo/seat (frequently discounted) · Professional $890/mo monthly ($800/mo billed annually, plus a one-time $3,000 onboarding fee) · Enterprise $3,600/mo (plus $7,000 onboarding).</p>
+<p><strong>Free tier:</strong> Yes — two users, full CRM basics, no card.</p>
+<p><strong>Who it's for:</strong> Teams that will eventually need marketing and sales in one database. <strong>Not for:</strong> a founder tracking 30 contacts — a spreadsheet and an assistant is cheaper, and the migration cost is real.</p>
+<p class="flex items-center gap-2 flex-wrap">
+  <a href="/tool/hubspot-ai" class="btn-primary">See HubSpot in the directory →</a>
+</p>
+
+<h2>9. Zapier — Best for Automating the Glue Nobody Wants to Own</h2>
+<p><strong>Rating: 4.5/5</strong></p>
+<p>Support email into the CRM, new signup into Slack, form submission into a sheet and a notification — these are ten-minute automations that quietly cost hours a week when done by hand. Zapier's free tier allows 100 tasks a month and two-step Zaps, which is enough to prove a workflow before paying; paid plans scale by task volume rather than seats.</p>
+<p><strong>Pricing:</strong> Free (100 tasks/mo, two-step Zaps) · paid plans from $19.99/mo.</p>
+<p><strong>Free tier:</strong> Yes — 100 tasks a month.</p>
+<p><strong>Who it's for:</strong> Teams running three or more tools that need to share data. <strong>Not for:</strong> high-volume event pipelines — at that point the economics favour direct API work.</p>
+<p class="flex items-center gap-2 flex-wrap">
+  <a href="/tool/zapier" class="btn-primary">See Zapier in the directory →</a>
+</p>
+
+<h2>Side-by-Side Comparison</h2>
+<table>
+<thead><tr><th>Tool</th><th>Job</th><th>Free tier</th><th>Entry paid</th><th>Budget unit</th><th>Best for</th></tr></thead>
+<tbody>
+<tr><td><strong>Claude</strong></td><td>Research &amp; code</td><td>Limited usage</td><td>$20/mo</td><td>Seats</td><td>One assistant for everything</td></tr>
+<tr><td><strong>Bolt</strong></td><td>Build</td><td>1M tokens/mo</td><td>$25/mo</td><td>Tokens</td><td>Validation builds</td></tr>
+<tr><td><strong>Notion</strong></td><td>Docs</td><td>Unlimited (solo)</td><td>$10/member/mo</td><td>Seats</td><td>Specs and onboarding</td></tr>
+<tr><td><strong>Synthesia</strong></td><td>Demo video</td><td>~10 min/mo</td><td>$19/mo</td><td>Credits (~100/min)</td><td>Demos and localisation</td></tr>
+<tr><td><strong>ElevenLabs</strong></td><td>Voice</td><td>10,000 credits/mo</td><td>$6/mo</td><td>Characters</td><td>Product voice, narration</td></tr>
+<tr><td><strong>Canva</strong></td><td>Design</td><td>Free plan</td><td>Pro, billed annually</td><td>Seats + AI allowance</td><td>Deck and social</td></tr>
+<tr><td><strong>Surfer</strong></td><td>Discovery</td><td>None</td><td>$49/mo</td><td>Documents, pages</td><td>Search and AI citations</td></tr>
+<tr><td><strong>HubSpot</strong></td><td>CRM</td><td>2 users</td><td>$20/seat</td><td>Seats, contacts</td><td>Pipeline management</td></tr>
+<tr><td><strong>Zapier</strong></td><td>Automation</td><td>100 tasks/mo</td><td>$19.99/mo</td><td>Tasks</td><td>Connecting tools</td></tr>
+</tbody>
+</table>
+
+<h2>How to Choose</h2>
+<p><strong>Pre-product (week 1-4):</strong> Claude free tier plus Bolt free. You need a running prototype and something to send it with; that costs $0 until you hit Bolt's 1M-token monthly cap.</p>
+<p><strong>First paying customers:</strong> add HubSpot's free CRM before you need it, not after. Migrating 200 contacts is easy, migrating a year of messy pipeline is not. Then add Zapier's free tier to get form submissions into the CRM automatically.</p>
+<p><strong>Starting to sell:</strong> the demo video is the highest-leverage asset. Synthesia's free plan gives about 10 watermarked minutes; Starter at $19/mo removes the watermark and adds about 12 minutes of footage a month, which covers a demo plus two feature explainers.</p>
+<p><strong>Starting to publish:</strong> Surfer at $49/mo only makes sense once there is a product page worth ranking and someone to write. Before that, spend the money on the demo instead.</p>
+<p><strong>What to skip:</strong> per-seat tools bought for people who will not log in, annual commitments before a workflow is validated, and any tool whose only benefit is that it appeared in a listicle. Audit seats monthly in the first year, not annually.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What AI tools does a startup actually need on day one?</h3>
+<p>Four, and three can be free: a reasoning assistant (Claude free or $20/month for Pro), a place to write things down (Notion free, or Business at $20/member/month for the Notion Agent), a way to ship a working prototype (Bolt free gives 1M tokens a month, Pro is $25/month) and an automation layer (Zapier free covers 100 tasks a month). Everything else waits until a specific bottleneck appears.</p>
+
+<h3>Is it cheaper to build an MVP with AI tools or hire a developer?</h3>
+<p>For a validation build, AI builders are dramatically cheaper — Bolt Pro is $25/month, with Lovable and Cursor selling comparable monthly tiers. The trade-off is ceiling, not price: they get you to a testable product fast and then stop being the right tool once you need a real data model, permissions and payments. Most teams validate with AI and productionise with a developer.</p>
+
+<h3>Do startups need AI video and voice tools?</h3>
+<p>Earlier than most founders expect. A demo that does not require a call is now part of the sales motion: Synthesia's Starter is $19/month ($14/month billed yearly) for about 12 minutes of avatar footage, and the free plan allows about 10 watermarked minutes a month. ElevenLabs starts at $6/month with a 10,000-credit free tier.</p>
+
+<h3>How much should a seed-stage startup budget for AI subscriptions?</h3>
+<p>Roughly $100-200 a month at pre-seed, and it should stay under $500 until there is revenue. A working set is $20-25 for an assistant, $0-20 for docs, $25-49 for building, $0-19 for automation and $0-6 for voice. The line item that quietly inflates is per-seat tools bought for people who never log in.</p>
+
+<h3>Which AI tools have free tiers good enough that you do not need to pay?</h3>
+<p>Bolt's free plan is 1M tokens a month with a 300K daily cap — enough for a prototype. Notion free is unlimited pages for solo use, HubSpot free covers two users with no card, Canva free covers 1.6M+ templates and one brand kit, Zapier free is 100 tasks a month, and both Claude and ElevenLabs run usable free tiers. Together they carry a two-person team a long way.</p>
+
+<h2>How We Evaluate</h2>
+<p>This page is a buyer's guide, not a lab report: tools are compared on documented features, official pricing and published limits. We do not present lab-style test results we did not produce.</p>
+<ul>
+<li><strong>Scope:</strong> The jobs that consume a seed-stage team's time — build, document, demo, sell, publish, automate.</li>
+<li><strong>Method:</strong> Feature lists, official pricing pages and vendor-published usage limits, checked on the date shown above.</li>
+<li><strong>Criteria:</strong> Whether the free tier can carry a real workload, the cost of the next tier up, seat and token maths, and how quickly the tool becomes dead weight if the company pivots.</li>
+<li><strong>Corrections:</strong> Prices move. If a figure here disagrees with the vendor's page, email admin@aizest.net and we will fix it.</li>
+</ul>
+
+        <RelatedContent category="business" />
+<p><em>Disclosure: Some links on this page are affiliate links. We may earn a commission at no extra cost to you — it never changes which tools we cover or how we describe them. Prices verified 18 November 2026.</em></p>
+</ArticleWrap>
+</BaseLayout>

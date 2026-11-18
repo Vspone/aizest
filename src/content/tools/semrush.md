@@ -4,7 +4,7 @@ slug: "semrush"
 description: "All-in-one marketing toolkit with AI-powered SEO, content marketing, competitive research, and PPC analytics."
 category: "marketing"
 website: "https://www.semrush.com"
-pricing: "$129.95/mo"
+pricing: "Free / from $139/mo"
 affiliate_url: https://www.semrush.com
 affiliate: false
 scores:
@@ -14,7 +14,7 @@ scores:
   speed: 8.5
   overall: 9.0
 best_for: "Marketers, SEO professionals, and growth teams"
-last_verified: 2026-06-25
+last_verified: 2026-11-18
 featured: false
 rating: 4.5
 features:
@@ -25,29 +25,36 @@ features:
   - "Topic research with SEO content templates"
   - "PPC keyword research and ad copy suggestions"
 pricing_tiers:
-  - name: "Pro"
-    price: "$129.95/mo"
+  - name: "Free"
+    price: "$0"
     features:
-      - "5 projects"
-      - "500 keywords to track"
-      - "10K results per report"
-      - "Content Marketing tools"
-  - name: "Guru"
-    price: "$249.95/mo"
+      - "1 demo project"
+      - "10 reports per day across vital tools"
+      - "AI visibility features"
+  - name: "SEO"
+    price: "$139/mo ($117.33/mo billed yearly)"
     features:
-      - "15 projects"
-      - "1,500 keywords to track"
-      - "Content audit"
-      - "Share of Voice analysis"
-      - "Historical data"
-  - name: "Business"
-    price: "$499.95/mo"
+      - "5 websites, 500 keywords tracked daily"
+      - "Position tracking, site audit, keyword research"
+      - "Track performance in AI search, monitor AI sentiment"
+  - name: "Starter (SEO + AI Search)"
+    price: "$199/mo ($165.17/mo billed yearly)"
     features:
-      - "40 projects"
-      - "5,000 keywords to track"
-      - "API access"
-      - "Google Data Studio integration"
-      - "Extended limits"
+      - "Everything in SEO plus 50 prompts tracked daily"
+      - "300 AI visibility reports per day"
+      - "MCP access, AI-ready site audit"
+  - name: "Pro+ (SEO + AI Search)"
+    price: "$299/mo ($248.17/mo billed yearly)"
+    features:
+      - "15 websites, 1,500 keywords tracked daily"
+      - "100 prompts tracked daily, historical SEO data"
+      - "Content optimization and cannibalization analysis"
+  - name: "Advanced"
+    price: "Custom"
+    features:
+      - "40+ websites, 5,000+ keywords tracked daily"
+      - "Unlimited prompts, SEO share of voice"
+      - "Advanced API integration, team users"
 pros:
   - "Highly comprehensive SEO toolkit"
   - "AI content writing actually produces decent drafts"

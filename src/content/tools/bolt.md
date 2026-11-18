@@ -4,7 +4,7 @@ slug: "bolt"
 description: "AI-powered web app builder that generates full-stack applications from a single prompt — edit, preview, and deploy in browser."
 category: "coding"
 website: "https://bolt.new"
-pricing: "Free / $20/mo (Starter)"
+pricing: "Free / $25/mo (Pro)"
 needs_vps: true
 affiliate_url: https://bolt.new
 scores:
@@ -14,7 +14,7 @@ scores:
   speed: 8.5
   overall: 9.0
 best_for: "Developers, software engineers, and technical teams"
-last_verified: 2026-06-25
+last_verified: 2026-11-18
 featured: true
 rating: 4.5
 features:
@@ -28,23 +28,26 @@ pricing_tiers:
   - name: "Free"
     price: "$0"
     features:
-      - "Limited tokens per day"
-      - "Basic app generation"
-      - "Community support"
-  - name: "Starter"
-    price: "$20/mo"
-    features:
-      - "10x more tokens"
-      - "Faster generation speed"
-      - "Priority support"
-      - "Code export"
+      - "1M tokens/month, 300K daily limit"
+      - "Bolt branding on published sites"
+      - "Unlimited databases, website hosting"
   - name: "Pro"
-    price: "$100/mo"
+    price: "$25/mo"
     features:
-      - "Unlimited tokens"
-      - "Team collaboration"
-      - "Custom deployment domains"
-      - "API access"
+      - "Starts at 10M tokens/month, no daily limit"
+      - "No Bolt branding, custom domain, SEO boosting"
+      - "Unused tokens roll over up to two months"
+  - name: "Teams"
+    price: "$30/member/mo"
+    features:
+      - "Everything in Pro plus centralized billing"
+      - "Granular admin controls and user provisioning"
+      - "Tokens are per member, not shared"
+  - name: "Enterprise"
+    price: "Custom"
+    features:
+      - "SSO, audit logs, compliance support"
+      - "Dedicated account manager, 24/7 priority support"
 pros:
   - "Fastest way to go from idea to working app"
   - "Real-time preview eliminates guesswork"

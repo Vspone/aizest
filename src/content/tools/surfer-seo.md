@@ -4,7 +4,7 @@ slug: "surfer-seo"
 description: "AI-driven content optimization platform that helps you write search-engine-optimized content that actually ranks."
 category: "marketing"
 website: "https://surferseo.com"
-pricing: "$69/mo"
+pricing: "From $49/mo"
 affiliate_url: https://surferseo.com
 affiliate: false
 scores:
@@ -14,7 +14,7 @@ scores:
   speed: 8.1
   overall: 8.6
 best_for: "Marketers, SEO professionals, and growth teams"
-last_verified: 2026-06-25
+last_verified: 2026-11-18
 featured: false
 rating: 4.3
 features:
@@ -25,28 +25,33 @@ features:
   - "Auto-optimize with one-click fixes"
   - "Integration with WordPress, Google Docs, and Jasper"
 pricing_tiers:
-  - name: "Essential"
-    price: "$69/mo"
+  - name: "Discovery"
+    price: "$49/mo"
     features:
-      - "60 article queries/mo"
-      - "Content editor"
-      - "Basic SERP analysis"
-      - "WordPress integration"
-  - name: "Advanced"
-    price: "$149/mo"
+      - "AI SEO optimization guidelines and content score"
+      - "120 documents to create or optimize"
+      - "Track 10 pages"
+      - "Surfy AI assistant and humanizer"
+  - name: "Standard"
+    price: "$99/mo"
     features:
-      - "180 article queries/mo"
-      - "Auto-optimize"
-      - "Content audit"
-      - "Keyword clustering"
-      - "Priority support"
-  - name: "Max"
-    price: "$249/mo"
+      - "360 documents, 50 pages tracked, 1 seat"
+      - "AI visibility tracking on ChatGPT (25 prompts, weekly)"
+      - "WordPress and Google Docs integrations"
+      - "1-click content optimization, plagiarism checker"
+  - name: "Pro"
+    price: "$182/mo"
     features:
-      - "Unlimited queries"
-      - "All features"
-      - "API access"
-      - "Dedicated account manager"
+      - "360 documents, 200 pages tracked, 3 seats"
+      - "AI visibility across ChatGPT, Perplexity, Gemini, AI Overviews"
+      - "50 prompts tracked daily, 1-click internal linking"
+      - "Content ideas and cannibalization report"
+  - name: "Peace of Mind"
+    price: "$299/mo"
+    features:
+      - "Unlimited documents and brand spaces, 10 seats"
+      - "100 prompts tracked daily, advanced SERP analysis"
+      - "API access, personalized onboarding, dedicated success manager"
 pros:
   - "Data-driven optimization — no guesswork"
   - "Real-time scoring as you write"

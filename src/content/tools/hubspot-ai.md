@@ -4,7 +4,7 @@ slug: "hubspot-ai"
 description: "AI-powered sales, marketing, and CRM tools baked into HubSpot for content generation, email outreach, and lead scoring."
 category: "marketing"
 website: "https://www.hubspot.com"
-pricing: "Free / $45/mo"
+pricing: "Free / $20/mo/seat (Starter)"
 affiliate_url: https://www.hubspot.com
 scores:
   ease_of_use: 8.5
@@ -13,7 +13,7 @@ scores:
   speed: 8.3
   overall: 8.8
 best_for: "Marketers, SEO professionals, and growth teams"
-last_verified: 2026-06-25
+last_verified: 2026-11-18
 featured: true
 rating: 4.4
 features:
@@ -27,26 +27,26 @@ pricing_tiers:
   - name: "Free"
     price: "$0"
     features:
-      - "CRM with 1M contacts"
-      - "Basic AI content tools"
-      - "Email tracking"
-      - "Live chat"
+      - "Up to 2 users, free CRM and marketing tools"
+      - "No credit card required"
   - name: "Starter"
-    price: "$45/mo"
+    price: "$20/mo/seat (frequently discounted to $7)"
     features:
-      - "AI content assistant"
-      - "Sequences and automation"
-      - "Meeting scheduling"
-      - "Pipeline management"
-      - "2 users included"
+      - "500 HubSpot credits, 1,000 marketing contacts"
+      - "Agent Hub and Agent Builder"
+      - "Email marketing, ad management, CRM segments"
   - name: "Professional"
-    price: "$800/mo"
+    price: "$890/mo monthly ($800/mo annual, + $3,000 onboarding)"
     features:
-      - "AI lead scoring"
-      - "Custom reporting"
-      - "Multi-touch attribution"
-      - "Smart CRM automation"
-      - "Unlimited users"
+      - "3,000 credits, 2,000 marketing contacts, 3 core seats"
+      - "Social and video creation, marketing studio (beta)"
+      - "AEO included free (tracks 25 prompts across 3 answer engines)"
+  - name: "Enterprise"
+    price: "$3,600/mo (+ $7,000 onboarding)"
+    features:
+      - "5,000 credits, 10,000 marketing contacts, 5 core seats"
+      - "Multi-touch revenue attribution, customer journey analytics"
+      - "Email approvals, behavioural event triggers"
 pros:
   - "Deep integration with a complete CRM platform"
   - "AI features are practical and directly useful for sales/marketing"

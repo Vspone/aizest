@@ -1,0 +1,170 @@
+---
+// Cookie consent banner + consent-gated GA4 loader (Basic Consent Mode).
+// Nothing analytics-related is emitted when PUBLIC_GA_ID is unset.
+const gaId = import.meta.env.PUBLIC_GA_ID;
+---
+
+{gaId && (
+  <div
+    id="aizest-consent"
+    class="hidden fixed inset-x-0 bottom-0 z-[9999] p-3 sm:p-4"
+    role="dialog"
+    aria-modal="false"
+    aria-label="Cookie consent"
+  >
+    <div class="mx-auto max-w-4xl rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-2xl p-4 sm:p-5">
+      <p class="text-sm font-semibold text-gray-900 dark:text-white">Cookies &amp; analytics</p>
+      <p class="mt-1 text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+        We use Google Analytics to understand which pages are useful. It sets cookies, so it is
+        loaded only after you accept. This site sets no advertising cookies and no affiliate
+        tracking cookies of its own.
+        <a href="/cookie-policy" class="text-[#3B82F6] hover:underline">Cookie Policy</a>
+      </p>
+
+      <div id="aizest-consent-custom" class="hidden mt-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/60 p-3">
+        <label class="flex items-start gap-3 cursor-pointer">
+          <input id="aizest-consent-analytics" type="checkbox" class="mt-0.5 h-4 w-4 shrink-0 accent-[#3B82F6]" />
+          <span>
+            <span class="block text-sm font-medium text-gray-900 dark:text-white">Analytics — Google Analytics 4</span>
+            <span class="block text-xs text-gray-500 dark:text-gray-400 mt-0.5">Page views, referral source, approximate location, browser and device type. Off unless you tick this.</span>
+          </span>
+        </label>
+        <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Advertising and affiliate tracking: not used on this site.</p>
+      </div>
+
+      <div class="mt-4 flex flex-col sm:flex-row gap-2">
+        <button id="aizest-consent-accept" type="button" class="w-full sm:w-auto order-1 sm:order-2 rounded-lg bg-[#3B82F6] px-4 py-2.5 min-h-[44px] text-sm font-semibold text-white hover:bg-blue-600 transition-colors">Accept all</button>
+        <button id="aizest-consent-reject" type="button" class="w-full sm:w-auto order-2 sm:order-1 rounded-lg border border-gray-300 dark:border-gray-600 px-4 py-2.5 min-h-[44px] text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Reject all</button>
+        <button id="aizest-consent-customize" type="button" class="w-full sm:w-auto order-3 rounded-lg border border-gray-300 dark:border-gray-600 px-4 py-2.5 min-h-[44px] text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Customize</button>
+        <button id="aizest-consent-save" type="button" class="hidden w-full sm:w-auto order-4 rounded-lg bg-gray-900 dark:bg-white px-4 py-2.5 min-h-[44px] text-sm font-semibold text-white dark:text-gray-900 hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors">Save choices</button>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ gaId }}>
+    (function () {
+      var KEY = 'aizest_consent_v1';
+      var el = document.getElementById('aizest-consent');
+      var panel = document.getElementById('aizest-consent-custom');
+      var toggle = document.getElementById('aizest-consent-analytics');
+      var saveBtn = document.getElementById('aizest-consent-save');
+      if (!el || !panel || !toggle || !saveBtn) return;
+
+      var gaLoaded = false;
+
+      function read() {
+        try {
+          var raw = localStorage.getItem(KEY);
+          if (!raw) return null;
+          var s = JSON.parse(raw);
+          return s && s.v === 1 ? s : null;
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function write(analytics) {
+        var s = { v: 1, analytics: !!analytics, ts: new Date().toISOString() };
+        try {
+          localStorage.setItem(KEY, JSON.stringify(s));
+        } catch (e) {}
+        return s;
+      }
+
+      function loadGA() {
+        if (gaLoaded || !gaId) return;
+        gaLoaded = true;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () {
+          window.dataLayer.push(arguments);
+        };
+        window.gtag('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'granted',
+          functionality_storage: 'granted',
+          security_storage: 'granted'
+        });
+        window.gtag('js', new Date());
+        window.gtag('config', gaId, { anonymize_ip: true });
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gaId);
+        document.head.appendChild(s);
+      }
+
+      // Withdrawal must actually stop collection and clear existing cookies.
+      function revokeGA() {
+        if (typeof window.gtag === 'function') {
+          window.gtag('consent', 'update', { analytics_storage: 'denied' });
+        }
+        var host = location.hostname;
+        document.cookie.split(';').forEach(function (c) {
+          var name = c.split('=')[0].trim();
+          if (name && name.indexOf('_ga') === 0) {
+            document.cookie = name + '=; Max-Age=0; path=/; domain=' + host;
+            document.cookie = name + '=; Max-Age=0; path=/; domain=.' + host;
+          }
+        });
+      }
+
+      function show() {
+        el.classList.remove('hidden');
+      }
+
+      function hide() {
+        el.classList.add('hidden');
+        panel.classList.add('hidden');
+        saveBtn.classList.add('hidden');
+      }
+
+      // Exposed for the footer "Cookie Settings" control.
+      window.openCookieSettings = function () {
+        var s = read();
+        toggle.checked = !!(s && s.analytics);
+        show();
+      };
+
+      var saved = read();
+      if (!saved) {
+        show();
+      } else if (saved.analytics) {
+        loadGA();
+      }
+
+      document.getElementById('aizest-consent-accept').addEventListener('click', function () {
+        write(true);
+        loadGA();
+        hide();
+      });
+
+      document.getElementById('aizest-consent-reject').addEventListener('click', function () {
+        write(false);
+        revokeGA();
+        hide();
+      });
+
+      document.getElementById('aizest-consent-customize').addEventListener('click', function () {
+        var isHidden = panel.classList.contains('hidden');
+        panel.classList.toggle('hidden', !isHidden);
+        saveBtn.classList.toggle('hidden', !isHidden);
+        if (isHidden) {
+          var s = read();
+          toggle.checked = !!(s && s.analytics);
+        }
+      });
+
+      document.getElementById('aizest-consent-save').addEventListener('click', function () {
+        var on = !!toggle.checked;
+        write(on);
+        if (on) {
+          loadGA();
+        } else {
+          revokeGA();
+        }
+        hide();
+      });
+    })();
+  </script>
+)}

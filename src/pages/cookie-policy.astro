@@ -15,7 +15,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </nav>
 
     <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">Cookie Policy</h1>
-    <p class="text-sm text-gray-400 dark:text-gray-500 mb-10">Last updated: June 23, 2026</p>
+    <p class="text-sm text-gray-400 dark:text-gray-500 mb-10">Last updated: November 19, 2026</p>
 
     <section class="mb-8">
       <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">1. What Are Cookies</h2>
@@ -32,7 +32,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 leading-relaxed space-y-1">
         <li><strong>Essential Cookies</strong> — required for the basic functionality of the Site (e.g., dark mode preference)</li>
         <li><strong>Analytics Cookies</strong> — to understand how visitors interact with our Site and improve user experience</li>
-        <li><strong>Affiliate Cookies</strong> — when you click an affiliate link, a cookie may be placed to track referrals for commission purposes (e.g., via Awin)</li>
+        <li><strong>Affiliate Cookies</strong> — when you click an affiliate link, a cookie may be set by the partner or its tracking platform to attribute the referral for commission purposes</li>
         <li><strong>Email Service Cookies</strong> — MailerLite may place cookies to manage newsletter signup forms</li>
       </ul>
     </section>
@@ -56,9 +56,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <td class="py-2">Session / Persistent</td>
             </tr>
             <tr class="border-b border-gray-200 dark:border-gray-700">
-              <td class="py-2 pr-4">Awin affiliate cookies</td>
-              <td class="py-2 pr-4">Tracks affiliate referrals from Awin links</td>
-              <td class="py-2">30 days (typical)</td>
+              <td class="py-2 pr-4">_ga, _ga_*</td>
+              <td class="py-2 pr-4">Google Analytics 4 — distinguishes visitors and sessions for aggregate traffic reporting</td>
+              <td class="py-2">Up to 2 years</td>
+            </tr>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <td class="py-2 pr-4">Affiliate partner cookies</td>
+              <td class="py-2 pr-4">Set by the partner or its tracking platform to attribute a referral when you click our link</td>
+              <td class="py-2">Varies by partner (typically 30–90 days)</td>
             </tr>
             <tr class="border-b border-gray-200 dark:border-gray-700">
               <td class="py-2 pr-4">MailerLite cookies</td>
@@ -81,8 +86,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Some cookies are placed by third-party services that appear on our Site:
       </p>
       <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 leading-relaxed space-y-1 mt-2">
+        <li><strong>Google Analytics 4</strong> — traffic analytics by Google LLC (<a href="https://policies.google.com/technologies/partner-sites" class="text-[#3B82F6] hover:underline" target="_blank" rel="noopener">How Google uses data</a>)</li>
         <li><strong>MailerLite</strong> — email newsletter platform (<a href="https://www.mailerlite.com/legal/cookie-policy" class="text-[#3B82F6] hover:underline" target="_blank" rel="noopener">MailerLite Cookie Policy</a>)</li>
-        <li><strong>Awin</strong> — affiliate network (<a href="https://www.awin.com/gb/legal" class="text-[#3B82F6] hover:underline" target="_blank" rel="noopener">Awin Privacy Policy</a>)</li>
+        <li><strong>Affiliate partners</strong> — ElevenLabs, Synthesia and Submagic, plus their affiliate tracking platforms, may set cookies when you click our partner links</li>
         <li><strong>Cloudflare</strong> — CDN and security (<a href="https://www.cloudflare.com/privacypolicy/" class="text-[#3B82F6] hover:underline" target="_blank" rel="noopener">Cloudflare Privacy Policy</a>)</li>
       </ul>
     </section>
